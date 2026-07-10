@@ -111,8 +111,11 @@ td.docs {
 }
 td.docs p {
   padding-right: 10px;
-  padding-top: 5px;
+  padding-top: 0;
   padding-bottom: 15px;
+}
+td.docs > :first-child {
+  transform: translateY(-2px);
 }
 td.code {
   box-sizing: border-box;
