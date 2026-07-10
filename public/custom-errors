@@ -31,10 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p>It&rsquo;s possible to define custom error types by
-implementing the <code>Error()</code> method on them. Here&rsquo;s a
-variant on the example above that uses a custom type
-to explicitly represent an argument error.</p>
+            <p>يمكن تعريف أنواع أخطاء مخصصة بتطبيق الأسلوب <code>Error()</code>
+عليها. إليك نسخة من المثال السابق تستخدم نوعًا مخصصًا
+لتمثيل خطأ في وسيط بوضوح.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,7 +47,7 @@ to explicitly represent an argument error.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/0WHh8JFOjQq" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/xmDFTXrDDgu" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -68,7 +67,7 @@ to explicitly represent an argument error.</p>
         
         <tr>
           <td class="docs">
-            <p>A custom error type usually has the suffix &ldquo;Error&rdquo;.</p>
+            <p>يحمل نوع الخطأ المخصص عادةً اللاحقة <code>Error</code>.</p>
 
           </td>
           <td class="code leading">
@@ -82,8 +81,8 @@ to explicitly represent an argument error.</p>
         
         <tr>
           <td class="docs">
-            <p>Adding this <code>Error</code> method makes <code>argError</code> implement
-the <code>error</code> interface.</p>
+            <p>تؤدي إضافة الأسلوب <code>Error</code> إلى جعل <code>argError</code> يطبق
+واجهة <code>error</code>.</p>
 
           </td>
           <td class="code leading">
@@ -107,7 +106,7 @@ the <code>error</code> interface.</p>
         
         <tr>
           <td class="docs">
-            <p>Return our custom error.</p>
+            <p>أعد الخطأ المخصص.</p>
 
           </td>
           <td class="code leading">
@@ -131,11 +130,11 @@ the <code>error</code> interface.</p>
         
         <tr>
           <td class="docs">
-            <p><code>errors.AsType</code> is a more advanced version of <code>errors.Is</code>.
-It checks that a given error (or any error in its chain)
-matches a specific error type and converts to a value
-of that type, also returning <code>true</code>. If there&rsquo;s no match, the
-second return value is <code>false</code>.</p>
+            <p><code>errors.AsType</code> نسخة أكثر تقدمًا من <code>errors.Is</code>. تتحقق
+مما إذا كان خطأ معطى، أو أي خطأ في سلسلته، يطابق نوع
+خطأ محدد، وتحوله إلى قيمة من ذلك النوع مع إعادة
+<code>true</code> أيضًا. إذا لم يوجد تطابق، تكون قيمة الإرجاع
+الثانية <code>false</code>.</p>
 
           </td>
           <td class="code">

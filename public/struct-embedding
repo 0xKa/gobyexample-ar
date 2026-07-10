@@ -31,11 +31,11 @@
         
         <tr>
           <td class="docs">
-            <p>Go supports <em>embedding</em> of structs and interfaces
-to express a more seamless <em>composition</em> of types.
-This is not to be confused with <a href="embed-directive"><code>//go:embed</code></a> which is
-a go directive introduced in Go version 1.16+ to embed
-files and folders into the application binary.</p>
+            <p>تدعم Go <em>تضمين</em> الهياكل والواجهات للتعبير عن <em>تركيب</em>
+أكثر سلاسة للأنواع. لا ينبغي الخلط بين ذلك وبين
+<a href="embed-directive"><code>//go:embed</code></a>، وهو توجيه في Go أُضيف
+في الإصدار 1.16 لتضمين الملفات والمجلدات في الملف
+التنفيذي للتطبيق.</p>
 
           </td>
           <td class="code empty leading">
@@ -49,7 +49,7 @@ files and folders into the application binary.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/-LOu1L0i2tR" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/Ojvp9HCz1ri" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -90,8 +90,8 @@ files and folders into the application binary.</p>
         
         <tr>
           <td class="docs">
-            <p>A <code>container</code> <em>embeds</em> a <code>base</code>. An embedding looks
-like a field without a name.</p>
+            <p><em>يضمّن</em> <code>container</code> النوع <code>base</code>. ويبدو التضمين كحقل
+بلا اسم.</p>
 
           </td>
           <td class="code leading">
@@ -115,9 +115,8 @@ like a field without a name.</p>
         
         <tr>
           <td class="docs">
-            <p>When creating structs with literals, we have to
-initialize the embedding explicitly; here the
-embedded type serves as the field name.</p>
+            <p>عند إنشاء الهياكل باستخدام القيم الحرفية، علينا تهيئة
+التضمين صراحةً؛ ويؤدي النوع المضمّن هنا دور اسم الحقل.</p>
 
           </td>
           <td class="code leading">
@@ -133,8 +132,8 @@ embedded type serves as the field name.</p>
         
         <tr>
           <td class="docs">
-            <p>We can access the base&rsquo;s fields directly on <code>co</code>,
-e.g. <code>co.num</code>.</p>
+            <p>يمكننا الوصول إلى حقول <code>base</code> مباشرةً عبر <code>co</code>،
+مثل <code>co.num</code>.</p>
 
           </td>
           <td class="code leading">
@@ -145,8 +144,8 @@ e.g. <code>co.num</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Alternatively, we can spell out the full path using
-the embedded type name.</p>
+            <p>بدلًا من ذلك، يمكننا كتابة المسار كاملًا باستخدام
+اسم النوع المضمّن.</p>
 
           </td>
           <td class="code leading">
@@ -157,10 +156,9 @@ the embedded type name.</p>
         
         <tr>
           <td class="docs">
-            <p>Since <code>container</code> embeds <code>base</code>, the methods of
-<code>base</code> also become methods of a <code>container</code>. Here
-we invoke a method that was embedded from <code>base</code>
-directly on <code>co</code>.</p>
+            <p>بما أن <code>container</code> يضمّن <code>base</code>، تصبح أساليب <code>base</code>
+أيضًا أساليب لـ<code>container</code>. نستدعي هنا مباشرةً عبر
+<code>co</code> أسلوبًا مضمّنًا من <code>base</code>.</p>
 
           </td>
           <td class="code leading">
@@ -183,10 +181,9 @@ directly on <code>co</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Embedding structs with methods may be used to bestow
-interface implementations onto other structs. Here
-we see that a <code>container</code> now implements the
-<code>describer</code> interface because it embeds <code>base</code>.</p>
+            <p>يمكن استخدام تضمين الهياكل ذات الأساليب لجعل هياكل
+أخرى تطبق واجهات. نرى هنا أن <code>container</code> يطبق الآن
+واجهة <code>describer</code> لأنه يضمّن <code>base</code>.</p>
 
           </td>
           <td class="code">

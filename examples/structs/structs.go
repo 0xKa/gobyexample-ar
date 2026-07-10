@@ -1,23 +1,21 @@
-// Go's _structs_ are typed collections of fields.
-// They're useful for grouping data together to form
-// records.
+// _الهياكل_ في Go مجموعات من الحقول محددة الأنواع.
+// تفيد في تجميع البيانات معًا لتكوين سجلات.
 
 package main
 
 import "fmt"
 
-// This `person` struct type has `name` and `age` fields.
+// يحتوي نوع الهيكل `person` على الحقلين `name` و`age`.
 type person struct {
 	name string
 	age  int
 }
 
-// `newPerson` constructs a new person struct with the given name.
+// تنشئ `newPerson` هيكل `person` جديدًا بالاسم المعطى.
 func newPerson(name string) *person {
-	// Go is a garbage collected language; you can safely
-	// return a pointer to a local variable - it will only
-	// be cleaned up by the garbage collector when there
-	// are no active references to it.
+	// تستخدم Go جمع المهملات؛ لذلك يمكنك بأمان إعادة مؤشر
+	// إلى متغير محلي، إذ لن ينظفه جامع المهملات إلا عندما
+	// تنعدم المراجع النشطة إليه.
 	p := person{name: name}
 	p.age = 42
 	return &p
@@ -25,38 +23,38 @@ func newPerson(name string) *person {
 
 func main() {
 
-	// This syntax creates a new struct.
+	// تنشئ هذه الصيغة هيكلًا جديدًا.
 	fmt.Println(person{"Bob", 20})
 
-	// You can name the fields when initializing a struct.
+	// يمكنك تسمية الحقول عند تهيئة هيكل.
 	fmt.Println(person{name: "Alice", age: 30})
 
-	// Omitted fields will be zero-valued.
+	// تأخذ الحقول غير المذكورة قيمها الصفرية.
 	fmt.Println(person{name: "Fred"})
 
-	// An `&` prefix yields a pointer to the struct.
+	// تعطي البادئة `&` مؤشرًا إلى الهيكل.
 	fmt.Println(&person{name: "Ann", age: 40})
 
-	// It's idiomatic to encapsulate new struct creation in constructor functions
+	// من المتعارف عليه حصر إنشاء الهياكل الجديدة في دوال إنشاء.
 	fmt.Println(newPerson("Jon"))
 
-	// Access struct fields with a dot.
+	// استخدم النقطة للوصول إلى حقول الهيكل.
 	s := person{name: "Sean", age: 50}
 	fmt.Println(s.name)
 
-	// You can also use dots with struct pointers - the
-	// pointers are automatically dereferenced.
+	// يمكنك أيضًا استخدام النقاط مع مؤشرات الهياكل؛ إذ تفك
+	// Go إشارة المؤشرات تلقائيًا.
 	sp := &s
 	fmt.Println(sp.age)
 
-	// Structs are mutable.
+	// الهياكل قابلة للتغيير.
 	sp.age = 51
 	fmt.Println(sp.age)
 
-	// If a struct type is only used for a single value, we don't
-	// have to give it a name. The value can have an anonymous
-	// struct type. This technique is commonly used for
-	// [table-driven tests](testing-and-benchmarking).
+	// إذا لم يُستخدم نوع هيكل إلا لقيمة واحدة، فلا يلزم أن
+	// نسميه؛ إذ يمكن أن يكون للقيمة نوع هيكل مجهول. يشيع
+	// استخدام هذه التقنية في
+	// [الاختبارات القائمة على جداول](testing-and-benchmarking).
 	dog := struct {
 		name   string
 		isGood bool

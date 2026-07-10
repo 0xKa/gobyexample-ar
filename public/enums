@@ -31,12 +31,11 @@
         
         <tr>
           <td class="docs">
-            <p><em>Enumerated types</em> (enums) are a special case of
-<a href="https://en.wikipedia.org/wiki/Algebraic_data_type">sum types</a>.
-An enum is a type that has a fixed number of possible
-values, each with a distinct name. Go doesn&rsquo;t have an
-enum type as a distinct language feature, but enums
-are simple to implement using existing language idioms.</p>
+            <p><em>الأنواع المعدّدة</em> (التعدادات) حالة خاصة من
+<a href="https://en.wikipedia.org/wiki/Algebraic_data_type">الأنواع المجموعية</a>.
+التعداد نوع له عدد ثابت من القيم الممكنة، ولكل منها اسم
+مميز. لا تملك Go نوع تعداد كميزة لغوية مستقلة، لكن يسهل
+تطبيق التعدادات باستخدام أساليب اللغة المتعارف عليها.</p>
 
           </td>
           <td class="code empty leading">
@@ -50,7 +49,7 @@ are simple to implement using existing language idioms.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/prQMptP_p1s" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/TL6fVir66cT" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -67,7 +66,7 @@ are simple to implement using existing language idioms.</p>
         
         <tr>
           <td class="docs">
-            <p>Our enum type <code>ServerState</code> has an underlying <code>int</code> type.</p>
+            <p>النوع الأساسي لتعدادنا <code>ServerState</code> هو <code>int</code>.</p>
 
           </td>
           <td class="code leading">
@@ -78,10 +77,10 @@ are simple to implement using existing language idioms.</p>
         
         <tr>
           <td class="docs">
-            <p>The possible values for <code>ServerState</code> are defined as
-constants. The special keyword <a href="https://go.dev/ref/spec#Iota">iota</a>
-generates successive constant values automatically; in this
-case 0, 1, 2 and so on.</p>
+            <p>تُعرّف القيم الممكنة لـ<code>ServerState</code> كثوابت. تولد الكلمة
+الخاصة <a href="https://go.dev/ref/spec#Iota">iota</a> قيمًا ثابتة
+متتالية تلقائيًا؛ وهي في هذه الحالة <code>0</code> و<code>1</code> و<code>2</code>
+وهكذا.</p>
 
           </td>
           <td class="code leading">
@@ -97,15 +96,14 @@ case 0, 1, 2 and so on.</p>
         
         <tr>
           <td class="docs">
-            <p>By implementing the <a href="https://pkg.go.dev/fmt#Stringer">fmt.Stringer</a>
-interface, values of <code>ServerState</code> can be printed out or converted
-to strings.</p>
+            <p>بتطبيق واجهة <a href="https://pkg.go.dev/fmt#Stringer">fmt.Stringer</a>،
+يمكن طباعة قيم <code>ServerState</code> أو تحويلها إلى سلاسل نصية.</p>
 
-<p>This can get cumbersome if there are many possible values. In such
-cases the <a href="https://pkg.go.dev/golang.org/x/tools/cmd/stringer">stringer tool</a>
-can be used in conjunction with <code>go:generate</code> to automate the
-process. See <a href="https://eli.thegreenplace.net/2021/a-comprehensive-guide-to-go-generate">this post</a>
-for a longer explanation.</p>
+<p>قد يصبح هذا مرهقًا عند وجود قيم ممكنة كثيرة. في هذه
+الحالات، يمكن استخدام <a href="https://pkg.go.dev/golang.org/x/tools/cmd/stringer">أداة stringer</a>
+مع <code>go:generate</code> لأتمتة العملية. راجع
+<a href="https://eli.thegreenplace.net/2021/a-comprehensive-guide-to-go-generate">هذه المقالة</a>
+لشرح أطول.</p>
 
           </td>
           <td class="code leading">
@@ -133,9 +131,9 @@ for a longer explanation.</p>
         
         <tr>
           <td class="docs">
-            <p>If we have a value of type <code>int</code>, we cannot pass it to <code>transition</code> - the
-compiler will complain about type mismatch. This provides some degree of
-compile-time type safety for enums.</p>
+            <p>إذا كانت لدينا قيمة من النوع <code>int</code>، فلا يمكننا تمريرها
+إلى <code>transition</code>، إذ سيبلغ المترجم عن عدم تطابق النوع.
+يوفر ذلك قدرًا من سلامة أنواع التعدادات وقت الترجمة.</p>
 
           </td>
           <td class="code leading">
@@ -160,9 +158,8 @@ compile-time type safety for enums.</p>
         
         <tr>
           <td class="docs">
-            <p>transition emulates a state transition for a
-server; it takes the existing state and returns
-a new state.</p>
+            <p>تحاكي <code>transition</code> انتقال حالة لخادم؛ فتستقبل الحالة
+الحالية وتعيد حالة جديدة.</p>
 
           </td>
           <td class="code leading">
@@ -177,8 +174,8 @@ a new state.</p>
         
         <tr>
           <td class="docs">
-            <p>Suppose we check some predicates here to
-determine the next state&hellip;</p>
+            <p>افترض أننا نتحقق هنا من بعض الشروط لتحديد
+الحالة التالية&hellip;</p>
 
           </td>
           <td class="code">

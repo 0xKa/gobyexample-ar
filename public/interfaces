@@ -31,8 +31,7 @@
         
         <tr>
           <td class="docs">
-            <p><em>Interfaces</em> are named collections of method
-signatures.</p>
+            <p><em>الواجهات</em> مجموعات مسماة من تواقيع الأساليب.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +45,7 @@ signatures.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/xAAbgd7GOKD" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/0G0V45D86D_r" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -66,7 +65,7 @@ signatures.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s a basic interface for geometric shapes.</p>
+            <p>إليك واجهة أساسية للأشكال الهندسية.</p>
 
           </td>
           <td class="code leading">
@@ -80,8 +79,8 @@ signatures.</p>
         
         <tr>
           <td class="docs">
-            <p>For our example we&rsquo;ll implement this interface on
-<code>rect</code> and <code>circle</code> types.</p>
+            <p>سنطبق هذه الواجهة في مثالنا على النوعين <code>rect</code>
+و<code>circle</code>.</p>
 
           </td>
           <td class="code leading">
@@ -97,9 +96,8 @@ signatures.</p>
         
         <tr>
           <td class="docs">
-            <p>To implement an interface in Go, we just need to
-implement all the methods in the interface. Here we
-implement <code>geometry</code> on <code>rect</code>s.</p>
+            <p>لتطبيق واجهة في Go، يكفي تطبيق جميع الأساليب الموجودة
+فيها. نطبق هنا <code>geometry</code> على قيم <code>rect</code>.</p>
 
           </td>
           <td class="code leading">
@@ -115,7 +113,7 @@ implement <code>geometry</code> on <code>rect</code>s.</p>
         
         <tr>
           <td class="docs">
-            <p>The implementation for <code>circle</code>s.</p>
+            <p>وهذا هو التطبيق لقيم <code>circle</code>.</p>
 
           </td>
           <td class="code leading">
@@ -131,10 +129,9 @@ implement <code>geometry</code> on <code>rect</code>s.</p>
         
         <tr>
           <td class="docs">
-            <p>If a variable has an interface type, then we can call
-methods that are in the named interface. Here&rsquo;s a
-generic <code>measure</code> function taking advantage of this
-to work on any <code>geometry</code>.</p>
+            <p>إذا كان للمتغير نوع واجهة، فيمكننا استدعاء الأساليب
+الموجودة في الواجهة المسماة. تستفيد الدالة <code>measure</code>
+هنا من ذلك للعمل على أي قيمة <code>geometry</code>.</p>
 
           </td>
           <td class="code leading">
@@ -149,9 +146,9 @@ to work on any <code>geometry</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Sometimes it&rsquo;s useful to know the runtime type of an
-interface value. One option is using a <em>type assertion</em>
-as shown here; another is a <a href="switch">type <code>switch</code></a>.</p>
+            <p>يفيد أحيانًا معرفة نوع قيمة الواجهة وقت التشغيل. أحد
+الخيارات هو استخدام <em>تأكيد النوع</em> كما هو موضح هنا،
+والآخر استخدام <a href="switch">عبارة <code>switch</code> للأنواع</a>.</p>
 
           </td>
           <td class="code leading">
@@ -178,10 +175,9 @@ as shown here; another is a <a href="switch">type <code>switch</code></a>.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>circle</code> and <code>rect</code> struct types both
-implement the <code>geometry</code> interface so we can use
-instances of
-these structs as arguments to <code>measure</code>.</p>
+            <p>يطبق نوعا الهيكل <code>circle</code> و<code>rect</code> واجهة <code>geometry</code>،
+لذا يمكننا تمرير قيم من هذين الهيكلين كوسائط إلى
+<code>measure</code>.</p>
 
           </td>
           <td class="code leading">
@@ -226,8 +222,8 @@ these structs as arguments to <code>measure</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>To understand how Go&rsquo;s interfaces work under the hood,
-check out this <a href="https://research.swtch.com/interfaces">blog post</a>.</p>
+            <p>لفهم كيفية عمل واجهات Go في الداخل، راجع
+<a href="https://research.swtch.com/interfaces">هذه المقالة</a>.</p>
 
           </td>
           <td class="code empty">

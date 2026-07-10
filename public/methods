@@ -31,7 +31,7 @@
         
         <tr>
           <td class="docs">
-            <p>Go supports <em>methods</em> defined on struct types.</p>
+            <p>تدعم Go تعريف <em>الأساليب</em> على أنواع الهياكل.</p>
 
           </td>
           <td class="code empty leading">
@@ -45,7 +45,7 @@
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/4wmDCAydC1e" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/xgva37k49EJ" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -74,7 +74,7 @@
         
         <tr>
           <td class="docs">
-            <p>This <code>area</code> method has a <em>receiver type</em> of <code>*rect</code>.</p>
+            <p>للأسلوب <code>area</code> <em>نوع مستقبِل</em> هو <code>*rect</code>.</p>
 
           </td>
           <td class="code leading">
@@ -87,8 +87,8 @@
         
         <tr>
           <td class="docs">
-            <p>Methods can be defined for either pointer or value
-receiver types. Here&rsquo;s an example of a value receiver.</p>
+            <p>يمكن تعريف الأساليب على أنواع مستقبِلات من المؤشرات أو
+القيم. إليك مثالًا على مستقبِل من نوع قيمة.</p>
 
           </td>
           <td class="code leading">
@@ -112,7 +112,7 @@ receiver types. Here&rsquo;s an example of a value receiver.</p>
         
         <tr>
           <td class="docs">
-            <p>Here we call the 2 methods defined for our struct.</p>
+            <p>نستدعي هنا الأسلوبين المعرّفين لهيكلنا.</p>
 
           </td>
           <td class="code leading">
@@ -124,11 +124,10 @@ receiver types. Here&rsquo;s an example of a value receiver.</p>
         
         <tr>
           <td class="docs">
-            <p>Go automatically handles conversion between values
-and pointers for method calls. You may want to use
-a pointer receiver type to avoid copying on method
-calls or to allow the method to mutate the
-receiving struct.</p>
+            <p>تتولى Go تلقائيًا التحويل بين القيم والمؤشرات عند
+استدعاء الأساليب. قد ترغب في استخدام نوع مستقبِل من
+المؤشرات لتجنب النسخ عند استدعاء الأسلوب، أو للسماح
+للأسلوب بتغيير الهيكل المستقبِل.</p>
 
           </td>
           <td class="code">
@@ -160,8 +159,8 @@ receiving struct.</p>
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at Go&rsquo;s mechanism for grouping and
-naming related sets of methods: interfaces.</p>
+            <p>سنستعرض تاليًا آلية Go لتجميع مجموعات الأساليب
+المترابطة وتسميتها: الواجهات.</p>
 
           </td>
           <td class="code empty">
