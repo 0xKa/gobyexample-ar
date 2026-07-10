@@ -1,7 +1,6 @@
-// _Channels_ are the pipes that connect concurrent
-// goroutines. You can send values into channels from one
-// goroutine and receive those values into another
-// goroutine.
+// _القنوات_ هي الأنابيب التي تصل بين روتينات Go المتزامنة.
+// يمكنك إرسال قيم إلى القنوات من روتين Go واستقبال تلك القيم
+// في روتين Go آخر.
 
 package main
 
@@ -9,18 +8,17 @@ import "fmt"
 
 func main() {
 
-	// Create a new channel with `make(chan val-type)`.
-	// Channels are typed by the values they convey.
+	// أنشئ قناة جديدة باستخدام `make(chan val-type)`.
+	// يتحدد نوع القناة بحسب نوع القيم التي تنقلها.
 	messages := make(chan string)
 
-	// _Send_ a value into a channel using the `channel <-`
-	// syntax. Here we send `"ping"`  to the `messages`
-	// channel we made above, from a new goroutine.
+	// _أرسل_ قيمة إلى قناة باستخدام الصياغة `channel <-`.
+	// نرسل هنا `"ping"` إلى القناة `messages` التي أنشأناها
+	// أعلاه، وذلك من روتين Go جديد.
 	go func() { messages <- "ping" }()
 
-	// The `<-channel` syntax _receives_ a value from the
-	// channel. Here we'll receive the `"ping"` message
-	// we sent above and print it out.
+	// تستقبل الصياغة `<-channel` قيمة من القناة. سنستقبل هنا
+	// الرسالة `"ping"` التي أرسلناها أعلاه ونطبعها.
 	msg := <-messages
 	fmt.Println(msg)
 }

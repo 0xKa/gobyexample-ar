@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: الأخطاء المخصصة (error)</title>
+    <title>لغة Go بالأمثلة: الأخطاء المخصصة</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="custom-errors">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الأخطاء المخصصة (error)</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الأخطاء المخصصة</bdi></h2>
       
       <table>
         
@@ -170,7 +170,7 @@
       
       
       <p class="next">
-        المثال التالي: <a href="goroutines" rel="next"><bdi dir="auto">روتينات Go (goroutine)</bdi></a>.
+        المثال التالي: <a href="goroutines" rel="next"><bdi dir="auto">روتينات Go</bdi></a>.
       </p>
       
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: روتينات Go (goroutine)</title>
+    <title>لغة Go بالأمثلة: روتينات Go</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,13 +25,13 @@
   </script>
   <body>
     <div class="example" id="goroutines">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">روتينات Go (goroutine)</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">روتينات Go</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>A <em>goroutine</em> is a lightweight thread of execution.</p>
+            <p><em>روتين Go</em> (<code>goroutine</code>) هو <a href="https://ar.wikipedia.org/wiki/%D8%AA%D8%B4%D8%B9%D8%A8_%28%D8%AD%D9%88%D8%B3%D8%A8%D8%A9%29">خيط تنفيذ</a> خفيف الوزن.</p>
 
           </td>
           <td class="code empty leading">
@@ -45,7 +45,7 @@
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/0fx_WokYVFO" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/IIdLIaxDm5r" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -89,9 +89,8 @@
         
         <tr>
           <td class="docs">
-            <p>Suppose we have a function call <code>f(s)</code>. Here&rsquo;s how
-we&rsquo;d call that in the usual way, running it
-synchronously.</p>
+            <p>لنفترض أن لدينا استدعاء الدالة <code>f(s)</code>. هكذا نستدعيها
+بالطريقة المعتادة، فتعمل بصورة متزامنة.</p>
 
           </td>
           <td class="code leading">
@@ -102,9 +101,8 @@ synchronously.</p>
         
         <tr>
           <td class="docs">
-            <p>To invoke this function in a goroutine, use
-<code>go f(s)</code>. This new goroutine will execute
-concurrently with the calling one.</p>
+            <p>لاستدعاء هذه الدالة داخل روتين Go، استخدم <code>go f(s)</code>.
+سيعمل روتين Go الجديد بالتزامن مع الروتين الذي استدعاه.</p>
 
           </td>
           <td class="code leading">
@@ -115,8 +113,7 @@ concurrently with the calling one.</p>
         
         <tr>
           <td class="docs">
-            <p>You can also start a goroutine for an anonymous
-function call.</p>
+            <p>يمكنك أيضًا بدء روتين Go لاستدعاء دالة مجهولة.</p>
 
           </td>
           <td class="code leading">
@@ -129,9 +126,9 @@ function call.</p>
         
         <tr>
           <td class="docs">
-            <p>Our two function calls are running asynchronously in
-separate goroutines now. Wait for them to finish
-(for a more robust approach, use a <a href="waitgroups">WaitGroup</a>).</p>
+            <p>يعمل استدعاءا الدالة الآن بصورة غير متزامنة في روتيني
+Go منفصلين. انتظر حتى ينتهيا (ولطريقة أكثر متانة، استخدم
+<a href="waitgroups">مجموعة انتظار</a>).</p>
 
           </td>
           <td class="code">
@@ -148,11 +145,9 @@ separate goroutines now. Wait for them to finish
         
         <tr>
           <td class="docs">
-            <p>When we run this program, we see the output of the
-blocking call first, then the output of the two
-goroutines. The goroutines&rsquo; output may be interleaved,
-because goroutines are being run concurrently by the
-Go runtime.</p>
+            <p>عند تشغيل هذا البرنامج، نرى أولًا خرج الاستدعاء الحاجز،
+ثم خرج روتيني Go. قد تتداخل أسطر خرجهما لأن بيئة تشغيل Go
+تشغّلهما بالتزامن.</p>
 
           </td>
           <td class="code leading">
@@ -171,8 +166,8 @@ Go runtime.</p>
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at a complement to goroutines in
-concurrent Go programs: channels.</p>
+            <p>سنتعرف تاليًا على ما يكمل روتينات Go في برامج Go
+المتزامنة: القنوات.</p>
 
           </td>
           <td class="code empty">

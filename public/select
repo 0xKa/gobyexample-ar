@@ -31,9 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p>Go&rsquo;s <em>select</em> lets you wait on multiple channel
-operations. Combining goroutines and channels with
-select is a powerful feature of Go.</p>
+            <p>تتيح لك عبارة <em><code>select</code></em> في Go انتظار عدة عمليات على
+القنوات. يُعد الجمع بين روتينات Go والقنوات و<code>select</code> من
+مزايا Go القوية.</p>
 
           </td>
           <td class="code empty leading">
@@ -47,7 +47,7 @@ select is a powerful feature of Go.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/dOrjUfgGwB2" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/kSni-4AsgKL" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -77,7 +77,7 @@ select is a powerful feature of Go.</p>
         
         <tr>
           <td class="docs">
-            <p>For our example we&rsquo;ll select across two channels.</p>
+            <p>سنختار في مثالنا بين قناتين.</p>
 
           </td>
           <td class="code leading">
@@ -89,9 +89,8 @@ select is a powerful feature of Go.</p>
         
         <tr>
           <td class="docs">
-            <p>Each channel will receive a value after some amount
-of time, to simulate e.g. blocking RPC operations
-executing in concurrent goroutines.</p>
+            <p>ستستقبل كل قناة قيمة بعد مدة معينة، لمحاكاة عمليات RPC
+حاجزة مثلًا تعمل داخل روتينات Go متزامنة.</p>
 
           </td>
           <td class="code leading">
@@ -109,8 +108,8 @@ executing in concurrent goroutines.</p>
         
         <tr>
           <td class="docs">
-            <p>We&rsquo;ll use <code>select</code> to await both of these values
-simultaneously, printing each one as it arrives.</p>
+            <p>سنستخدم <code>select</code> لانتظار القيمتين معًا، وطباعة كل منهما
+عند وصولها.</p>
 
           </td>
           <td class="code">
@@ -133,8 +132,7 @@ simultaneously, printing each one as it arrives.</p>
         
         <tr>
           <td class="docs">
-            <p>We receive the values <code>&quot;one&quot;</code> and then <code>&quot;two&quot;</code> as
-expected.</p>
+            <p>نستقبل القيمتين <code>&quot;one&quot;</code> ثم <code>&quot;two&quot;</code> كما هو متوقع.</p>
 
           </td>
           <td class="code leading">
@@ -147,9 +145,8 @@ expected.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that the total execution time is only ~2 seconds
-since both the 1 and 2 second <code>Sleeps</code> execute
-concurrently.</p>
+            <p>لاحظ أن إجمالي وقت التنفيذ يبلغ نحو ثانيتين فقط، لأن عمليتي
+<code>Sleep</code> اللتين تستغرقان ثانية وثانيتين تعملان بالتزامن.</p>
 
           </td>
           <td class="code">

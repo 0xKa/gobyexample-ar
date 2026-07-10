@@ -1,26 +1,23 @@
-// _Closing_ a channel indicates that no more values
-// will be sent on it. This can be useful to communicate
-// completion to the channel's receivers.
+// يشير _إغلاق_ قناة إلى عدم إرسال أي قيم أخرى إليها. يفيد ذلك
+// في إبلاغ مستقبِلي القناة باكتمال العمل.
 
 package main
 
 import "fmt"
 
-// In this example we'll use a `jobs` channel to
-// communicate work to be done from the `main()` goroutine
-// to a worker goroutine. When we have no more jobs for
-// the worker we'll `close` the `jobs` channel.
+// سنستخدم في هذا المثال القناة `jobs` لإرسال العمل المطلوب من
+// روتين Go الذي ينفذ `main()` إلى روتين Go عامل. عندما لا يبقى
+// لدينا المزيد من المهام للعامل، سنغلق القناة `jobs` باستخدام
+// `close`.
 func main() {
 	jobs := make(chan int, 5)
 	done := make(chan bool)
 
-	// Here's the worker goroutine. It repeatedly receives
-	// from `jobs` with `j, more := <-jobs`. In this
-	// special 2-value form of receive, the `more` value
-	// will be `false` if `jobs` has been `close`d and all
-	// values in the channel have already been received.
-	// We use this to notify on `done` when we've worked
-	// all our jobs.
+	// هذا هو روتين Go العامل. يستقبل مرارًا من `jobs` باستخدام
+	// `j, more := <-jobs`. في صيغة الاستقبال الخاصة هذه، التي
+	// تعيد قيمتين، تكون قيمة `more` مساوية لـ`false` إذا أُغلقت
+	// `jobs` واستُقبلت جميع القيم الموجودة في القناة. نستخدم ذلك
+	// للإشعار عبر `done` بعد إنجاز جميع مهامنا.
 	go func() {
 		for {
 			j, more := <-jobs
@@ -34,8 +31,7 @@ func main() {
 		}
 	}()
 
-	// This sends 3 jobs to the worker over the `jobs`
-	// channel, then closes it.
+	// يرسل هذا 3 مهام إلى العامل عبر القناة `jobs`، ثم يغلقها.
 	for j := 1; j <= 3; j++ {
 		jobs <- j
 		fmt.Println("sent job", j)
@@ -43,18 +39,15 @@ func main() {
 	close(jobs)
 	fmt.Println("sent all jobs")
 
-	// We await the worker using the
-	// [synchronization](channel-synchronization) approach
-	// we saw earlier.
+	// ننتظر العامل باستخدام أسلوب
+	// [المزامنة](channel-synchronization) الذي رأيناه سابقًا.
 	<-done
 
-	// Reading from a closed channel succeeds immediately,
-	// returning the zero value of the underlying type.
-	// The optional second return value is `true` if the
-	// value received was delivered by a successful send
-	// operation to the channel, or `false` if it was a
-	// zero value generated because the channel is closed
-	// and empty.
+	// تنجح القراءة من قناة مغلقة فورًا، وتعيد القيمة الصفرية
+	// للنوع الأساسي. تكون قيمة الإرجاع الثانية الاختيارية `true`
+	// إذا وصلت القيمة المستقبلة بعملية إرسال ناجحة إلى القناة،
+	// أو `false` إذا كانت قيمة صفرية أُنشئت لأن القناة مغلقة
+	// وفارغة.
 	_, ok := <-jobs
 	fmt.Println("received more jobs:", ok)
 }

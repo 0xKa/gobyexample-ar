@@ -1,9 +1,8 @@
-// By default channels are _unbuffered_, meaning that they
-// will only accept sends (`chan <-`) if there is a
-// corresponding receive (`<- chan`) ready to receive the
-// sent value. _Buffered channels_ accept a limited
-// number of  values without a corresponding receiver for
-// those values.
+// تكون القنوات _غير مخزنة مؤقتًا_ افتراضيًا، أي إنها لا تقبل
+// عمليات الإرسال (`chan <-`) إلا إذا كانت هناك عملية استقبال
+// مقابلة (`<- chan`) جاهزة لاستقبال القيمة المرسلة. تقبل
+// _القنوات المخزنة مؤقتًا_ عددًا محدودًا من القيم دون وجود
+// مستقبِل مقابل لها.
 
 package main
 
@@ -11,17 +10,16 @@ import "fmt"
 
 func main() {
 
-	// Here we `make` a channel of strings buffering up to
-	// 2 values.
+	// ننشئ هنا باستخدام `make` قناة لسلاسل نصية، يتسع مخزنها
+	// المؤقت لقيمتين.
 	messages := make(chan string, 2)
 
-	// Because this channel is buffered, we can send these
-	// values into the channel without a corresponding
-	// concurrent receive.
+	// لأن هذه القناة مخزنة مؤقتًا، يمكننا إرسال هاتين القيمتين
+	// إليها دون عملية استقبال متزامنة مقابلة.
 	messages <- "buffered"
 	messages <- "channel"
 
-	// Later we can receive these two values as usual.
+	// يمكننا لاحقًا استقبال هاتين القيمتين كالمعتاد.
 	fmt.Println(<-messages)
 	fmt.Println(<-messages)
 }

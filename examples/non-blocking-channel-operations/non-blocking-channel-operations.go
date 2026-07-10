@@ -1,7 +1,7 @@
-// Basic sends and receives on channels are blocking.
-// However, we can use `select` with a `default` clause to
-// implement _non-blocking_ sends, receives, and even
-// non-blocking multi-way `select`s.
+// عمليات الإرسال والاستقبال الأساسية على القنوات حاجزة. لكن
+// يمكننا استخدام `select` مع فرع `default` لتنفيذ عمليات إرسال
+// واستقبال _غير حاجزة_، بل وحتى عبارات `select` متعددة الفروع
+// وغير حاجزة.
 
 package main
 
@@ -11,10 +11,9 @@ func main() {
 	messages := make(chan string)
 	signals := make(chan bool)
 
-	// Here's a non-blocking receive. If a value is
-	// available on `messages` then `select` will take
-	// the `<-messages` `case` with that value. If not
-	// it will immediately take the `default` case.
+	// هذه عملية استقبال غير حاجزة. إذا توفرت قيمة في `messages`،
+	// فستختار `select` فرع `<-messages` مع تلك القيمة. وإلا
+	// فستختار فرع `default` فورًا.
 	select {
 	case msg := <-messages:
 		fmt.Println("received message", msg)
@@ -22,10 +21,9 @@ func main() {
 		fmt.Println("no message received")
 	}
 
-	// A non-blocking send works similarly. Here `msg`
-	// cannot be sent to the `messages` channel, because
-	// the channel has no buffer and there is no receiver.
-	// Therefore the `default` case is selected.
+	// تعمل عملية الإرسال غير الحاجزة بطريقة مماثلة. لا يمكن هنا
+	// إرسال `msg` إلى القناة `messages`، لأن القناة بلا مخزن
+	// مؤقت ولا يوجد مستقبِل. لذلك يُختار فرع `default`.
 	msg := "hi"
 	select {
 	case messages <- msg:
@@ -34,10 +32,9 @@ func main() {
 		fmt.Println("no message sent")
 	}
 
-	// We can use multiple `case`s above the `default`
-	// clause to implement a multi-way non-blocking
-	// select. Here we attempt non-blocking receives
-	// on both `messages` and `signals`.
+	// يمكننا استخدام عدة فروع `case` قبل فرع `default` لتنفيذ
+	// `select` متعددة الفروع وغير حاجزة. نحاول هنا إجراء عمليتي
+	// استقبال غير حاجزتين من `messages` و`signals`.
 	select {
 	case msg := <-messages:
 		fmt.Println("received message", msg)

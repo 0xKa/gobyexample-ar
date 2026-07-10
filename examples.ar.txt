@@ -11,7 +11,7 @@ slices|الشرائح (slice)
 maps|الخرائط (map)
 functions|الدوال (func)
 multiple-return-values|إرجاع قيم متعددة (return)
-variadic-functions|الدوال متغيرة عدد الوسائط (func)
+variadic-functions|الدوال متغيرة عدد الوسائط
 closures|الإغلاقات (closure)
 recursion|الاستدعاء الذاتي (recursion)
 range-over-built-in-types|اجتياز الأنواع المدمجة (range)
@@ -23,29 +23,29 @@ interfaces|الواجهات (interface)
 enums|التعدادات (iota)
 struct-embedding|تضمين الهياكل (embedding)
 generics|الأنواع العامة (generics)
-range-over-iterators|اجتياز المكررات (range)
+range-over-iterators|اجتياز المكررات
 errors|الأخطاء (error)
-custom-errors|الأخطاء المخصصة (error)
-goroutines|روتينات Go (goroutine)
+custom-errors|الأخطاء المخصصة
+goroutines|روتينات Go
 channels|القنوات (chan)
-channel-buffering|القنوات المخزنة مؤقتًا (chan)
-channel-synchronization|المزامنة باستخدام القنوات (chan)
-channel-directions|اتجاهات القنوات (chan)
+channel-buffering|القنوات المخزنة مؤقتًا
+channel-synchronization|المزامنة باستخدام القنوات
+channel-directions|اتجاهات القنوات
 select|عبارة الاختيار (select)
 timeouts|المهل الزمنية
-non-blocking-channel-operations|عمليات القنوات غير الحاجزة (select)
+non-blocking-channel-operations|عمليات القنوات غير الحاجزة
 closing-channels|إغلاق القنوات (close)
-range-over-channels|اجتياز القنوات (range/chan)
+range-over-channels|اجتياز القنوات
 timers|المؤقتات
 tickers|المؤقتات الدورية
-worker-pools|مجموعات العمال (go/chan)
+worker-pools|مجموعات العمال
 waitgroups|مجموعات الانتظار
 rate-limiting|تحديد المعدل
 atomic-counters|العدادات الذرية
 mutexes|أقفال الاستبعاد المتبادل
-stateful-goroutines|روتينات Go ذات الحالة (go/chan)
+stateful-goroutines|روتينات Go ذات الحالة
 sorting|الفرز
-sorting-by-functions|الفرز باستخدام الدوال (func)
+sorting-by-functions|الفرز باستخدام الدوال
 panic|الذعر (panic)
 defer|التأجيل (defer)
 recover|الاستعادة (recover)

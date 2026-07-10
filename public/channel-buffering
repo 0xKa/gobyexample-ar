@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: القنوات المخزنة مؤقتًا (chan)</title>
+    <title>لغة Go بالأمثلة: القنوات المخزنة مؤقتًا</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,18 +25,17 @@
   </script>
   <body>
     <div class="example" id="channel-buffering">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">القنوات المخزنة مؤقتًا (chan)</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">القنوات المخزنة مؤقتًا</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>By default channels are <em>unbuffered</em>, meaning that they
-will only accept sends (<code>chan &lt;-</code>) if there is a
-corresponding receive (<code>&lt;- chan</code>) ready to receive the
-sent value. <em>Buffered channels</em> accept a limited
-number of  values without a corresponding receiver for
-those values.</p>
+            <p>تكون القنوات <em>غير مخزنة مؤقتًا</em> افتراضيًا، أي إنها لا تقبل
+عمليات الإرسال (<code>chan &lt;-</code>) إلا إذا كانت هناك عملية استقبال
+مقابلة (<code>&lt;- chan</code>) جاهزة لاستقبال القيمة المرسلة. تقبل
+<em>القنوات المخزنة مؤقتًا</em> عددًا محدودًا من القيم دون وجود
+مستقبِل مقابل لها.</p>
 
           </td>
           <td class="code empty leading">
@@ -50,7 +49,7 @@ those values.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/3BRCdRnRszb" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/Ql2Au_l77-o" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -77,8 +76,8 @@ those values.</p>
         
         <tr>
           <td class="docs">
-            <p>Here we <code>make</code> a channel of strings buffering up to
-2 values.</p>
+            <p>ننشئ هنا باستخدام <code>make</code> قناة لسلاسل نصية، يتسع مخزنها
+المؤقت لقيمتين.</p>
 
           </td>
           <td class="code leading">
@@ -89,9 +88,8 @@ those values.</p>
         
         <tr>
           <td class="docs">
-            <p>Because this channel is buffered, we can send these
-values into the channel without a corresponding
-concurrent receive.</p>
+            <p>لأن هذه القناة مخزنة مؤقتًا، يمكننا إرسال هاتين القيمتين
+إليها دون عملية استقبال متزامنة مقابلة.</p>
 
           </td>
           <td class="code leading">
@@ -103,7 +101,7 @@ concurrent receive.</p>
         
         <tr>
           <td class="docs">
-            <p>Later we can receive these two values as usual.</p>
+            <p>يمكننا لاحقًا استقبال هاتين القيمتين كالمعتاد.</p>
 
           </td>
           <td class="code">
@@ -134,7 +132,7 @@ concurrent receive.</p>
       
       
       <p class="next">
-        المثال التالي: <a href="channel-synchronization" rel="next"><bdi dir="auto">المزامنة باستخدام القنوات (chan)</bdi></a>.
+        المثال التالي: <a href="channel-synchronization" rel="next"><bdi dir="auto">المزامنة باستخدام القنوات</bdi></a>.
       </p>
       
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: عمليات القنوات غير الحاجزة (select)</title>
+    <title>لغة Go بالأمثلة: عمليات القنوات غير الحاجزة</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,16 +25,16 @@
   </script>
   <body>
     <div class="example" id="non-blocking-channel-operations">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">عمليات القنوات غير الحاجزة (select)</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">عمليات القنوات غير الحاجزة</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>Basic sends and receives on channels are blocking.
-However, we can use <code>select</code> with a <code>default</code> clause to
-implement <em>non-blocking</em> sends, receives, and even
-non-blocking multi-way <code>select</code>s.</p>
+            <p>عمليات الإرسال والاستقبال الأساسية على القنوات حاجزة. لكن
+يمكننا استخدام <code>select</code> مع فرع <code>default</code> لتنفيذ عمليات إرسال
+واستقبال _غير حاجزة_، بل وحتى عبارات <code>select</code> متعددة الفروع
+وغير حاجزة.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,7 +48,7 @@ non-blocking multi-way <code>select</code>s.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/TFv6-7OVNVq" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/QXxqBxej8Yg" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -77,10 +77,9 @@ non-blocking multi-way <code>select</code>s.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s a non-blocking receive. If a value is
-available on <code>messages</code> then <code>select</code> will take
-the <code>&lt;-messages</code> <code>case</code> with that value. If not
-it will immediately take the <code>default</code> case.</p>
+            <p>هذه عملية استقبال غير حاجزة. إذا توفرت قيمة في <code>messages</code>،
+فستختار <code>select</code> فرع <code>&lt;-messages</code> مع تلك القيمة. وإلا
+فستختار فرع <code>default</code> فورًا.</p>
 
           </td>
           <td class="code leading">
@@ -96,10 +95,9 @@ it will immediately take the <code>default</code> case.</p>
         
         <tr>
           <td class="docs">
-            <p>A non-blocking send works similarly. Here <code>msg</code>
-cannot be sent to the <code>messages</code> channel, because
-the channel has no buffer and there is no receiver.
-Therefore the <code>default</code> case is selected.</p>
+            <p>تعمل عملية الإرسال غير الحاجزة بطريقة مماثلة. لا يمكن هنا
+إرسال <code>msg</code> إلى القناة <code>messages</code>، لأن القناة بلا مخزن
+مؤقت ولا يوجد مستقبِل. لذلك يُختار فرع <code>default</code>.</p>
 
           </td>
           <td class="code leading">
@@ -116,10 +114,9 @@ Therefore the <code>default</code> case is selected.</p>
         
         <tr>
           <td class="docs">
-            <p>We can use multiple <code>case</code>s above the <code>default</code>
-clause to implement a multi-way non-blocking
-select. Here we attempt non-blocking receives
-on both <code>messages</code> and <code>signals</code>.</p>
+            <p>يمكننا استخدام عدة فروع <code>case</code> قبل فرع <code>default</code> لتنفيذ
+<code>select</code> متعددة الفروع وغير حاجزة. نحاول هنا إجراء عمليتي
+استقبال غير حاجزتين من <code>messages</code> و<code>signals</code>.</p>
 
           </td>
           <td class="code">

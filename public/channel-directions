@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: اتجاهات القنوات (chan)</title>
+    <title>لغة Go بالأمثلة: اتجاهات القنوات</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,16 +25,15 @@
   </script>
   <body>
     <div class="example" id="channel-directions">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">اتجاهات القنوات (chan)</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">اتجاهات القنوات</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>When using channels as function parameters, you can
-specify if a channel is meant to only send or receive
-values. This specificity increases the type-safety of
-the program.</p>
+            <p>عند استخدام القنوات كمُعامِلات للدوال، يمكنك تحديد ما إذا
+كانت القناة مخصصة لإرسال القيم فقط أو لاستقبالها فقط. يزيد
+هذا التحديد من أمان الأنواع في البرنامج.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,7 +47,7 @@ the program.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/mjNJDHwUH4R" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/s5X08YCkt0n" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -65,9 +64,8 @@ the program.</p>
         
         <tr>
           <td class="docs">
-            <p>This <code>ping</code> function only accepts a channel for sending
-values. It would be a compile-time error to try to
-receive on this channel.</p>
+            <p>لا تقبل الدالة <code>ping</code> سوى قناة لإرسال القيم. ستؤدي محاولة
+الاستقبال من هذه القناة إلى خطأ في وقت الترجمة.</p>
 
           </td>
           <td class="code leading">
@@ -80,8 +78,8 @@ receive on this channel.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>pong</code> function accepts one channel for receives
-(<code>pings</code>) and a second for sends (<code>pongs</code>).</p>
+            <p>تقبل الدالة <code>pong</code> قناة للاستقبال (<code>pings</code>) وأخرى للإرسال
+(<code>pongs</code>).</p>
 
           </td>
           <td class="code leading">
