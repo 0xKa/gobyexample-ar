@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: الاستدعاء الذاتي</title>
+    <title>لغة Go بالأمثلة: الاستدعاء الذاتي (recursion)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="recursion">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الاستدعاء الذاتي</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الاستدعاء الذاتي (recursion)</bdi></h2>
       
       <table>
         
@@ -160,7 +160,7 @@ knows which function to call with <code>fib</code> here.</p>
       
       
       <p class="next">
-        المثال التالي: <a href="range-over-built-in-types" rel="next"><bdi dir="auto">اجتياز الأنواع المدمجة باستخدام range</bdi></a>.
+        المثال التالي: <a href="range-over-built-in-types" rel="next"><bdi dir="auto">اجتياز الأنواع المدمجة (range)</bdi></a>.
       </p>
       
 

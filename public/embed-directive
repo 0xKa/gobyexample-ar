@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: توجيه embed</title>
+    <title>لغة Go بالأمثلة: توجيه التضمين (//go:embed)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="embed-directive">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">توجيه embed</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">توجيه التضمين (//go:embed)</bdi></h2>
       
       <table>
         

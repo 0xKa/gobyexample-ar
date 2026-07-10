@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: الأساليب</title>
+    <title>لغة Go بالأمثلة: الأساليب (method)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="methods">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الأساليب</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الأساليب (method)</bdi></h2>
       
       <table>
         
@@ -174,7 +174,7 @@ naming related sets of methods: interfaces.</p>
       
       
       <p class="next">
-        المثال التالي: <a href="interfaces" rel="next"><bdi dir="auto">الواجهات</bdi></a>.
+        المثال التالي: <a href="interfaces" rel="next"><bdi dir="auto">الواجهات (interface)</bdi></a>.
       </p>
       
 

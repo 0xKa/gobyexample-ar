@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: الكلمة defer</title>
+    <title>لغة Go بالأمثلة: التأجيل (defer)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="defer">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الكلمة defer</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">التأجيل (defer)</bdi></h2>
       
       <table>
         
@@ -179,7 +179,7 @@ after being written.</p>
       
       
       <p class="next">
-        المثال التالي: <a href="recover" rel="next"><bdi dir="auto">الدالة recover</bdi></a>.
+        المثال التالي: <a href="recover" rel="next"><bdi dir="auto">الاستعادة (recover)</bdi></a>.
       </p>
       
 

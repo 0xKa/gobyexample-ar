@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: الإغلاقات</title>
+    <title>لغة Go بالأمثلة: الإغلاقات (closure)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="closures">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الإغلاقات</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الإغلاقات (closure)</bdi></h2>
       
       <table>
         
@@ -169,7 +169,7 @@ recursion.</p>
       
       
       <p class="next">
-        المثال التالي: <a href="recursion" rel="next"><bdi dir="auto">الاستدعاء الذاتي</bdi></a>.
+        المثال التالي: <a href="recursion" rel="next"><bdi dir="auto">الاستدعاء الذاتي (recursion)</bdi></a>.
       </p>
       
 

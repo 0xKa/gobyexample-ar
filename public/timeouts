@@ -162,7 +162,7 @@ out and the second succeeding.</p>
       
       
       <p class="next">
-        المثال التالي: <a href="non-blocking-channel-operations" rel="next"><bdi dir="auto">عمليات القنوات غير الحاجزة</bdi></a>.
+        المثال التالي: <a href="non-blocking-channel-operations" rel="next"><bdi dir="auto">عمليات القنوات غير الحاجزة (select)</bdi></a>.
       </p>
       
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: الأنواع العامة</title>
+    <title>لغة Go بالأمثلة: الأنواع العامة (generics)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="generics">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الأنواع العامة</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الأنواع العامة (generics)</bdi></h2>
       
       <table>
         
@@ -226,7 +226,7 @@ automatically.</p>
       
       
       <p class="next">
-        المثال التالي: <a href="range-over-iterators" rel="next"><bdi dir="auto">اجتياز المكررات باستخدام range</bdi></a>.
+        المثال التالي: <a href="range-over-iterators" rel="next"><bdi dir="auto">اجتياز المكررات (range)</bdi></a>.
       </p>
       
 

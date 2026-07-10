@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: الشرائح</title>
+    <title>لغة Go بالأمثلة: الشرائح (slice)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="slices">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الشرائح</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الشرائح (slice)</bdi></h2>
       
       <table>
         
@@ -46,7 +46,7 @@
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/0AcyUxp5bVg" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/8KACpbZgAVO" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -231,7 +231,7 @@
         
         <tr>
           <td class="docs">
-            <p>يمكن تركيب الشرائح في بنى بيانات متعددة الأبعاد.
+            <p>يمكن تركيب الشرائح في هياكل بيانات متعددة الأبعاد.
 ويمكن أن تختلف أطوال الشرائح الداخلية، بخلاف
 المصفوفات متعددة الأبعاد.</p>
 
@@ -295,7 +295,7 @@
         
         <tr>
           <td class="docs">
-            <p>بعد أن تعرفنا على المصفوفات والشرائح، سننتقل إلى بنية
+            <p>بعد أن تعرفنا على المصفوفات والشرائح، سننتقل إلى هيكل
 بيانات مدمجة أساسية أخرى في Go، وهي الخرائط.</p>
 
           </td>
@@ -309,7 +309,7 @@
       
       
       <p class="next">
-        المثال التالي: <a href="maps" rel="next"><bdi dir="auto">الخرائط</bdi></a>.
+        المثال التالي: <a href="maps" rel="next"><bdi dir="auto">الخرائط (map)</bdi></a>.
       </p>
       
 

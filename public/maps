@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: الخرائط</title>
+    <title>لغة Go بالأمثلة: الخرائط (map)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="maps">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الخرائط</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الخرائط (map)</bdi></h2>
       
       <table>
         
@@ -251,7 +251,7 @@ printed with <code>fmt.Println</code>.</p>
       
       
       <p class="next">
-        المثال التالي: <a href="functions" rel="next"><bdi dir="auto">الدوال</bdi></a>.
+        المثال التالي: <a href="functions" rel="next"><bdi dir="auto">الدوال (func)</bdi></a>.
       </p>
       
 

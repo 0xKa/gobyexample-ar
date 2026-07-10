@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: السلاسل النصية ومحارف rune</title>
+    <title>لغة Go بالأمثلة: السلاسل النصية والمحارف (string/rune)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="strings-and-runes">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">السلاسل النصية ومحارف rune</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">السلاسل النصية والمحارف (string/rune)</bdi></h2>
       
       <table>
         
@@ -254,7 +254,7 @@ can compare a <code>rune</code> value to a rune literal directly.</p>
       
       
       <p class="next">
-        المثال التالي: <a href="structs" rel="next"><bdi dir="auto">البنى</bdi></a>.
+        المثال التالي: <a href="structs" rel="next"><bdi dir="auto">الهياكل (struct)</bdi></a>.
       </p>
       
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: اجتياز المكررات باستخدام range</title>
+    <title>لغة Go بالأمثلة: اجتياز المكررات (range)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="range-over-iterators">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">اجتياز المكررات باستخدام range</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">اجتياز المكررات (range)</bdi></h2>
       
       <table>
         
@@ -299,7 +299,7 @@ passed to the iterator will return <code>false</code>.</p>
       
       
       <p class="next">
-        المثال التالي: <a href="errors" rel="next"><bdi dir="auto">الأخطاء</bdi></a>.
+        المثال التالي: <a href="errors" rel="next"><bdi dir="auto">الأخطاء (error)</bdi></a>.
       </p>
       
 

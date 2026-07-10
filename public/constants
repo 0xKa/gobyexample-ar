@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: الثوابت</title>
+    <title>لغة Go بالأمثلة: الثوابت (const)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="constants">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الثوابت</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الثوابت (const)</bdi></h2>
       
       <table>
         
@@ -160,7 +160,7 @@
       
       
       <p class="next">
-        المثال التالي: <a href="for" rel="next"><bdi dir="auto">حلقة التكرار for</bdi></a>.
+        المثال التالي: <a href="for" rel="next"><bdi dir="auto">حلقة التكرار (for)</bdi></a>.
       </p>
       
 

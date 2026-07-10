@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: تضمين البنى</title>
+    <title>لغة Go بالأمثلة: تضمين الهياكل (embedding)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="struct-embedding">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">تضمين البنى</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">تضمين الهياكل (embedding)</bdi></h2>
       
       <table>
         
@@ -219,7 +219,7 @@ we see that a <code>container</code> now implements the
       
       
       <p class="next">
-        المثال التالي: <a href="generics" rel="next"><bdi dir="auto">الأنواع العامة</bdi></a>.
+        المثال التالي: <a href="generics" rel="next"><bdi dir="auto">الأنواع العامة (generics)</bdi></a>.
       </p>
       
 

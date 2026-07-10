@@ -255,7 +255,7 @@ an error message and non-zero return code.</p>
       
       
       <p class="next">
-        المثال التالي: <a href="execing-processes" rel="next"><bdi dir="auto">استبدال العملية باستخدام exec</bdi></a>.
+        المثال التالي: <a href="execing-processes" rel="next"><bdi dir="auto">استبدال العملية (exec)</bdi></a>.
       </p>
       
 

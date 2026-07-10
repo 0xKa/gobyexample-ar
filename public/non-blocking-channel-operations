@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: عمليات القنوات غير الحاجزة</title>
+    <title>لغة Go بالأمثلة: عمليات القنوات غير الحاجزة (select)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="non-blocking-channel-operations">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">عمليات القنوات غير الحاجزة</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">عمليات القنوات غير الحاجزة (select)</bdi></h2>
       
       <table>
         
@@ -157,7 +157,7 @@ on both <code>messages</code> and <code>signals</code>.</p>
       
       
       <p class="next">
-        المثال التالي: <a href="closing-channels" rel="next"><bdi dir="auto">إغلاق القنوات</bdi></a>.
+        المثال التالي: <a href="closing-channels" rel="next"><bdi dir="auto">إغلاق القنوات (close)</bdi></a>.
       </p>
       
 

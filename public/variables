@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: المتغيرات</title>
+    <title>لغة Go بالأمثلة: المتغيرات (var)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="variables">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">المتغيرات</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">المتغيرات (var)</bdi></h2>
       
       <table>
         
@@ -159,7 +159,7 @@
       
       
       <p class="next">
-        المثال التالي: <a href="constants" rel="next"><bdi dir="auto">الثوابت</bdi></a>.
+        المثال التالي: <a href="constants" rel="next"><bdi dir="auto">الثوابت (const)</bdi></a>.
       </p>
       
 

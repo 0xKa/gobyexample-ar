@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: إرجاع قيم متعددة</title>
+    <title>لغة Go بالأمثلة: إرجاع قيم متعددة (return)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="multiple-return-values">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">إرجاع قيم متعددة</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">إرجاع قيم متعددة (return)</bdi></h2>
       
       <table>
         
@@ -147,7 +147,7 @@ feature of Go functions; we&rsquo;ll look at this next.</p>
       
       
       <p class="next">
-        المثال التالي: <a href="variadic-functions" rel="next"><bdi dir="auto">الدوال متغيرة عدد الوسائط</bdi></a>.
+        المثال التالي: <a href="variadic-functions" rel="next"><bdi dir="auto">الدوال متغيرة عدد الوسائط (func)</bdi></a>.
       </p>
       
 

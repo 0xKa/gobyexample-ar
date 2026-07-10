@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: حلقة التكرار for</title>
+    <title>لغة Go بالأمثلة: حلقة التكرار (for)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,13 +25,13 @@
   </script>
   <body>
     <div class="example" id="for">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">حلقة التكرار for</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">حلقة التكرار (for)</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p><code>for</code> هي بنية التكرار الوحيدة في Go. إليك بعض
+            <p><code>for</code> هي صيغة التكرار الوحيدة في Go. إليك بعض
 الأنواع الأساسية لحلقات <code>for</code>.</p>
 
           </td>
@@ -46,7 +46,7 @@
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/YbM-dUDghZL" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/OWrNa7YiKGI" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -178,7 +178,7 @@
         <tr>
           <td class="docs">
             <p>سنرى صيغًا أخرى من <code>for</code> لاحقًا عند تناول عبارات
-<code>range</code> والقنوات وبنى البيانات الأخرى.</p>
+<code>range</code> والقنوات وهياكل البيانات الأخرى.</p>
 
           </td>
           <td class="code empty">
@@ -191,7 +191,7 @@
       
       
       <p class="next">
-        المثال التالي: <a href="if-else" rel="next"><bdi dir="auto">الشرط if/else</bdi></a>.
+        المثال التالي: <a href="if-else" rel="next"><bdi dir="auto">الشرط (if/else)</bdi></a>.
       </p>
       
 

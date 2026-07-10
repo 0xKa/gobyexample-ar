@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: الشرط if/else</title>
+    <title>لغة Go بالأمثلة: الشرط (if/else)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="if-else">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الشرط if/else</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الشرط (if/else)</bdi></h2>
       
       <table>
         
@@ -179,7 +179,7 @@
       
       
       <p class="next">
-        المثال التالي: <a href="switch" rel="next"><bdi dir="auto">عبارة switch</bdi></a>.
+        المثال التالي: <a href="switch" rel="next"><bdi dir="auto">عبارة التبديل (switch)</bdi></a>.
       </p>
       
 

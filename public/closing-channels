@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: إغلاق القنوات</title>
+    <title>لغة Go بالأمثلة: إغلاق القنوات (close)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="closing-channels">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">إغلاق القنوات</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">إغلاق القنوات (close)</bdi></h2>
       
       <table>
         
@@ -194,7 +194,7 @@ example: <code>range</code> over channels.</p>
       
       
       <p class="next">
-        المثال التالي: <a href="range-over-channels" rel="next"><bdi dir="auto">اجتياز القنوات باستخدام range</bdi></a>.
+        المثال التالي: <a href="range-over-channels" rel="next"><bdi dir="auto">اجتياز القنوات (range/chan)</bdi></a>.
       </p>
       
 

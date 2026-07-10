@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: البنى</title>
+    <title>لغة Go بالأمثلة: الهياكل (struct)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="structs">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">البنى</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الهياكل (struct)</bdi></h2>
       
       <table>
         
@@ -255,7 +255,7 @@ struct type. This technique is commonly used for
       
       
       <p class="next">
-        المثال التالي: <a href="methods" rel="next"><bdi dir="auto">الأساليب</bdi></a>.
+        المثال التالي: <a href="methods" rel="next"><bdi dir="auto">الأساليب (method)</bdi></a>.
       </p>
       
 

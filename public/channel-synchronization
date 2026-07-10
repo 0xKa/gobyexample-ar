@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: المزامنة باستخدام القنوات</title>
+    <title>لغة Go بالأمثلة: المزامنة باستخدام القنوات (chan)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="channel-synchronization">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">المزامنة باستخدام القنوات</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">المزامنة باستخدام القنوات (chan)</bdi></h2>
       
       <table>
         
@@ -163,7 +163,7 @@ its work, or in some cases even before it started.</p>
       
       
       <p class="next">
-        المثال التالي: <a href="channel-directions" rel="next"><bdi dir="auto">اتجاهات القنوات</bdi></a>.
+        المثال التالي: <a href="channel-directions" rel="next"><bdi dir="auto">اتجاهات القنوات (chan)</bdi></a>.
       </p>
       
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: القنوات المخزنة مؤقتًا</title>
+    <title>لغة Go بالأمثلة: القنوات المخزنة مؤقتًا (chan)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="channel-buffering">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">القنوات المخزنة مؤقتًا</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">القنوات المخزنة مؤقتًا (chan)</bdi></h2>
       
       <table>
         
@@ -134,7 +134,7 @@ concurrent receive.</p>
       
       
       <p class="next">
-        المثال التالي: <a href="channel-synchronization" rel="next"><bdi dir="auto">المزامنة باستخدام القنوات</bdi></a>.
+        المثال التالي: <a href="channel-synchronization" rel="next"><bdi dir="auto">المزامنة باستخدام القنوات (chan)</bdi></a>.
       </p>
       
 

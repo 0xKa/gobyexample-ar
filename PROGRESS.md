@@ -39,54 +39,54 @@
 | ---: | --- | --- | ---: | :---: | :---: |
 | 1 | `hello-world` | مرحبًا بالعالم | 4 | ✅ | ✅ |
 | 2 | `values` | القيم | 4 | ✅ | ✅ |
-| 3 | `variables` | المتغيرات | 4 | ✅ | ✅ |
-| 4 | `constants` | الثوابت | 4 | ✅ | ✅ |
-| 5 | `for` | حلقة التكرار `for` | 4 | ✅ | ✅ |
-| 6 | `if-else` | الشرط `if/else` | 4 | ✅ | ✅ |
-| 7 | `switch` | عبارة `switch` | 4 | ✅ | ✅ |
-| 8 | `arrays` | المصفوفات | 4 | ✅ | ✅ |
-| 9 | `slices` | الشرائح | 4 | ✅ | ✅ |
-| 10 | `maps` | الخرائط | 5 | ⬜ | ⬜ |
-| 11 | `functions` | الدوال | 5 | ⬜ | ⬜ |
-| 12 | `multiple-return-values` | إرجاع قيم متعددة | 5 | ⬜ | ⬜ |
-| 13 | `variadic-functions` | الدوال متغيرة عدد الوسائط | 5 | ⬜ | ⬜ |
-| 14 | `closures` | الإغلاقات | 5 | ⬜ | ⬜ |
-| 15 | `recursion` | الاستدعاء الذاتي | 5 | ⬜ | ⬜ |
-| 16 | `range-over-built-in-types` | اجتياز الأنواع المدمجة باستخدام `range` | 5 | ⬜ | ⬜ |
-| 17 | `pointers` | المؤشرات | 5 | ⬜ | ⬜ |
-| 18 | `strings-and-runes` | السلاسل النصية ومحارف `rune` | 5 | ⬜ | ⬜ |
-| 19 | `structs` | البنى | 6 | ⬜ | ⬜ |
-| 20 | `methods` | الأساليب | 6 | ⬜ | ⬜ |
-| 21 | `interfaces` | الواجهات | 6 | ⬜ | ⬜ |
-| 22 | `enums` | التعدادات | 6 | ⬜ | ⬜ |
-| 23 | `struct-embedding` | تضمين البنى | 6 | ⬜ | ⬜ |
-| 24 | `generics` | الأنواع العامة | 6 | ⬜ | ⬜ |
-| 25 | `range-over-iterators` | اجتياز المكررات باستخدام `range` | 6 | ⬜ | ⬜ |
-| 26 | `errors` | الأخطاء | 6 | ⬜ | ⬜ |
-| 27 | `custom-errors` | الأخطاء المخصصة | 6 | ⬜ | ⬜ |
-| 28 | `goroutines` | روتينات Go | 7 | ⬜ | ⬜ |
-| 29 | `channels` | القنوات | 7 | ⬜ | ⬜ |
-| 30 | `channel-buffering` | القنوات المخزنة مؤقتًا | 7 | ⬜ | ⬜ |
-| 31 | `channel-synchronization` | المزامنة باستخدام القنوات | 7 | ⬜ | ⬜ |
-| 32 | `channel-directions` | اتجاهات القنوات | 7 | ⬜ | ⬜ |
-| 33 | `select` | عبارة `select` | 7 | ⬜ | ⬜ |
+| 3 | `variables` | المتغيرات (`var`) | 4 | ✅ | ✅ |
+| 4 | `constants` | الثوابت (`const`) | 4 | ✅ | ✅ |
+| 5 | `for` | حلقة التكرار (`for`) | 4 | ✅ | ✅ |
+| 6 | `if-else` | الشرط (`if/else`) | 4 | ✅ | ✅ |
+| 7 | `switch` | عبارة التبديل (`switch`) | 4 | ✅ | ✅ |
+| 8 | `arrays` | المصفوفات (`array`) | 4 | ✅ | ✅ |
+| 9 | `slices` | الشرائح (`slice`) | 4 | ✅ | ✅ |
+| 10 | `maps` | الخرائط (`map`) | 5 | ⬜ | ⬜ |
+| 11 | `functions` | الدوال (`func`) | 5 | ⬜ | ⬜ |
+| 12 | `multiple-return-values` | إرجاع قيم متعددة (`return`) | 5 | ⬜ | ⬜ |
+| 13 | `variadic-functions` | الدوال متغيرة عدد الوسائط (`func`) | 5 | ⬜ | ⬜ |
+| 14 | `closures` | الإغلاقات (`closure`) | 5 | ⬜ | ⬜ |
+| 15 | `recursion` | الاستدعاء الذاتي (`recursion`) | 5 | ⬜ | ⬜ |
+| 16 | `range-over-built-in-types` | اجتياز الأنواع المدمجة (`range`) | 5 | ⬜ | ⬜ |
+| 17 | `pointers` | المؤشرات (`pointer`) | 5 | ⬜ | ⬜ |
+| 18 | `strings-and-runes` | السلاسل النصية والمحارف (`string/rune`) | 5 | ⬜ | ⬜ |
+| 19 | `structs` | الهياكل (`struct`) | 6 | ⬜ | ⬜ |
+| 20 | `methods` | الأساليب (`method`) | 6 | ⬜ | ⬜ |
+| 21 | `interfaces` | الواجهات (`interface`) | 6 | ⬜ | ⬜ |
+| 22 | `enums` | التعدادات (`iota`) | 6 | ⬜ | ⬜ |
+| 23 | `struct-embedding` | تضمين الهياكل (`embedding`) | 6 | ⬜ | ⬜ |
+| 24 | `generics` | الأنواع العامة (`generics`) | 6 | ⬜ | ⬜ |
+| 25 | `range-over-iterators` | اجتياز المكررات (`range`) | 6 | ⬜ | ⬜ |
+| 26 | `errors` | الأخطاء (`error`) | 6 | ⬜ | ⬜ |
+| 27 | `custom-errors` | الأخطاء المخصصة (`error`) | 6 | ⬜ | ⬜ |
+| 28 | `goroutines` | روتينات Go (`goroutine`) | 7 | ⬜ | ⬜ |
+| 29 | `channels` | القنوات (`chan`) | 7 | ⬜ | ⬜ |
+| 30 | `channel-buffering` | القنوات المخزنة مؤقتًا (`chan`) | 7 | ⬜ | ⬜ |
+| 31 | `channel-synchronization` | المزامنة باستخدام القنوات (`chan`) | 7 | ⬜ | ⬜ |
+| 32 | `channel-directions` | اتجاهات القنوات (`chan`) | 7 | ⬜ | ⬜ |
+| 33 | `select` | عبارة الاختيار (`select`) | 7 | ⬜ | ⬜ |
 | 34 | `timeouts` | المهل الزمنية | 7 | ⬜ | ⬜ |
-| 35 | `non-blocking-channel-operations` | عمليات القنوات غير الحاجزة | 7 | ⬜ | ⬜ |
-| 36 | `closing-channels` | إغلاق القنوات | 7 | ⬜ | ⬜ |
-| 37 | `range-over-channels` | اجتياز القنوات باستخدام `range` | 8 | ⬜ | ⬜ |
+| 35 | `non-blocking-channel-operations` | عمليات القنوات غير الحاجزة (`select`) | 7 | ⬜ | ⬜ |
+| 36 | `closing-channels` | إغلاق القنوات (`close`) | 7 | ⬜ | ⬜ |
+| 37 | `range-over-channels` | اجتياز القنوات (`range/chan`) | 8 | ⬜ | ⬜ |
 | 38 | `timers` | المؤقتات | 8 | ⬜ | ⬜ |
 | 39 | `tickers` | المؤقتات الدورية | 8 | ⬜ | ⬜ |
-| 40 | `worker-pools` | مجموعات العمال | 8 | ⬜ | ⬜ |
+| 40 | `worker-pools` | مجموعات العمال (`go/chan`) | 8 | ⬜ | ⬜ |
 | 41 | `waitgroups` | مجموعات الانتظار | 8 | ⬜ | ⬜ |
 | 42 | `rate-limiting` | تحديد المعدل | 8 | ⬜ | ⬜ |
 | 43 | `atomic-counters` | العدادات الذرية | 8 | ⬜ | ⬜ |
 | 44 | `mutexes` | أقفال الاستبعاد المتبادل | 8 | ⬜ | ⬜ |
-| 45 | `stateful-goroutines` | روتينات Go ذات الحالة | 8 | ⬜ | ⬜ |
+| 45 | `stateful-goroutines` | روتينات Go ذات الحالة (`go/chan`) | 8 | ⬜ | ⬜ |
 | 46 | `sorting` | الفرز | 9 | ⬜ | ⬜ |
-| 47 | `sorting-by-functions` | الفرز باستخدام الدوال | 9 | ⬜ | ⬜ |
-| 48 | `panic` | الدالة `panic` | 9 | ⬜ | ⬜ |
-| 49 | `defer` | الكلمة `defer` | 9 | ⬜ | ⬜ |
-| 50 | `recover` | الدالة `recover` | 9 | ⬜ | ⬜ |
+| 47 | `sorting-by-functions` | الفرز باستخدام الدوال (`func`) | 9 | ⬜ | ⬜ |
+| 48 | `panic` | الذعر (`panic`) | 9 | ⬜ | ⬜ |
+| 49 | `defer` | التأجيل (`defer`) | 9 | ⬜ | ⬜ |
+| 50 | `recover` | الاستعادة (`recover`) | 9 | ⬜ | ⬜ |
 | 51 | `string-functions` | دوال السلاسل النصية | 9 | ⬜ | ⬜ |
 | 52 | `string-formatting` | تنسيق السلاسل النصية | 9 | ⬜ | ⬜ |
 | 53 | `text-templates` | قوالب النصوص | 9 | ⬜ | ⬜ |
@@ -107,7 +107,7 @@
 | 68 | `file-paths` | مسارات الملفات | 11 | ⬜ | ⬜ |
 | 69 | `directories` | المجلدات | 11 | ⬜ | ⬜ |
 | 70 | `temporary-files-and-directories` | الملفات والمجلدات المؤقتة | 11 | ⬜ | ⬜ |
-| 71 | `embed-directive` | توجيه `embed` | 12 | ⬜ | ⬜ |
+| 71 | `embed-directive` | توجيه التضمين (`//go:embed`) | 12 | ⬜ | ⬜ |
 | 72 | `testing-and-benchmarking` | الاختبار وقياس الأداء | 12 | ⬜ | ⬜ |
 | 73 | `command-line-arguments` | وسائط سطر الأوامر | 12 | ⬜ | ⬜ |
 | 74 | `command-line-flags` | خيارات سطر الأوامر | 12 | ⬜ | ⬜ |
@@ -119,7 +119,7 @@
 | 80 | `tcp-server` | خادم TCP | 13 | ⬜ | ⬜ |
 | 81 | `context` | السياق | 13 | ⬜ | ⬜ |
 | 82 | `spawning-processes` | تشغيل عمليات جديدة | 13 | ⬜ | ⬜ |
-| 83 | `execing-processes` | استبدال العملية باستخدام `exec` | 13 | ⬜ | ⬜ |
+| 83 | `execing-processes` | استبدال العملية (`exec`) | 13 | ⬜ | ⬜ |
 | 84 | `signals` | الإشارات | 13 | ⬜ | ⬜ |
 | 85 | `exit` | الخروج | 13 | ⬜ | ⬜ |
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: المصفوفات</title>
+    <title>لغة Go بالأمثلة: المصفوفات (array)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="arrays">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">المصفوفات</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">المصفوفات (array)</bdi></h2>
       
       <table>
         
@@ -47,7 +47,7 @@
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/csdTRLAZRhl" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/UEubLOKA5RT" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -155,7 +155,7 @@
         <tr>
           <td class="docs">
             <p>أنواع المصفوفات أحادية البعد، لكن يمكنك تركيب الأنواع
-لبناء بنى بيانات متعددة الأبعاد.</p>
+لبناء هياكل بيانات متعددة الأبعاد.</p>
 
           </td>
           <td class="code leading">
@@ -216,7 +216,7 @@
       
       
       <p class="next">
-        المثال التالي: <a href="slices" rel="next"><bdi dir="auto">الشرائح</bdi></a>.
+        المثال التالي: <a href="slices" rel="next"><bdi dir="auto">الشرائح (slice)</bdi></a>.
       </p>
       
 

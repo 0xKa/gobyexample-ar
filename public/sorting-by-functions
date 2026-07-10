@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: الفرز باستخدام الدوال</title>
+    <title>لغة Go بالأمثلة: الفرز باستخدام الدوال (func)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="sorting-by-functions">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الفرز باستخدام الدوال</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الفرز باستخدام الدوال (func)</bdi></h2>
       
       <table>
         
@@ -176,7 +176,7 @@ doubt, <a href="testing-and-benchmarking">benchmark</a>!</p>
       
       
       <p class="next">
-        المثال التالي: <a href="panic" rel="next"><bdi dir="auto">الدالة panic</bdi></a>.
+        المثال التالي: <a href="panic" rel="next"><bdi dir="auto">الذعر (panic)</bdi></a>.
       </p>
       
 

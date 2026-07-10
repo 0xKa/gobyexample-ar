@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>لغة Go بالأمثلة: عبارة switch</title>
+    <title>لغة Go بالأمثلة: عبارة التبديل (switch)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -25,7 +25,7 @@
   </script>
   <body>
     <div class="example" id="switch">
-      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">عبارة switch</bdi></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">عبارة التبديل (switch)</bdi></h2>
       
       <table>
         
@@ -181,7 +181,7 @@
       
       
       <p class="next">
-        المثال التالي: <a href="arrays" rel="next"><bdi dir="auto">المصفوفات</bdi></a>.
+        المثال التالي: <a href="arrays" rel="next"><bdi dir="auto">المصفوفات (array)</bdi></a>.
       </p>
       
 
