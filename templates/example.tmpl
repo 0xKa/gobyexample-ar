@@ -34,7 +34,7 @@
             {{.DocsRendered}}
           </td>
           <td class="code{{if .CodeEmpty}} empty{{end}}{{if .CodeLeading}} leading{{end}}">
-            {{if .CodeRun}}<a href="https://go.dev/play/p/{{$.URLHash}}" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>{{end}}
+            {{if .CodeRun}}<a href="https://go.dev/play/p/{{$.URLHash}}" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>{{end}}
           {{.CodeRendered}}
           </td>
         </tr>

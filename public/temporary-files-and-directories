@@ -49,7 +49,7 @@ time.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/hVcPg9RH3_V" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/hVcPg9RH3_V" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>

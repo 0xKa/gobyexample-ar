@@ -1,4 +1,4 @@
-# لتشغيل البرنامج، ضع الشيفرة في `hello-world.go` ثم
+# لتشغيل البرنامج، ضع الكود في `hello-world.go` ثم
 # استخدم `go run`.
 $ go run hello-world.go
 hello world
