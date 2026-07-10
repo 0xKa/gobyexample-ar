@@ -1,23 +1,76 @@
-## Contributing
+# المساهمة في ترجمة لغة Go بالأمثلة
 
-Thanks for your interest in contributing to Go by Example!
+شكرًا لاهتمامك بتحسين الترجمة العربية. يهدف هذا المستودع إلى تقديم ترجمة عربية دقيقة وسهلة القراءة مع البقاء متوافقًا مع مشروع [Go by Example الأصلي](https://github.com/mmcgrana/gobyexample).
 
-* When sending a PR that affects the displayed contents of the site, 
-  updating the HTML in the `public` directory by itself is insufficient, since
-  the source of truth for the website is in the `examples` directory.
-  
-  Instead, update the proper source file(s) in the `examples` directory and
-  run `tools/build` locally to regenerate the HTML; include both changes in
-  your PR.  
-  
-  If you don't want to deal with getting a proper PR in, feel free to just
-  open an issue and point out the change you suggest.
+## قبل البدء
 
-* We're open to adding more examples to the site. They should be on things
-  used by many programmers and only require the standard library. If you're
-  interested in adding an example, _please open an issue to discuss the topic
-  first_.
+1. راجع [جدول التقدم](PROGRESS.md) واختر مثالًا لم تبدأ ترجمته، أو افتح مسألة لتنسيق العمل عليه.
+2. اقرأ [مسرد المصطلحات](GLOSSARY.md) والتزم بالمصطلحات المعتمدة.
+3. أنشئ فرعًا مخصصًا لتغييرك انطلاقًا من أحدث نسخة من `master`.
+4. ثبّت إصدار Go المحدد في `go.mod` واستخدم بيئة Bash لتشغيل أدوات المشروع.
 
-* We're not going to change the navigation of the site, in particular adding
-  a "previous section" link or an "index" link other than the one on the title
-  text.
+على Windows، أبقِ نهايات الأسطر بصيغة LF:
+
+```console
+$ git config --local core.autocrlf false
+```
+
+## مصدر المحتوى
+
+المصدر الأساسي للموقع هو `examples` و`templates` و`examples.ar.txt`، أما `public` فهو ناتج مولّد.
+
+- تُترجم الشروح الكاملة التي تبدأ بـ `// ` في ملفات Go.
+- تُترجم الشروح التي تبدأ بـ `# ` في ملفات `.sh` عندما تكون نصًا توضيحيًا.
+- تُعدل عناوين الأمثلة في `examples.ar.txt` مع إبقاء المعرّفات الإنجليزية دون تغيير.
+- تُعدل النصوص المشتركة في `templates`، ثم يعاد توليد `public`.
+- لا تعدل ملفات `public` يدويًا، ولا ترسل تغييرًا في HTML المولّد دون تغيير مصدره.
+
+## قواعد الترجمة
+
+- استخدم العربية الفصحى المعاصرة، وفضل العبارة الواضحة على الترجمة الحرفية.
+- حافظ على المعنى التقني وتسلسل الشرح، ولا تضف سلوكًا غير موجود في المثال الأصلي.
+- أبقِ الكلمات المحجوزة، وأسماء الأنواع والدوال والحزم والمعرّفات باللغة الإنجليزية وبين علامتي شيفرة، مثل `for` و`range` و`fmt.Println`.
+- لا تترجم الشيفرة، أو السلاسل النصية التي ينتج عنها خرج متوقع، أو الأوامر، أو الخيارات، أو المسارات، أو عناوين URL، أو قيم JSON وXML، أو البصمات.
+- استخدم علامات الترقيم العربية في النثر، واستخدم الأرقام `0-9` في السياقات التقنية لتطابق الشيفرة والخرج.
+- عند الحاجة إلى مصطلح إنجليزي غير مألوف، اذكر المقابل العربي أولًا ثم المصطلح الإنجليزي بين قوسين أو ضمن شيفرة في أول ظهور له.
+- حافظ على اتجاه النص التقني من اليسار إلى اليمين، ولا تضف محارف اتجاه مخفية إلى ملفات المصدر.
+- إذا احتجت إلى مصطلح غير موجود في المسرد، أضفه إلى `GLOSSARY.md` ضمن التغيير نفسه.
+
+## البناء والاختبار
+
+بعد تعديل المصادر، شغّل:
+
+```console
+$ VERBOSE=1 tools/build
+$ VERBOSE=1 TESTING=1 tools/build
+$ tools/serve
+```
+
+راجع الموقع محليًا على `http://127.0.0.1:8000/`، وتحقق خصوصًا من اختلاط العربية بالشيفرة الإنجليزية ومن العرض على شاشة ضيقة.
+
+يحسب المولد بصمة ملف Go كاملًا، بما في ذلك الشروح. لذلك قد يؤدي تغيير الشروح إلى تحديث ملف `.hash` المرتبط بالمثال وإرسال نسخة جديدة إلى Go Playground. أدرج ملف `.hash` الجديد ضمن التغيير إذا حدّثته أداة البناء.
+
+## ما يجب أن يتضمنه التغيير
+
+- ملفات المصدر المترجمة في `examples` أو `templates`.
+- الملفات المولّدة المقابلة داخل `public`.
+- ملفات `.hash` التي حدثتها أداة البناء، إن وجدت.
+- تحديث حالة الأمثلة في `PROGRESS.md`.
+- تحديث `GLOSSARY.md` عند اعتماد مصطلح جديد.
+- تغيير واحد مترابط دون تعديلات جانبية غير ضرورية.
+
+## قائمة المراجعة قبل طلب الدمج
+
+- [ ] الترجمة عربية فصحى سليمة وتنقل المعنى الأصلي بدقة.
+- [ ] المصطلحات متوافقة مع `GLOSSARY.md`.
+- [ ] الشيفرة والخرج والأوامر والمعرّفات لم تتغير دون سبب تقني.
+- [ ] `tools/build` ونسخة `TESTING=1` ينجحان.
+- [ ] `public` مولّد من المصادر الحالية.
+- [ ] عاينت اتجاه RTL وعزل الشيفرة LTR والتنقل والروابط.
+- [ ] حدّثت `PROGRESS.md` والملفات المولّدة والبصمات اللازمة.
+
+## الأمثلة الجديدة والتغييرات الهيكلية
+
+لا تضف مثالًا جديدًا أو تغير ترتيب التنقل في الترجمة وحدها. افتح أولًا نقاشًا في [المشروع الأصلي](https://github.com/mmcgrana/gobyexample/issues)، ثم تُزامن الإضافة بعد قبولها upstream.
+
+إذا كان التغيير إصلاحًا في الشيفرة الأصلية لا يخص العربية، فمن الأفضل إرساله إلى المشروع الأصلي أولًا ثم مزامنته هنا.
