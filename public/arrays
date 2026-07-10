@@ -31,10 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p>In Go, an <em>array</em> is a numbered sequence of elements of a
-specific length. In typical Go code, <a href="slices">slices</a> are
-much more common; arrays are useful in some special
-scenarios.</p>
+            <p><em>المصفوفة</em> في Go تسلسل مرقّم من العناصر بطول محدد.
+في شيفرة Go المعتادة، تكون <a href="slices">الشرائح</a> أكثر
+شيوعًا بكثير؛ وتفيد المصفوفات في بعض الحالات الخاصة.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,7 +47,7 @@ scenarios.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/-NFSggT7dFH" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/nFkt6V94vaQ" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -75,10 +74,10 @@ scenarios.</p>
         
         <tr>
           <td class="docs">
-            <p>Here we create an array <code>a</code> that will hold exactly
-5 <code>int</code>s. The type of elements and length are both
-part of the array&rsquo;s type. By default an array is
-zero-valued, which for <code>int</code>s means <code>0</code>s.</p>
+            <p>ننشئ هنا المصفوفة <code>a</code> التي ستحتوي على خمسة عناصر
+من النوع <code>int</code> بالضبط. يدخل كل من نوع العناصر والطول
+في نوع المصفوفة. تأخذ المصفوفة افتراضيًا القيمة
+الصفرية، أي <code>0</code> لكل عنصر من النوع <code>int</code>.</p>
 
           </td>
           <td class="code leading">
@@ -90,8 +89,8 @@ zero-valued, which for <code>int</code>s means <code>0</code>s.</p>
         
         <tr>
           <td class="docs">
-            <p>We can set a value at an index using the
-<code>array[index] = value</code> syntax, and get a value with
+            <p>يمكننا إسناد قيمة عند فهرس باستخدام الصيغة
+<code>array[index] = value</code>، والحصول على قيمة باستخدام
 <code>array[index]</code>.</p>
 
           </td>
@@ -105,7 +104,7 @@ zero-valued, which for <code>int</code>s means <code>0</code>s.</p>
         
         <tr>
           <td class="docs">
-            <p>The builtin <code>len</code> returns the length of an array.</p>
+            <p>تعيد الدالة المدمجة <code>len</code> طول المصفوفة.</p>
 
           </td>
           <td class="code leading">
@@ -116,8 +115,8 @@ zero-valued, which for <code>int</code>s means <code>0</code>s.</p>
         
         <tr>
           <td class="docs">
-            <p>Use this syntax to declare and initialize an array
-in one line.</p>
+            <p>استخدم هذه الصيغة للتصريح عن مصفوفة وتهيئتها في
+سطر واحد.</p>
 
           </td>
           <td class="code leading">
@@ -129,8 +128,8 @@ in one line.</p>
         
         <tr>
           <td class="docs">
-            <p>You can also have the compiler count the number of
-elements for you with <code>...</code></p>
+            <p>يمكنك أيضًا جعل المترجم يحسب عدد العناصر باستخدام
+<code>...</code>.</p>
 
           </td>
           <td class="code leading">
@@ -142,8 +141,8 @@ elements for you with <code>...</code></p>
         
         <tr>
           <td class="docs">
-            <p>If you specify the index with <code>:</code>, the elements in
-between will be zeroed.</p>
+            <p>إذا حددت الفهرس باستخدام <code>:</code>، فستأخذ العناصر الواقعة
+بين الفهارس المحددة قيمتها الصفرية.</p>
 
           </td>
           <td class="code leading">
@@ -155,9 +154,8 @@ between will be zeroed.</p>
         
         <tr>
           <td class="docs">
-            <p>Array types are one-dimensional, but you can
-compose types to build multi-dimensional data
-structures.</p>
+            <p>أنواع المصفوفات أحادية البعد، لكن يمكنك تركيب الأنواع
+لبناء بنى بيانات متعددة الأبعاد.</p>
 
           </td>
           <td class="code leading">
@@ -174,8 +172,8 @@ structures.</p>
         
         <tr>
           <td class="docs">
-            <p>You can create and initialize multi-dimensional
-arrays at once too.</p>
+            <p>يمكنك أيضًا إنشاء المصفوفات متعددة الأبعاد وتهيئتها
+دفعة واحدة.</p>
 
           </td>
           <td class="code">
@@ -195,8 +193,8 @@ arrays at once too.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that arrays appear in the form <code>[v1 v2 v3 ...]</code>
-when printed with <code>fmt.Println</code>.</p>
+            <p>لاحظ أن المصفوفات تظهر بالصيغة <code>[v1 v2 v3 ...]</code> عند
+طباعتها باستخدام <code>fmt.Println</code>.</p>
 
           </td>
           <td class="code">

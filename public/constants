@@ -31,8 +31,8 @@
         
         <tr>
           <td class="docs">
-            <p>Go supports <em>constants</em> of character, string, boolean,
-and numeric values.</p>
+            <p>تدعم Go <em>الثوابت</em> المحرفية والنصية والمنطقية
+والعددية.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +46,7 @@ and numeric values.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/LfvIxHlpomp" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/hs_WpWSRGDx" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -66,7 +66,7 @@ and numeric values.</p>
         
         <tr>
           <td class="docs">
-            <p><code>const</code> declares a constant value.</p>
+            <p>تصرّح <code>const</code> عن قيمة ثابتة.</p>
 
           </td>
           <td class="code leading">
@@ -88,8 +88,8 @@ and numeric values.</p>
         
         <tr>
           <td class="docs">
-            <p>A <code>const</code> statement can also appear inside a
-function body.</p>
+            <p>يمكن أن تظهر عبارة <code>const</code> أيضًا داخل جسم
+الدالة.</p>
 
           </td>
           <td class="code leading">
@@ -100,8 +100,8 @@ function body.</p>
         
         <tr>
           <td class="docs">
-            <p>Constant expressions perform arithmetic with
-arbitrary precision.</p>
+            <p>تُجري تعبيرات الثوابت العمليات الحسابية بدقة
+غير محدودة.</p>
 
           </td>
           <td class="code leading">
@@ -113,8 +113,8 @@ arbitrary precision.</p>
         
         <tr>
           <td class="docs">
-            <p>A numeric constant has no type until it&rsquo;s given
-one, such as by an explicit conversion.</p>
+            <p>لا يكون للثابت العددي نوع حتى يُسند إليه نوع،
+كما يحدث مثلًا عند إجراء تحويل صريح.</p>
 
           </td>
           <td class="code leading">
@@ -125,10 +125,10 @@ one, such as by an explicit conversion.</p>
         
         <tr>
           <td class="docs">
-            <p>A number can be given a type by using it in a
-context that requires one, such as a variable
-assignment or function call. For example, here
-<code>math.Sin</code> expects a <code>float64</code>.</p>
+            <p>يمكن إسناد نوع إلى عدد باستخدامه في سياق يتطلب
+نوعًا، مثل إسناده إلى متغير أو تمريره إلى دالة.
+فمثلًا، تتوقع <code>math.Sin</code> هنا قيمة من النوع
+<code>float64</code>.</p>
 
           </td>
           <td class="code">

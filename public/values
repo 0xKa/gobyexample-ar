@@ -31,9 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p>Go has various value types including strings,
-integers, floats, booleans, etc. Here are a few
-basic examples.</p>
+            <p>تتضمن Go أنواعًا متعددة من القيم، منها السلاسل النصية
+والأعداد الصحيحة وأعداد الفاصلة العائمة والقيم المنطقية
+وغيرها. إليك بعض الأمثلة الأساسية.</p>
 
           </td>
           <td class="code empty leading">
@@ -47,7 +47,7 @@ basic examples.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/YnVS3LZr8pk" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/Pxc-8lyC3N1" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -74,7 +74,7 @@ basic examples.</p>
         
         <tr>
           <td class="docs">
-            <p>Strings, which can be added together with <code>+</code>.</p>
+            <p>السلاسل النصية، ويمكن جمعها معًا باستخدام <code>+</code>.</p>
 
           </td>
           <td class="code leading">
@@ -85,7 +85,7 @@ basic examples.</p>
         
         <tr>
           <td class="docs">
-            <p>Integers and floats.</p>
+            <p>الأعداد الصحيحة وأعداد الفاصلة العائمة.</p>
 
           </td>
           <td class="code leading">
@@ -97,7 +97,7 @@ basic examples.</p>
         
         <tr>
           <td class="docs">
-            <p>Booleans, with boolean operators as you&rsquo;d expect.</p>
+            <p>القيم المنطقية، مع المعاملات المنطقية المعتادة.</p>
 
           </td>
           <td class="code">

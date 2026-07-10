@@ -27,12 +27,12 @@
         
         <tr>
           <td class="docs">
-            <p>Our first program will print the classic &ldquo;hello world&rdquo;
-message. Here&rsquo;s the full source code.</p>
+            <p>سيطبع برنامجنا الأول رسالة &ldquo;hello world&rdquo; التقليدية.
+إليك الشيفرة المصدرية كاملة.</p>
 
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/NeviD0awXjt" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/E-punpEm8m7" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -65,8 +65,8 @@ message. Here&rsquo;s the full source code.</p>
         
         <tr>
           <td class="docs">
-            <p>To run the program, put the code in <code>hello-world.go</code> and
-use <code>go run</code>.</p>
+            <p>لتشغيل البرنامج، ضع الشيفرة في <code>hello-world.go</code> ثم
+استخدم <code>go run</code>.</p>
 
           </td>
           <td class="code leading">
@@ -78,8 +78,8 @@ use <code>go run</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Sometimes we&rsquo;ll want to build our programs into
-binaries. We can do this using <code>go build</code>.</p>
+            <p>نحتاج أحيانًا إلى بناء برامجنا على شكل ملفات
+تنفيذية. يمكننا فعل ذلك باستخدام <code>go build</code>.</p>
 
           </td>
           <td class="code leading">
@@ -92,7 +92,7 @@ binaries. We can do this using <code>go build</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>We can then execute the built binary directly.</p>
+            <p>يمكننا بعد ذلك تشغيل الملف التنفيذي الناتج مباشرة.</p>
 
           </td>
           <td class="code leading">
@@ -104,8 +104,8 @@ binaries. We can do this using <code>go build</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Now that we can run and build basic Go programs, let&rsquo;s
-learn more about the language.</p>
+            <p>بعدما أصبح بإمكاننا تشغيل برامج Go الأساسية وبنائها،
+فلنتعرف أكثر على اللغة.</p>
 
           </td>
           <td class="code empty">

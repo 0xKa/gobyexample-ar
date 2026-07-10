@@ -1,5 +1,5 @@
-// _Slices_ are an important data type in Go, giving
-// a more powerful interface to sequences than arrays.
+// _الشرائح_ نوع بيانات مهم في Go، وتوفر وسيلة أقوى
+// للتعامل مع التسلسلات مقارنة بالمصفوفات.
 
 package main
 
@@ -10,79 +10,76 @@ import (
 
 func main() {
 
-	// Unlike arrays, slices are typed only by the
-	// elements they contain (not the number of elements).
-	// An uninitialized slice equals to nil and has
-	// length 0.
+	// بخلاف المصفوفات، يتحدد نوع الشريحة بنوع العناصر التي
+	// تحتويها فقط، لا بعددها. تساوي الشريحة غير المهيأة
+	// `nil` ويكون طولها `0`.
 	var s []string
 	fmt.Println("uninit:", s, s == nil, len(s) == 0)
 
-	// To create a slice with non-zero length, use
-	// the builtin `make`. Here we make a slice of
-	// `string`s of length `3` (initially zero-valued).
-	// By default a new slice's capacity is equal to its
-	// length; if we know the slice is going to grow ahead
-	// of time, it's possible to pass a capacity explicitly
-	// as an additional parameter to `make`.
+	// لإنشاء شريحة بطول غير صفري، استخدم الدالة المدمجة
+	// `make`. ننشئ هنا شريحة من عناصر `string` طولها `3`
+	// وتأخذ عناصرها قيمتها الصفرية في البداية. تساوي سعة
+	// الشريحة الجديدة طولها افتراضيًا؛ وإذا عرفنا مسبقًا أن
+	// الشريحة ستنمو، فيمكننا تمرير السعة صراحةً كوسيط إضافي
+	// إلى `make`.
 	s = make([]string, 3)
 	fmt.Println("emp:", s, "len:", len(s), "cap:", cap(s))
 
-	// We can set and get just like with arrays.
+	// يمكننا إسناد العناصر واسترجاعها كما في المصفوفات.
 	s[0] = "a"
 	s[1] = "b"
 	s[2] = "c"
 	fmt.Println("set:", s)
 	fmt.Println("get:", s[2])
 
-	// `len` returns the length of the slice as expected.
+	// تعيد `len` طول الشريحة كما هو متوقع.
 	fmt.Println("len:", len(s))
 
-	// In addition to these basic operations, slices
-	// support several more that make them richer than
-	// arrays. One is the builtin `append`, which
-	// returns a slice containing one or more new values.
-	// Note that we need to accept a return value from
-	// `append` as we may get a new slice value.
+	// إلى جانب هذه العمليات الأساسية، تدعم الشرائح عدة
+	// عمليات أخرى تجعلها أغنى من المصفوفات. إحداها الدالة
+	// المدمجة `append`، التي تعيد شريحة تحتوي على قيمة
+	// جديدة واحدة أو أكثر. لاحظ أن علينا استخدام القيمة
+	// المعادة من `append` لأننا قد نحصل على شريحة جديدة.
 	s = append(s, "d")
 	s = append(s, "e", "f")
 	fmt.Println("apd:", s)
 
-	// Slices can also be `copy`'d. Here we create an
-	// empty slice `c` of the same length as `s` and copy
-	// into `c` from `s`.
+	// يمكن أيضًا نسخ الشرائح باستخدام `copy`. ننشئ هنا
+	// شريحة فارغة `c` لها طول `s` نفسه، ثم ننسخ من `s`
+	// إلى `c`.
 	c := make([]string, len(s))
 	copy(c, s)
 	fmt.Println("cpy:", c)
 
-	// Slices support a "slice" operator with the syntax
-	// `slice[low:high]`. For example, this gets a slice
-	// of the elements `s[2]`, `s[3]`, and `s[4]`.
+	// تدعم الشرائح عامل إنشاء شريحة فرعية بالصيغة
+	// `slice[low:high]`. فمثلًا، نحصل هنا على شريحة من
+	// العناصر `s[2]` و`s[3]` و`s[4]`.
 	l := s[2:5]
 	fmt.Println("sl1:", l)
 
-	// This slices up to (but excluding) `s[5]`.
+	// تنشئ هذه الصيغة شريحة حتى `s[5]` دون تضمينه.
 	l = s[:5]
 	fmt.Println("sl2:", l)
 
-	// And this slices up from (and including) `s[2]`.
+	// وتنشئ هذه شريحة بدءًا من `s[2]` مع تضمينه.
 	l = s[2:]
 	fmt.Println("sl3:", l)
 
-	// We can declare and initialize a variable for slice
-	// in a single line as well.
+	// يمكننا أيضًا التصريح عن متغير لشريحة وتهيئته في
+	// سطر واحد.
 	t := []string{"g", "h", "i"}
 	fmt.Println("dcl:", t)
 
-	// The `slices` package contains a number of useful
-	// utility functions for slices.
+	// تحتوي الحزمة `slices` على عدد من الدوال المساعدة
+	// المفيدة للشرائح.
 	t2 := []string{"g", "h", "i"}
 	if slices.Equal(t, t2) {
 		fmt.Println("t == t2")
 	}
 
-	// Slices can be composed into multi-dimensional data
-	// structures. The length of the inner slices can
-	// vary, unlike with multi-dimensional arrays.
+	// يمكن تركيب الشرائح في بنى بيانات متعددة الأبعاد.
+	// ويمكن أن تختلف أطوال الشرائح الداخلية، بخلاف
+	// المصفوفات متعددة الأبعاد.
 	twoD := make([][]int, 3)
 	for i := range 3 {
 		innerLen := i + 1

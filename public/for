@@ -31,8 +31,8 @@
         
         <tr>
           <td class="docs">
-            <p><code>for</code> is Go&rsquo;s only looping construct. Here are
-some basic types of <code>for</code> loops.</p>
+            <p><code>for</code> هي بنية التكرار الوحيدة في Go. إليك بعض
+الأنواع الأساسية لحلقات <code>for</code>.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +46,7 @@ some basic types of <code>for</code> loops.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/_F2rYHNilKa" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/YbM-dUDghZL" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -73,7 +73,7 @@ some basic types of <code>for</code> loops.</p>
         
         <tr>
           <td class="docs">
-            <p>The most basic type, with a single condition.</p>
+            <p>أبسط الأنواع، ويحتوي على شرط واحد.</p>
 
           </td>
           <td class="code leading">
@@ -88,7 +88,8 @@ some basic types of <code>for</code> loops.</p>
         
         <tr>
           <td class="docs">
-            <p>A classic initial/condition/after <code>for</code> loop.</p>
+            <p>حلقة <code>for</code> تقليدية بأجزاء التهيئة والشرط
+وما بعد التكرار.</p>
 
           </td>
           <td class="code leading">
@@ -101,8 +102,8 @@ some basic types of <code>for</code> loops.</p>
         
         <tr>
           <td class="docs">
-            <p>Another way of accomplishing the basic &ldquo;do this
-N times&rdquo; iteration is <code>range</code> over an integer.</p>
+            <p>هناك طريقة أخرى لتنفيذ تكرار بسيط من نوع &ldquo;نفّذ
+هذا <code>N</code> مرة&rdquo;، وهي استخدام <code>range</code> مع عدد صحيح.</p>
 
           </td>
           <td class="code leading">
@@ -115,9 +116,9 @@ N times&rdquo; iteration is <code>range</code> over an integer.</p>
         
         <tr>
           <td class="docs">
-            <p><code>for</code> without a condition will loop repeatedly
-until you <code>break</code> out of the loop or <code>return</code> from
-the enclosing function.</p>
+            <p>تستمر <code>for</code> التي لا تحتوي على شرط في التكرار حتى
+تخرج من الحلقة باستخدام <code>break</code> أو تخرج من الدالة
+المحيطة باستخدام <code>return</code>.</p>
 
           </td>
           <td class="code leading">
@@ -131,8 +132,8 @@ the enclosing function.</p>
         
         <tr>
           <td class="docs">
-            <p>You can also <code>continue</code> to the next iteration of
-the loop.</p>
+            <p>يمكنك أيضًا الانتقال إلى التكرار التالي من الحلقة
+باستخدام <code>continue</code>.</p>
 
           </td>
           <td class="code">
@@ -176,9 +177,8 @@ the loop.</p>
         
         <tr>
           <td class="docs">
-            <p>We&rsquo;ll see some other <code>for</code> forms later when we look at
-<code>range</code> statements, channels, and other data
-structures.</p>
+            <p>سنرى صيغًا أخرى من <code>for</code> لاحقًا عند تناول عبارات
+<code>range</code> والقنوات وبنى البيانات الأخرى.</p>
 
           </td>
           <td class="code empty">

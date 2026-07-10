@@ -31,9 +31,8 @@
         
         <tr>
           <td class="docs">
-            <p>In Go, <em>variables</em> are explicitly declared and used by
-the compiler to e.g. check type-correctness of function
-calls.</p>
+            <p>يُصرّح عن <em>المتغيرات</em> في Go تصريحًا صريحًا، ويستخدمها
+المترجم للتحقق، مثلًا، من توافق أنواع استدعاءات الدوال.</p>
 
           </td>
           <td class="code empty leading">
@@ -47,7 +46,7 @@ calls.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/N5rWndIliJW" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/o8qdUA5Djzr" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -74,7 +73,7 @@ calls.</p>
         
         <tr>
           <td class="docs">
-            <p><code>var</code> declares 1 or more variables.</p>
+            <p>تصرّح <code>var</code> عن متغير واحد أو أكثر.</p>
 
           </td>
           <td class="code leading">
@@ -86,7 +85,7 @@ calls.</p>
         
         <tr>
           <td class="docs">
-            <p>You can declare multiple variables at once.</p>
+            <p>يمكنك التصريح عن عدة متغيرات دفعة واحدة.</p>
 
           </td>
           <td class="code leading">
@@ -98,7 +97,7 @@ calls.</p>
         
         <tr>
           <td class="docs">
-            <p>Go will infer the type of initialized variables.</p>
+            <p>تستنتج Go نوع المتغيرات التي جرت تهيئتها.</p>
 
           </td>
           <td class="code leading">
@@ -110,9 +109,9 @@ calls.</p>
         
         <tr>
           <td class="docs">
-            <p>Variables declared without a corresponding
-initialization are <em>zero-valued</em>. For example, the
-zero value for an <code>int</code> is <code>0</code>.</p>
+            <p>تأخذ المتغيرات المصرّح عنها دون تهيئة مقابلة
+<em>القيمة الصفرية</em>. فمثلًا، القيمة الصفرية للنوع
+<code>int</code> هي <code>0</code>.</p>
 
           </td>
           <td class="code leading">
@@ -124,10 +123,9 @@ zero value for an <code>int</code> is <code>0</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>:=</code> syntax is shorthand for declaring and
-initializing a variable, e.g. for
-<code>var f string = &quot;apple&quot;</code> in this case.
-This syntax is only available inside functions.</p>
+            <p>الصيغة <code>:=</code> اختصار للتصريح عن متغير وتهيئته؛ وهي
+تكافئ هنا <code>var f string = &quot;apple&quot;</code>.
+لا تتاح هذه الصيغة إلا داخل الدوال.</p>
 
           </td>
           <td class="code">

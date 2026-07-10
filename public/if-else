@@ -31,8 +31,7 @@
         
         <tr>
           <td class="docs">
-            <p>Branching with <code>if</code> and <code>else</code> in Go is
-straight-forward.</p>
+            <p>التفرع باستخدام <code>if</code> و<code>else</code> في Go مباشر وبسيط.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +45,7 @@ straight-forward.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/RKgKzCe7qcF" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/6FH_JSQFGWz" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -73,7 +72,7 @@ straight-forward.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s a basic example.</p>
+            <p>إليك مثالًا أساسيًا.</p>
 
           </td>
           <td class="code leading">
@@ -88,7 +87,7 @@ straight-forward.</p>
         
         <tr>
           <td class="docs">
-            <p>You can have an <code>if</code> statement without an else.</p>
+            <p>يمكن استخدام عبارة <code>if</code> دون <code>else</code>.</p>
 
           </td>
           <td class="code leading">
@@ -101,8 +100,8 @@ straight-forward.</p>
         
         <tr>
           <td class="docs">
-            <p>Logical operators like <code>&amp;&amp;</code> and <code>||</code> are often
-useful in conditions.</p>
+            <p>غالبًا ما تكون المعاملات المنطقية مثل <code>&amp;&amp;</code> و<code>||</code>
+مفيدة في الشروط.</p>
 
           </td>
           <td class="code leading">
@@ -115,9 +114,9 @@ useful in conditions.</p>
         
         <tr>
           <td class="docs">
-            <p>A statement can precede conditionals; any variables
-declared in this statement are available in the current
-and all subsequent branches.</p>
+            <p>يمكن أن تسبق الشروط عبارة؛ وتتاح المتغيرات المصرّح
+عنها في هذه العبارة داخل الفرع الحالي وجميع الفروع
+اللاحقة.</p>
 
           </td>
           <td class="code leading">
@@ -135,8 +134,8 @@ and all subsequent branches.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that you don&rsquo;t need parentheses around conditions
-in Go, but that the braces are required.</p>
+            <p>لاحظ أنك لا تحتاج إلى أقواس حول الشروط في Go، لكن
+الأقواس المعقوفة مطلوبة.</p>
 
           </td>
           <td class="code empty">
@@ -165,9 +164,9 @@ in Go, but that the braces are required.</p>
         
         <tr>
           <td class="docs">
-            <p>There is no <a href="https://en.wikipedia.org/wiki/%3F:">ternary if</a>
-in Go, so you&rsquo;ll need to use a full <code>if</code> statement even
-for basic conditions.</p>
+            <p>لا يوجد <a href="https://en.wikipedia.org/wiki/%3F:">شرط ثلاثي</a>
+في Go، لذلك ستحتاج إلى استخدام عبارة <code>if</code> كاملة حتى
+مع الشروط البسيطة.</p>
 
           </td>
           <td class="code empty">

@@ -31,8 +31,8 @@
         
         <tr>
           <td class="docs">
-            <p><em>Switch statements</em> express conditionals across many
-branches.</p>
+            <p>تعبّر عبارات <code>switch</code> عن الشروط التي تتوزع على عدة
+فروع.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +46,7 @@ branches.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/qVDqWoUQ6AI" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/i-cJ68z2XL2" class="run" title="شغّل الشيفرة" aria-label="شغّل الشيفرة في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الشيفرة" aria-label="انسخ الشيفرة"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -76,7 +76,7 @@ branches.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s a basic <code>switch</code>.</p>
+            <p>إليك عبارة <code>switch</code> أساسية.</p>
 
           </td>
           <td class="code leading">
@@ -96,9 +96,9 @@ branches.</p>
         
         <tr>
           <td class="docs">
-            <p>You can use commas to separate multiple expressions
-in the same <code>case</code> statement. We use the optional
-<code>default</code> case in this example as well.</p>
+            <p>يمكنك استخدام الفواصل للفصل بين عدة تعبيرات في عبارة
+<code>case</code> نفسها. ونستخدم في هذا المثال أيضًا حالة
+<code>default</code> الاختيارية.</p>
 
           </td>
           <td class="code leading">
@@ -114,9 +114,9 @@ in the same <code>case</code> statement. We use the optional
         
         <tr>
           <td class="docs">
-            <p><code>switch</code> without an expression is an alternate way
-to express if/else logic. Here we also show how the
-<code>case</code> expressions can be non-constants.</p>
+            <p>تمثل <code>switch</code> دون تعبير طريقة بديلة لصياغة منطق
+<code>if/else</code>. ونوضح هنا أيضًا أن تعبيرات <code>case</code> يمكن
+أن تكون غير ثابتة.</p>
 
           </td>
           <td class="code leading">
@@ -133,10 +133,9 @@ to express if/else logic. Here we also show how the
         
         <tr>
           <td class="docs">
-            <p>A type <code>switch</code> compares types instead of values.  You
-can use this to discover the type of an interface
-value.  In this example, the variable <code>t</code> will have the
-type corresponding to its clause.</p>
+            <p>تقارن <code>switch</code> الخاصة بالأنواع بين الأنواع بدلًا من
+القيم. يمكنك استخدامها لمعرفة نوع قيمة مخزنة في واجهة.
+في هذا المثال، سيحمل المتغير <code>t</code> النوع الموافق لفرعه.</p>
 
           </td>
           <td class="code">

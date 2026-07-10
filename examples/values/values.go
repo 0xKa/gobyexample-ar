@@ -1,6 +1,6 @@
-// Go has various value types including strings,
-// integers, floats, booleans, etc. Here are a few
-// basic examples.
+// تتضمن Go أنواعًا متعددة من القيم، منها السلاسل النصية
+// والأعداد الصحيحة وأعداد الفاصلة العائمة والقيم المنطقية
+// وغيرها. إليك بعض الأمثلة الأساسية.
 
 package main
 
@@ -8,14 +8,14 @@ import "fmt"
 
 func main() {
 
-	// Strings, which can be added together with `+`.
+	// السلاسل النصية، ويمكن جمعها معًا باستخدام `+`.
 	fmt.Println("go" + "lang")
 
-	// Integers and floats.
+	// الأعداد الصحيحة وأعداد الفاصلة العائمة.
 	fmt.Println("1+1 =", 1+1)
 	fmt.Println("7.0/3.0 =", 7.0/3.0)
 
-	// Booleans, with boolean operators as you'd expect.
+	// القيم المنطقية، مع المعاملات المنطقية المعتادة.
 	fmt.Println(true && false)
 	fmt.Println(true || false)
 	fmt.Println(!true)
