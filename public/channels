@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Channels</title>
+    <title>Go by Example: القنوات</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="channels">
-      <h2><a href="./">Go by Example</a>: Channels</h2>
+      <h2><a href="./">Go by Example</a>: القنوات</h2>
       
       <table>
         
@@ -148,7 +148,7 @@ message without having to use any other synchronization.</p>
       
       
       <p class="next">
-        Next example: <a href="channel-buffering" rel="next">Channel Buffering</a>.
+        Next example: <a href="channel-buffering" rel="next">القنوات المخزنة مؤقتًا</a>.
       </p>
       
 

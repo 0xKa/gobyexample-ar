@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Slices</title>
+    <title>Go by Example: الشرائح</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="slices">
-      <h2><a href="./">Go by Example</a>: Slices</h2>
+      <h2><a href="./">Go by Example</a>: الشرائح</h2>
       
       <table>
         
@@ -311,7 +311,7 @@ Go&rsquo;s other key builtin data structure: maps.</p>
       
       
       <p class="next">
-        Next example: <a href="maps" rel="next">Maps</a>.
+        Next example: <a href="maps" rel="next">الخرائط</a>.
       </p>
       
 

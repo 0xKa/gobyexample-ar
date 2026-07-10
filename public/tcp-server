@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: TCP Server</title>
+    <title>Go by Example: خادم TCP</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="tcp-server">
-      <h2><a href="./">Go by Example</a>: TCP Server</h2>
+      <h2><a href="./">Go by Example</a>: خادم TCP</h2>
       
       <table>
         
@@ -224,7 +224,7 @@ demonstrating two-way communication.</p>
       
       
       <p class="next">
-        Next example: <a href="context" rel="next">Context</a>.
+        Next example: <a href="context" rel="next">السياق</a>.
       </p>
       
 

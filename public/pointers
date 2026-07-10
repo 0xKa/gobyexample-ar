@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Pointers</title>
+    <title>Go by Example: المؤشرات</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="pointers">
-      <h2><a href="./">Go by Example</a>: Pointers</h2>
+      <h2><a href="./">Go by Example</a>: المؤشرات</h2>
       
       <table>
         
@@ -184,7 +184,7 @@ the memory address for that variable.</p>
       
       
       <p class="next">
-        Next example: <a href="strings-and-runes" rel="next">Strings and Runes</a>.
+        Next example: <a href="strings-and-runes" rel="next">السلاسل النصية ومحارف rune</a>.
       </p>
       
 

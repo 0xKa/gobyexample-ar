@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Epoch</title>
+    <title>Go by Example: زمن الحقبة</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="epoch">
-      <h2><a href="./">Go by Example</a>: Epoch</h2>
+      <h2><a href="./">Go by Example</a>: زمن الحقبة</h2>
       
       <table>
         
@@ -151,7 +151,7 @@ parsing and formatting.</p>
       
       
       <p class="next">
-        Next example: <a href="time-formatting-parsing" rel="next">Time Formatting / Parsing</a>.
+        Next example: <a href="time-formatting-parsing" rel="next">تنسيق الوقت وتحليله</a>.
       </p>
       
 

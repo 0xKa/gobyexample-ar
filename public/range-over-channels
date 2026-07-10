@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Range over Channels</title>
+    <title>Go by Example: اجتياز القنوات باستخدام range</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="range-over-channels">
-      <h2><a href="./">Go by Example</a>: Range over Channels</h2>
+      <h2><a href="./">Go by Example</a>: اجتياز القنوات باستخدام range</h2>
       
       <table>
         
@@ -136,7 +136,7 @@ values be received.</p>
       
       
       <p class="next">
-        Next example: <a href="timers" rel="next">Timers</a>.
+        Next example: <a href="timers" rel="next">المؤقتات</a>.
       </p>
       
 

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Enums</title>
+    <title>Go by Example: التعدادات</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="enums">
-      <h2><a href="./">Go by Example</a>: Enums</h2>
+      <h2><a href="./">Go by Example</a>: التعدادات</h2>
       
       <table>
         
@@ -212,7 +212,7 @@ determine the next state&hellip;</p>
       
       
       <p class="next">
-        Next example: <a href="struct-embedding" rel="next">Struct Embedding</a>.
+        Next example: <a href="struct-embedding" rel="next">تضمين البنى</a>.
       </p>
       
 

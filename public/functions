@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Functions</title>
+    <title>Go by Example: الدوال</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="functions">
-      <h2><a href="./">Go by Example</a>: Functions</h2>
+      <h2><a href="./">Go by Example</a>: الدوال</h2>
       
       <table>
         
@@ -169,7 +169,7 @@ multiple return values, which we&rsquo;ll look at next.</p>
       
       
       <p class="next">
-        Next example: <a href="multiple-return-values" rel="next">Multiple Return Values</a>.
+        Next example: <a href="multiple-return-values" rel="next">إرجاع قيم متعددة</a>.
       </p>
       
 

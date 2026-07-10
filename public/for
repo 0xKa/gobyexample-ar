@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: For</title>
+    <title>Go by Example: حلقة التكرار for</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="for">
-      <h2><a href="./">Go by Example</a>: For</h2>
+      <h2><a href="./">Go by Example</a>: حلقة التكرار for</h2>
       
       <table>
         
@@ -190,7 +190,7 @@ structures.</p>
       
       
       <p class="next">
-        Next example: <a href="if-else" rel="next">If/Else</a>.
+        Next example: <a href="if-else" rel="next">الشرط if/else</a>.
       </p>
       
 

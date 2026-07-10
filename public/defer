@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Defer</title>
+    <title>Go by Example: الكلمة defer</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="defer">
-      <h2><a href="./">Go by Example</a>: Defer</h2>
+      <h2><a href="./">Go by Example</a>: الكلمة defer</h2>
       
       <table>
         
@@ -178,7 +178,7 @@ after being written.</p>
       
       
       <p class="next">
-        Next example: <a href="recover" rel="next">Recover</a>.
+        Next example: <a href="recover" rel="next">الدالة recover</a>.
       </p>
       
 

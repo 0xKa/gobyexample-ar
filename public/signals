@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Signals</title>
+    <title>Go by Example: الإشارات</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="signals">
-      <h2><a href="./">Go by Example</a>: Signals</h2>
+      <h2><a href="./">Go by Example</a>: الإشارات</h2>
       
       <table>
         
@@ -148,7 +148,7 @@ causing the program to print the cancellation cause and then exit.</p>
       
       
       <p class="next">
-        Next example: <a href="exit" rel="next">Exit</a>.
+        Next example: <a href="exit" rel="next">الخروج</a>.
       </p>
       
 

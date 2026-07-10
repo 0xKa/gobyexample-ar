@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Channel Synchronization</title>
+    <title>Go by Example: المزامنة باستخدام القنوات</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="channel-synchronization">
-      <h2><a href="./">Go by Example</a>: Channel Synchronization</h2>
+      <h2><a href="./">Go by Example</a>: المزامنة باستخدام القنوات</h2>
       
       <table>
         
@@ -162,7 +162,7 @@ its work, or in some cases even before it started.</p>
       
       
       <p class="next">
-        Next example: <a href="channel-directions" rel="next">Channel Directions</a>.
+        Next example: <a href="channel-directions" rel="next">اتجاهات القنوات</a>.
       </p>
       
 

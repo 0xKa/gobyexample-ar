@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Command-Line Flags</title>
+    <title>Go by Example: خيارات سطر الأوامر</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="command-line-flags">
-      <h2><a href="./">Go by Example</a>: Command-Line Flags</h2>
+      <h2><a href="./">Go by Example</a>: خيارات سطر الأوامر</h2>
       
       <table>
         
@@ -274,7 +274,7 @@ and show the help text again.</p>
       
       
       <p class="next">
-        Next example: <a href="command-line-subcommands" rel="next">Command-Line Subcommands</a>.
+        Next example: <a href="command-line-subcommands" rel="next">الأوامر الفرعية لسطر الأوامر</a>.
       </p>
       
 

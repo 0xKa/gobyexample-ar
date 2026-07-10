@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Sorting by Functions</title>
+    <title>Go by Example: الفرز باستخدام الدوال</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="sorting-by-functions">
-      <h2><a href="./">Go by Example</a>: Sorting by Functions</h2>
+      <h2><a href="./">Go by Example</a>: الفرز باستخدام الدوال</h2>
       
       <table>
         
@@ -175,7 +175,7 @@ doubt, <a href="testing-and-benchmarking">benchmark</a>!</p>
       
       
       <p class="next">
-        Next example: <a href="panic" rel="next">Panic</a>.
+        Next example: <a href="panic" rel="next">الدالة panic</a>.
       </p>
       
 

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Errors</title>
+    <title>Go by Example: الأخطاء</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="errors">
-      <h2><a href="./">Go by Example</a>: Errors</h2>
+      <h2><a href="./">Go by Example</a>: الأخطاء</h2>
       
       <table>
         
@@ -255,7 +255,7 @@ errors in a chain of errors.</p>
       
       
       <p class="next">
-        Next example: <a href="custom-errors" rel="next">Custom Errors</a>.
+        Next example: <a href="custom-errors" rel="next">الأخطاء المخصصة</a>.
       </p>
       
 

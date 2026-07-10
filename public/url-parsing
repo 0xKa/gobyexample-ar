@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: URL Parsing</title>
+    <title>Go by Example: تحليل عناوين URL</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="url-parsing">
-      <h2><a href="./">Go by Example</a>: URL Parsing</h2>
+      <h2><a href="./">Go by Example</a>: تحليل عناوين URL</h2>
       
       <table>
         
@@ -207,7 +207,7 @@ pieces that we extracted.</p>
       
       
       <p class="next">
-        Next example: <a href="sha256-hashes" rel="next">SHA256 Hashes</a>.
+        Next example: <a href="sha256-hashes" rel="next">بصمات SHA-256</a>.
       </p>
       
 

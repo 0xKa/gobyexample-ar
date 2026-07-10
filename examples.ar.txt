@@ -1,0 +1,86 @@
+# Stable example ID|Arabic display title
+hello-world|مرحبًا بالعالم
+values|القيم
+variables|المتغيرات
+constants|الثوابت
+for|حلقة التكرار for
+if-else|الشرط if/else
+switch|عبارة switch
+arrays|المصفوفات
+slices|الشرائح
+maps|الخرائط
+functions|الدوال
+multiple-return-values|إرجاع قيم متعددة
+variadic-functions|الدوال متغيرة عدد الوسائط
+closures|الإغلاقات
+recursion|الاستدعاء الذاتي
+range-over-built-in-types|اجتياز الأنواع المدمجة باستخدام range
+pointers|المؤشرات
+strings-and-runes|السلاسل النصية ومحارف rune
+structs|البنى
+methods|الأساليب
+interfaces|الواجهات
+enums|التعدادات
+struct-embedding|تضمين البنى
+generics|الأنواع العامة
+range-over-iterators|اجتياز المكررات باستخدام range
+errors|الأخطاء
+custom-errors|الأخطاء المخصصة
+goroutines|روتينات Go
+channels|القنوات
+channel-buffering|القنوات المخزنة مؤقتًا
+channel-synchronization|المزامنة باستخدام القنوات
+channel-directions|اتجاهات القنوات
+select|عبارة select
+timeouts|المهل الزمنية
+non-blocking-channel-operations|عمليات القنوات غير الحاجزة
+closing-channels|إغلاق القنوات
+range-over-channels|اجتياز القنوات باستخدام range
+timers|المؤقتات
+tickers|المؤقتات الدورية
+worker-pools|مجموعات العمال
+waitgroups|مجموعات الانتظار
+rate-limiting|تحديد المعدل
+atomic-counters|العدادات الذرية
+mutexes|أقفال الاستبعاد المتبادل
+stateful-goroutines|روتينات Go ذات الحالة
+sorting|الفرز
+sorting-by-functions|الفرز باستخدام الدوال
+panic|الدالة panic
+defer|الكلمة defer
+recover|الدالة recover
+string-functions|دوال السلاسل النصية
+string-formatting|تنسيق السلاسل النصية
+text-templates|قوالب النصوص
+regular-expressions|التعبيرات النمطية
+json|JSON
+xml|XML
+time|الوقت
+epoch|زمن الحقبة
+time-formatting-parsing|تنسيق الوقت وتحليله
+random-numbers|الأرقام العشوائية
+number-parsing|تحليل الأرقام
+url-parsing|تحليل عناوين URL
+sha256-hashes|بصمات SHA-256
+base64-encoding|ترميز Base64
+reading-files|قراءة الملفات
+writing-files|كتابة الملفات
+line-filters|مرشحات الأسطر
+file-paths|مسارات الملفات
+directories|المجلدات
+temporary-files-and-directories|الملفات والمجلدات المؤقتة
+embed-directive|توجيه embed
+testing-and-benchmarking|الاختبار وقياس الأداء
+command-line-arguments|وسائط سطر الأوامر
+command-line-flags|خيارات سطر الأوامر
+command-line-subcommands|الأوامر الفرعية لسطر الأوامر
+environment-variables|متغيرات البيئة
+logging|تسجيل الأحداث
+http-client|عميل HTTP
+http-server|خادم HTTP
+tcp-server|خادم TCP
+context|السياق
+spawning-processes|تشغيل عمليات جديدة
+execing-processes|استبدال العملية باستخدام exec
+signals|الإشارات
+exit|الخروج

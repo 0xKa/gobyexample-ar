@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: WaitGroups</title>
+    <title>Go by Example: مجموعات الانتظار</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="waitgroups">
-      <h2><a href="./">Go by Example</a>: WaitGroups</h2>
+      <h2><a href="./">Go by Example</a>: مجموعات الانتظار</h2>
       
       <table>
         
@@ -194,7 +194,7 @@ is likely to be different for each invocation.</p>
       
       
       <p class="next">
-        Next example: <a href="rate-limiting" rel="next">Rate Limiting</a>.
+        Next example: <a href="rate-limiting" rel="next">تحديد المعدل</a>.
       </p>
       
 

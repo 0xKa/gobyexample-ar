@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Switch</title>
+    <title>Go by Example: عبارة switch</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="switch">
-      <h2><a href="./">Go by Example</a>: Switch</h2>
+      <h2><a href="./">Go by Example</a>: عبارة switch</h2>
       
       <table>
         
@@ -181,7 +181,7 @@ type corresponding to its clause.</p>
       
       
       <p class="next">
-        Next example: <a href="arrays" rel="next">Arrays</a>.
+        Next example: <a href="arrays" rel="next">المصفوفات</a>.
       </p>
       
 

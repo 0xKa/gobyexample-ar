@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: HTTP Server</title>
+    <title>Go by Example: خادم HTTP</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="http-server">
-      <h2><a href="./">Go by Example</a>: HTTP Server</h2>
+      <h2><a href="./">Go by Example</a>: خادم HTTP</h2>
       
       <table>
         
@@ -182,7 +182,7 @@ router we&rsquo;ve just set up.</p>
       
       
       <p class="next">
-        Next example: <a href="tcp-server" rel="next">TCP Server</a>.
+        Next example: <a href="tcp-server" rel="next">خادم TCP</a>.
       </p>
       
 

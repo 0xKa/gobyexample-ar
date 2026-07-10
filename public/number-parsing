@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Number Parsing</title>
+    <title>Go by Example: تحليل الأرقام</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="number-parsing">
-      <h2><a href="./">Go by Example</a>: Number Parsing</h2>
+      <h2><a href="./">Go by Example</a>: تحليل الأرقام</h2>
       
       <table>
         
@@ -187,7 +187,7 @@ bits.</p>
       
       
       <p class="next">
-        Next example: <a href="url-parsing" rel="next">URL Parsing</a>.
+        Next example: <a href="url-parsing" rel="next">تحليل عناوين URL</a>.
       </p>
       
 

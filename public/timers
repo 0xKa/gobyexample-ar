@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Timers</title>
+    <title>Go by Example: المؤقتات</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="timers">
-      <h2><a href="./">Go by Example</a>: Timers</h2>
+      <h2><a href="./">Go by Example</a>: المؤقتات</h2>
       
       <table>
         
@@ -162,7 +162,7 @@ a chance to fire.</p>
       
       
       <p class="next">
-        Next example: <a href="tickers" rel="next">Tickers</a>.
+        Next example: <a href="tickers" rel="next">المؤقتات الدورية</a>.
       </p>
       
 

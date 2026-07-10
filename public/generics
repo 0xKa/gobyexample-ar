@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Generics</title>
+    <title>Go by Example: الأنواع العامة</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="generics">
-      <h2><a href="./">Go by Example</a>: Generics</h2>
+      <h2><a href="./">Go by Example</a>: الأنواع العامة</h2>
       
       <table>
         
@@ -225,7 +225,7 @@ automatically.</p>
       
       
       <p class="next">
-        Next example: <a href="range-over-iterators" rel="next">Range over Iterators</a>.
+        Next example: <a href="range-over-iterators" rel="next">اجتياز المكررات باستخدام range</a>.
       </p>
       
 

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Embed Directive</title>
+    <title>Go by Example: توجيه embed</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="embed-directive">
-      <h2><a href="./">Go by Example</a>: Embed Directive</h2>
+      <h2><a href="./">Go by Example</a>: توجيه embed</h2>
       
       <table>
         
@@ -182,7 +182,7 @@ this example can only be run on your local machine.)</p>
       
       
       <p class="next">
-        Next example: <a href="testing-and-benchmarking" rel="next">Testing and Benchmarking</a>.
+        Next example: <a href="testing-and-benchmarking" rel="next">الاختبار وقياس الأداء</a>.
       </p>
       
 

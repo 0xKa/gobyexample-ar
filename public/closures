@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Closures</title>
+    <title>Go by Example: الإغلاقات</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="closures">
-      <h2><a href="./">Go by Example</a>: Closures</h2>
+      <h2><a href="./">Go by Example</a>: الإغلاقات</h2>
       
       <table>
         
@@ -168,7 +168,7 @@ recursion.</p>
       
       
       <p class="next">
-        Next example: <a href="recursion" rel="next">Recursion</a>.
+        Next example: <a href="recursion" rel="next">الاستدعاء الذاتي</a>.
       </p>
       
 

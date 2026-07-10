@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Environment Variables</title>
+    <title>Go by Example: متغيرات البيئة</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="environment-variables">
-      <h2><a href="./">Go by Example</a>: Environment Variables</h2>
+      <h2><a href="./">Go by Example</a>: متغيرات البيئة</h2>
       
       <table>
         
@@ -165,7 +165,7 @@ program picks that value up.</p>
       
       
       <p class="next">
-        Next example: <a href="logging" rel="next">Logging</a>.
+        Next example: <a href="logging" rel="next">تسجيل الأحداث</a>.
       </p>
       
 

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Goroutines</title>
+    <title>Go by Example: روتينات Go</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="goroutines">
-      <h2><a href="./">Go by Example</a>: Goroutines</h2>
+      <h2><a href="./">Go by Example</a>: روتينات Go</h2>
       
       <table>
         
@@ -184,7 +184,7 @@ concurrent Go programs: channels.</p>
       
       
       <p class="next">
-        Next example: <a href="channels" rel="next">Channels</a>.
+        Next example: <a href="channels" rel="next">القنوات</a>.
       </p>
       
 

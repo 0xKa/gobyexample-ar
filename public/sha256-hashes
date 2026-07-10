@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: SHA256 Hashes</title>
+    <title>Go by Example: بصمات SHA-256</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="sha256-hashes">
-      <h2><a href="./">Go by Example</a>: SHA256 Hashes</h2>
+      <h2><a href="./">Go by Example</a>: بصمات SHA-256</h2>
       
       <table>
         
@@ -176,7 +176,7 @@ you should carefully research
       
       
       <p class="next">
-        Next example: <a href="base64-encoding" rel="next">Base64 Encoding</a>.
+        Next example: <a href="base64-encoding" rel="next">ترميز Base64</a>.
       </p>
       
 

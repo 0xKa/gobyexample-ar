@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: File Paths</title>
+    <title>Go by Example: مسارات الملفات</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="file-paths">
-      <h2><a href="./">Go by Example</a>: File Paths</h2>
+      <h2><a href="./">Go by Example</a>: مسارات الملفات</h2>
       
       <table>
         
@@ -218,7 +218,7 @@ be made relative to base.</p>
       
       
       <p class="next">
-        Next example: <a href="directories" rel="next">Directories</a>.
+        Next example: <a href="directories" rel="next">المجلدات</a>.
       </p>
       
 

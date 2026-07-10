@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: String Formatting</title>
+    <title>Go by Example: تنسيق السلاسل النصية</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="string-formatting">
-      <h2><a href="./">Go by Example</a>: String Formatting</h2>
+      <h2><a href="./">Go by Example</a>: تنسيق السلاسل النصية</h2>
       
       <table>
         
@@ -397,7 +397,7 @@ and returns a string without printing it anywhere.</p>
       
       
       <p class="next">
-        Next example: <a href="text-templates" rel="next">Text Templates</a>.
+        Next example: <a href="text-templates" rel="next">قوالب النصوص</a>.
       </p>
       
 

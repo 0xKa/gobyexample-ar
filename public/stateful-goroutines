@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Stateful Goroutines</title>
+    <title>Go by Example: روتينات Go ذات الحالة</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="stateful-goroutines">
-      <h2><a href="./">Go by Example</a>: Stateful Goroutines</h2>
+      <h2><a href="./">Go by Example</a>: روتينات Go ذات الحالة</h2>
       
       <table>
         
@@ -282,7 +282,7 @@ program.</p>
       
       
       <p class="next">
-        Next example: <a href="sorting" rel="next">Sorting</a>.
+        Next example: <a href="sorting" rel="next">الفرز</a>.
       </p>
       
 

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Exec'ing Processes</title>
+    <title>Go by Example: استبدال العملية باستخدام exec</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="execing-processes">
-      <h2><a href="./">Go by Example</a>: Exec'ing Processes</h2>
+      <h2><a href="./">Go by Example</a>: استبدال العملية باستخدام exec</h2>
       
       <table>
         
@@ -181,7 +181,7 @@ processes covers most use cases for <code>fork</code>.</p>
       
       
       <p class="next">
-        Next example: <a href="signals" rel="next">Signals</a>.
+        Next example: <a href="signals" rel="next">الإشارات</a>.
       </p>
       
 

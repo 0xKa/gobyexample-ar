@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Worker Pools</title>
+    <title>Go by Example: مجموعات العمال</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="worker-pools">
-      <h2><a href="./">Go by Example</a>: Worker Pools</h2>
+      <h2><a href="./">Go by Example</a>: مجموعات العمال</h2>
       
       <table>
         
@@ -198,7 +198,7 @@ there are 3 workers operating concurrently.</p>
       
       
       <p class="next">
-        Next example: <a href="waitgroups" rel="next">WaitGroups</a>.
+        Next example: <a href="waitgroups" rel="next">مجموعات الانتظار</a>.
       </p>
       
 

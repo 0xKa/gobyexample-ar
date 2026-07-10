@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Recursion</title>
+    <title>Go by Example: الاستدعاء الذاتي</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="recursion">
-      <h2><a href="./">Go by Example</a>: Recursion</h2>
+      <h2><a href="./">Go by Example</a>: الاستدعاء الذاتي</h2>
       
       <table>
         
@@ -159,7 +159,7 @@ knows which function to call with <code>fib</code> here.</p>
       
       
       <p class="next">
-        Next example: <a href="range-over-built-in-types" rel="next">Range over Built-in Types</a>.
+        Next example: <a href="range-over-built-in-types" rel="next">اجتياز الأنواع المدمجة باستخدام range</a>.
       </p>
       
 

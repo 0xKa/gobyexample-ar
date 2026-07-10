@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Methods</title>
+    <title>Go by Example: الأساليب</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="methods">
-      <h2><a href="./">Go by Example</a>: Methods</h2>
+      <h2><a href="./">Go by Example</a>: الأساليب</h2>
       
       <table>
         
@@ -173,7 +173,7 @@ naming related sets of methods: interfaces.</p>
       
       
       <p class="next">
-        Next example: <a href="interfaces" rel="next">Interfaces</a>.
+        Next example: <a href="interfaces" rel="next">الواجهات</a>.
       </p>
       
 

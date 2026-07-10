@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Multiple Return Values</title>
+    <title>Go by Example: إرجاع قيم متعددة</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="multiple-return-values">
-      <h2><a href="./">Go by Example</a>: Multiple Return Values</h2>
+      <h2><a href="./">Go by Example</a>: إرجاع قيم متعددة</h2>
       
       <table>
         
@@ -146,7 +146,7 @@ feature of Go functions; we&rsquo;ll look at this next.</p>
       
       
       <p class="next">
-        Next example: <a href="variadic-functions" rel="next">Variadic Functions</a>.
+        Next example: <a href="variadic-functions" rel="next">الدوال متغيرة عدد الوسائط</a>.
       </p>
       
 

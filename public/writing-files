@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Writing Files</title>
+    <title>Go by Example: كتابة الملفات</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="writing-files">
-      <h2><a href="./">Go by Example</a>: Writing Files</h2>
+      <h2><a href="./">Go by Example</a>: كتابة الملفات</h2>
       
       <table>
         
@@ -255,7 +255,7 @@ we&rsquo;ve just seen to the <code>stdin</code> and <code>stdout</code> streams.
       
       
       <p class="next">
-        Next example: <a href="line-filters" rel="next">Line Filters</a>.
+        Next example: <a href="line-filters" rel="next">مرشحات الأسطر</a>.
       </p>
       
 

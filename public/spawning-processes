@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Spawning Processes</title>
+    <title>Go by Example: تشغيل عمليات جديدة</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="spawning-processes">
-      <h2><a href="./">Go by Example</a>: Spawning Processes</h2>
+      <h2><a href="./">Go by Example</a>: تشغيل عمليات جديدة</h2>
       
       <table>
         
@@ -254,7 +254,7 @@ an error message and non-zero return code.</p>
       
       
       <p class="next">
-        Next example: <a href="execing-processes" rel="next">Exec'ing Processes</a>.
+        Next example: <a href="execing-processes" rel="next">استبدال العملية باستخدام exec</a>.
       </p>
       
 

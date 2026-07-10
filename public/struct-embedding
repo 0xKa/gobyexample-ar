@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Struct Embedding</title>
+    <title>Go by Example: تضمين البنى</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -24,7 +24,7 @@
   </script>
   <body>
     <div class="example" id="struct-embedding">
-      <h2><a href="./">Go by Example</a>: Struct Embedding</h2>
+      <h2><a href="./">Go by Example</a>: تضمين البنى</h2>
       
       <table>
         
@@ -218,7 +218,7 @@ we see that a <code>container</code> now implements the
       
       
       <p class="next">
-        Next example: <a href="generics" rel="next">Generics</a>.
+        Next example: <a href="generics" rel="next">الأنواع العامة</a>.
       </p>
       
 
