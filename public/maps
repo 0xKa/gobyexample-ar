@@ -31,8 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p><em>Maps</em> are Go&rsquo;s built-in <a href="https://en.wikipedia.org/wiki/Associative_array">associative data type</a>
-(sometimes called <em>hashes</em> or <em>dicts</em> in other languages).</p>
+            <p><em>الخرائط</em> هي <a href="https://en.wikipedia.org/wiki/Associative_array">نوع البيانات الترابطي</a>
+المدمج في Go (وتسمى أحيانًا <em>جداول التجزئة</em> أو <em>القواميس</em>
+في لغات أخرى).</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +47,7 @@
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/5jpkxJ2T0Lv" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/yBbmCBzowPK" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -76,7 +77,7 @@
         
         <tr>
           <td class="docs">
-            <p>To create an empty map, use the builtin <code>make</code>:
+            <p>لإنشاء خريطة فارغة، استخدم الدالة المدمجة <code>make</code>:
 <code>make(map[key-type]val-type)</code>.</p>
 
           </td>
@@ -88,8 +89,8 @@
         
         <tr>
           <td class="docs">
-            <p>Set key/value pairs using typical <code>name[key] = val</code>
-syntax.</p>
+            <p>أسند أزواج المفاتيح والقيم باستخدام الصيغة المعتادة
+<code>name[key] = val</code>.</p>
 
           </td>
           <td class="code leading">
@@ -101,8 +102,8 @@ syntax.</p>
         
         <tr>
           <td class="docs">
-            <p>Printing a map with e.g. <code>fmt.Println</code> will show all of
-its key/value pairs.</p>
+            <p>تعرض طباعة خريطة باستخدام <code>fmt.Println</code> مثلًا جميع
+أزواج المفاتيح والقيم فيها.</p>
 
           </td>
           <td class="code leading">
@@ -113,7 +114,7 @@ its key/value pairs.</p>
         
         <tr>
           <td class="docs">
-            <p>Get a value for a key with <code>name[key]</code>.</p>
+            <p>احصل على قيمة مفتاح باستخدام <code>name[key]</code>.</p>
 
           </td>
           <td class="code leading">
@@ -125,9 +126,9 @@ its key/value pairs.</p>
         
         <tr>
           <td class="docs">
-            <p>If the key doesn&rsquo;t exist, the
-<a href="https://go.dev/ref/spec#The_zero_value">zero value</a> of the
-value type is returned.</p>
+            <p>إذا لم يكن المفتاح موجودًا، تُعاد
+<a href="https://go.dev/ref/spec#The_zero_value">القيمة الصفرية</a>
+لنوع القيمة.</p>
 
           </td>
           <td class="code leading">
@@ -139,8 +140,8 @@ value type is returned.</p>
         
         <tr>
           <td class="docs">
-            <p>The builtin <code>len</code> returns the number of key/value
-pairs when called on a map.</p>
+            <p>تعيد الدالة المدمجة <code>len</code> عدد أزواج المفاتيح والقيم
+عند استدعائها على خريطة.</p>
 
           </td>
           <td class="code leading">
@@ -151,8 +152,8 @@ pairs when called on a map.</p>
         
         <tr>
           <td class="docs">
-            <p>The builtin <code>delete</code> removes key/value pairs from
-a map.</p>
+            <p>تحذف الدالة المدمجة <code>delete</code> أزواج المفاتيح والقيم
+من الخريطة.</p>
 
           </td>
           <td class="code leading">
@@ -164,8 +165,8 @@ a map.</p>
         
         <tr>
           <td class="docs">
-            <p>To remove <em>all</em> key/value pairs from a map, use
-the <code>clear</code> builtin.</p>
+            <p>لحذف <em>جميع</em> أزواج المفاتيح والقيم من خريطة، استخدم
+الدالة المدمجة <code>clear</code>.</p>
 
           </td>
           <td class="code leading">
@@ -177,13 +178,11 @@ the <code>clear</code> builtin.</p>
         
         <tr>
           <td class="docs">
-            <p>The optional second return value when getting a
-value from a map indicates if the key was present
-in the map. This can be used to disambiguate
-between missing keys and keys with zero values
-like <code>0</code> or <code>&quot;&quot;</code>. Here we didn&rsquo;t need the value
-itself, so we ignored it with the <em>blank identifier</em>
-<code>_</code>.</p>
+            <p>تشير قيمة الإرجاع الثانية الاختيارية عند جلب قيمة من
+خريطة إلى وجود المفتاح فيها. ويمكن استخدامها للتمييز
+بين المفاتيح الغائبة والمفاتيح ذات القيم الصفرية مثل
+<code>0</code> أو <code>&quot;&quot;</code>. لم نحتج هنا إلى القيمة نفسها، لذلك
+تجاهلناها باستخدام <em>المعرّف الفارغ</em> <code>_</code>.</p>
 
           </td>
           <td class="code leading">
@@ -195,8 +194,8 @@ itself, so we ignored it with the <em>blank identifier</em>
         
         <tr>
           <td class="docs">
-            <p>You can also declare and initialize a new map in
-the same line with this syntax.</p>
+            <p>يمكنك أيضًا التصريح عن خريطة جديدة وتهيئتها في السطر
+نفسه باستخدام هذه الصيغة.</p>
 
           </td>
           <td class="code leading">
@@ -208,8 +207,8 @@ the same line with this syntax.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>maps</code> package contains a number of useful
-utility functions for maps.</p>
+            <p>تحتوي الحزمة <code>maps</code> على عدد من الدوال المساعدة
+المفيدة للخرائط.</p>
 
           </td>
           <td class="code">
@@ -228,8 +227,8 @@ utility functions for maps.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that maps appear in the form <code>map[k:v k:v]</code> when
-printed with <code>fmt.Println</code>.</p>
+            <p>لاحظ أن الخرائط تظهر بالصيغة <code>map[k:v k:v]</code> عند
+طباعتها باستخدام <code>fmt.Println</code>.</p>
 
           </td>
           <td class="code">

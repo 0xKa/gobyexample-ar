@@ -31,10 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p><em>range</em> iterates over elements in a variety of
-built-in data structures. Let&rsquo;s see how to
-use <code>range</code> with some of the data structures
-we&rsquo;ve already learned.</p>
+            <p>يجتاز <code>range</code> عناصر مجموعة متنوعة من هياكل البيانات
+المدمجة. لنرَ كيفية استخدام <code>range</code> مع بعض هياكل
+البيانات التي تعرفنا عليها.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,7 +47,7 @@ we&rsquo;ve already learned.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/S171w0PjgsD" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/fD6CMwR_YgU" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -75,8 +74,8 @@ we&rsquo;ve already learned.</p>
         
         <tr>
           <td class="docs">
-            <p>Here we use <code>range</code> to sum the numbers in a slice.
-Arrays work like this too.</p>
+            <p>نستخدم هنا <code>range</code> لجمع الأرقام في شريحة. تعمل
+المصفوفات بالطريقة نفسها أيضًا.</p>
 
           </td>
           <td class="code leading">
@@ -92,11 +91,10 @@ Arrays work like this too.</p>
         
         <tr>
           <td class="docs">
-            <p><code>range</code> on arrays and slices provides both the
-index and value for each entry. Above we didn&rsquo;t
-need the index, so we ignored it with the
-blank identifier <code>_</code>. Sometimes we actually want
-the indexes though.</p>
+            <p>يوفر <code>range</code> عند استخدامه مع المصفوفات والشرائح فهرس
+كل عنصر وقيمته. لم نحتج إلى الفهرس أعلاه، فتجاهلناه
+باستخدام المعرّف الفارغ <code>_</code>. لكننا نحتاج إلى الفهارس
+أحيانًا.</p>
 
           </td>
           <td class="code leading">
@@ -111,7 +109,7 @@ the indexes though.</p>
         
         <tr>
           <td class="docs">
-            <p><code>range</code> on map iterates over key/value pairs.</p>
+            <p>يجتاز <code>range</code> أزواج المفاتيح والقيم في الخريطة.</p>
 
           </td>
           <td class="code leading">
@@ -125,7 +123,7 @@ the indexes though.</p>
         
         <tr>
           <td class="docs">
-            <p><code>range</code> can also iterate over just the keys of a map.</p>
+            <p>يمكن لـ<code>range</code> أيضًا اجتياز مفاتيح الخريطة وحدها.</p>
 
           </td>
           <td class="code leading">
@@ -138,11 +136,11 @@ the indexes though.</p>
         
         <tr>
           <td class="docs">
-            <p><code>range</code> on strings iterates over Unicode code
-points. The first value is the starting byte index
-of the <code>rune</code> and the second the <code>rune</code> itself.
-See <a href="strings-and-runes">Strings and Runes</a> for more
-details.</p>
+            <p>يجتاز <code>range</code> نقاط ترميز Unicode في السلاسل النصية.
+القيمة الأولى هي فهرس البايت الذي يبدأ عنده محرف
+<code>rune</code>، والثانية هي محرف <code>rune</code> نفسه. راجع
+<a href="strings-and-runes">السلاسل النصية والمحارف</a> لمزيد
+من التفاصيل.</p>
 
           </td>
           <td class="code">

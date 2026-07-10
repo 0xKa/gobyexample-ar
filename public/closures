@@ -31,10 +31,10 @@
         
         <tr>
           <td class="docs">
-            <p>Go supports <a href="https://en.wikipedia.org/wiki/Anonymous_function"><em>anonymous functions</em></a>,
-which can form <a href="https://en.wikipedia.org/wiki/Closure_(computer_science)"><em>closures</em></a>.
-Anonymous functions are useful when you want to define
-a function inline without having to name it.</p>
+            <p>تدعم Go <a href="https://en.wikipedia.org/wiki/Anonymous_function"><em>الدوال المجهولة</em></a>،
+التي يمكنها تكوين <a href="https://en.wikipedia.org/wiki/Closure_(computer_science)"><em>إغلاقات</em></a>.
+تفيد الدوال المجهولة عندما تريد تعريف دالة في موضعها
+دون الحاجة إلى تسميتها.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,7 +48,7 @@ a function inline without having to name it.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/NpgpzS8ZG8y" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/EEC6krw0D1i" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -65,10 +65,9 @@ a function inline without having to name it.</p>
         
         <tr>
           <td class="docs">
-            <p>This function <code>intSeq</code> returns another function, which
-we define anonymously in the body of <code>intSeq</code>. The
-returned function <em>closes over</em> the variable <code>i</code> to
-form a closure.</p>
+            <p>تعيد الدالة <code>intSeq</code> دالة أخرى نعرّفها دون اسم داخل
+جسم <code>intSeq</code>. تلتقط الدالة المعادة المتغير <code>i</code> لتكوّن
+إغلاقًا.</p>
 
           </td>
           <td class="code leading">
@@ -95,10 +94,9 @@ form a closure.</p>
         
         <tr>
           <td class="docs">
-            <p>We call <code>intSeq</code>, assigning the result (a function)
-to <code>nextInt</code>. This function value captures its
-own <code>i</code> value, which will be updated each time
-we call <code>nextInt</code>.</p>
+            <p>نستدعي <code>intSeq</code> ونسند النتيجة، وهي دالة، إلى
+<code>nextInt</code>. تلتقط هذه الدالة قيمة <code>i</code> الخاصة بها،
+التي ستُحدَّث في كل مرة نستدعي فيها <code>nextInt</code>.</p>
 
           </td>
           <td class="code leading">
@@ -109,8 +107,7 @@ we call <code>nextInt</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>See the effect of the closure by calling <code>nextInt</code>
-a few times.</p>
+            <p>شاهد أثر الإغلاق باستدعاء <code>nextInt</code> عدة مرات.</p>
 
           </td>
           <td class="code leading">
@@ -123,8 +120,8 @@ a few times.</p>
         
         <tr>
           <td class="docs">
-            <p>To confirm that the state is unique to that
-particular function, create and test a new one.</p>
+            <p>للتأكد من أن الحالة خاصة بتلك الدالة، أنشئ دالة
+جديدة واختبرها.</p>
 
           </td>
           <td class="code">
@@ -155,8 +152,7 @@ particular function, create and test a new one.</p>
         
         <tr>
           <td class="docs">
-            <p>The last feature of functions we&rsquo;ll look at for now is
-recursion.</p>
+            <p>آخر ميزة للدوال سنستعرضها الآن هي الاستدعاء الذاتي.</p>
 
           </td>
           <td class="code empty">

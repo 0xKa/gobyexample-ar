@@ -31,10 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p><a href="https://en.wikipedia.org/wiki/Variadic_function"><em>Variadic functions</em></a>
-can be called with any number of trailing arguments.
-For example, <code>fmt.Println</code> is a common variadic
-function.</p>
+            <p>يمكن استدعاء <a href="https://en.wikipedia.org/wiki/Variadic_function"><em>الدوال متغيرة عدد الوسائط</em></a>
+بأي عدد من الوسائط اللاحقة. فمثلًا، <code>fmt.Println</code>
+دالة شائعة متغيرة عدد الوسائط.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,7 +47,7 @@ function.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/glNdE8aKPNq" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/SU0hfoq9kDt" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -65,8 +64,8 @@ function.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s a function that will take an arbitrary number
-of <code>int</code>s as arguments.</p>
+            <p>تستقبل هذه الدالة عددًا غير محدد من الوسائط ذات النوع
+<code>int</code>.</p>
 
           </td>
           <td class="code leading">
@@ -79,9 +78,8 @@ of <code>int</code>s as arguments.</p>
         
         <tr>
           <td class="docs">
-            <p>Within the function, the type of <code>nums</code> is
-equivalent to <code>[]int</code>. We can call <code>len(nums)</code>,
-iterate over it with <code>range</code>, etc.</p>
+            <p>داخل الدالة، يكافئ نوع <code>nums</code> النوع <code>[]int</code>. ويمكننا
+استدعاء <code>len(nums)</code> واجتيازه باستخدام <code>range</code> وغير ذلك.</p>
 
           </td>
           <td class="code leading">
@@ -106,8 +104,8 @@ iterate over it with <code>range</code>, etc.</p>
         
         <tr>
           <td class="docs">
-            <p>Variadic functions can be called in the usual way
-with individual arguments.</p>
+            <p>يمكن استدعاء الدوال متغيرة عدد الوسائط بالطريقة
+المعتادة باستخدام وسائط منفردة.</p>
 
           </td>
           <td class="code leading">
@@ -119,9 +117,8 @@ with individual arguments.</p>
         
         <tr>
           <td class="docs">
-            <p>If you already have multiple args in a slice,
-apply them to a variadic function using
-<code>func(slice...)</code> like this.</p>
+            <p>إذا كانت لديك عدة وسائط في شريحة، فمررها إلى دالة
+متغيرة عدد الوسائط باستخدام <code>func(slice...)</code> كما يلي.</p>
 
           </td>
           <td class="code">
@@ -151,8 +148,8 @@ apply them to a variadic function using
         
         <tr>
           <td class="docs">
-            <p>Another key aspect of functions in Go is their ability
-to form closures, which we&rsquo;ll look at next.</p>
+            <p>من الجوانب الأساسية الأخرى لدوال Go قدرتها على تكوين
+إغلاقات، وهو ما سنستعرضه تاليًا.</p>
 
           </td>
           <td class="code empty">

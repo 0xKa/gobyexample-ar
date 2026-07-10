@@ -31,9 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p>Go supports <em><a href="https://en.wikipedia.org/wiki/Pointer_(computer_programming)">pointers</a></em>,
-allowing you to pass references to values and records
-within your program.</p>
+            <p>تدعم Go <em><a href="https://en.wikipedia.org/wiki/Pointer_(computer_programming)">المؤشرات</a></em>،
+مما يتيح لك تمرير مراجع إلى القيم والسجلات داخل
+برنامجك.</p>
 
           </td>
           <td class="code empty leading">
@@ -47,7 +47,7 @@ within your program.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/B928SrV-F9M" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/HitMvnQww1K" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -64,11 +64,11 @@ within your program.</p>
         
         <tr>
           <td class="docs">
-            <p>We&rsquo;ll show how pointers work in contrast to values with
-2 functions: <code>zeroval</code> and <code>zeroptr</code>. <code>zeroval</code> has an
-<code>int</code> parameter, so arguments will be passed to it by
-value. <code>zeroval</code> will get a copy of <code>ival</code> distinct
-from the one in the calling function.</p>
+            <p>سنوضح الفرق بين عمل المؤشرات والقيم باستخدام دالتين:
+<code>zeroval</code> و<code>zeroptr</code>. تستقبل <code>zeroval</code> معاملًا من النوع
+<code>int</code>، لذلك ستمرر الوسائط إليها بالقيمة. وستحصل
+<code>zeroval</code> على نسخة من <code>ival</code> تختلف عن النسخة الموجودة
+في الدالة المستدعية.</p>
 
           </td>
           <td class="code leading">
@@ -81,12 +81,12 @@ from the one in the calling function.</p>
         
         <tr>
           <td class="docs">
-            <p><code>zeroptr</code> in contrast has an <code>*int</code> parameter, meaning
-that it takes an <code>int</code> pointer. The <code>*iptr</code> code in the
-function body then <em>dereferences</em> the pointer from its
-memory address to the current value at that address.
-Assigning a value to a dereferenced pointer changes the
-value at the referenced address.</p>
+            <p>في المقابل، تستقبل <code>zeroptr</code> معاملًا من النوع <code>*int</code>،
+ما يعني أنها تستقبل مؤشرًا إلى <code>int</code>. تفك الصيغة
+<code>*iptr</code> في جسم الدالة إشارة المؤشر، فتصل من عنوان
+الذاكرة إلى القيمة الحالية المخزنة فيه. يؤدي إسناد قيمة
+إلى مؤشر مفكوك الإشارة إلى تغيير القيمة في العنوان
+المشار إليه.</p>
 
           </td>
           <td class="code leading">
@@ -122,8 +122,7 @@ value at the referenced address.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>&amp;i</code> syntax gives the memory address of <code>i</code>,
-i.e. a pointer to <code>i</code>.</p>
+            <p>تعطي الصيغة <code>&amp;i</code> عنوان ذاكرة <code>i</code>، أي مؤشرًا إلى <code>i</code>.</p>
 
           </td>
           <td class="code leading">
@@ -135,7 +134,7 @@ i.e. a pointer to <code>i</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Pointers can be printed too.</p>
+            <p>يمكن طباعة المؤشرات أيضًا.</p>
 
           </td>
           <td class="code leading">
@@ -146,8 +145,8 @@ i.e. a pointer to <code>i</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>A new pointer to a value can be created with the
-builtin function <code>new</code>.</p>
+            <p>يمكن إنشاء مؤشر جديد إلى قيمة باستخدام الدالة
+المدمجة <code>new</code>.</p>
 
           </td>
           <td class="code">
@@ -166,9 +165,8 @@ builtin function <code>new</code>.</p>
         
         <tr>
           <td class="docs">
-            <p><code>zeroval</code> doesn&rsquo;t change the <code>i</code> in <code>main</code>, but
-<code>zeroptr</code> does because it has a reference to
-the memory address for that variable.</p>
+            <p>لا تغير <code>zeroval</code> قيمة <code>i</code> في <code>main</code>، بينما تغيرها
+<code>zeroptr</code> لأنها تملك مرجعًا إلى عنوان ذاكرة ذلك المتغير.</p>
 
           </td>
           <td class="code">

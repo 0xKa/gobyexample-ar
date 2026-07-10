@@ -31,9 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p>Go has built-in support for <em>multiple return values</em>.
-This feature is used often in idiomatic Go, for example
-to return both result and error values from a function.</p>
+            <p>تدعم Go <em>إرجاع قيم متعددة</em> دعمًا مدمجًا. تُستخدم هذه
+الميزة كثيرًا في أسلوب Go المتعارف عليه، مثل إعادة
+النتيجة والخطأ معًا من دالة.</p>
 
           </td>
           <td class="code empty leading">
@@ -47,7 +47,7 @@ to return both result and error values from a function.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/vZdUvLB1WbK" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/jz4Sg2dLybt" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -64,8 +64,8 @@ to return both result and error values from a function.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>(int, int)</code> in this function signature shows that
-the function returns 2 <code>int</code>s.</p>
+            <p>يوضح <code>(int, int)</code> في توقيع هذه الدالة أنها تعيد
+قيمتين من النوع <code>int</code>.</p>
 
           </td>
           <td class="code leading">
@@ -88,8 +88,8 @@ the function returns 2 <code>int</code>s.</p>
         
         <tr>
           <td class="docs">
-            <p>Here we use the 2 different return values from the
-call with <em>multiple assignment</em>.</p>
+            <p>نستخدم هنا قيمتي الإرجاع المختلفتين من الاستدعاء
+بواسطة <em>الإسناد المتعدد</em>.</p>
 
           </td>
           <td class="code leading">
@@ -102,8 +102,8 @@ call with <em>multiple assignment</em>.</p>
         
         <tr>
           <td class="docs">
-            <p>If you only want a subset of the returned values,
-use the blank identifier <code>_</code>.</p>
+            <p>إذا أردت بعض القيم المعادة فقط، فاستخدم المعرّف
+الفارغ <code>_</code>.</p>
 
           </td>
           <td class="code">
@@ -133,8 +133,8 @@ use the blank identifier <code>_</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Accepting a variable number of arguments is another nice
-feature of Go functions; we&rsquo;ll look at this next.</p>
+            <p>استقبال عدد متغير من الوسائط ميزة أخرى مفيدة في دوال
+Go؛ وسنستعرضها تاليًا.</p>
 
           </td>
           <td class="code empty">

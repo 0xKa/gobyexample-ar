@@ -31,8 +31,8 @@
         
         <tr>
           <td class="docs">
-            <p><em>Functions</em> are central in Go. We&rsquo;ll learn about
-functions with a few different examples.</p>
+            <p>للدوال دور أساسي في Go. سنتعرف على <em>الدوال</em> من خلال
+بضعة أمثلة مختلفة.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +46,7 @@ functions with a few different examples.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/-o49-dQfGbK" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/8-KTrWIQKpT" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -63,8 +63,8 @@ functions with a few different examples.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s a function that takes two <code>int</code>s and returns
-their sum as an <code>int</code>.</p>
+            <p>تستقبل هذه الدالة قيمتين من النوع <code>int</code> وتعيد
+مجموعهما كقيمة من النوع <code>int</code>.</p>
 
           </td>
           <td class="code leading">
@@ -75,9 +75,8 @@ their sum as an <code>int</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Go requires explicit returns, i.e. it won&rsquo;t
-automatically return the value of the last
-expression.</p>
+            <p>تتطلب Go إرجاع القيم صراحةً، أي إنها لا تعيد تلقائيًا
+قيمة التعبير الأخير.</p>
 
           </td>
           <td class="code leading">
@@ -89,10 +88,9 @@ expression.</p>
         
         <tr>
           <td class="docs">
-            <p>When you have multiple consecutive parameters of
-the same type, you may omit the type name for the
-like-typed parameters up to the final parameter that
-declares the type.</p>
+            <p>عندما توجد عدة معاملات متتالية من النوع نفسه، يمكنك
+حذف اسم النوع من المعاملات المتشابهة حتى المعامل
+الأخير الذي يصرّح عن النوع.</p>
 
           </td>
           <td class="code leading">
@@ -115,7 +113,7 @@ declares the type.</p>
         
         <tr>
           <td class="docs">
-            <p>Call a function just as you&rsquo;d expect, with
+            <p>استدعِ دالة بالطريقة المعتادة باستخدام
 <code>name(args)</code>.</p>
 
           </td>
@@ -156,8 +154,8 @@ declares the type.</p>
         
         <tr>
           <td class="docs">
-            <p>There are several other features to Go functions. One is
-multiple return values, which we&rsquo;ll look at next.</p>
+            <p>لدوال Go عدة ميزات أخرى، منها إرجاع قيم متعددة، وهو ما
+سنستعرضه تاليًا.</p>
 
           </td>
           <td class="code empty">
