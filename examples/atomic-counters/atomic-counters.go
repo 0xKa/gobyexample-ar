@@ -1,9 +1,7 @@
-// The primary mechanism for managing state in Go is
-// communication over channels. We saw this for example
-// with [worker pools](worker-pools). There are a few other
-// options for managing state though. Here we'll
-// look at using the `sync/atomic` package for _atomic
-// counters_ accessed by multiple goroutines.
+// الآلية الأساسية لإدارة الحالة في Go هي الاتصال عبر القنوات.
+// رأينا ذلك مثلًا مع [مجموعات العمال](worker-pools). لكن توجد
+// خيارات أخرى لإدارة الحالة. سنتعرف هنا على استخدام الحزمة
+// `sync/atomic` لإنشاء _عدادات ذرية_ تصل إليها عدة روتينات Go.
 
 package main
 
@@ -15,30 +13,28 @@ import (
 
 func main() {
 
-	// We'll use an atomic integer type to represent our
-	// (always-positive) counter.
+	// سنستخدم نوع عدد صحيح ذري لتمثيل عدادنا ذي القيمة الموجبة
+	// دائمًا.
 	var ops atomic.Uint64
 
-	// A WaitGroup will help us wait for all goroutines
-	// to finish their work.
+	// ستساعدنا `WaitGroup` على انتظار انتهاء عمل جميع روتينات Go.
 	var wg sync.WaitGroup
 
-	// We'll start 50 goroutines that each increment the
-	// counter exactly 1000 times.
+	// سنبدأ 50 روتين Go، يزيد كل منها العداد 1000 مرة بالضبط.
 	for range 50 {
 		wg.Go(func() {
 			for range 1000 {
-				// To atomically increment the counter we use `Add`.
+				// نستخدم `Add` لزيادة العداد ذريًا.
 				ops.Add(1)
 			}
 		})
 	}
 
-	// Wait until all the goroutines are done.
+	// انتظر حتى تنتهي جميع روتينات Go.
 	wg.Wait()
 
-	// Here no goroutines are writing to 'ops', but using
-	// `Load` it's safe to atomically read a value even while
-	// other goroutines are (atomically) updating it.
+	// لا تكتب أي روتينات Go في `ops` هنا، لكن استخدام `Load`
+	// يتيح قراءة القيمة ذريًا بأمان حتى أثناء تحديث روتينات Go
+	// أخرى لها ذريًا.
 	fmt.Println("ops:", ops.Load())
 }

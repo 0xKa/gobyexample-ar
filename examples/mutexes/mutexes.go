@@ -1,7 +1,7 @@
-// In the previous example we saw how to manage simple
-// counter state using [atomic operations](atomic-counters).
-// For more complex state we can use a [_mutex_](https://en.wikipedia.org/wiki/Mutual_exclusion)
-// to safely access data across multiple goroutines.
+// رأينا في المثال السابق كيفية إدارة حالة عداد بسيطة باستخدام
+// [العمليات الذرية](atomic-counters). للحالات الأكثر تعقيدًا،
+// يمكننا استخدام [قفل استبعاد متبادل](https://en.wikipedia.org/wiki/Mutual_exclusion)
+// للوصول إلى البيانات بأمان من عدة روتينات Go.
 
 package main
 
@@ -10,21 +10,18 @@ import (
 	"sync"
 )
 
-// Container holds a map of counters; since we want to
-// update it concurrently from multiple goroutines, we
-// add a `Mutex` to synchronize access.
-// Note that mutexes must not be copied, so if this
-// `struct` is passed around, it should be done by
-// pointer.
+// يحتوي `Container` على خريطة عدادات. ولأننا نريد تحديثها
+// بالتزامن من عدة روتينات Go، نضيف `Mutex` لمزامنة الوصول.
+// لاحظ أنه يجب عدم نسخ أقفال الاستبعاد المتبادل، ولذلك ينبغي
+// تمرير هذا الهيكل بالمؤشر إذا مُرّر بين الدوال.
 type Container struct {
 	mu       sync.Mutex
 	counters map[string]int
 }
 
 func (c *Container) inc(name string) {
-	// Lock the mutex before accessing `counters`; unlock
-	// it at the end of the function using a [defer](defer)
-	// statement.
+	// اقفل قفل الاستبعاد المتبادل قبل الوصول إلى `counters`،
+	// وافتحه في نهاية الدالة باستخدام عبارة [`defer`](defer).
 	c.mu.Lock()
 	defer c.mu.Unlock()
 	c.counters[name]++
@@ -32,24 +29,22 @@ func (c *Container) inc(name string) {
 
 func main() {
 	c := Container{
-		// Note that the zero value of a mutex is usable as-is, so no
-		// initialization is required here.
+		// لاحظ أن القيمة الصفرية لقفل الاستبعاد المتبادل قابلة
+		// للاستخدام كما هي، فلا حاجة إلى تهيئته هنا.
 		counters: map[string]int{"a": 0, "b": 0},
 	}
 
 	var wg sync.WaitGroup
 
-	// This function increments a named counter
-	// in a loop.
+	// تزيد هذه الدالة عدادًا محدد الاسم داخل حلقة تكرار.
 	doIncrement := func(name string, n int) {
 		for range n {
 			c.inc(name)
 		}
 	}
 
-	// Run several goroutines concurrently; note
-	// that they all access the same `Container`,
-	// and two of them access the same counter.
+	// شغّل عدة روتينات Go بالتزامن. لاحظ أنها جميعًا تصل إلى
+	// `Container` نفسه، وأن اثنين منها يصلان إلى العداد نفسه.
 	wg.Go(func() {
 		doIncrement("a", 10000)
 	})
@@ -62,7 +57,7 @@ func main() {
 		doIncrement("b", 10000)
 	})
 
-	// Wait for the goroutines to finish
+	// انتظر انتهاء روتينات Go.
 	wg.Wait()
 	fmt.Println(c.counters)
 }

@@ -31,10 +31,10 @@
         
         <tr>
           <td class="docs">
-            <p>In the previous example we saw how to manage simple
-counter state using <a href="atomic-counters">atomic operations</a>.
-For more complex state we can use a <a href="https://en.wikipedia.org/wiki/Mutual_exclusion"><em>mutex</em></a>
-to safely access data across multiple goroutines.</p>
+            <p>رأينا في المثال السابق كيفية إدارة حالة عداد بسيطة باستخدام
+<a href="atomic-counters">العمليات الذرية</a>. للحالات الأكثر تعقيدًا،
+يمكننا استخدام <a href="https://en.wikipedia.org/wiki/Mutual_exclusion">قفل استبعاد متبادل</a>
+للوصول إلى البيانات بأمان من عدة روتينات Go.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,7 +48,7 @@ to safely access data across multiple goroutines.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/u0VAVSWRlU0" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/pRsGns-4hn0" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -68,12 +68,10 @@ to safely access data across multiple goroutines.</p>
         
         <tr>
           <td class="docs">
-            <p>Container holds a map of counters; since we want to
-update it concurrently from multiple goroutines, we
-add a <code>Mutex</code> to synchronize access.
-Note that mutexes must not be copied, so if this
-<code>struct</code> is passed around, it should be done by
-pointer.</p>
+            <p>يحتوي <code>Container</code> على خريطة عدادات. ولأننا نريد تحديثها
+بالتزامن من عدة روتينات Go، نضيف <code>Mutex</code> لمزامنة الوصول.
+لاحظ أنه يجب عدم نسخ أقفال الاستبعاد المتبادل، ولذلك ينبغي
+تمرير هذا الهيكل بالمؤشر إذا مُرّر بين الدوال.</p>
 
           </td>
           <td class="code leading">
@@ -87,9 +85,8 @@ pointer.</p>
         
         <tr>
           <td class="docs">
-            <p>Lock the mutex before accessing <code>counters</code>; unlock
-it at the end of the function using a <a href="defer">defer</a>
-statement.</p>
+            <p>اقفل قفل الاستبعاد المتبادل قبل الوصول إلى <code>counters</code>،
+وافتحه في نهاية الدالة باستخدام عبارة <a href="defer"><code>defer</code></a>.</p>
 
           </td>
           <td class="code leading">
@@ -113,8 +110,8 @@ statement.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that the zero value of a mutex is usable as-is, so no
-initialization is required here.</p>
+            <p>لاحظ أن القيمة الصفرية لقفل الاستبعاد المتبادل قابلة
+للاستخدام كما هي، فلا حاجة إلى تهيئته هنا.</p>
 
           </td>
           <td class="code leading">
@@ -147,8 +144,7 @@ initialization is required here.</p>
         
         <tr>
           <td class="docs">
-            <p>This function increments a named counter
-in a loop.</p>
+            <p>تزيد هذه الدالة عدادًا محدد الاسم داخل حلقة تكرار.</p>
 
           </td>
           <td class="code leading">
@@ -163,9 +159,8 @@ in a loop.</p>
         
         <tr>
           <td class="docs">
-            <p>Run several goroutines concurrently; note
-that they all access the same <code>Container</code>,
-and two of them access the same counter.</p>
+            <p>شغّل عدة روتينات Go بالتزامن. لاحظ أنها جميعًا تصل إلى
+<code>Container</code> نفسه، وأن اثنين منها يصلان إلى العداد نفسه.</p>
 
           </td>
           <td class="code leading">
@@ -202,7 +197,7 @@ and two of them access the same counter.</p>
         
         <tr>
           <td class="docs">
-            <p>Wait for the goroutines to finish</p>
+            <p>انتظر انتهاء روتينات Go.</p>
 
           </td>
           <td class="code">
@@ -219,8 +214,7 @@ and two of them access the same counter.</p>
         
         <tr>
           <td class="docs">
-            <p>Running the program shows that the counters
-updated as expected.</p>
+            <p>يوضح تشغيل البرنامج أن العدادات قد حُدّثت كما هو متوقع.</p>
 
           </td>
           <td class="code leading">
@@ -232,8 +226,8 @@ updated as expected.</p>
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at implementing this same state
-management task using only goroutines and channels.</p>
+            <p>سنتعرف تاليًا على تنفيذ مهمة إدارة الحالة نفسها باستخدام
+روتينات Go والقنوات فقط.</p>
 
           </td>
           <td class="code empty">

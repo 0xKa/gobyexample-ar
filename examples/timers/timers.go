@@ -1,8 +1,7 @@
-// We often want to execute Go code at some point in the
-// future, or repeatedly at some interval. Go's built-in
-// _timer_ and _ticker_ features make both of these tasks
-// easy. We'll look first at timers and then
-// at [tickers](tickers).
+// نريد غالبًا تنفيذ كود Go في وقت ما مستقبلًا، أو تنفيذه
+// مرارًا على فاصل زمني معين. تسهّل ميزتا _المؤقت_ و_المؤقت
+// الدوري_ المدمجتان في Go هاتين المهمتين. سنتعرف أولًا على
+// المؤقتات، ثم على [المؤقتات الدورية](tickers).
 
 package main
 
@@ -13,22 +12,19 @@ import (
 
 func main() {
 
-	// Timers represent a single event in the future. You
-	// tell the timer how long you want to wait, and it
-	// provides a channel that will be notified at that
-	// time. This timer will wait 2 seconds.
+	// تمثل المؤقتات حدثًا واحدًا في المستقبل. تحدد للمؤقت المدة
+	// التي تريد انتظارها، فيوفر قناة تُشعَر عند انقضاء تلك المدة.
+	// سينتظر هذا المؤقت ثانيتين.
 	timer1 := time.NewTimer(2 * time.Second)
 
-	// The `<-timer1.C` blocks on the timer's channel `C`
-	// until it sends a value indicating that the timer
-	// fired.
+	// تحجب `<-timer1.C` التنفيذ عند قناة المؤقت `C` حتى ترسل
+	// القناة قيمة تشير إلى انطلاق المؤقت.
 	<-timer1.C
 	fmt.Println("Timer 1 fired")
 
-	// If you just wanted to wait, you could have used
-	// `time.Sleep`. One reason a timer may be useful is
-	// that you can cancel the timer before it fires.
-	// Here's an example of that.
+	// إذا أردت الانتظار فحسب، لأمكنك استخدام `time.Sleep`. من
+	// أسباب فائدة المؤقت إمكانية إلغائه قبل أن ينطلق. إليك مثالًا
+	// على ذلك.
 	timer2 := time.NewTimer(time.Second)
 	go func() {
 		<-timer2.C
@@ -39,7 +35,7 @@ func main() {
 		fmt.Println("Timer 2 stopped")
 	}
 
-	// Give the `timer2` enough time to fire, if it ever
-	// was going to, to show it is in fact stopped.
+	// امنح `timer2` وقتًا كافيًا لينطلق لو كان سينطلق، لإظهار أنه
+	// متوقف بالفعل.
 	time.Sleep(2 * time.Second)
 }

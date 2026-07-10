@@ -31,8 +31,7 @@
         
         <tr>
           <td class="docs">
-            <p>To wait for multiple goroutines to finish, we can
-use a <em>wait group</em>.</p>
+            <p>يمكننا استخدام <em>مجموعة انتظار</em> لانتظار انتهاء عدة روتينات Go.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +45,7 @@ use a <em>wait group</em>.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/csaELahJTWt" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/EUZg54JRc48" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -67,7 +66,7 @@ use a <em>wait group</em>.</p>
         
         <tr>
           <td class="docs">
-            <p>This is the function we&rsquo;ll run in every goroutine.</p>
+            <p>هذه هي الدالة التي سنشغّلها في كل روتين Go.</p>
 
           </td>
           <td class="code leading">
@@ -79,7 +78,7 @@ use a <em>wait group</em>.</p>
         
         <tr>
           <td class="docs">
-            <p>Sleep to simulate an expensive task.</p>
+            <p>انتظر لمحاكاة مهمة مكلفة.</p>
 
           </td>
           <td class="code leading">
@@ -102,9 +101,9 @@ use a <em>wait group</em>.</p>
         
         <tr>
           <td class="docs">
-            <p>This WaitGroup is used to wait for all the
-goroutines launched here to finish. Note: if a WaitGroup is
-explicitly passed into functions, it should be done <em>by pointer</em>.</p>
+            <p>تُستخدم <code>WaitGroup</code> هذه لانتظار انتهاء جميع روتينات Go
+التي بدأناها هنا. لاحظ أنه عند تمرير <code>WaitGroup</code> صراحة إلى
+الدوال، ينبغي تمريرها <em>بالمؤشر</em>.</p>
 
           </td>
           <td class="code leading">
@@ -115,7 +114,7 @@ explicitly passed into functions, it should be done <em>by pointer</em>.</p>
         
         <tr>
           <td class="docs">
-            <p>Launch several goroutines using <code>WaitGroup.Go</code></p>
+            <p>ابدأ عدة روتينات Go باستخدام <code>WaitGroup.Go</code>.</p>
 
           </td>
           <td class="code leading">
@@ -130,9 +129,8 @@ explicitly passed into functions, it should be done <em>by pointer</em>.</p>
         
         <tr>
           <td class="docs">
-            <p>Block until all the goroutines started by <code>wg</code> are
-done. A goroutine is done when the function it invokes
-returns.</p>
+            <p>احجب التنفيذ حتى تنتهي جميع روتينات Go التي بدأتها <code>wg</code>.
+ينتهي روتين Go عندما تعود الدالة التي يستدعيها.</p>
 
           </td>
           <td class="code leading">
@@ -143,10 +141,9 @@ returns.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that this approach has no straightforward way
-to propagate errors from workers. For more
-advanced use cases, consider using the
-<a href="https://pkg.go.dev/golang.org/x/sync/errgroup">errgroup package</a>.</p>
+            <p>لاحظ أن هذا الأسلوب لا يوفر طريقة مباشرة لتمرير الأخطاء من
+العمال. لحالات الاستخدام الأكثر تقدمًا، فكّر في استخدام
+<a href="https://pkg.go.dev/golang.org/x/sync/errgroup">الحزمة errgroup</a>.</p>
 
           </td>
           <td class="code">
@@ -181,8 +178,7 @@ advanced use cases, consider using the
         
         <tr>
           <td class="docs">
-            <p>The order of workers starting up and finishing
-is likely to be different for each invocation.</p>
+            <p>يُرجح أن يختلف ترتيب بدء العمال وانتهائهم مع كل تشغيل.</p>
 
           </td>
           <td class="code empty">

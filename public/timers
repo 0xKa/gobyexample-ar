@@ -31,11 +31,10 @@
         
         <tr>
           <td class="docs">
-            <p>We often want to execute Go code at some point in the
-future, or repeatedly at some interval. Go&rsquo;s built-in
-<em>timer</em> and <em>ticker</em> features make both of these tasks
-easy. We&rsquo;ll look first at timers and then
-at <a href="tickers">tickers</a>.</p>
+            <p>نريد غالبًا تنفيذ كود Go في وقت ما مستقبلًا، أو تنفيذه
+مرارًا على فاصل زمني معين. تسهّل ميزتا <em>المؤقت</em> و<em>المؤقت
+الدوري</em> المدمجتان في Go هاتين المهمتين. سنتعرف أولًا على
+المؤقتات، ثم على <a href="tickers">المؤقتات الدورية</a>.</p>
 
           </td>
           <td class="code empty leading">
@@ -49,7 +48,7 @@ at <a href="tickers">tickers</a>.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/gF7VLRz3URM" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/GYJv8XhuLX-" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -79,10 +78,9 @@ at <a href="tickers">tickers</a>.</p>
         
         <tr>
           <td class="docs">
-            <p>Timers represent a single event in the future. You
-tell the timer how long you want to wait, and it
-provides a channel that will be notified at that
-time. This timer will wait 2 seconds.</p>
+            <p>تمثل المؤقتات حدثًا واحدًا في المستقبل. تحدد للمؤقت المدة
+التي تريد انتظارها، فيوفر قناة تُشعَر عند انقضاء تلك المدة.
+سينتظر هذا المؤقت ثانيتين.</p>
 
           </td>
           <td class="code leading">
@@ -93,9 +91,8 @@ time. This timer will wait 2 seconds.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>&lt;-timer1.C</code> blocks on the timer&rsquo;s channel <code>C</code>
-until it sends a value indicating that the timer
-fired.</p>
+            <p>تحجب <code>&lt;-timer1.C</code> التنفيذ عند قناة المؤقت <code>C</code> حتى ترسل
+القناة قيمة تشير إلى انطلاق المؤقت.</p>
 
           </td>
           <td class="code leading">
@@ -107,10 +104,9 @@ fired.</p>
         
         <tr>
           <td class="docs">
-            <p>If you just wanted to wait, you could have used
-<code>time.Sleep</code>. One reason a timer may be useful is
-that you can cancel the timer before it fires.
-Here&rsquo;s an example of that.</p>
+            <p>إذا أردت الانتظار فحسب، لأمكنك استخدام <code>time.Sleep</code>. من
+أسباب فائدة المؤقت إمكانية إلغائه قبل أن ينطلق. إليك مثالًا
+على ذلك.</p>
 
           </td>
           <td class="code leading">
@@ -129,8 +125,8 @@ Here&rsquo;s an example of that.</p>
         
         <tr>
           <td class="docs">
-            <p>Give the <code>timer2</code> enough time to fire, if it ever
-was going to, to show it is in fact stopped.</p>
+            <p>امنح <code>timer2</code> وقتًا كافيًا لينطلق لو كان سينطلق، لإظهار أنه
+متوقف بالفعل.</p>
 
           </td>
           <td class="code">
@@ -146,9 +142,8 @@ was going to, to show it is in fact stopped.</p>
         
         <tr>
           <td class="docs">
-            <p>The first timer will fire ~2s after we start the
-program, but the second should be stopped before it has
-a chance to fire.</p>
+            <p>سينطلق المؤقت الأول بعد نحو ثانيتين من بدء البرنامج، لكن
+ينبغي إيقاف الثاني قبل أن تتاح له فرصة الانطلاق.</p>
 
           </td>
           <td class="code">

@@ -31,11 +31,10 @@
         
         <tr>
           <td class="docs">
-            <p><a href="https://en.wikipedia.org/wiki/Rate_limiting"><em>Rate limiting</em></a>
-is an important mechanism for controlling resource
-utilization and maintaining quality of service. Go
-elegantly supports rate limiting with goroutines,
-channels, and <a href="tickers">tickers</a>.</p>
+            <p>يُعد <a href="https://en.wikipedia.org/wiki/Rate_limiting">تحديد المعدل</a>
+آلية مهمة للتحكم في استخدام الموارد والحفاظ على جودة الخدمة.
+تدعم Go تحديد المعدل بأناقة باستخدام روتينات Go والقنوات
+و<a href="tickers">المؤقتات الدورية</a>.</p>
 
           </td>
           <td class="code empty leading">
@@ -49,7 +48,7 @@ channels, and <a href="tickers">tickers</a>.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/y9V3goQfy5m" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/tqLpZSomIBU" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -79,10 +78,9 @@ channels, and <a href="tickers">tickers</a>.</p>
         
         <tr>
           <td class="docs">
-            <p>First we&rsquo;ll look at basic rate limiting. Suppose
-we want to limit our handling of incoming requests.
-We&rsquo;ll serve these requests off a channel of the
-same name.</p>
+            <p>سنتعرف أولًا على تحديد المعدل الأساسي. لنفترض أننا نريد
+تقييد معالجتنا للطلبات الواردة. سنخدم هذه الطلبات من قناة
+تحمل الاسم نفسه.</p>
 
           </td>
           <td class="code leading">
@@ -97,9 +95,8 @@ same name.</p>
         
         <tr>
           <td class="docs">
-            <p>This <code>limiter</code> channel will receive a value
-every 200 milliseconds. This is the regulator in
-our rate limiting scheme.</p>
+            <p>ستستقبل القناة <code>limiter</code> قيمة كل 200 مللي ثانية. وهي المنظّم
+في آلية تحديد المعدل لدينا.</p>
 
           </td>
           <td class="code leading">
@@ -110,9 +107,8 @@ our rate limiting scheme.</p>
         
         <tr>
           <td class="docs">
-            <p>By blocking on a receive from the <code>limiter</code> channel
-before serving each request, we limit ourselves to
-1 request every 200 milliseconds.</p>
+            <p>بحجب التنفيذ عند الاستقبال من القناة <code>limiter</code> قبل خدمة كل
+طلب، نقيد أنفسنا بطلب واحد كل 200 مللي ثانية.</p>
 
           </td>
           <td class="code leading">
@@ -126,11 +122,10 @@ before serving each request, we limit ourselves to
         
         <tr>
           <td class="docs">
-            <p>We may want to allow short bursts of requests in
-our rate limiting scheme while preserving the
-overall rate limit. We can accomplish this by
-buffering our limiter channel. This <code>burstyLimiter</code>
-channel will allow bursts of up to 3 events.</p>
+            <p>قد نرغب في السماح بدفعات قصيرة من الطلبات ضمن آلية تحديد
+المعدل، مع الحفاظ على المعدل الإجمالي. يمكننا تحقيق ذلك
+بتخزين قناة تحديد المعدل مؤقتًا. ستسمح القناة
+<code>burstyLimiter</code> بدفعات تصل إلى 3 أحداث.</p>
 
           </td>
           <td class="code leading">
@@ -141,7 +136,7 @@ channel will allow bursts of up to 3 events.</p>
         
         <tr>
           <td class="docs">
-            <p>Fill up the channel to represent allowed bursting.</p>
+            <p>املأ القناة لتمثيل الدفعات المسموح بها.</p>
 
           </td>
           <td class="code leading">
@@ -154,8 +149,8 @@ channel will allow bursts of up to 3 events.</p>
         
         <tr>
           <td class="docs">
-            <p>Every 200 milliseconds we&rsquo;ll try to add a new
-value to <code>burstyLimiter</code>, up to its limit of 3.</p>
+            <p>سنحاول كل 200 مللي ثانية إضافة قيمة جديدة إلى
+<code>burstyLimiter</code>، حتى حدها البالغ 3 قيم.</p>
 
           </td>
           <td class="code leading">
@@ -170,9 +165,8 @@ value to <code>burstyLimiter</code>, up to its limit of 3.</p>
         
         <tr>
           <td class="docs">
-            <p>Now simulate 5 more incoming requests. The first
-3 of these will benefit from the burst capability
-of <code>burstyLimiter</code>.</p>
+            <p>حاكِ الآن 5 طلبات واردة أخرى. ستستفيد الطلبات الثلاثة
+الأولى من قدرة <code>burstyLimiter</code> على معالجة الدفعات.</p>
 
           </td>
           <td class="code">
@@ -196,8 +190,8 @@ of <code>burstyLimiter</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Running our program we see the first batch of requests
-handled once every ~200 milliseconds as desired.</p>
+            <p>عند تشغيل برنامجنا، نرى معالجة الدفعة الأولى من الطلبات بمعدل
+طلب واحد كل نحو 200 مللي ثانية كما أردنا.</p>
 
           </td>
           <td class="code leading">
@@ -213,9 +207,9 @@ handled once every ~200 milliseconds as desired.</p>
         
         <tr>
           <td class="docs">
-            <p>For the second batch of requests we serve the first
-3 immediately because of the burstable rate limiting,
-then serve the remaining 2 with ~200ms delays each.</p>
+            <p>في الدفعة الثانية من الطلبات، نخدم الطلبات الثلاثة الأولى فورًا
+لأن تحديد المعدل يسمح بالدفعات، ثم نخدم الطلبين المتبقيين
+بفاصل يبلغ نحو 200 مللي ثانية لكل منهما.</p>
 
           </td>
           <td class="code">

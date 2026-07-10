@@ -1,11 +1,9 @@
-// In the previous example we used explicit locking with
-// [mutexes](mutexes) to synchronize access to shared state
-// across multiple goroutines. Another option is to use the
-// built-in synchronization features of  goroutines and
-// channels to achieve the same result. This channel-based
-// approach aligns with Go's ideas of sharing memory by
-// communicating and having each piece of data owned
-// by exactly one goroutine.
+// استخدمنا في المثال السابق القفل الصريح باستخدام
+// [أقفال الاستبعاد المتبادل](mutexes) لمزامنة وصول عدة روتينات
+// Go إلى حالة مشتركة. يمكن بدلًا من ذلك استخدام مزايا المزامنة
+// المدمجة في روتينات Go والقنوات لتحقيق النتيجة نفسها. يتوافق
+// هذا الأسلوب القائم على القنوات مع نهج Go في مشاركة الذاكرة
+// عن طريق الاتصال، وامتلاك روتين Go واحد فقط لكل جزء من البيانات.
 
 package main
 
@@ -16,14 +14,11 @@ import (
 	"time"
 )
 
-// In this example our state will be owned by a single
-// goroutine. This will guarantee that the data is never
-// corrupted with concurrent access. In order to read or
-// write that state, other goroutines will send messages
-// to the owning goroutine and receive corresponding
-// replies. These `readOp` and `writeOp` `struct`s
-// encapsulate those requests and a way for the owning
-// goroutine to respond.
+// سيمتلك روتين Go واحد حالتنا في هذا المثال، ما يضمن عدم تلف
+// البيانات بسبب الوصول المتزامن. لقراءة هذه الحالة أو كتابتها،
+// سترسل روتينات Go الأخرى رسائل إلى الروتين المالك وتتلقى
+// الردود المقابلة. يغلّف الهيكلان `readOp` و`writeOp` هذه
+// الطلبات، ويوفران وسيلة للروتين المالك كي يرد عليها.
 type readOp struct {
 	key  int
 	resp chan int
@@ -36,25 +31,21 @@ type writeOp struct {
 
 func main() {
 
-	// As before we'll count how many operations we perform.
+	// سنعد، كما سبق، عدد العمليات التي ننفذها.
 	var readOps uint64
 	var writeOps uint64
 
-	// The `reads` and `writes` channels will be used by
-	// other goroutines to issue read and write requests,
-	// respectively.
+	// ستستخدم روتينات Go الأخرى القناتين `reads` و`writes`
+	// لإصدار طلبات القراءة والكتابة على الترتيب.
 	reads := make(chan readOp)
 	writes := make(chan writeOp)
 
-	// Here is the goroutine that owns the `state`, which
-	// is a map as in the previous example but now private
-	// to the stateful goroutine. This goroutine repeatedly
-	// selects on the `reads` and `writes` channels,
-	// responding to requests as they arrive. A response
-	// is executed by first performing the requested
-	// operation and then sending a value on the response
-	// channel `resp` to indicate success (and the desired
-	// value in the case of `reads`).
+	// هذا هو روتين Go الذي يمتلك `state`، وهي خريطة كما في المثال
+	// السابق، لكنها الآن خاصة بروتين Go ذي الحالة. يختار هذا
+	// الروتين مرارًا بين القناتين `reads` و`writes`، ويرد على
+	// الطلبات عند وصولها. لتنفيذ الرد، ينفذ أولًا العملية المطلوبة،
+	// ثم يرسل قيمة عبر قناة الرد `resp` للإشارة إلى النجاح (ومعها
+	// القيمة المطلوبة في حالة `reads`).
 	go func() {
 		var state = make(map[int]int)
 		for {
@@ -68,11 +59,10 @@ func main() {
 		}
 	}()
 
-	// This starts 100 goroutines to issue reads to the
-	// state-owning goroutine via the `reads` channel.
-	// Each read requires constructing a `readOp`, sending
-	// it over the `reads` channel, and then receiving the
-	// result over the provided `resp` channel.
+	// يبدأ هذا تشغيل 100 روتين Go لإصدار طلبات قراءة إلى الروتين
+	// المالك للحالة عبر القناة `reads`. تتطلب كل قراءة إنشاء `readOp`
+	// وإرساله عبر القناة `reads`، ثم استقبال النتيجة عبر القناة
+	// `resp` المقدمة.
 	for range 100 {
 		go func() {
 			for {
@@ -87,8 +77,7 @@ func main() {
 		}()
 	}
 
-	// We start 10 writes as well, using a similar
-	// approach.
+	// نبدأ أيضًا 10 روتينات للكتابة باستخدام أسلوب مماثل.
 	for range 10 {
 		go func() {
 			for {
@@ -104,10 +93,10 @@ func main() {
 		}()
 	}
 
-	// Let the goroutines work for a second.
+	// دع روتينات Go تعمل لمدة ثانية.
 	time.Sleep(time.Second)
 
-	// Finally, capture and report the op counts.
+	// احفظ أخيرًا أعداد العمليات واعرضها.
 	readOpsFinal := atomic.LoadUint64(&readOps)
 	fmt.Println("readOps:", readOpsFinal)
 	writeOpsFinal := atomic.LoadUint64(&writeOps)

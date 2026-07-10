@@ -31,10 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p>In a <a href="range-over-built-in-types">previous</a> example we saw how <code>for</code> and
-<code>range</code> provide iteration over basic data structures.
-We can also use this syntax to iterate over
-values received from a channel.</p>
+            <p>رأينا في مثال <a href="range-over-built-in-types">سابق</a> كيف تتيح
+<code>for</code> و<code>range</code> اجتياز هياكل البيانات الأساسية. يمكننا أيضًا
+استخدام هذه الصياغة لاجتياز القيم المستقبلة من قناة.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,7 +47,7 @@ values received from a channel.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/8vAhX6eX1wy" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/bpZIsQ53pCm" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -75,7 +74,7 @@ values received from a channel.</p>
         
         <tr>
           <td class="docs">
-            <p>We&rsquo;ll iterate over 2 values in the <code>queue</code> channel.</p>
+            <p>سنجتاز قيمتين في القناة <code>queue</code>.</p>
 
           </td>
           <td class="code leading">
@@ -89,10 +88,9 @@ values received from a channel.</p>
         
         <tr>
           <td class="docs">
-            <p>This <code>range</code> iterates over each element as it&rsquo;s
-received from <code>queue</code>. Because we <code>close</code>d the
-channel above, the iteration terminates after
-receiving the 2 elements.</p>
+            <p>تجتاز <code>range</code> كل عنصر عند استقباله من <code>queue</code>. ولأننا أغلقنا
+القناة أعلاه باستخدام <code>close</code>، ينتهي الاجتياز بعد استقبال
+العنصرين.</p>
 
           </td>
           <td class="code">
@@ -122,9 +120,8 @@ receiving the 2 elements.</p>
         
         <tr>
           <td class="docs">
-            <p>This example also showed that it&rsquo;s possible to close
-a non-empty channel but still have the remaining
-values be received.</p>
+            <p>يوضح هذا المثال أيضًا إمكانية إغلاق قناة غير فارغة مع
+استمرار استقبال القيم المتبقية فيها.</p>
 
           </td>
           <td class="code empty">

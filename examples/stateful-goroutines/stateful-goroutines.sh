@@ -1,15 +1,11 @@
-# Running our program shows that the goroutine-based
-# state management example completes about 80,000
-# total operations.
+# يوضح تشغيل برنامجنا أن مثال إدارة الحالة القائم على روتينات
+# Go ينجز نحو 80,000 عملية إجمالًا.
 $ go run stateful-goroutines.go
 readOps: 71708
 writeOps: 7177
 
-# For this particular case the goroutine-based approach
-# was a bit more involved than the mutex-based one. It
-# might be useful in certain cases though, for example
-# where you have other channels involved or when managing
-# multiple such mutexes would be error-prone. You should
-# use whichever approach feels most natural, especially
-# with respect to understanding the correctness of your
-# program.
+# في هذه الحالة تحديدًا، كان الأسلوب القائم على روتينات Go
+# أعقد قليلًا من الأسلوب القائم على أقفال الاستبعاد المتبادل.
+# لكنه قد يكون مفيدًا في حالات معينة، مثل وجود قنوات أخرى، أو
+# عندما تكون إدارة عدة أقفال من هذا النوع عرضة للأخطاء. استخدم
+# الأسلوب الذي تجده أكثر ملاءمة، ولا سيما من حيث فهم صحة برنامجك.

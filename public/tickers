@@ -31,11 +31,10 @@
         
         <tr>
           <td class="docs">
-            <p><a href="timers">Timers</a> are for when you want to do
-something once in the future - <em>tickers</em> are for when
-you want to do something repeatedly at regular
-intervals. Here&rsquo;s an example of a ticker that ticks
-periodically until we stop it.</p>
+            <p>تُستخدم <a href="timers">المؤقتات</a> عندما تريد تنفيذ شيء مرة واحدة
+مستقبلًا، بينما تُستخدم <em>المؤقتات الدورية</em> عندما تريد تنفيذه
+مرارًا على فواصل زمنية منتظمة. إليك مثالًا على مؤقت دوري
+يرسل نبضات بانتظام حتى نوقفه.</p>
 
           </td>
           <td class="code empty leading">
@@ -49,7 +48,7 @@ periodically until we stop it.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/gs6zoJP-Pl9" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/BlacmXnh3xT" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -79,10 +78,9 @@ periodically until we stop it.</p>
         
         <tr>
           <td class="docs">
-            <p>Tickers use a similar mechanism to timers: a
-channel that is sent values. Here we&rsquo;ll use the
-<code>select</code> builtin on the channel to await the
-values as they arrive every 500ms.</p>
+            <p>تستخدم المؤقتات الدورية آلية شبيهة بالمؤقتات: قناة تُرسل
+إليها القيم. سنستخدم هنا عبارة <code>select</code> المدمجة على القناة
+لانتظار القيم عند وصولها كل 500 مللي ثانية.</p>
 
           </td>
           <td class="code leading">
@@ -113,9 +111,9 @@ values as they arrive every 500ms.</p>
         
         <tr>
           <td class="docs">
-            <p>Tickers can be stopped like timers. Once a ticker
-is stopped it won&rsquo;t receive any more values on its
-channel. We&rsquo;ll stop ours after 1600ms.</p>
+            <p>يمكن إيقاف المؤقتات الدورية مثل المؤقتات. بعد إيقاف المؤقت
+الدوري، لن تتلقى قناته أي قيم أخرى. سنوقف مؤقتنا بعد 1600
+مللي ثانية.</p>
 
           </td>
           <td class="code">
@@ -134,8 +132,8 @@ channel. We&rsquo;ll stop ours after 1600ms.</p>
         
         <tr>
           <td class="docs">
-            <p>When we run this program the ticker should tick 3 times
-before we stop it.</p>
+            <p>عند تشغيل هذا البرنامج، ينبغي أن يرسل المؤقت الدوري 3 نبضات
+قبل أن نوقفه.</p>
 
           </td>
           <td class="code">

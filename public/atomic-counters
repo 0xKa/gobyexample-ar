@@ -31,12 +31,10 @@
         
         <tr>
           <td class="docs">
-            <p>The primary mechanism for managing state in Go is
-communication over channels. We saw this for example
-with <a href="worker-pools">worker pools</a>. There are a few other
-options for managing state though. Here we&rsquo;ll
-look at using the <code>sync/atomic</code> package for <em>atomic
-counters</em> accessed by multiple goroutines.</p>
+            <p>الآلية الأساسية لإدارة الحالة في Go هي الاتصال عبر القنوات.
+رأينا ذلك مثلًا مع <a href="worker-pools">مجموعات العمال</a>. لكن توجد
+خيارات أخرى لإدارة الحالة. سنتعرف هنا على استخدام الحزمة
+<code>sync/atomic</code> لإنشاء <em>عدادات ذرية</em> تصل إليها عدة روتينات Go.</p>
 
           </td>
           <td class="code empty leading">
@@ -50,7 +48,7 @@ counters</em> accessed by multiple goroutines.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/yiGAVfTH49v" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/NY16zMZF74B" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -81,8 +79,8 @@ counters</em> accessed by multiple goroutines.</p>
         
         <tr>
           <td class="docs">
-            <p>We&rsquo;ll use an atomic integer type to represent our
-(always-positive) counter.</p>
+            <p>سنستخدم نوع عدد صحيح ذري لتمثيل عدادنا ذي القيمة الموجبة
+دائمًا.</p>
 
           </td>
           <td class="code leading">
@@ -93,8 +91,7 @@ counters</em> accessed by multiple goroutines.</p>
         
         <tr>
           <td class="docs">
-            <p>A WaitGroup will help us wait for all goroutines
-to finish their work.</p>
+            <p>ستساعدنا <code>WaitGroup</code> على انتظار انتهاء عمل جميع روتينات Go.</p>
 
           </td>
           <td class="code leading">
@@ -105,8 +102,7 @@ to finish their work.</p>
         
         <tr>
           <td class="docs">
-            <p>We&rsquo;ll start 50 goroutines that each increment the
-counter exactly 1000 times.</p>
+            <p>سنبدأ 50 روتين Go، يزيد كل منها العداد 1000 مرة بالضبط.</p>
 
           </td>
           <td class="code leading">
@@ -119,7 +115,7 @@ counter exactly 1000 times.</p>
         
         <tr>
           <td class="docs">
-            <p>To atomically increment the counter we use <code>Add</code>.</p>
+            <p>نستخدم <code>Add</code> لزيادة العداد ذريًا.</p>
 
           </td>
           <td class="code leading">
@@ -133,7 +129,7 @@ counter exactly 1000 times.</p>
         
         <tr>
           <td class="docs">
-            <p>Wait until all the goroutines are done.</p>
+            <p>انتظر حتى تنتهي جميع روتينات Go.</p>
 
           </td>
           <td class="code leading">
@@ -144,9 +140,9 @@ counter exactly 1000 times.</p>
         
         <tr>
           <td class="docs">
-            <p>Here no goroutines are writing to &lsquo;ops&rsquo;, but using
-<code>Load</code> it&rsquo;s safe to atomically read a value even while
-other goroutines are (atomically) updating it.</p>
+            <p>لا تكتب أي روتينات Go في <code>ops</code> هنا، لكن استخدام <code>Load</code>
+يتيح قراءة القيمة ذريًا بأمان حتى أثناء تحديث روتينات Go
+أخرى لها ذريًا.</p>
 
           </td>
           <td class="code">
@@ -162,13 +158,11 @@ other goroutines are (atomically) updating it.</p>
         
         <tr>
           <td class="docs">
-            <p>We expect to get exactly 50,000 operations. Had we
-used a non-atomic integer and incremented it with
-<code>ops++</code>, we&rsquo;d likely get a different number,
-changing between runs, because the goroutines
-would interfere with each other. Moreover, we&rsquo;d
-get data race failures when running with the
-<code>-race</code> flag.</p>
+            <p>نتوقع الحصول على 50,000 عملية بالضبط. لو استخدمنا عددًا
+صحيحًا غير ذري وزدناه باستخدام <code>ops++</code>، لحصلنا غالبًا على عدد
+مختلف يتغير بين مرات التشغيل، لأن روتينات Go كانت ستتداخل مع
+بعضها. وإضافة إلى ذلك، كنا سنحصل على إخفاقات بسبب تسابق
+البيانات عند التشغيل باستخدام الخيار <code>-race</code>.</p>
 
           </td>
           <td class="code leading">
@@ -180,8 +174,8 @@ get data race failures when running with the
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at mutexes, another tool for managing
-state.</p>
+            <p>سنتعرف تاليًا على أقفال الاستبعاد المتبادل، وهي أداة أخرى
+لإدارة الحالة.</p>
 
           </td>
           <td class="code empty">
