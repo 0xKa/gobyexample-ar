@@ -70,7 +70,7 @@ div.example {
   margin-bottom: 120px;
 }
 div.example table {
-  direction: rtl;
+  direction: ltr;
   margin-top: 15px;
   margin-bottom: 20px;
   width: 100%;
@@ -110,7 +110,7 @@ td.docs {
   text-align: right;
 }
 td.docs p {
-  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 5px;
   padding-bottom: 15px;
 }
@@ -179,7 +179,7 @@ a.run:focus-visible, button.copy:focus-visible {
     width: 100%;
   }
   td.docs p {
-    padding-left: 0;
+    padding-right: 0;
   }
   td.code {
     overflow-x: auto;
