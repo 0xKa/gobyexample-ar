@@ -31,23 +31,23 @@
         
         <tr>
           <td class="docs">
-            <p><code>//go:embed</code> is a <a href="https://pkg.go.dev/cmd/compile#hdr-Compiler_Directives">compiler
-directive</a> that
-allows programs to include arbitrary files and folders in the Go binary at
-build time. Read more about the embed directive
-<a href="https://pkg.go.dev/embed">here</a>.</p>
+            <p><code>//go:embed</code> هو <a href="https://pkg.go.dev/cmd/compile#hdr-Compiler_Directives">توجيه
+للمترجم</a> يتيح
+للبرامج تضمين أي ملفات ومجلدات في ملف Go التنفيذي عند وقت البناء.
+اقرأ المزيد عن توجيه <code>embed</code>
+<a href="https://pkg.go.dev/embed">هنا</a>.</p>
 
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/6m2ll-D52BB" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/hRftCcb__9B" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
         
         <tr>
           <td class="docs">
-            <p>Import the <code>embed</code> package; if you don&rsquo;t use any exported
-identifiers from this package, you can do a blank import with <code>_ &quot;embed&quot;</code>.</p>
+            <p>استورد الحزمة <code>embed</code>. إذا لم تستخدم أي معرّفات مصدّرة من هذه
+الحزمة، فيمكنك إجراء استيراد فارغ باستخدام <code>_ &quot;embed&quot;</code>.</p>
 
           </td>
           <td class="code leading">
@@ -60,9 +60,9 @@ identifiers from this package, you can do a blank import with <code>_ &quot;embe
         
         <tr>
           <td class="docs">
-            <p><code>embed</code> directives accept paths relative to the directory containing the
-Go source file. This directive embeds the contents of the file into the
-<code>string</code> variable immediately following it.</p>
+            <p>تقبل توجيهات <code>embed</code> مسارات نسبية إلى المجلد الذي يحتوي على ملف
+Go المصدري. يضمّن هذا التوجيه محتويات الملف في متغير <code>string</code>
+الذي يليه مباشرة.</p>
 
           </td>
           <td class="code leading">
@@ -74,7 +74,7 @@ Go source file. This directive embeds the contents of the file into the
         
         <tr>
           <td class="docs">
-            <p>Or embed the contents of the file into a <code>[]byte</code>.</p>
+            <p>أو ضمّن محتويات الملف في قيمة <code>[]byte</code>.</p>
 
           </td>
           <td class="code leading">
@@ -86,9 +86,9 @@ Go source file. This directive embeds the contents of the file into the
         
         <tr>
           <td class="docs">
-            <p>We can also embed multiple files or even folders with wildcards. This uses
-a variable of the <a href="https://pkg.go.dev/embed#FS">embed.FS type</a>, which
-implements a simple virtual file system.</p>
+            <p>يمكننا أيضًا تضمين عدة ملفات، أو حتى مجلدات، باستخدام محارف
+البدل. يستخدم ذلك متغيرًا من <a href="https://pkg.go.dev/embed#FS">النوع embed.FS</a>،
+الذي ينفذ نظام ملفات افتراضيًا بسيطًا.</p>
 
           </td>
           <td class="code leading">
@@ -111,7 +111,7 @@ implements a simple virtual file system.</p>
         
         <tr>
           <td class="docs">
-            <p>Print out the contents of <code>single_file.txt</code>.</p>
+            <p>اطبع محتويات <code>single_file.txt</code>.</p>
 
           </td>
           <td class="code leading">
@@ -123,7 +123,7 @@ implements a simple virtual file system.</p>
         
         <tr>
           <td class="docs">
-            <p>Retrieve some files from the embedded folder.</p>
+            <p>استرجع بعض الملفات من المجلد المضمّن.</p>
 
           </td>
           <td class="code leading">
@@ -151,9 +151,9 @@ implements a simple virtual file system.</p>
         
         <tr>
           <td class="docs">
-            <p>Use these commands to run the example.
-(Note: due to limitation on go playground,
-this example can only be run on your local machine.)</p>
+            <p>استخدم هذه الأوامر لتشغيل المثال.
+(ملاحظة: بسبب قيود Go Playground، لا يمكن تشغيل هذا المثال
+إلا على جهازك المحلي.)</p>
 
           </td>
           <td class="code leading">

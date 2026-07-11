@@ -31,14 +31,13 @@
         
         <tr>
           <td class="docs">
-            <p>The Go standard library comes with excellent support
-for HTTP clients and servers in the <code>net/http</code>
-package. In this example we&rsquo;ll use it to issue simple
-HTTP requests.</p>
+            <p>توفر مكتبة Go القياسية دعمًا ممتازًا لعملاء HTTP وخوادم HTTP في
+الحزمة <code>net/http</code>. سنستخدمها في هذا المثال لإرسال طلبات HTTP
+بسيطة.</p>
 
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/vFW_el7oHMk" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/rt2cmQwh5PT" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -69,11 +68,10 @@ HTTP requests.</p>
         
         <tr>
           <td class="docs">
-            <p>Issue an HTTP GET request to a server. <code>http.Get</code> is a
-convenient shortcut around creating an <code>http.Client</code>
-object and calling its <code>Get</code> method; it uses the
-<code>http.DefaultClient</code> object which has useful default
-settings.</p>
+            <p>أرسل طلب HTTP من النوع <code>GET</code> إلى خادم. تمثل <code>http.Get</code> اختصارًا
+ملائمًا يغني عن إنشاء كائن <code>http.Client</code> واستدعاء أسلوبه
+<code>Get</code>؛ فهي تستخدم الكائن <code>http.DefaultClient</code> ذا الإعدادات
+الافتراضية المفيدة.</p>
 
           </td>
           <td class="code leading">
@@ -88,7 +86,7 @@ settings.</p>
         
         <tr>
           <td class="docs">
-            <p>Print the HTTP response status.</p>
+            <p>اطبع حالة استجابة HTTP.</p>
 
           </td>
           <td class="code leading">
@@ -99,7 +97,7 @@ settings.</p>
         
         <tr>
           <td class="docs">
-            <p>Print the first 5 lines of the response body.</p>
+            <p>اطبع أول 5 أسطر من جسم الاستجابة.</p>
 
           </td>
           <td class="code leading">

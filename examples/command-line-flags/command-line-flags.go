@@ -1,13 +1,11 @@
-// [_Command-line flags_](https://en.wikipedia.org/wiki/Command-line_interface#Command-line_option)
-// are a common way to specify options for command-line
-// programs. For example, in `wc -l` the `-l` is a
-// command-line flag.
+// تُعد [خيارات سطر الأوامر](https://en.wikipedia.org/wiki/Command-line_interface#Command-line_option)
+// طريقة شائعة لتحديد خيارات برامج سطر الأوامر. في `wc -l` مثلًا،
+// يُعد `-l` خيارًا لسطر الأوامر.
 
 package main
 
-// Go provides a `flag` package supporting basic
-// command-line flag parsing. We'll use this package to
-// implement our example command-line program.
+// توفر Go الحزمة `flag` لدعم التحليل الأساسي لخيارات سطر
+// الأوامر. سنستخدم هذه الحزمة لتنفيذ مثالنا على برنامج سطر أوامر.
 import (
 	"flag"
 	"fmt"
@@ -15,34 +13,31 @@ import (
 
 func main() {
 
-	// Basic flag declarations are available for string,
-	// integer, and boolean options. Here we declare a
-	// string flag `word` with a default value `"foo"`
-	// and a short description. This `flag.String` function
-	// returns a string pointer (not a string value);
-	// we'll see how to use this pointer below.
+	// تتوفر تصريحات أساسية لخيارات السلاسل النصية والأعداد الصحيحة
+	// والقيم المنطقية. نصرّح هنا بخيار السلسلة النصية `word`، مع
+	// القيمة الافتراضية `"foo"` ووصف مختصر. تعيد الدالة
+	// `flag.String` مؤشرًا إلى سلسلة نصية، لا قيمة سلسلة نصية؛
+	// وسنرى أدناه كيفية استخدام هذا المؤشر.
 	wordPtr := flag.String("word", "foo", "a string")
 
-	// This declares `numb` and `fork` flags, using a
-	// similar approach to the `word` flag.
+	// يصرّح هذا بالخيارين `numb` و`fork` باتباع أسلوب شبيه بخيار
+	// `word`.
 	numbPtr := flag.Int("numb", 42, "an int")
 	forkPtr := flag.Bool("fork", false, "a bool")
 
-	// It's also possible to declare an option that uses an
-	// existing var declared elsewhere in the program.
-	// Note that we need to pass in a pointer to the flag
-	// declaration function.
+	// يمكن أيضًا التصريح بخيار يستخدم متغيرًا موجودًا صُرّح به في
+	// موضع آخر من البرنامج. لاحظ أن علينا تمرير مؤشر إلى دالة
+	// التصريح بالخيار.
 	var svar string
 	flag.StringVar(&svar, "svar", "bar", "a string var")
 
-	// Once all flags are declared, call `flag.Parse()`
-	// to execute the command-line parsing.
+	// بعد التصريح بجميع الخيارات، استدعِ `flag.Parse()` لتنفيذ
+	// تحليل سطر الأوامر.
 	flag.Parse()
 
-	// Here we'll just dump out the parsed options and
-	// any trailing positional arguments. Note that we
-	// need to dereference the pointers with e.g. `*wordPtr`
-	// to get the actual option values.
+	// سنطبع هنا الخيارات المحللة وأي وسائط موضعية لاحقة. لاحظ أن
+	// علينا فك إشارة المؤشرات، باستخدام `*wordPtr` مثلًا، للحصول
+	// على قيم الخيارات الفعلية.
 	fmt.Println("word:", *wordPtr)
 	fmt.Println("numb:", *numbPtr)
 	fmt.Println("fork:", *forkPtr)

@@ -1,11 +1,10 @@
-// Unit testing is an important part of writing
-// principled Go programs. The `testing` package
-// provides the tools we need to write unit tests
-// and the `go test` command runs tests.
+// اختبار الوحدات جزء مهم من كتابة برامج Go سليمة الأسس. توفر
+// الحزمة `testing` الأدوات التي نحتاجها لكتابة اختبارات الوحدات،
+// ويشغّل الأمر `go test` الاختبارات.
 
-// For the sake of demonstration, this code is in package
-// `main`, but it could be any package. Testing code
-// typically lives in the same package as the code it tests.
+// لأغراض التوضيح، يوجد هذا الكود في الحزمة `main`، لكنه قد يوجد
+// في أي حزمة. يوجد كود الاختبار عادة في الحزمة نفسها التي يوجد
+// فيها الكود الذي يختبره.
 package main
 
 import (
@@ -13,11 +12,9 @@ import (
 	"testing"
 )
 
-// We'll be testing this simple implementation of an
-// integer minimum. Typically, the code we're testing
-// would be in a source file named something like
-// `intutils.go`, and the test file for it would then
-// be named `intutils_test.go`.
+// سنختبر هذا التنفيذ البسيط لإيجاد أصغر عدد صحيح. عادة ما يكون
+// الكود الذي نختبره في ملف مصدري باسم مثل `intutils.go`، ويكون
+// ملف اختباره حينئذ باسم `intutils_test.go`.
 func IntMin(a, b int) int {
 	if a < b {
 		return a
@@ -25,22 +22,19 @@ func IntMin(a, b int) int {
 	return b
 }
 
-// A test is created by writing a function with a name
-// beginning with `Test`.
+// يُنشأ الاختبار بكتابة دالة يبدأ اسمها بـ`Test`.
 func TestIntMinBasic(t *testing.T) {
 	ans := IntMin(2, -2)
 	if ans != -2 {
-		// `t.Error*` will report test failures but continue
-		// executing the test. `t.Fatal*` will report test
-		// failures and stop the test immediately.
+		// تبلغ `t.Error*` عن إخفاقات الاختبار، لكنها تواصل تنفيذ
+		// الاختبار. تبلغ `t.Fatal*` عن الإخفاقات وتوقف الاختبار فورًا.
 		t.Errorf("IntMin(2, -2) = %d; want -2", ans)
 	}
 }
 
-// Writing tests can be repetitive, so it's idiomatic to
-// use a *table-driven style*, where test inputs and
-// expected outputs are listed in a table and a single loop
-// walks over them and performs the test logic.
+// قد تكون كتابة الاختبارات متكررة، لذا من الشائع استخدام *أسلوب
+// قائم على جدول*، تُسرد فيه مدخلات الاختبار ومخرجاته المتوقعة في
+// جدول، وتجتازها حلقة واحدة لتنفيذ منطق الاختبار.
 func TestIntMinTableDriven(t *testing.T) {
 	var tests = []struct {
 		a, b int
@@ -54,9 +48,8 @@ func TestIntMinTableDriven(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		// `t.Run` enables running "subtests", one for each
-		// table entry. These are shown separately
-		// when executing `go test -v`.
+		// تتيح `t.Run` تشغيل «اختبارات فرعية»، اختبارًا لكل صف في
+		// الجدول. تُعرض هذه الاختبارات منفصلة عند تنفيذ `go test -v`.
 		testname := fmt.Sprintf("%d,%d", tt.a, tt.b)
 		t.Run(testname, func(t *testing.T) {
 			ans := IntMin(tt.a, tt.b)
@@ -67,15 +60,13 @@ func TestIntMinTableDriven(t *testing.T) {
 	}
 }
 
-// Benchmark tests typically go in `_test.go` files and are
-// named beginning with `Benchmark`.
-// Any code that's required for the benchmark to run but should
-// not be measured goes before this loop.
+// توجد اختبارات قياس الأداء عادة في ملفات `_test.go`، وتبدأ
+// أسماؤها بـ`Benchmark`. يوضع قبل هذه الحلقة أي كود يلزم لتشغيل
+// قياس الأداء، لكن ينبغي ألا يدخل ضمن القياس.
 func BenchmarkIntMin(b *testing.B) {
 	for b.Loop() {
-		// The benchmark runner will automatically execute this loop
-		// body many times to determine a reasonable estimate of the
-		// run-time of a single iteration.
+		// سينفذ مشغّل قياس الأداء متن هذه الحلقة مرات كثيرة تلقائيًا
+		// لتحديد تقدير معقول لوقت تشغيل تكرار واحد.
 		IntMin(1, 2)
 	}
 }

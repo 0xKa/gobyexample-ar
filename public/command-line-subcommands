@@ -31,12 +31,10 @@
         
         <tr>
           <td class="docs">
-            <p>Some command-line tools, like the <code>go</code> tool or <code>git</code>
-have many <em>subcommands</em>, each with its own set of
-flags. For example, <code>go build</code> and <code>go get</code> are two
-different subcommands of the <code>go</code> tool.
-The <code>flag</code> package lets us easily define simple
-subcommands that have their own flags.</p>
+            <p>لبعض أدوات سطر الأوامر، مثل <code>go</code> أو <code>git</code>، عدة *أوامر فرعية*،
+لكل منها مجموعة خيارات خاصة به. يُعد <code>go build</code> و<code>go get</code> مثلًا
+أمرين فرعيين مختلفين للأداة <code>go</code>. تتيح لنا الحزمة <code>flag</code> تعريف
+أوامر فرعية بسيطة ذات خيارات خاصة بسهولة.</p>
 
           </td>
           <td class="code empty leading">
@@ -50,7 +48,7 @@ subcommands that have their own flags.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/DkvdHKK-XCv" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/7YmVegbZvXp" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -81,9 +79,8 @@ subcommands that have their own flags.</p>
         
         <tr>
           <td class="docs">
-            <p>We declare a subcommand using the <code>NewFlagSet</code>
-function, and proceed to define new flags specific
-for this subcommand.</p>
+            <p>نصرّح بأمر فرعي باستخدام الدالة <code>NewFlagSet</code>، ثم نعرّف خيارات
+جديدة خاصة بهذا الأمر الفرعي.</p>
 
           </td>
           <td class="code leading">
@@ -96,8 +93,7 @@ for this subcommand.</p>
         
         <tr>
           <td class="docs">
-            <p>For a different subcommand we can define different
-supported flags.</p>
+            <p>يمكننا تعريف خيارات مدعومة مختلفة لأمر فرعي آخر.</p>
 
           </td>
           <td class="code leading">
@@ -109,8 +105,7 @@ supported flags.</p>
         
         <tr>
           <td class="docs">
-            <p>The subcommand is expected as the first argument
-to the program.</p>
+            <p>يُتوقع أن يكون الأمر الفرعي أول وسيط للبرنامج.</p>
 
           </td>
           <td class="code leading">
@@ -124,7 +119,7 @@ to the program.</p>
         
         <tr>
           <td class="docs">
-            <p>Check which subcommand is invoked.</p>
+            <p>تحقق من الأمر الفرعي المستدعى.</p>
 
           </td>
           <td class="code leading">
@@ -135,8 +130,7 @@ to the program.</p>
         
         <tr>
           <td class="docs">
-            <p>For every subcommand, we parse its own flags and
-have access to trailing positional arguments.</p>
+            <p>لكل أمر فرعي، نحلل خياراته ونصل إلى الوسائط الموضعية اللاحقة.</p>
 
           </td>
           <td class="code">
@@ -176,7 +170,7 @@ have access to trailing positional arguments.</p>
         
         <tr>
           <td class="docs">
-            <p>First invoke the foo subcommand.</p>
+            <p>استدعِ أولًا الأمر الفرعي <code>foo</code>.</p>
 
           </td>
           <td class="code leading">
@@ -191,7 +185,7 @@ have access to trailing positional arguments.</p>
         
         <tr>
           <td class="docs">
-            <p>Now try bar.</p>
+            <p>جرّب الآن <code>bar</code>.</p>
 
           </td>
           <td class="code leading">
@@ -205,7 +199,7 @@ have access to trailing positional arguments.</p>
         
         <tr>
           <td class="docs">
-            <p>But bar won&rsquo;t accept foo&rsquo;s flags.</p>
+            <p>لكن <code>bar</code> لن يقبل خيارات <code>foo</code>.</p>
 
           </td>
           <td class="code leading">
@@ -220,8 +214,8 @@ have access to trailing positional arguments.</p>
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at environment variables, another common
-way to parameterize programs.</p>
+            <p>سنتعرف تاليًا على متغيرات البيئة، وهي طريقة شائعة أخرى لتحديد
+مُعامِلات البرامج.</p>
 
           </td>
           <td class="code empty">

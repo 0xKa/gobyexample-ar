@@ -31,10 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p><a href="https://en.wikipedia.org/wiki/Command-line_interface#Command-line_option"><em>Command-line flags</em></a>
-are a common way to specify options for command-line
-programs. For example, in <code>wc -l</code> the <code>-l</code> is a
-command-line flag.</p>
+            <p>تُعد <a href="https://en.wikipedia.org/wiki/Command-line_interface#Command-line_option">خيارات سطر الأوامر</a>
+طريقة شائعة لتحديد خيارات برامج سطر الأوامر. في <code>wc -l</code> مثلًا،
+يُعد <code>-l</code> خيارًا لسطر الأوامر.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,16 +47,15 @@ command-line flag.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/IUPZlYSigc3" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/0R5wHHXrk2K" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
         
         <tr>
           <td class="docs">
-            <p>Go provides a <code>flag</code> package supporting basic
-command-line flag parsing. We&rsquo;ll use this package to
-implement our example command-line program.</p>
+            <p>توفر Go الحزمة <code>flag</code> لدعم التحليل الأساسي لخيارات سطر
+الأوامر. سنستخدم هذه الحزمة لتنفيذ مثالنا على برنامج سطر أوامر.</p>
 
           </td>
           <td class="code leading">
@@ -81,12 +79,11 @@ implement our example command-line program.</p>
         
         <tr>
           <td class="docs">
-            <p>Basic flag declarations are available for string,
-integer, and boolean options. Here we declare a
-string flag <code>word</code> with a default value <code>&quot;foo&quot;</code>
-and a short description. This <code>flag.String</code> function
-returns a string pointer (not a string value);
-we&rsquo;ll see how to use this pointer below.</p>
+            <p>تتوفر تصريحات أساسية لخيارات السلاسل النصية والأعداد الصحيحة
+والقيم المنطقية. نصرّح هنا بخيار السلسلة النصية <code>word</code>، مع
+القيمة الافتراضية <code>&quot;foo&quot;</code> ووصف مختصر. تعيد الدالة
+<code>flag.String</code> مؤشرًا إلى سلسلة نصية، لا قيمة سلسلة نصية؛
+وسنرى أدناه كيفية استخدام هذا المؤشر.</p>
 
           </td>
           <td class="code leading">
@@ -97,8 +94,8 @@ we&rsquo;ll see how to use this pointer below.</p>
         
         <tr>
           <td class="docs">
-            <p>This declares <code>numb</code> and <code>fork</code> flags, using a
-similar approach to the <code>word</code> flag.</p>
+            <p>يصرّح هذا بالخيارين <code>numb</code> و<code>fork</code> باتباع أسلوب شبيه بخيار
+<code>word</code>.</p>
 
           </td>
           <td class="code leading">
@@ -110,10 +107,9 @@ similar approach to the <code>word</code> flag.</p>
         
         <tr>
           <td class="docs">
-            <p>It&rsquo;s also possible to declare an option that uses an
-existing var declared elsewhere in the program.
-Note that we need to pass in a pointer to the flag
-declaration function.</p>
+            <p>يمكن أيضًا التصريح بخيار يستخدم متغيرًا موجودًا صُرّح به في
+موضع آخر من البرنامج. لاحظ أن علينا تمرير مؤشر إلى دالة
+التصريح بالخيار.</p>
 
           </td>
           <td class="code leading">
@@ -125,8 +121,8 @@ declaration function.</p>
         
         <tr>
           <td class="docs">
-            <p>Once all flags are declared, call <code>flag.Parse()</code>
-to execute the command-line parsing.</p>
+            <p>بعد التصريح بجميع الخيارات، استدعِ <code>flag.Parse()</code> لتنفيذ
+تحليل سطر الأوامر.</p>
 
           </td>
           <td class="code leading">
@@ -137,10 +133,9 @@ to execute the command-line parsing.</p>
         
         <tr>
           <td class="docs">
-            <p>Here we&rsquo;ll just dump out the parsed options and
-any trailing positional arguments. Note that we
-need to dereference the pointers with e.g. <code>*wordPtr</code>
-to get the actual option values.</p>
+            <p>سنطبع هنا الخيارات المحللة وأي وسائط موضعية لاحقة. لاحظ أن
+علينا فك إشارة المؤشرات، باستخدام <code>*wordPtr</code> مثلًا، للحصول
+على قيم الخيارات الفعلية.</p>
 
           </td>
           <td class="code">
@@ -160,9 +155,8 @@ to get the actual option values.</p>
         
         <tr>
           <td class="docs">
-            <p>To experiment with the command-line flags program it&rsquo;s
-best to first compile it and then run the resulting
-binary directly.</p>
+            <p>لتجربة برنامج خيارات سطر الأوامر، يُفضل أولًا ترجمته، ثم تشغيل
+الملف التنفيذي الناتج مباشرة.</p>
 
           </td>
           <td class="code leading">
@@ -173,8 +167,7 @@ binary directly.</p>
         
         <tr>
           <td class="docs">
-            <p>Try out the built program by first giving it values for
-all flags.</p>
+            <p>جرّب البرنامج المبني بإعطائه أولًا قيمًا لجميع الخيارات.</p>
 
           </td>
           <td class="code leading">
@@ -190,8 +183,7 @@ all flags.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that if you omit flags they automatically take
-their default values.</p>
+            <p>لاحظ أن الخيارات التي لا تذكرها تأخذ قيمها الافتراضية تلقائيًا.</p>
 
           </td>
           <td class="code leading">
@@ -207,8 +199,7 @@ their default values.</p>
         
         <tr>
           <td class="docs">
-            <p>Trailing positional arguments can be provided after
-any flags.</p>
+            <p>يمكن توفير الوسائط الموضعية اللاحقة بعد أي خيارات.</p>
 
           </td>
           <td class="code leading">
@@ -222,9 +213,8 @@ any flags.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that the <code>flag</code> package requires all flags to
-appear before positional arguments (otherwise the flags
-will be interpreted as positional arguments).</p>
+            <p>لاحظ أن الحزمة <code>flag</code> تشترط ظهور جميع الخيارات قبل الوسائط
+الموضعية، وإلا فستُفسر الخيارات على أنها وسائط موضعية.</p>
 
           </td>
           <td class="code leading">
@@ -240,8 +230,8 @@ will be interpreted as positional arguments).</p>
         
         <tr>
           <td class="docs">
-            <p>Use <code>-h</code> or <code>--help</code> flags to get automatically
-generated help text for the command-line program.</p>
+            <p>استخدم الخيار <code>-h</code> أو <code>--help</code> للحصول على نص مساعدة مولّد
+تلقائيًا لبرنامج سطر الأوامر.</p>
 
           </td>
           <td class="code leading">
@@ -257,9 +247,8 @@ generated help text for the command-line program.</p>
         
         <tr>
           <td class="docs">
-            <p>If you provide a flag that wasn&rsquo;t specified to the
-<code>flag</code> package, the program will print an error message
-and show the help text again.</p>
+            <p>إذا قدمت خيارًا لم يُعرّف في الحزمة <code>flag</code>، فسيطبع البرنامج رسالة
+خطأ ويعرض نص المساعدة مجددًا.</p>
 
           </td>
           <td class="code">

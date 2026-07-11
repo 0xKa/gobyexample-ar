@@ -1,7 +1,6 @@
-// [_Command-line arguments_](https://en.wikipedia.org/wiki/Command-line_interface#Arguments)
-// are a common way to parameterize execution of programs.
-// For example, `go run hello.go` uses `run` and
-// `hello.go` arguments to the `go` program.
+// تُعد [وسائط سطر الأوامر](https://en.wikipedia.org/wiki/Command-line_interface#Arguments)
+// طريقة شائعة لتحديد مُعامِلات تشغيل البرامج. يستخدم الأمر
+// `go run hello.go` مثلًا `run` و`hello.go` وسيطين للبرنامج `go`.
 
 package main
 
@@ -12,14 +11,13 @@ import (
 
 func main() {
 
-	// `os.Args` provides access to raw command-line
-	// arguments. Note that the first value in this slice
-	// is the path to the program, and `os.Args[1:]`
-	// holds the arguments to the program.
+	// تتيح `os.Args` الوصول إلى وسائط سطر الأوامر الخام. لاحظ أن
+	// أول قيمة في هذه الشريحة هي مسار البرنامج، وأن `os.Args[1:]`
+	// تحتوي على وسائط البرنامج.
 	argsWithProg := os.Args
 	argsWithoutProg := os.Args[1:]
 
-	// You can get individual args with normal indexing.
+	// يمكنك الحصول على كل وسيط على حدة باستخدام الفهرسة المعتادة.
 	arg := os.Args[3]
 
 	fmt.Println(argsWithProg)

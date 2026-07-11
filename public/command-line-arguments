@@ -31,10 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p><a href="https://en.wikipedia.org/wiki/Command-line_interface#Arguments"><em>Command-line arguments</em></a>
-are a common way to parameterize execution of programs.
-For example, <code>go run hello.go</code> uses <code>run</code> and
-<code>hello.go</code> arguments to the <code>go</code> program.</p>
+            <p>تُعد <a href="https://en.wikipedia.org/wiki/Command-line_interface#Arguments">وسائط سطر الأوامر</a>
+طريقة شائعة لتحديد مُعامِلات تشغيل البرامج. يستخدم الأمر
+<code>go run hello.go</code> مثلًا <code>run</code> و<code>hello.go</code> وسيطين للبرنامج <code>go</code>.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,7 +47,7 @@ For example, <code>go run hello.go</code> uses <code>run</code> and
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/UYCEvh9d2Zb" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/xfYDh9vyZc1" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -78,10 +77,9 @@ For example, <code>go run hello.go</code> uses <code>run</code> and
         
         <tr>
           <td class="docs">
-            <p><code>os.Args</code> provides access to raw command-line
-arguments. Note that the first value in this slice
-is the path to the program, and <code>os.Args[1:]</code>
-holds the arguments to the program.</p>
+            <p>تتيح <code>os.Args</code> الوصول إلى وسائط سطر الأوامر الخام. لاحظ أن
+أول قيمة في هذه الشريحة هي مسار البرنامج، وأن <code>os.Args[1:]</code>
+تحتوي على وسائط البرنامج.</p>
 
           </td>
           <td class="code leading">
@@ -93,7 +91,7 @@ holds the arguments to the program.</p>
         
         <tr>
           <td class="docs">
-            <p>You can get individual args with normal indexing.</p>
+            <p>يمكنك الحصول على كل وسيط على حدة باستخدام الفهرسة المعتادة.</p>
 
           </td>
           <td class="code leading">
@@ -121,8 +119,8 @@ holds the arguments to the program.</p>
         
         <tr>
           <td class="docs">
-            <p>To experiment with command-line arguments it&rsquo;s best to
-build a binary with <code>go build</code> first.</p>
+            <p>لتجربة وسائط سطر الأوامر، يُفضل أولًا بناء ملف تنفيذي باستخدام
+<code>go build</code>.</p>
 
           </td>
           <td class="code leading">
@@ -137,8 +135,8 @@ build a binary with <code>go build</code> first.</p>
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at more advanced command-line processing
-with flags.</p>
+            <p>سنتعرف تاليًا على معالجة أكثر تقدمًا لسطر الأوامر باستخدام
+الخيارات.</p>
 
           </td>
           <td class="code empty">

@@ -1,5 +1,5 @@
-# Sample output; the date and time
-# emitted will depend on when the example ran.
+# هذا خرج نموذجي؛ يعتمد التاريخ والوقت الناتجان على وقت تشغيل
+# المثال.
 $ go run logging.go
 2023/08/22 10:45:16 standard logger
 2023/08/22 10:45:16.904141 with micro
@@ -8,9 +8,8 @@ my:2023/08/22 10:45:16 from mylog
 ohmy:2023/08/22 10:45:16 from mylog
 from buflog:buf:2023/08/22 10:45:16 hello
 
-# These are wrapped for clarity of presentation
-# on the website; in reality they are emitted
-# on a single line.
+# قُسّم هذا الخرج على عدة أسطر لتوضيح عرضه على الموقع، لكنه يُخرج
+# في الواقع في سطر واحد.
 {"time":"2023-08-22T10:45:16.904166391-07:00",
  "level":"INFO","msg":"hi there"}
 {"time":"2023-08-22T10:45:16.904178985-07:00",
