@@ -120,6 +120,9 @@ func parseHashFile(sourcePath string) (string, string) {
 }
 
 func resetURLHashFile(codehash, code, sourcePath string) string {
+	if os.Getenv("TESTING") != "" {
+		panic(fmt.Sprintf("%s: stale Go Playground hash; run tools/build without TESTING to refresh it", sourcePath))
+	}
 	if verbose() {
 		fmt.Println("  Sending request to go.dev")
 	}

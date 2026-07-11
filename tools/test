@@ -8,3 +8,7 @@ set -eo pipefail
 # also report known issues with the code. Disabling the -unreachable check
 # because it will fire false positives for some examples demonstrating panics.
 go vet -unreachable=false ./examples/...
+
+# Check that the Arabic catalog, progress table, and translated source coverage
+# remain complete and free of hidden bidirectional control characters.
+go run tools/check_translation.go
