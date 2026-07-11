@@ -4,16 +4,58 @@
 
 ## قبل البدء
 
-1. راجع [جدول التقدم](PROGRESS.md) واختر تحسينًا لغويًا أو تقنيًا، أو افتح مسألة لتنسيق العمل عليه.
+1. راجع [جدول الأمثلة](PROGRESS.md) واختر تحسينًا لغويًا أو تقنيًا، أو افتح مسألة لتنسيق العمل عليه.
 2. اقرأ [مسرد المصطلحات](GLOSSARY.md) والتزم بالمصطلحات المعتمدة.
-3. أنشئ فرعًا مخصصًا لتغييرك انطلاقًا من أحدث نسخة من `master`.
-4. ثبّت إصدار Go المحدد في `go.mod` واستخدم بيئة Bash لتشغيل أدوات المشروع.
+3. ثبّت إصدار Go المحدد في `go.mod` واستخدم بيئة Bash لتشغيل أدوات المشروع.
 
 على Windows، أبقِ نهايات الأسطر بصيغة LF:
 
 ```console
 $ git config --local core.autocrlf false
 ```
+
+## خطوات المساهمة
+
+1. أنشئ Fork من المستودع `0xKa/gobyexample-ar` من لوحة GitHub.
+2. استنسخ نسختك وأضف المستودع الأصلي باسم `upstream`:
+
+   ```console
+   $ git clone https://github.com/YOUR-USER/gobyexample-ar.git
+   $ cd gobyexample-ar
+   $ git remote add upstream https://github.com/0xKa/gobyexample-ar.git
+   ```
+
+3. ابدأ فرعًا جديدًا من أحدث `master`:
+
+   ```console
+   $ git fetch upstream
+   $ git switch -c fix/short-description upstream/master
+   ```
+
+4. عدّل ملفات المصدر المناسبة، ولا تعدّل `public` يدويًا.
+5. شغّل البناء والفحوص والمعاينة المحلية الموضحة أدناه. إذا غيّرت شرح ملف Go،
+   فقد يرسل البناء غير الاختباري المصدر العام إلى Go Playground لتحديث بصمته.
+6. راجع التغيير قبل إرساله:
+
+   ```console
+   $ git status --short
+   $ git diff --check
+   $ git diff
+   ```
+
+7. أنشئ commit واضحًا وادفع الفرع إلى Fork الخاص بك:
+
+   ```console
+   $ git add path/to/changed-file
+   $ git commit -m "fix(ar): describe the change"
+   $ git push -u origin fix/short-description
+   ```
+
+8. من صفحة Fork على GitHub اضغط **Compare & pull request**. اجعل المستودع
+   الأساسي `0xKa/gobyexample-ar` والفرع الأساسي `master`، واشرح سبب التغيير
+   والملفات المتأثرة ونتائج الفحوص، ثم أنشئ Pull Request.
+9. تابع فحوص CI وملاحظات المراجعة، وادفع الإصلاحات إلى الفرع نفسه حتى تُدمج
+   المساهمة.
 
 ## مصدر المحتوى
 
@@ -60,7 +102,7 @@ $ tools/serve
 - ملفات المصدر المترجمة في `examples` أو `templates`.
 - الملفات المولّدة المقابلة داخل `public`.
 - ملفات `.hash` التي حدثتها أداة البناء، إن وجدت.
-- تحديث حالة الأمثلة في `PROGRESS.md`.
+- تحديث حالة المثال في `PROGRESS.md` إذا تغيرت حالة ترجمته أو مراجعته.
 - تحديث `GLOSSARY.md` عند اعتماد مصطلح جديد.
 - تغيير واحد مترابط دون تعديلات جانبية غير ضرورية.
 
@@ -72,7 +114,7 @@ $ tools/serve
 - [ ] `tools/build` ونسخة `TESTING=1` ينجحان.
 - [ ] `public` مولّد من المصادر الحالية.
 - [ ] عاينت اتجاه RTL وعزل الكود LTR والتنقل والروابط.
-- [ ] حدّثت `PROGRESS.md` والملفات المولّدة والبصمات اللازمة.
+- [ ] حدّثت `PROGRESS.md` والملفات المولّدة والبصمات اللازمة، إن انطبق ذلك.
 
 ## الأمثلة الجديدة والتغييرات الهيكلية
 

@@ -14,7 +14,7 @@ import (
 
 var (
 	hyphenPattern   = regexp.MustCompile(`-+`)
-	progressPattern = regexp.MustCompile("^\\|\\s*(\\d+)\\s*\\|\\s*`([^`]+)`\\s*\\|.*\\|\\s*(✅|⬜)\\s*\\|\\s*(✅|⬜)\\s*\\|\\s*$")
+	progressPattern = regexp.MustCompile("^\\|\\s*(\\d+)\\s*\\|\\s*`([^`]+)`\\s*\\|[^|]+\\|\\s*(✅|⬜)\\s*\\|\\s*(✅|⬜)\\s*\\|\\s*$")
 	technicalTitles = map[string]bool{"JSON": true, "XML": true}
 )
 
