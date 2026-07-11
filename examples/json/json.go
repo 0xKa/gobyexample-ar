@@ -73,9 +73,9 @@ func main() {
 	byt := []byte(`{"num":6.13,"strs":["a","b"]}`)
 
 	// علينا توفير متغير تضع فيه حزمة JSON البيانات الناتجة عن فك
-	// الترميز. ستحتوي `map[string]interface{}` هذه على خريطة تربط
+	// الترميز. ستحتوي `map[string]any` هذه على خريطة تربط
 	// السلاسل النصية بقيم من أي نوع بيانات.
-	var dat map[string]interface{}
+	var dat map[string]any
 
 	// هذا هو فك الترميز الفعلي، مع التحقق من الأخطاء المرتبطة به.
 	// نتجاهل الأخطاء في هذه الأمثلة توخيًا للاختصار، لكن ينبغي في
@@ -92,7 +92,7 @@ func main() {
 	fmt.Println(num)
 
 	// يتطلب الوصول إلى البيانات المتداخلة سلسلة من التحويلات.
-	strs := dat["strs"].([]interface{})
+	strs := dat["strs"].([]any)
 	str1 := strs[0].(string)
 	fmt.Println(str1)
 
