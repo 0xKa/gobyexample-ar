@@ -1,5 +1,4 @@
-# Some of the generated numbers may be
-# different when you run the sample.
+# قد تختلف بعض الأعداد المولدة عند تشغيل العينة.
 $ go run random-numbers.go
 68,56
 0.8090228139659177
@@ -7,6 +6,6 @@ $ go run random-numbers.go
 94,49
 94,49
 
-# See the [`math/rand/v2`](https://pkg.go.dev/math/rand/v2)
-# package docs for references on other random quantities
-# that Go can provide.
+# راجع توثيق الحزمة
+# [`math/rand/v2`](https://pkg.go.dev/math/rand/v2) للتعرف على
+# كميات عشوائية أخرى يمكن أن توفرها Go.

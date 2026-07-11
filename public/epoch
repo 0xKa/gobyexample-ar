@@ -31,10 +31,10 @@
         
         <tr>
           <td class="docs">
-            <p>A common requirement in programs is getting the number
-of seconds, milliseconds, or nanoseconds since the
-<a href="https://en.wikipedia.org/wiki/Unix_time">Unix epoch</a>.
-Here&rsquo;s how to do it in Go.</p>
+            <p>من المتطلبات الشائعة في البرامج الحصول على عدد الثواني أو
+المللي ثانية أو النانو ثانية المنقضية منذ
+<a href="https://en.wikipedia.org/wiki/Unix_time">حقبة Unix</a>.
+هكذا تفعل ذلك في Go.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,7 +48,7 @@ Here&rsquo;s how to do it in Go.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/lRmD1EWHHPz" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/1KFoxXznMTU" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -78,9 +78,9 @@ Here&rsquo;s how to do it in Go.</p>
         
         <tr>
           <td class="docs">
-            <p>Use <code>time.Now</code> with <code>Unix</code>, <code>UnixMilli</code> or <code>UnixNano</code>
-to get elapsed time since the Unix epoch in seconds,
-milliseconds or nanoseconds, respectively.</p>
+            <p>استخدم <code>time.Now</code> مع <code>Unix</code> أو <code>UnixMilli</code> أو <code>UnixNano</code>
+للحصول على الوقت المنقضي منذ حقبة Unix بالثواني أو المللي
+ثانية أو النانو ثانية على الترتيب.</p>
 
           </td>
           <td class="code leading">
@@ -104,8 +104,8 @@ milliseconds or nanoseconds, respectively.</p>
         
         <tr>
           <td class="docs">
-            <p>You can also convert integer seconds or nanoseconds
-since the epoch into the corresponding <code>time</code>.</p>
+            <p>يمكنك أيضًا تحويل عدد صحيح من الثواني أو النانو ثانية منذ
+الحقبة إلى قيمة <code>time</code> المقابلة.</p>
 
           </td>
           <td class="code">
@@ -138,8 +138,7 @@ since the epoch into the corresponding <code>time</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at another time-related task: time
-parsing and formatting.</p>
+            <p>سنتعرف تاليًا على مهمة أخرى متعلقة بالوقت: تحليل الوقت وتنسيقه.</p>
 
           </td>
           <td class="code empty">

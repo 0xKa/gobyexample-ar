@@ -1,5 +1,5 @@
-// Go offers built-in support for XML and XML-like
-// formats with the `encoding/xml` package.
+// توفر Go دعمًا مدمجًا لـXML والصيغ الشبيهة به باستخدام الحزمة
+// `encoding/xml`.
 
 package main
 
@@ -8,13 +8,11 @@ import (
 	"fmt"
 )
 
-// Plant will be mapped to XML. Similarly to the
-// JSON examples, field tags contain directives for the
-// encoder and decoder. Here we use some special features
-// of the XML package: the `XMLName` field name dictates
-// the name of the XML element representing this struct;
-// `id,attr` means that the `Id` field is an XML
-// _attribute_ rather than a nested element.
+// سيُمثّل `Plant` في XML. كما في أمثلة JSON، تحتوي وسوم الحقول
+// على توجيهات للمرمّز وأداة فك الترميز. نستخدم هنا بعض مزايا حزمة
+// XML الخاصة: يحدد اسم الحقل `XMLName` اسم عنصر XML الذي يمثل
+// هذا الهيكل، وتعني `id,attr` أن الحقل `Id` هو _سمة_ XML وليس
+// عنصرًا متداخلًا.
 type Plant struct {
 	XMLName xml.Name `xml:"plant"`
 	Id      int      `xml:"id,attr"`
@@ -31,20 +29,17 @@ func main() {
 	coffee := &Plant{Id: 27, Name: "Coffee"}
 	coffee.Origin = []string{"Ethiopia", "Brazil"}
 
-	// Emit XML representing our plant; using
-	// `MarshalIndent` to produce a more
-	// human-readable output.
+	// أخرج XML الذي يمثل نبتتنا، باستخدام `MarshalIndent` لإنتاج
+	// خرج أسهل للقراءة.
 	out, _ := xml.MarshalIndent(coffee, " ", "  ")
 	fmt.Println(string(out))
 
-	// To add a generic XML header to the output, append
-	// it explicitly.
+	// لإضافة ترويسة XML عامة إلى الخرج، ألحقها صراحة.
 	fmt.Println(xml.Header + string(out))
 
-	// Use `Unmarshal` to parse a stream of bytes with XML
-	// into a data structure. If the XML is malformed or
-	// cannot be mapped onto Plant, a descriptive error
-	// will be returned.
+	// استخدم `Unmarshal` لتحليل تدفق بايتات يحتوي على XML إلى هيكل
+	// بيانات. إذا كان XML غير صالح أو تعذر مطابقته مع `Plant`،
+	// فسيُعاد خطأ وصفي.
 	var p Plant
 	if err := xml.Unmarshal(out, &p); err != nil {
 		panic(err)
@@ -54,8 +49,8 @@ func main() {
 	tomato := &Plant{Id: 81, Name: "Tomato"}
 	tomato.Origin = []string{"Mexico", "California"}
 
-	// The `parent>child>plant` field tag tells the encoder
-	// to nest all `plant`s under `<parent><child>...`
+	// يطلب وسم الحقل `parent>child>plant` من المرمّز وضع جميع عناصر
+	// `plant` متداخلة تحت `<parent><child>...`.
 	type Nesting struct {
 		XMLName xml.Name `xml:"nesting"`
 		Plants  []*Plant `xml:"parent>child>plant"`

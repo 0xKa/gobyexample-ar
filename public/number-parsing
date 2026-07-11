@@ -31,8 +31,8 @@
         
         <tr>
           <td class="docs">
-            <p>Parsing numbers from strings is a basic but common task
-in many programs; here&rsquo;s how to do it in Go.</p>
+            <p>تحليل الأعداد من السلاسل النصية مهمة أساسية وشائعة في كثير من
+البرامج. هكذا تفعل ذلك في Go.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,15 +46,14 @@ in many programs; here&rsquo;s how to do it in Go.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/ZAMEid6Fpmu" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/fZN6dmngPEq" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
         
         <tr>
           <td class="docs">
-            <p>The built-in package <code>strconv</code> provides the number
-parsing.</p>
+            <p>توفر الحزمة <code>strconv</code> في المكتبة القياسية تحليل الأعداد.</p>
 
           </td>
           <td class="code leading">
@@ -78,8 +77,7 @@ parsing.</p>
         
         <tr>
           <td class="docs">
-            <p>With <code>ParseFloat</code>, this <code>64</code> tells how many bits of
-precision to parse.</p>
+            <p>مع <code>ParseFloat</code>، تحدد <code>64</code> عدد بتات الدقة المطلوب تحليلها.</p>
 
           </td>
           <td class="code leading">
@@ -91,9 +89,8 @@ precision to parse.</p>
         
         <tr>
           <td class="docs">
-            <p>For <code>ParseInt</code>, the <code>0</code> means infer the base from
-the string. <code>64</code> requires that the result fit in 64
-bits.</p>
+            <p>مع <code>ParseInt</code>، تعني <code>0</code> استنتاج الأساس من السلسلة النصية،
+وتشترط <code>64</code> أن تتسع النتيجة في 64 بتًا.</p>
 
           </td>
           <td class="code leading">
@@ -105,7 +102,7 @@ bits.</p>
         
         <tr>
           <td class="docs">
-            <p><code>ParseInt</code> will recognize hex-formatted numbers.</p>
+            <p>تتعرف <code>ParseInt</code> على الأعداد المنسقة بالنظام السداسي عشري.</p>
 
           </td>
           <td class="code leading">
@@ -117,7 +114,7 @@ bits.</p>
         
         <tr>
           <td class="docs">
-            <p>A <code>ParseUint</code> is also available.</p>
+            <p>تتوفر أيضًا <code>ParseUint</code>.</p>
 
           </td>
           <td class="code leading">
@@ -129,8 +126,7 @@ bits.</p>
         
         <tr>
           <td class="docs">
-            <p><code>Atoi</code> is a convenience function for basic base-10
-<code>int</code> parsing.</p>
+            <p><code>Atoi</code> دالة مساعدة للتحليل الأساسي لقيم <code>int</code> ذات الأساس 10.</p>
 
           </td>
           <td class="code leading">
@@ -142,7 +138,7 @@ bits.</p>
         
         <tr>
           <td class="docs">
-            <p>Parse functions return an error on bad input.</p>
+            <p>تعيد دوال التحليل خطأ عند تلقي مدخلات غير صالحة.</p>
 
           </td>
           <td class="code">
@@ -175,7 +171,7 @@ bits.</p>
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at another common parsing task: URLs.</p>
+            <p>سنتعرف تاليًا على مهمة تحليل شائعة أخرى: عناوين URL.</p>
 
           </td>
           <td class="code empty">

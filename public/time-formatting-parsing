@@ -31,8 +31,7 @@
         
         <tr>
           <td class="docs">
-            <p>Go supports time formatting and parsing via
-pattern-based layouts.</p>
+            <p>تدعم Go تنسيق الوقت وتحليله عبر تخطيطات قائمة على الأنماط.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +45,7 @@ pattern-based layouts.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/0dgIUsTgEYs" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/tJt10O3IHhI" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -77,9 +76,8 @@ pattern-based layouts.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s a basic example of formatting a time
-according to RFC3339, using the corresponding layout
-constant.</p>
+            <p>هذا مثال أساسي على تنسيق وقت وفق RFC3339 باستخدام ثابت
+التخطيط المقابل.</p>
 
           </td>
           <td class="code leading">
@@ -91,7 +89,7 @@ constant.</p>
         
         <tr>
           <td class="docs">
-            <p>Time parsing uses the same layout values as <code>Format</code>.</p>
+            <p>يستخدم تحليل الوقت قيم التخطيط نفسها التي تستخدمها <code>Format</code>.</p>
 
           </td>
           <td class="code leading">
@@ -103,13 +101,13 @@ constant.</p>
         
         <tr>
           <td class="docs">
-            <p><code>Format</code> and <code>Parse</code> use example-based layouts. Usually
-you&rsquo;ll use a constant from <code>time</code> for these layouts, but
-you can also supply custom layouts. Layouts must use the
-reference time <code>Mon Jan 2 15:04:05 MST 2006</code> to show the
-pattern with which to format/parse a given time/string.
-The example time must be exactly as shown: the year 2006,
-15 for the hour, Monday for the day of the week, etc.</p>
+            <p>تستخدم <code>Format</code> و<code>Parse</code> تخطيطات قائمة على الأمثلة. ستستخدم
+عادة ثابتًا من <code>time</code> لهذه التخطيطات، لكن يمكنك أيضًا توفير
+تخطيطات مخصصة. يجب أن تستخدم التخطيطات الوقت المرجعي
+<code>Mon Jan 2 15:04:05 MST 2006</code> لإظهار نمط تنسيق أو تحليل وقت
+أو سلسلة نصية معينة. يجب أن يكون وقت المثال كما هو موضح
+تمامًا: السنة 2006 والساعة 15 والاثنين بوصفه يوم الأسبوع،
+وهكذا.</p>
 
           </td>
           <td class="code leading">
@@ -125,9 +123,8 @@ The example time must be exactly as shown: the year 2006,
         
         <tr>
           <td class="docs">
-            <p>For purely numeric representations you can also
-use standard string formatting with the extracted
-components of the time value.</p>
+            <p>للتمثيلات الرقمية البحتة، يمكنك أيضًا استخدام تنسيق السلاسل
+النصية القياسي مع المكونات المستخرجة من قيمة الوقت.</p>
 
           </td>
           <td class="code leading">
@@ -140,8 +137,8 @@ components of the time value.</p>
         
         <tr>
           <td class="docs">
-            <p><code>Parse</code> will return an error on malformed input
-explaining the parsing problem.</p>
+            <p>ستعيد <code>Parse</code> خطأ يوضح مشكلة التحليل إذا كانت المدخلات غير
+صالحة.</p>
 
           </td>
           <td class="code">

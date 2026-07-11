@@ -31,9 +31,8 @@
         
         <tr>
           <td class="docs">
-            <p>Go offers built-in support for JSON encoding and
-decoding, including to and from built-in and custom
-data types.</p>
+            <p>توفر Go دعمًا مدمجًا لترميز JSON وفك ترميزه، بما في ذلك
+التحويل من أنواع البيانات المدمجة والمخصصة وإليها.</p>
 
           </td>
           <td class="code empty leading">
@@ -47,7 +46,7 @@ data types.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/z6LEC8UI8l8" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/wxK6zWzitz9" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -69,8 +68,8 @@ data types.</p>
         
         <tr>
           <td class="docs">
-            <p>We&rsquo;ll use these two structs to demonstrate encoding and
-decoding of custom types below.</p>
+            <p>سنستخدم هذين الهيكلين أدناه لتوضيح ترميز الأنواع المخصصة وفك
+ترميزها.</p>
 
           </td>
           <td class="code leading">
@@ -84,8 +83,8 @@ decoding of custom types below.</p>
         
         <tr>
           <td class="docs">
-            <p>Only exported fields will be encoded/decoded in JSON.
-Fields must start with capital letters to be exported.</p>
+            <p>لا تخضع للترميز وفك الترميز في JSON إلا الحقول المصدّرة. يجب
+أن تبدأ أسماء الحقول بأحرف إنجليزية كبيرة لتكون مصدّرة.</p>
 
           </td>
           <td class="code leading">
@@ -109,9 +108,8 @@ Fields must start with capital letters to be exported.</p>
         
         <tr>
           <td class="docs">
-            <p>First we&rsquo;ll look at encoding basic data types to
-JSON strings. Here are some examples for atomic
-values.</p>
+            <p>سنتعرف أولًا على ترميز أنواع البيانات الأساسية إلى سلاسل
+نصية بصيغة JSON. إليك بعض الأمثلة على القيم البسيطة.</p>
 
           </td>
           <td class="code leading">
@@ -156,8 +154,8 @@ values.</p>
         
         <tr>
           <td class="docs">
-            <p>And here are some for slices and maps, which encode
-to JSON arrays and objects as you&rsquo;d expect.</p>
+            <p>وإليك أمثلة على الشرائح والخرائط، التي تُرمّز إلى مصفوفات
+وكائنات JSON كما هو متوقع.</p>
 
           </td>
           <td class="code leading">
@@ -182,10 +180,9 @@ to JSON arrays and objects as you&rsquo;d expect.</p>
         
         <tr>
           <td class="docs">
-            <p>The JSON package can automatically encode your
-custom data types. It will only include exported
-fields in the encoded output and will by default
-use those names as the JSON keys.</p>
+            <p>يمكن لحزمة JSON ترميز أنواع بياناتك المخصصة تلقائيًا. لن
+يتضمن الخرج المرمّز سوى الحقول المصدّرة، وستستخدم الحزمة
+أسماءها افتراضيًا كمفاتيح JSON.</p>
 
           </td>
           <td class="code leading">
@@ -200,10 +197,9 @@ use those names as the JSON keys.</p>
         
         <tr>
           <td class="docs">
-            <p>You can use tags on struct field declarations
-to customize the encoded JSON key names. Check the
-definition of <code>response2</code> above to see an example
-of such tags.</p>
+            <p>يمكنك استخدام الوسوم في تصريحات حقول الهيكل لتخصيص أسماء
+مفاتيح JSON المرمّزة. راجع تعريف <code>response2</code> أعلاه للاطلاع
+على مثال لهذه الوسوم.</p>
 
           </td>
           <td class="code leading">
@@ -218,9 +214,8 @@ of such tags.</p>
         
         <tr>
           <td class="docs">
-            <p>Now let&rsquo;s look at decoding JSON data into Go
-values. Here&rsquo;s an example for a generic data
-structure.</p>
+            <p>لنتعرف الآن على فك ترميز بيانات JSON إلى قيم Go. إليك مثالًا
+على هيكل بيانات عام.</p>
 
           </td>
           <td class="code leading">
@@ -231,10 +226,9 @@ structure.</p>
         
         <tr>
           <td class="docs">
-            <p>We need to provide a variable where the JSON
-package can put the decoded data. This
-<code>map[string]interface{}</code> will hold a map of strings
-to arbitrary data types.</p>
+            <p>علينا توفير متغير تضع فيه حزمة JSON البيانات الناتجة عن فك
+الترميز. ستحتوي <code>map[string]interface{}</code> هذه على خريطة تربط
+السلاسل النصية بقيم من أي نوع بيانات.</p>
 
           </td>
           <td class="code leading">
@@ -245,11 +239,9 @@ to arbitrary data types.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s the actual decoding, and a check for
-associated errors.
-For the sake of brevity we ignore the errors in
-these examples; in real code, you should always check
-for errors and act upon them.</p>
+            <p>هذا هو فك الترميز الفعلي، مع التحقق من الأخطاء المرتبطة به.
+نتجاهل الأخطاء في هذه الأمثلة توخيًا للاختصار، لكن ينبغي في
+الكود الفعلي التحقق دائمًا من الأخطاء والتعامل معها.</p>
 
           </td>
           <td class="code leading">
@@ -263,10 +255,9 @@ for errors and act upon them.</p>
         
         <tr>
           <td class="docs">
-            <p>In order to use the values in the decoded map,
-we&rsquo;ll need to convert them to their appropriate type.
-For example here we convert the value in <code>num</code> to
-the expected <code>float64</code> type.</p>
+            <p>لاستخدام القيم الموجودة في الخريطة الناتجة عن فك الترميز،
+علينا تحويلها إلى أنواعها المناسبة. نحوّل هنا مثلًا القيمة في
+<code>num</code> إلى النوع المتوقع <code>float64</code>.</p>
 
           </td>
           <td class="code leading">
@@ -278,8 +269,7 @@ the expected <code>float64</code> type.</p>
         
         <tr>
           <td class="docs">
-            <p>Accessing nested data requires a series of
-conversions.</p>
+            <p>يتطلب الوصول إلى البيانات المتداخلة سلسلة من التحويلات.</p>
 
           </td>
           <td class="code leading">
@@ -292,11 +282,9 @@ conversions.</p>
         
         <tr>
           <td class="docs">
-            <p>We can also decode JSON into custom data types.
-This has the advantages of adding additional
-type-safety to our programs and eliminating the
-need for type assertions when accessing the decoded
-data.</p>
+            <p>يمكننا أيضًا فك ترميز JSON إلى أنواع بيانات مخصصة. يضيف ذلك
+مزيدًا من أمان الأنواع إلى برامجنا، ويلغي الحاجة إلى تأكيدات
+الأنواع عند الوصول إلى البيانات الناتجة عن فك الترميز.</p>
 
           </td>
           <td class="code leading">
@@ -311,11 +299,10 @@ data.</p>
         
         <tr>
           <td class="docs">
-            <p>In the examples above we always used bytes and
-strings as intermediates between the data and
-JSON representation on standard out. We can also
-stream JSON encodings directly to <code>os.Writer</code>s like
-<code>os.Stdout</code> or even HTTP response bodies.</p>
+            <p>استخدمنا في الأمثلة أعلاه دائمًا البايتات والسلاسل النصية
+كقيم وسيطة بين البيانات وتمثيل JSON على الخرج القياسي. يمكننا
+أيضًا إرسال ترميزات JSON مباشرة إلى كائنات <code>os.Writer</code> مثل
+<code>os.Stdout</code>، أو حتى إلى أجسام استجابات HTTP.</p>
 
           </td>
           <td class="code leading">
@@ -328,8 +315,8 @@ stream JSON encodings directly to <code>os.Writer</code>s like
         
         <tr>
           <td class="docs">
-            <p>Streaming reads from <code>os.Reader</code>s like <code>os.Stdin</code>
-or HTTP request bodies is done with <code>json.Decoder</code>.</p>
+            <p>تُجرى القراءة المتدفقة من كائنات <code>os.Reader</code> مثل <code>os.Stdin</code>
+أو أجسام طلبات HTTP باستخدام <code>json.Decoder</code>.</p>
 
           </td>
           <td class="code">
@@ -373,10 +360,9 @@ or HTTP request bodies is done with <code>json.Decoder</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>We&rsquo;ve covered the basic of JSON in Go here, but check
-out the <a href="https://go.dev/blog/json">JSON and Go</a>
-blog post and <a href="https://pkg.go.dev/encoding/json">JSON package docs</a>
-for more.</p>
+            <p>تناولنا هنا أساسيات JSON في Go. لمعرفة المزيد، راجع تدوينة
+<a href="https://go.dev/blog/json">JSON وGo</a> وتوثيق
+<a href="https://pkg.go.dev/encoding/json">حزمة JSON</a>.</p>
 
           </td>
           <td class="code empty">

@@ -31,8 +31,8 @@
         
         <tr>
           <td class="docs">
-            <p>URLs provide a <a href="https://adam.herokuapp.com/past/2010/3/30/urls_are_the_uniform_way_to_locate_resources/">uniform way to locate resources</a>.
-Here&rsquo;s how to parse URLs in Go.</p>
+            <p>توفر عناوين URL <a href="https://adam.herokuapp.com/past/2010/3/30/urls_are_the_uniform_way_to_locate_resources/">طريقة موحدة لتحديد مواقع الموارد</a>.
+هكذا تحلل عناوين URL في Go.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +46,7 @@ Here&rsquo;s how to parse URLs in Go.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/fHTQn9X7l1B" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/YdYsIjgNTnR" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -77,9 +77,8 @@ Here&rsquo;s how to parse URLs in Go.</p>
         
         <tr>
           <td class="docs">
-            <p>We&rsquo;ll parse this example URL, which includes a
-scheme, authentication info, host, port, path,
-query params, and query fragment.</p>
+            <p>سنحلل عنوان URL هذا، وهو يتضمن مخططًا ومعلومات مصادقة
+ومضيفًا ومنفذًا ومسارًا ومُعامِلات استعلام وجزءًا.</p>
 
           </td>
           <td class="code leading">
@@ -90,7 +89,7 @@ query params, and query fragment.</p>
         
         <tr>
           <td class="docs">
-            <p>Parse the URL and ensure there are no errors.</p>
+            <p>حلل عنوان URL وتأكد من عدم وجود أخطاء.</p>
 
           </td>
           <td class="code leading">
@@ -104,7 +103,7 @@ query params, and query fragment.</p>
         
         <tr>
           <td class="docs">
-            <p>Accessing the scheme is straightforward.</p>
+            <p>الوصول إلى المخطط مباشر.</p>
 
           </td>
           <td class="code leading">
@@ -115,9 +114,8 @@ query params, and query fragment.</p>
         
         <tr>
           <td class="docs">
-            <p><code>User</code> contains all authentication info; call
-<code>Username</code> and <code>Password</code> on this for individual
-values.</p>
+            <p>يحتوي <code>User</code> على جميع معلومات المصادقة. استدعِ عليه
+<code>Username</code> و<code>Password</code> للحصول على القيم المنفردة.</p>
 
           </td>
           <td class="code leading">
@@ -131,8 +129,8 @@ values.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>Host</code> contains both the hostname and the port,
-if present. Use <code>SplitHostPort</code> to extract them.</p>
+            <p>يحتوي <code>Host</code> على اسم المضيف والمنفذ إن وُجد. استخدم
+<code>SplitHostPort</code> لاستخراجهما.</p>
 
           </td>
           <td class="code leading">
@@ -146,8 +144,7 @@ if present. Use <code>SplitHostPort</code> to extract them.</p>
         
         <tr>
           <td class="docs">
-            <p>Here we extract the <code>path</code> and the fragment after
-the <code>#</code>.</p>
+            <p>نستخرج هنا <code>path</code> والجزء الواقع بعد <code>#</code>.</p>
 
           </td>
           <td class="code leading">
@@ -159,11 +156,11 @@ the <code>#</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>To get query params in a string of <code>k=v</code> format,
-use <code>RawQuery</code>. You can also parse query params
-into a map. The parsed query param maps are from
-strings to slices of strings, so index into <code>[0]</code>
-if you only want the first value.</p>
+            <p>للحصول على مُعامِلات الاستعلام في سلسلة نصية بالصيغة <code>k=v</code>،
+استخدم <code>RawQuery</code>. يمكنك أيضًا تحليل مُعامِلات الاستعلام إلى
+خريطة. تربط خرائط الاستعلام المحللة السلاسل النصية بشرائح
+من السلاسل النصية، لذا استخدم الفهرس <code>[0]</code> إذا أردت القيمة
+الأولى فقط.</p>
 
           </td>
           <td class="code">
@@ -182,8 +179,8 @@ if you only want the first value.</p>
         
         <tr>
           <td class="docs">
-            <p>Running our URL parsing program shows all the different
-pieces that we extracted.</p>
+            <p>يوضح تشغيل برنامج تحليل URL جميع الأجزاء المختلفة التي
+استخرجناها.</p>
 
           </td>
           <td class="code">
