@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Slices</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لغة Go بالأمثلة: الشرائح (slice)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -11,12 +12,12 @@
               return;
           }
           
-          if (e.key == "ArrowLeft") {
+          if (e.key == "ArrowRight") {
               window.location.href = 'arrays';
           }
           
           
-          if (e.key == "ArrowRight") {
+          if (e.key == "ArrowLeft") {
               window.location.href = 'maps';
           }
           
@@ -24,14 +25,14 @@
   </script>
   <body>
     <div class="example" id="slices">
-      <h2><a href="./">Go by Example</a>: Slices</h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الشرائح (slice)</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p><em>Slices</em> are an important data type in Go, giving
-a more powerful interface to sequences than arrays.</p>
+            <p><em>الشرائح</em> نوع بيانات مهم في Go، وتوفر وسيلة أقوى
+للتعامل مع التسلسلات مقارنة بالمصفوفات.</p>
 
           </td>
           <td class="code empty leading">
@@ -45,7 +46,7 @@ a more powerful interface to sequences than arrays.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/9-U3-8sKQun"><img title="Run code" src="play.png" class="run" /></a><img title="Copy code" src="clipboard.png" class="copy" />
+            <a href="https://go.dev/play/p/8KACpbZgAVO" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -75,10 +76,9 @@ a more powerful interface to sequences than arrays.</p>
         
         <tr>
           <td class="docs">
-            <p>Unlike arrays, slices are typed only by the
-elements they contain (not the number of elements).
-An uninitialized slice equals to nil and has
-length 0.</p>
+            <p>بخلاف المصفوفات، يتحدد نوع الشريحة بنوع العناصر التي
+تحتويها فقط، لا بعددها. تساوي الشريحة غير المهيأة
+<code>nil</code> ويكون طولها <code>0</code>.</p>
 
           </td>
           <td class="code leading">
@@ -90,13 +90,12 @@ length 0.</p>
         
         <tr>
           <td class="docs">
-            <p>To create a slice with non-zero length, use
-the builtin <code>make</code>. Here we make a slice of
-<code>string</code>s of length <code>3</code> (initially zero-valued).
-By default a new slice&rsquo;s capacity is equal to its
-length; if we know the slice is going to grow ahead
-of time, it&rsquo;s possible to pass a capacity explicitly
-as an additional parameter to <code>make</code>.</p>
+            <p>لإنشاء شريحة بطول غير صفري، استخدم الدالة المدمجة
+<code>make</code>. ننشئ هنا شريحة من عناصر <code>string</code> طولها <code>3</code>
+وتأخذ عناصرها قيمتها الصفرية في البداية. تساوي سعة
+الشريحة الجديدة طولها افتراضيًا؛ وإذا عرفنا مسبقًا أن
+الشريحة ستنمو، فيمكننا تمرير السعة صراحةً كوسيط إضافي
+إلى <code>make</code>.</p>
 
           </td>
           <td class="code leading">
@@ -108,7 +107,7 @@ as an additional parameter to <code>make</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>We can set and get just like with arrays.</p>
+            <p>يمكننا إسناد العناصر واسترجاعها كما في المصفوفات.</p>
 
           </td>
           <td class="code leading">
@@ -123,7 +122,7 @@ as an additional parameter to <code>make</code>.</p>
         
         <tr>
           <td class="docs">
-            <p><code>len</code> returns the length of the slice as expected.</p>
+            <p>تعيد <code>len</code> طول الشريحة كما هو متوقع.</p>
 
           </td>
           <td class="code leading">
@@ -134,12 +133,11 @@ as an additional parameter to <code>make</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>In addition to these basic operations, slices
-support several more that make them richer than
-arrays. One is the builtin <code>append</code>, which
-returns a slice containing one or more new values.
-Note that we need to accept a return value from
-<code>append</code> as we may get a new slice value.</p>
+            <p>إلى جانب هذه العمليات الأساسية، تدعم الشرائح عدة
+عمليات أخرى تجعلها أغنى من المصفوفات. إحداها الدالة
+المدمجة <code>append</code>، التي تعيد شريحة تحتوي على قيمة
+جديدة واحدة أو أكثر. لاحظ أن علينا استخدام القيمة
+المعادة من <code>append</code> لأننا قد نحصل على شريحة جديدة.</p>
 
           </td>
           <td class="code leading">
@@ -152,9 +150,9 @@ Note that we need to accept a return value from
         
         <tr>
           <td class="docs">
-            <p>Slices can also be <code>copy</code>&rsquo;d. Here we create an
-empty slice <code>c</code> of the same length as <code>s</code> and copy
-into <code>c</code> from <code>s</code>.</p>
+            <p>يمكن أيضًا نسخ الشرائح باستخدام <code>copy</code>. ننشئ هنا
+شريحة فارغة <code>c</code> لها طول <code>s</code> نفسه، ثم ننسخ من <code>s</code>
+إلى <code>c</code>.</p>
 
           </td>
           <td class="code leading">
@@ -167,9 +165,9 @@ into <code>c</code> from <code>s</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Slices support a &ldquo;slice&rdquo; operator with the syntax
-<code>slice[low:high]</code>. For example, this gets a slice
-of the elements <code>s[2]</code>, <code>s[3]</code>, and <code>s[4]</code>.</p>
+            <p>تدعم الشرائح عامل إنشاء شريحة فرعية بالصيغة
+<code>slice[low:high]</code>. فمثلًا، نحصل هنا على شريحة من
+العناصر <code>s[2]</code> و<code>s[3]</code> و<code>s[4]</code>.</p>
 
           </td>
           <td class="code leading">
@@ -181,7 +179,7 @@ of the elements <code>s[2]</code>, <code>s[3]</code>, and <code>s[4]</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>This slices up to (but excluding) <code>s[5]</code>.</p>
+            <p>تنشئ هذه الصيغة شريحة حتى <code>s[5]</code> دون تضمينه.</p>
 
           </td>
           <td class="code leading">
@@ -193,7 +191,7 @@ of the elements <code>s[2]</code>, <code>s[3]</code>, and <code>s[4]</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>And this slices up from (and including) <code>s[2]</code>.</p>
+            <p>وتنشئ هذه شريحة بدءًا من <code>s[2]</code> مع تضمينه.</p>
 
           </td>
           <td class="code leading">
@@ -205,8 +203,8 @@ of the elements <code>s[2]</code>, <code>s[3]</code>, and <code>s[4]</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>We can declare and initialize a variable for slice
-in a single line as well.</p>
+            <p>يمكننا أيضًا التصريح عن متغير لشريحة وتهيئته في
+سطر واحد.</p>
 
           </td>
           <td class="code leading">
@@ -218,8 +216,8 @@ in a single line as well.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>slices</code> package contains a number of useful
-utility functions for slices.</p>
+            <p>تحتوي الحزمة <code>slices</code> على عدد من الدوال المساعدة
+المفيدة للشرائح.</p>
 
           </td>
           <td class="code leading">
@@ -233,9 +231,9 @@ utility functions for slices.</p>
         
         <tr>
           <td class="docs">
-            <p>Slices can be composed into multi-dimensional data
-structures. The length of the inner slices can
-vary, unlike with multi-dimensional arrays.</p>
+            <p>يمكن تركيب الشرائح في هياكل بيانات متعددة الأبعاد.
+ويمكن أن تختلف أطوال الشرائح الداخلية، بخلاف
+المصفوفات متعددة الأبعاد.</p>
 
           </td>
           <td class="code">
@@ -259,8 +257,8 @@ vary, unlike with multi-dimensional arrays.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that while slices are different types than arrays,
-they are rendered similarly by <code>fmt.Println</code>.</p>
+            <p>لاحظ أن الشرائح، رغم اختلافها عن المصفوفات في النوع، تُعرض
+بطريقة مشابهة عند استخدام <code>fmt.Println</code>.</p>
 
           </td>
           <td class="code leading">
@@ -284,9 +282,9 @@ they are rendered similarly by <code>fmt.Println</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Check out this <a href="https://go.dev/blog/slices-intro">great blog post</a>
-by the Go team for more details on the design and
-implementation of slices in Go.</p>
+            <p>اقرأ هذه <a href="https://go.dev/blog/slices-intro">التدوينة المميزة</a>
+من فريق Go لمزيد من التفاصيل حول تصميم الشرائح
+وتنفيذها في Go.</p>
 
           </td>
           <td class="code empty leading">
@@ -297,8 +295,8 @@ implementation of slices in Go.</p>
         
         <tr>
           <td class="docs">
-            <p>Now that we&rsquo;ve seen arrays and slices we&rsquo;ll look at
-Go&rsquo;s other key builtin data structure: maps.</p>
+            <p>بعد أن تعرفنا على المصفوفات والشرائح، سننتقل إلى هيكل
+بيانات مدمجة أساسية أخرى في Go، وهي الخرائط.</p>
 
           </td>
           <td class="code empty">
@@ -311,12 +309,23 @@ Go&rsquo;s other key builtin data structure: maps.</p>
       
       
       <p class="next">
-        Next example: <a href="maps" rel="next">Maps</a>.
+        المثال التالي: <a href="maps" rel="next"><bdi dir="auto">الخرائط (map)</bdi></a>.
       </p>
       
 
     <p class="footer">
-      by <a href="https://markmcgranaghan.com">Mark McGranaghan</a> and <a href="https://eli.thegreenplace.net">Eli Bendersky</a> | <a href="https://github.com/mmcgrana/gobyexample">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      إعداد <a href="https://markmcgranaghan.com"><bdi dir="ltr">Mark McGranaghan</bdi></a>
+      و<a href="https://eli.thegreenplace.net"><bdi dir="ltr">Eli Bendersky</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample">المصدر الأصلي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample#license">الرخصة</a>
+      <br />
+      الترجمة العربية بواسطة <a href="https://github.com/0xKa"><bdi dir="ltr">0xKa</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://rr0.me">الموقع الشخصي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/0xKa/gobyexample-ar">مصدر الترجمة</a>
     </p>
 
     </div>

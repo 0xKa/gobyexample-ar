@@ -1,6 +1,5 @@
-// Go offers excellent support for string formatting in
-// the `printf` tradition. Here are some examples of
-// common string formatting tasks.
+// توفر Go دعمًا ممتازًا لتنسيق السلاسل النصية وفق نهج `printf`.
+// إليك بعض الأمثلة على مهام تنسيق السلاسل النصية الشائعة.
 
 package main
 
@@ -15,96 +14,89 @@ type point struct {
 
 func main() {
 
-	// Go offers several printing "verbs" designed to
-	// format general Go values. For example, this prints
-	// an instance of our `point` struct.
+	// توفر Go عدة «أفعال» طباعة مصممة لتنسيق قيم Go العامة.
+	// يطبع هذا مثلًا نسخة من الهيكل `point` لدينا.
 	p := point{1, 2}
 	fmt.Printf("struct1: %v\n", p)
 
-	// If the value is a struct, the `%+v` variant will
-	// include the struct's field names.
+	// إذا كانت القيمة هيكلًا، فستتضمن الصيغة `%+v` أسماء حقول
+	// الهيكل.
 	fmt.Printf("struct2: %+v\n", p)
 
-	// The `%#v` variant prints a Go syntax representation
-	// of the value, i.e. the source code snippet that
-	// would produce that value.
+	// تطبع الصيغة `%#v` تمثيل القيمة بصياغة Go، أي مقطع الكود
+	// المصدري الذي يُنتج تلك القيمة.
 	fmt.Printf("struct3: %#v\n", p)
 
-	// To print the type of a value, use `%T`.
+	// لطباعة نوع قيمة، استخدم `%T`.
 	fmt.Printf("type: %T\n", p)
 
-	// Formatting booleans is straight-forward.
+	// تنسيق القيم المنطقية مباشر.
 	fmt.Printf("bool: %t\n", true)
 
-	// There are many options for formatting integers.
-	// Use `%d` for standard, base-10 formatting.
+	// توجد خيارات كثيرة لتنسيق الأعداد الصحيحة. استخدم `%d`
+	// للتنسيق القياسي ذي الأساس 10.
 	fmt.Printf("int: %d\n", 123)
 
-	// This prints a binary representation.
+	// يطبع هذا تمثيلًا ثنائيًا.
 	fmt.Printf("bin: %b\n", 14)
 
-	// This prints the character corresponding to the
-	// given integer.
+	// يطبع هذا المحرف المقابل للعدد الصحيح المعطى.
 	fmt.Printf("char: %c\n", 33)
 
-	// `%x` provides hex encoding.
+	// يوفر `%x` ترميزًا سداسيًا عشريًا.
 	fmt.Printf("hex: %x\n", 456)
 
-	// There are also several formatting options for
-	// floats. For basic decimal formatting use `%f`.
+	// توجد أيضًا عدة خيارات لتنسيق أعداد الفاصلة العائمة. استخدم
+	// `%f` للتنسيق العشري الأساسي.
 	fmt.Printf("float1: %f\n", 78.9)
 
-	// `%e` and `%E` format the float in (slightly
-	// different versions of) scientific notation.
+	// ينسق `%e` و`%E` عدد الفاصلة العائمة بصيغتين مختلفتين قليلًا
+	// من التدوين العلمي.
 	fmt.Printf("float2: %e\n", 123400000.0)
 	fmt.Printf("float3: %E\n", 123400000.0)
 
-	// For basic string printing use `%s`.
+	// استخدم `%s` للطباعة الأساسية للسلاسل النصية.
 	fmt.Printf("str1: %s\n", "\"string\"")
 
-	// To double-quote strings as in Go source, use `%q`.
+	// استخدم `%q` لإحاطة السلاسل النصية بعلامتي اقتباس مزدوجتين
+	// كما في كود Go المصدري.
 	fmt.Printf("str2: %q\n", "\"string\"")
 
-	// As with integers seen earlier, `%x` renders
-	// the string in base-16, with two output characters
-	// per byte of input.
+	// كما رأينا مع الأعداد الصحيحة، يعرض `%x` السلسلة النصية
+	// بالأساس 16، بمحرفي خرج لكل بايت من المدخلات.
 	fmt.Printf("str3: %x\n", "hex this")
 
-	// To print a representation of a pointer, use `%p`.
+	// لطباعة تمثيل لمؤشر، استخدم `%p`.
 	fmt.Printf("pointer: %p\n", &p)
 
-	// When formatting numbers you will often want to
-	// control the width and precision of the resulting
-	// figure. To specify the width of an integer, use a
-	// number after the `%` in the verb. By default the
-	// result will be right-justified and padded with
-	// spaces.
+	// عند تنسيق الأعداد، ستحتاج غالبًا إلى التحكم في عرض العدد
+	// الناتج ودقته. لتحديد عرض عدد صحيح، ضع عددًا بعد `%` في فعل
+	// التنسيق. تُحاذى النتيجة افتراضيًا إلى اليمين وتُحشى بمسافات.
 	fmt.Printf("width1: |%6d|%6d|\n", 12, 345)
 
-	// You can also specify the width of printed floats,
-	// though usually you'll also want to restrict the
-	// decimal precision at the same time with the
-	// width.precision syntax.
+	// يمكنك أيضًا تحديد عرض أعداد الفاصلة العائمة المطبوعة، لكنك
+	// سترغب عادة في تقييد الدقة العشرية في الوقت نفسه باستخدام
+	// الصياغة `width.precision`.
 	fmt.Printf("width2: |%6.2f|%6.2f|\n", 1.2, 3.45)
 
-	// To left-justify, use the `-` flag.
+	// للمحاذاة إلى اليسار، استخدم الخيار `-`.
 	fmt.Printf("width3: |%-6.2f|%-6.2f|\n", 1.2, 3.45)
 
-	// You may also want to control width when formatting
-	// strings, especially to ensure that they align in
-	// table-like output. For basic right-justified width.
+	// قد ترغب أيضًا في التحكم في العرض عند تنسيق السلاسل النصية،
+	// ولا سيما لضمان محاذاتها في خرج شبيه بالجدول. هذا عرض أساسي
+	// محاذى إلى اليمين.
 	fmt.Printf("width4: |%6s|%6s|\n", "foo", "b")
 
-	// To left-justify use the `-` flag as with numbers.
+	// للمحاذاة إلى اليسار، استخدم الخيار `-` كما مع الأعداد.
 	fmt.Printf("width5: |%-6s|%-6s|\n", "foo", "b")
 
-	// So far we've seen `Printf`, which prints the
-	// formatted string to `os.Stdout`. `Sprintf` formats
-	// and returns a string without printing it anywhere.
+	// رأينا حتى الآن `Printf`، التي تطبع السلسلة النصية المنسقة
+	// إلى `os.Stdout`. تنسق `Sprintf` سلسلة نصية وتعيدها دون
+	// طباعتها في أي مكان.
 	s := fmt.Sprintf("sprintf: a %s", "string")
 	fmt.Println(s)
 
-	// You can format+print to `io.Writers` other than
-	// `os.Stdout` using `Fprintf`.
+	// يمكنك استخدام `Fprintf` للتنسيق والطباعة إلى كائنات
+	// `io.Writer` غير `os.Stdout`.
 	fmt.Fprintf(os.Stderr, "io: an %s\n", "error")
 }

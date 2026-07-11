@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: JSON</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لغة Go بالأمثلة: JSON</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -11,12 +12,12 @@
               return;
           }
           
-          if (e.key == "ArrowLeft") {
+          if (e.key == "ArrowRight") {
               window.location.href = 'regular-expressions';
           }
           
           
-          if (e.key == "ArrowRight") {
+          if (e.key == "ArrowLeft") {
               window.location.href = 'xml';
           }
           
@@ -24,15 +25,14 @@
   </script>
   <body>
     <div class="example" id="json">
-      <h2><a href="./">Go by Example</a>: JSON</h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">JSON</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>Go offers built-in support for JSON encoding and
-decoding, including to and from built-in and custom
-data types.</p>
+            <p>توفر Go دعمًا مدمجًا لترميز JSON وفك ترميزه، بما في ذلك
+التحويل من أنواع البيانات المدمجة والمخصصة وإليها.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +46,7 @@ data types.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/z6LEC8UI8l8"><img title="Run code" src="play.png" class="run" /></a><img title="Copy code" src="clipboard.png" class="copy" />
+            <a href="https://go.dev/play/p/by7Lk-MV4tk" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -68,8 +68,8 @@ data types.</p>
         
         <tr>
           <td class="docs">
-            <p>We&rsquo;ll use these two structs to demonstrate encoding and
-decoding of custom types below.</p>
+            <p>سنستخدم هذين الهيكلين أدناه لتوضيح ترميز الأنواع المخصصة وفك
+ترميزها.</p>
 
           </td>
           <td class="code leading">
@@ -83,8 +83,8 @@ decoding of custom types below.</p>
         
         <tr>
           <td class="docs">
-            <p>Only exported fields will be encoded/decoded in JSON.
-Fields must start with capital letters to be exported.</p>
+            <p>لا تخضع للترميز وفك الترميز في JSON إلا الحقول المصدّرة. يجب
+أن تبدأ أسماء الحقول بأحرف إنجليزية كبيرة لتكون مصدّرة.</p>
 
           </td>
           <td class="code leading">
@@ -108,9 +108,8 @@ Fields must start with capital letters to be exported.</p>
         
         <tr>
           <td class="docs">
-            <p>First we&rsquo;ll look at encoding basic data types to
-JSON strings. Here are some examples for atomic
-values.</p>
+            <p>سنتعرف أولًا على ترميز أنواع البيانات الأساسية إلى سلاسل
+نصية بصيغة JSON. إليك بعض الأمثلة على القيم البسيطة.</p>
 
           </td>
           <td class="code leading">
@@ -155,8 +154,8 @@ values.</p>
         
         <tr>
           <td class="docs">
-            <p>And here are some for slices and maps, which encode
-to JSON arrays and objects as you&rsquo;d expect.</p>
+            <p>وإليك أمثلة على الشرائح والخرائط، التي تُرمّز إلى مصفوفات
+وكائنات JSON كما هو متوقع.</p>
 
           </td>
           <td class="code leading">
@@ -181,10 +180,9 @@ to JSON arrays and objects as you&rsquo;d expect.</p>
         
         <tr>
           <td class="docs">
-            <p>The JSON package can automatically encode your
-custom data types. It will only include exported
-fields in the encoded output and will by default
-use those names as the JSON keys.</p>
+            <p>يمكن لحزمة JSON ترميز أنواع بياناتك المخصصة تلقائيًا. لن
+يتضمن الخرج المرمّز سوى الحقول المصدّرة، وستستخدم الحزمة
+أسماءها افتراضيًا كمفاتيح JSON.</p>
 
           </td>
           <td class="code leading">
@@ -199,10 +197,9 @@ use those names as the JSON keys.</p>
         
         <tr>
           <td class="docs">
-            <p>You can use tags on struct field declarations
-to customize the encoded JSON key names. Check the
-definition of <code>response2</code> above to see an example
-of such tags.</p>
+            <p>يمكنك استخدام الوسوم في تصريحات حقول الهيكل لتخصيص أسماء
+مفاتيح JSON المرمّزة. راجع تعريف <code>response2</code> أعلاه للاطلاع
+على مثال لهذه الوسوم.</p>
 
           </td>
           <td class="code leading">
@@ -217,9 +214,8 @@ of such tags.</p>
         
         <tr>
           <td class="docs">
-            <p>Now let&rsquo;s look at decoding JSON data into Go
-values. Here&rsquo;s an example for a generic data
-structure.</p>
+            <p>لنتعرف الآن على فك ترميز بيانات JSON إلى قيم Go. إليك مثالًا
+على هيكل بيانات عام.</p>
 
           </td>
           <td class="code leading">
@@ -230,25 +226,22 @@ structure.</p>
         
         <tr>
           <td class="docs">
-            <p>We need to provide a variable where the JSON
-package can put the decoded data. This
-<code>map[string]interface{}</code> will hold a map of strings
-to arbitrary data types.</p>
+            <p>علينا توفير متغير تضع فيه حزمة JSON البيانات الناتجة عن فك
+الترميز. ستحتوي <code>map[string]any</code> هذه على خريطة تربط
+السلاسل النصية بقيم من أي نوع بيانات.</p>
 
           </td>
           <td class="code leading">
             
-          <pre class="chroma"><code><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">dat</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}</span></span></span></code></pre>
+          <pre class="chroma"><code><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">dat</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="nx">any</span></span></span></code></pre>
           </td>
         </tr>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s the actual decoding, and a check for
-associated errors.
-For the sake of brevity we ignore the errors in
-these examples; in real code, you should always check
-for errors and act upon them.</p>
+            <p>هذا هو فك الترميز الفعلي، مع التحقق من الأخطاء المرتبطة به.
+نتجاهل الأخطاء في هذه الأمثلة توخيًا للاختصار، لكن ينبغي في
+الكود الفعلي التحقق دائمًا من الأخطاء والتعامل معها.</p>
 
           </td>
           <td class="code leading">
@@ -262,10 +255,9 @@ for errors and act upon them.</p>
         
         <tr>
           <td class="docs">
-            <p>In order to use the values in the decoded map,
-we&rsquo;ll need to convert them to their appropriate type.
-For example here we convert the value in <code>num</code> to
-the expected <code>float64</code> type.</p>
+            <p>لاستخدام القيم الموجودة في الخريطة الناتجة عن فك الترميز،
+علينا تحويلها إلى أنواعها المناسبة. نحوّل هنا مثلًا القيمة في
+<code>num</code> إلى النوع المتوقع <code>float64</code>.</p>
 
           </td>
           <td class="code leading">
@@ -277,13 +269,12 @@ the expected <code>float64</code> type.</p>
         
         <tr>
           <td class="docs">
-            <p>Accessing nested data requires a series of
-conversions.</p>
+            <p>يتطلب الوصول إلى البيانات المتداخلة سلسلة من التحويلات.</p>
 
           </td>
           <td class="code leading">
             
-          <pre class="chroma"><code><span class="line"><span class="cl">    <span class="nx">strs</span> <span class="o">:=</span> <span class="nx">dat</span><span class="p">[</span><span class="s">&#34;strs&#34;</span><span class="p">].([]</span><span class="kd">interface</span><span class="p">{})</span>
+          <pre class="chroma"><code><span class="line"><span class="cl">    <span class="nx">strs</span> <span class="o">:=</span> <span class="nx">dat</span><span class="p">[</span><span class="s">&#34;strs&#34;</span><span class="p">].([]</span><span class="nx">any</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">str1</span> <span class="o">:=</span> <span class="nx">strs</span><span class="p">[</span><span class="mi">0</span><span class="p">].(</span><span class="kt">string</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">str1</span><span class="p">)</span></span></span></code></pre>
           </td>
@@ -291,11 +282,9 @@ conversions.</p>
         
         <tr>
           <td class="docs">
-            <p>We can also decode JSON into custom data types.
-This has the advantages of adding additional
-type-safety to our programs and eliminating the
-need for type assertions when accessing the decoded
-data.</p>
+            <p>يمكننا أيضًا فك ترميز JSON إلى أنواع بيانات مخصصة. يضيف ذلك
+مزيدًا من أمان الأنواع إلى برامجنا، ويلغي الحاجة إلى تأكيدات
+الأنواع عند الوصول إلى البيانات الناتجة عن فك الترميز.</p>
 
           </td>
           <td class="code leading">
@@ -310,11 +299,10 @@ data.</p>
         
         <tr>
           <td class="docs">
-            <p>In the examples above we always used bytes and
-strings as intermediates between the data and
-JSON representation on standard out. We can also
-stream JSON encodings directly to <code>os.Writer</code>s like
-<code>os.Stdout</code> or even HTTP response bodies.</p>
+            <p>استخدمنا في الأمثلة أعلاه دائمًا البايتات والسلاسل النصية
+كقيم وسيطة بين البيانات وتمثيل JSON على الخرج القياسي. يمكننا
+أيضًا إرسال ترميزات JSON مباشرة إلى كائنات <code>os.Writer</code> مثل
+<code>os.Stdout</code>، أو حتى إلى أجسام استجابات HTTP.</p>
 
           </td>
           <td class="code leading">
@@ -327,8 +315,8 @@ stream JSON encodings directly to <code>os.Writer</code>s like
         
         <tr>
           <td class="docs">
-            <p>Streaming reads from <code>os.Reader</code>s like <code>os.Stdin</code>
-or HTTP request bodies is done with <code>json.Decoder</code>.</p>
+            <p>تُجرى القراءة المتدفقة من كائنات <code>os.Reader</code> مثل <code>os.Stdin</code>
+أو أجسام طلبات HTTP باستخدام <code>json.Decoder</code>.</p>
 
           </td>
           <td class="code">
@@ -372,10 +360,9 @@ or HTTP request bodies is done with <code>json.Decoder</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>We&rsquo;ve covered the basic of JSON in Go here, but check
-out the <a href="https://go.dev/blog/json">JSON and Go</a>
-blog post and <a href="https://pkg.go.dev/encoding/json">JSON package docs</a>
-for more.</p>
+            <p>تناولنا هنا أساسيات JSON في Go. لمعرفة المزيد، راجع تدوينة
+<a href="https://go.dev/blog/json">JSON وGo</a> وتوثيق
+<a href="https://pkg.go.dev/encoding/json">حزمة JSON</a>.</p>
 
           </td>
           <td class="code empty">
@@ -388,18 +375,29 @@ for more.</p>
       
       
       <p class="next">
-        Next example: <a href="xml" rel="next">XML</a>.
+        المثال التالي: <a href="xml" rel="next"><bdi dir="auto">XML</bdi></a>.
       </p>
       
 
     <p class="footer">
-      by <a href="https://markmcgranaghan.com">Mark McGranaghan</a> and <a href="https://eli.thegreenplace.net">Eli Bendersky</a> | <a href="https://github.com/mmcgrana/gobyexample">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      إعداد <a href="https://markmcgranaghan.com"><bdi dir="ltr">Mark McGranaghan</bdi></a>
+      و<a href="https://eli.thegreenplace.net"><bdi dir="ltr">Eli Bendersky</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample">المصدر الأصلي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample#license">الرخصة</a>
+      <br />
+      الترجمة العربية بواسطة <a href="https://github.com/0xKa"><bdi dir="ltr">0xKa</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://rr0.me">الموقع الشخصي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/0xKa/gobyexample-ar">مصدر الترجمة</a>
     </p>
 
     </div>
     <script>
       var codeLines = [];
-      codeLines.push('');codeLines.push('package main\u000A');codeLines.push('import (\u000A    \"encoding/json\"\u000A    \"fmt\"\u000A    \"os\"\u000A    \"strings\"\u000A)\u000A');codeLines.push('type response1 struct {\u000A    Page   int\u000A    Fruits []string\u000A}\u000A');codeLines.push('type response2 struct {\u000A    Page   int      `json:\"page\"`\u000A    Fruits []string `json:\"fruits\"`\u000A}\u000A');codeLines.push('func main() {\u000A');codeLines.push('    bolB, _ :\u003D json.Marshal(true)\u000A    fmt.Println(string(bolB))\u000A');codeLines.push('    intB, _ :\u003D json.Marshal(1)\u000A    fmt.Println(string(intB))\u000A');codeLines.push('    fltB, _ :\u003D json.Marshal(2.34)\u000A    fmt.Println(string(fltB))\u000A');codeLines.push('    strB, _ :\u003D json.Marshal(\"gopher\")\u000A    fmt.Println(string(strB))\u000A');codeLines.push('    slcD :\u003D []string{\"apple\", \"peach\", \"pear\"}\u000A    slcB, _ :\u003D json.Marshal(slcD)\u000A    fmt.Println(string(slcB))\u000A');codeLines.push('    mapD :\u003D map[string]int{\"apple\": 5, \"lettuce\": 7}\u000A    mapB, _ :\u003D json.Marshal(mapD)\u000A    fmt.Println(string(mapB))\u000A');codeLines.push('    res1D :\u003D \u0026response1{\u000A        Page:   1,\u000A        Fruits: []string{\"apple\", \"peach\", \"pear\"}}\u000A    res1B, _ :\u003D json.Marshal(res1D)\u000A    fmt.Println(string(res1B))\u000A');codeLines.push('    res2D :\u003D \u0026response2{\u000A        Page:   1,\u000A        Fruits: []string{\"apple\", \"peach\", \"pear\"}}\u000A    res2B, _ :\u003D json.Marshal(res2D)\u000A    fmt.Println(string(res2B))\u000A');codeLines.push('    byt :\u003D []byte(`{\"num\":6.13,\"strs\":[\"a\",\"b\"]}`)\u000A');codeLines.push('    var dat map[string]interface{}\u000A');codeLines.push('    if err :\u003D json.Unmarshal(byt, \u0026dat); err !\u003D nil {\u000A        panic(err)\u000A    }\u000A    fmt.Println(dat)\u000A');codeLines.push('    num :\u003D dat[\"num\"].(float64)\u000A    fmt.Println(num)\u000A');codeLines.push('    strs :\u003D dat[\"strs\"].([]interface{})\u000A    str1 :\u003D strs[0].(string)\u000A    fmt.Println(str1)\u000A');codeLines.push('    str :\u003D `{\"page\": 1, \"fruits\": [\"apple\", \"peach\"]}`\u000A    res :\u003D response2{}\u000A    _ \u003D json.Unmarshal([]byte(str), \u0026res)\u000A    fmt.Println(res)\u000A    fmt.Println(res.Fruits[0])\u000A');codeLines.push('    enc :\u003D json.NewEncoder(os.Stdout)\u000A    d :\u003D map[string]int{\"apple\": 5, \"lettuce\": 7}\u000A    _ \u003D enc.Encode(d)\u000A');codeLines.push('    dec :\u003D json.NewDecoder(strings.NewReader(str))\u000A    res1 :\u003D response2{}\u000A    _ \u003D dec.Decode(\u0026res1)\u000A    fmt.Println(res1)\u000A}\u000A');codeLines.push('');codeLines.push('');
+      codeLines.push('');codeLines.push('package main\u000A');codeLines.push('import (\u000A    \"encoding/json\"\u000A    \"fmt\"\u000A    \"os\"\u000A    \"strings\"\u000A)\u000A');codeLines.push('type response1 struct {\u000A    Page   int\u000A    Fruits []string\u000A}\u000A');codeLines.push('type response2 struct {\u000A    Page   int      `json:\"page\"`\u000A    Fruits []string `json:\"fruits\"`\u000A}\u000A');codeLines.push('func main() {\u000A');codeLines.push('    bolB, _ :\u003D json.Marshal(true)\u000A    fmt.Println(string(bolB))\u000A');codeLines.push('    intB, _ :\u003D json.Marshal(1)\u000A    fmt.Println(string(intB))\u000A');codeLines.push('    fltB, _ :\u003D json.Marshal(2.34)\u000A    fmt.Println(string(fltB))\u000A');codeLines.push('    strB, _ :\u003D json.Marshal(\"gopher\")\u000A    fmt.Println(string(strB))\u000A');codeLines.push('    slcD :\u003D []string{\"apple\", \"peach\", \"pear\"}\u000A    slcB, _ :\u003D json.Marshal(slcD)\u000A    fmt.Println(string(slcB))\u000A');codeLines.push('    mapD :\u003D map[string]int{\"apple\": 5, \"lettuce\": 7}\u000A    mapB, _ :\u003D json.Marshal(mapD)\u000A    fmt.Println(string(mapB))\u000A');codeLines.push('    res1D :\u003D \u0026response1{\u000A        Page:   1,\u000A        Fruits: []string{\"apple\", \"peach\", \"pear\"}}\u000A    res1B, _ :\u003D json.Marshal(res1D)\u000A    fmt.Println(string(res1B))\u000A');codeLines.push('    res2D :\u003D \u0026response2{\u000A        Page:   1,\u000A        Fruits: []string{\"apple\", \"peach\", \"pear\"}}\u000A    res2B, _ :\u003D json.Marshal(res2D)\u000A    fmt.Println(string(res2B))\u000A');codeLines.push('    byt :\u003D []byte(`{\"num\":6.13,\"strs\":[\"a\",\"b\"]}`)\u000A');codeLines.push('    var dat map[string]any\u000A');codeLines.push('    if err :\u003D json.Unmarshal(byt, \u0026dat); err !\u003D nil {\u000A        panic(err)\u000A    }\u000A    fmt.Println(dat)\u000A');codeLines.push('    num :\u003D dat[\"num\"].(float64)\u000A    fmt.Println(num)\u000A');codeLines.push('    strs :\u003D dat[\"strs\"].([]any)\u000A    str1 :\u003D strs[0].(string)\u000A    fmt.Println(str1)\u000A');codeLines.push('    str :\u003D `{\"page\": 1, \"fruits\": [\"apple\", \"peach\"]}`\u000A    res :\u003D response2{}\u000A    _ \u003D json.Unmarshal([]byte(str), \u0026res)\u000A    fmt.Println(res)\u000A    fmt.Println(res.Fruits[0])\u000A');codeLines.push('    enc :\u003D json.NewEncoder(os.Stdout)\u000A    d :\u003D map[string]int{\"apple\": 5, \"lettuce\": 7}\u000A    _ \u003D enc.Encode(d)\u000A');codeLines.push('    dec :\u003D json.NewDecoder(strings.NewReader(str))\u000A    res1 :\u003D response2{}\u000A    _ \u003D dec.Decode(\u0026res1)\u000A    fmt.Println(res1)\u000A}\u000A');codeLines.push('');codeLines.push('');
     </script>
     <script src="site.js" async></script>
   </body>

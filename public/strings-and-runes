@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Strings and Runes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لغة Go بالأمثلة: السلاسل النصية والمحارف (string/rune)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -11,12 +12,12 @@
               return;
           }
           
-          if (e.key == "ArrowLeft") {
+          if (e.key == "ArrowRight") {
               window.location.href = 'pointers';
           }
           
           
-          if (e.key == "ArrowRight") {
+          if (e.key == "ArrowLeft") {
               window.location.href = 'structs';
           }
           
@@ -24,20 +25,19 @@
   </script>
   <body>
     <div class="example" id="strings-and-runes">
-      <h2><a href="./">Go by Example</a>: Strings and Runes</h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">السلاسل النصية والمحارف (string/rune)</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>A Go string is a read-only slice of bytes. The language
-and the standard library treat strings specially - as
-containers of text encoded in <a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a>.
-In other languages, strings are made of &ldquo;characters&rdquo;.
-In Go, the concept of a character is called a <code>rune</code> - it&rsquo;s
-an integer that represents a Unicode code point.
-<a href="https://go.dev/blog/strings">This Go blog post</a> is a good
-introduction to the topic.</p>
+            <p>السلسلة النصية في Go شريحة بايتات للقراءة فقط. تتعامل
+اللغة والمكتبة القياسية مع السلاسل النصية معاملة خاصة،
+بوصفها حاويات لنص مرمّز بصيغة <a href="https://ar.wikipedia.org/wiki/صيغة_التحويل_الموحد-8">UTF-8</a>.
+تتكون السلاسل النصية في لغات أخرى من «محارف». أما في
+Go، فيسمى مفهوم المحرف <code>rune</code>، وهو عدد صحيح يمثل نقطة
+ترميز Unicode. تقدم <a href="https://go.dev/blog/strings">هذه المقالة في مدونة Go</a>
+مقدمة جيدة للموضوع.</p>
 
           </td>
           <td class="code empty leading">
@@ -51,7 +51,7 @@ introduction to the topic.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/-iNDXZ9IM3s"><img title="Run code" src="play.png" class="run" /></a><img title="Copy code" src="clipboard.png" class="copy" />
+            <a href="https://go.dev/play/p/EvbYAo5AfDh" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -81,10 +81,9 @@ introduction to the topic.</p>
         
         <tr>
           <td class="docs">
-            <p><code>s</code> is a <code>string</code> assigned a literal value
-representing the word &ldquo;hello&rdquo; in the Thai
-language. Go string literals are UTF-8
-encoded text.</p>
+            <p><code>s</code> سلسلة نصية من النوع <code>string</code> أُسندت إليها قيمة
+حرفية تمثل كلمة «مرحبًا» باللغة التايلاندية. القيم
+الحرفية للسلاسل النصية في Go نص مرمّز بصيغة UTF-8.</p>
 
           </td>
           <td class="code leading">
@@ -95,8 +94,8 @@ encoded text.</p>
         
         <tr>
           <td class="docs">
-            <p>Since strings are equivalent to <code>[]byte</code>, this
-will produce the length of the raw bytes stored within.</p>
+            <p>بما أن السلاسل النصية تكافئ <code>[]byte</code>، فسيعطي هذا
+طول البايتات الخام المخزنة داخلها.</p>
 
           </td>
           <td class="code leading">
@@ -107,9 +106,9 @@ will produce the length of the raw bytes stored within.</p>
         
         <tr>
           <td class="docs">
-            <p>Indexing into a string produces the raw byte values at
-each index. This loop generates the hex values of all
-the bytes that constitute the code points in <code>s</code>.</p>
+            <p>يعطي الفهرسة داخل سلسلة نصية قيم البايتات الخام عند
+كل فهرس. تولد هذه الحلقة القيم الست عشرية لجميع
+البايتات التي تكوّن نقاط الترميز في <code>s</code>.</p>
 
           </td>
           <td class="code leading">
@@ -123,13 +122,12 @@ the bytes that constitute the code points in <code>s</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>To count how many <em>runes</em> are in a string, we can use
-the <code>utf8</code> package. Note that the run-time of
-<code>RuneCountInString</code> depends on the size of the string,
-because it has to decode each UTF-8 rune sequentially.
-Some Thai characters are represented by UTF-8 code points
-that can span multiple bytes, so the result of this count
-may be surprising.</p>
+            <p>لعد محارف <em><code>rune</code></em> الموجودة في سلسلة نصية، يمكننا
+استخدام الحزمة <code>utf8</code>. لاحظ أن زمن تنفيذ
+<code>RuneCountInString</code> يعتمد على حجم السلسلة النصية، لأنها
+تفك ترميز كل محرف UTF-8 بالتتابع. تُمثّل بعض المحارف
+التايلاندية بنقاط ترميز UTF-8 تمتد عبر عدة بايتات، لذلك
+قد تكون نتيجة هذا العد مفاجئة.</p>
 
           </td>
           <td class="code leading">
@@ -140,8 +138,8 @@ may be surprising.</p>
         
         <tr>
           <td class="docs">
-            <p>A <code>range</code> loop handles strings specially and decodes
-each <code>rune</code> along with its offset in the string.</p>
+            <p>تتعامل حلقة <code>range</code> مع السلاسل النصية معاملة خاصة،
+فتفك ترميز كل محرف <code>rune</code> مع إزاحته في السلسلة.</p>
 
           </td>
           <td class="code leading">
@@ -154,8 +152,8 @@ each <code>rune</code> along with its offset in the string.</p>
         
         <tr>
           <td class="docs">
-            <p>We can achieve the same iteration by using the
-<code>utf8.DecodeRuneInString</code> function explicitly.</p>
+            <p>يمكننا تنفيذ الاجتياز نفسه باستخدام الدالة
+<code>utf8.DecodeRuneInString</code> صراحةً.</p>
 
           </td>
           <td class="code leading">
@@ -170,7 +168,7 @@ each <code>rune</code> along with its offset in the string.</p>
         
         <tr>
           <td class="docs">
-            <p>This demonstrates passing a <code>rune</code> value to a function.</p>
+            <p>يوضح هذا تمرير قيمة من النوع <code>rune</code> إلى دالة.</p>
 
           </td>
           <td class="code leading">
@@ -193,8 +191,9 @@ each <code>rune</code> along with its offset in the string.</p>
         
         <tr>
           <td class="docs">
-            <p>Values enclosed in single quotes are <em>rune literals</em>. We
-can compare a <code>rune</code> value to a rune literal directly.</p>
+            <p>القيم المحاطة بعلامتي اقتباس مفردتين هي <em>قيم حرفية من
+النوع <code>rune</code></em>. ويمكننا مقارنة قيمة <code>rune</code> بقيمة حرفية
+من النوع نفسه مباشرةً.</p>
 
           </td>
           <td class="code">
@@ -253,12 +252,23 @@ can compare a <code>rune</code> value to a rune literal directly.</p>
       
       
       <p class="next">
-        Next example: <a href="structs" rel="next">Structs</a>.
+        المثال التالي: <a href="structs" rel="next"><bdi dir="auto">الهياكل (struct)</bdi></a>.
       </p>
       
 
     <p class="footer">
-      by <a href="https://markmcgranaghan.com">Mark McGranaghan</a> and <a href="https://eli.thegreenplace.net">Eli Bendersky</a> | <a href="https://github.com/mmcgrana/gobyexample">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      إعداد <a href="https://markmcgranaghan.com"><bdi dir="ltr">Mark McGranaghan</bdi></a>
+      و<a href="https://eli.thegreenplace.net"><bdi dir="ltr">Eli Bendersky</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample">المصدر الأصلي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample#license">الرخصة</a>
+      <br />
+      الترجمة العربية بواسطة <a href="https://github.com/0xKa"><bdi dir="ltr">0xKa</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://rr0.me">الموقع الشخصي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/0xKa/gobyexample-ar">مصدر الترجمة</a>
     </p>
 
     </div>

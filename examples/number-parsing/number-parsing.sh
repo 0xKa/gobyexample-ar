@@ -6,4 +6,4 @@ $ go run number-parsing.go
 135
 strconv.ParseInt: parsing "wat": invalid syntax
 
-# Next we'll look at another common parsing task: URLs.
+# سنتعرف تاليًا على مهمة تحليل شائعة أخرى: عناوين URL.

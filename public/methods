@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Methods</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لغة Go بالأمثلة: الأساليب (method)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -11,12 +12,12 @@
               return;
           }
           
-          if (e.key == "ArrowLeft") {
+          if (e.key == "ArrowRight") {
               window.location.href = 'structs';
           }
           
           
-          if (e.key == "ArrowRight") {
+          if (e.key == "ArrowLeft") {
               window.location.href = 'interfaces';
           }
           
@@ -24,13 +25,13 @@
   </script>
   <body>
     <div class="example" id="methods">
-      <h2><a href="./">Go by Example</a>: Methods</h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الأساليب (method)</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>Go supports <em>methods</em> defined on struct types.</p>
+            <p>تدعم Go تعريف <em>الأساليب</em> على أنواع الهياكل.</p>
 
           </td>
           <td class="code empty leading">
@@ -44,7 +45,7 @@
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/4wmDCAydC1e"><img title="Run code" src="play.png" class="run" /></a><img title="Copy code" src="clipboard.png" class="copy" />
+            <a href="https://go.dev/play/p/xgva37k49EJ" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -73,7 +74,7 @@
         
         <tr>
           <td class="docs">
-            <p>This <code>area</code> method has a <em>receiver type</em> of <code>*rect</code>.</p>
+            <p>للأسلوب <code>area</code> <em>نوع مستقبِل</em> هو <code>*rect</code>.</p>
 
           </td>
           <td class="code leading">
@@ -86,8 +87,8 @@
         
         <tr>
           <td class="docs">
-            <p>Methods can be defined for either pointer or value
-receiver types. Here&rsquo;s an example of a value receiver.</p>
+            <p>يمكن تعريف الأساليب على أنواع مستقبِلات من المؤشرات أو
+القيم. إليك مثالًا على مستقبِل من نوع قيمة.</p>
 
           </td>
           <td class="code leading">
@@ -111,7 +112,7 @@ receiver types. Here&rsquo;s an example of a value receiver.</p>
         
         <tr>
           <td class="docs">
-            <p>Here we call the 2 methods defined for our struct.</p>
+            <p>نستدعي هنا الأسلوبين المعرّفين لهيكلنا.</p>
 
           </td>
           <td class="code leading">
@@ -123,11 +124,10 @@ receiver types. Here&rsquo;s an example of a value receiver.</p>
         
         <tr>
           <td class="docs">
-            <p>Go automatically handles conversion between values
-and pointers for method calls. You may want to use
-a pointer receiver type to avoid copying on method
-calls or to allow the method to mutate the
-receiving struct.</p>
+            <p>تتولى Go تلقائيًا التحويل بين القيم والمؤشرات عند
+استدعاء الأساليب. قد ترغب في استخدام نوع مستقبِل من
+المؤشرات لتجنب النسخ عند استدعاء الأسلوب، أو للسماح
+للأسلوب بتغيير الهيكل المستقبِل.</p>
 
           </td>
           <td class="code">
@@ -159,8 +159,8 @@ receiving struct.</p>
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at Go&rsquo;s mechanism for grouping and
-naming related sets of methods: interfaces.</p>
+            <p>سنستعرض تاليًا آلية Go لتجميع مجموعات الأساليب
+المترابطة وتسميتها: الواجهات.</p>
 
           </td>
           <td class="code empty">
@@ -173,12 +173,23 @@ naming related sets of methods: interfaces.</p>
       
       
       <p class="next">
-        Next example: <a href="interfaces" rel="next">Interfaces</a>.
+        المثال التالي: <a href="interfaces" rel="next"><bdi dir="auto">الواجهات (interface)</bdi></a>.
       </p>
       
 
     <p class="footer">
-      by <a href="https://markmcgranaghan.com">Mark McGranaghan</a> and <a href="https://eli.thegreenplace.net">Eli Bendersky</a> | <a href="https://github.com/mmcgrana/gobyexample">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      إعداد <a href="https://markmcgranaghan.com"><bdi dir="ltr">Mark McGranaghan</bdi></a>
+      و<a href="https://eli.thegreenplace.net"><bdi dir="ltr">Eli Bendersky</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample">المصدر الأصلي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample#license">الرخصة</a>
+      <br />
+      الترجمة العربية بواسطة <a href="https://github.com/0xKa"><bdi dir="ltr">0xKa</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://rr0.me">الموقع الشخصي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/0xKa/gobyexample-ar">مصدر الترجمة</a>
     </p>
 
     </div>

@@ -1,7 +1,6 @@
-// It's possible to define custom error types by
-// implementing the `Error()` method on them. Here's a
-// variant on the example above that uses a custom type
-// to explicitly represent an argument error.
+// يمكن تعريف أنواع أخطاء مخصصة بتطبيق الأسلوب `Error()`
+// عليها. إليك نسخة من المثال السابق تستخدم نوعًا مخصصًا
+// لتمثيل خطأ في وسيط بوضوح.
 
 package main
 
@@ -10,14 +9,14 @@ import (
 	"fmt"
 )
 
-// A custom error type usually has the suffix "Error".
+// يحمل نوع الخطأ المخصص عادةً اللاحقة `Error`.
 type argError struct {
 	arg     int
 	message string
 }
 
-// Adding this `Error` method makes `argError` implement
-// the `error` interface.
+// تؤدي إضافة الأسلوب `Error` إلى جعل `argError` يطبق
+// واجهة `error`.
 func (e *argError) Error() string {
 	return fmt.Sprintf("%d - %s", e.arg, e.message)
 }
@@ -25,7 +24,7 @@ func (e *argError) Error() string {
 func f(arg int) (int, error) {
 	if arg == 42 {
 
-		// Return our custom error.
+		// أعد الخطأ المخصص.
 		return -1, &argError{arg, "can't work with it"}
 	}
 	return arg + 3, nil
@@ -33,11 +32,11 @@ func f(arg int) (int, error) {
 
 func main() {
 
-	// `errors.AsType` is a more advanced version of `errors.Is`.
-	// It checks that a given error (or any error in its chain)
-	// matches a specific error type and converts to a value
-	// of that type, also returning `true`. If there's no match, the
-	// second return value is `false`.
+	// `errors.AsType` نسخة أكثر تقدمًا من `errors.Is`. تتحقق
+	// مما إذا كان خطأ معطى، أو أي خطأ في سلسلته، يطابق نوع
+	// خطأ محدد، وتحوله إلى قيمة من ذلك النوع مع إعادة
+	// `true` أيضًا. إذا لم يوجد تطابق، تكون قيمة الإرجاع
+	// الثانية `false`.
 	_, err := f(42)
 	if ae, ok := errors.AsType[*argError](err); ok {
 		fmt.Println(ae.arg)

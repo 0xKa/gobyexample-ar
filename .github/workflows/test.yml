@@ -6,25 +6,32 @@ on:
   pull_request:
     branches: [ master ]
 
-jobs:
+permissions:
+  contents: read
 
+jobs:
   build:
+    name: Translation and build checks (${{ matrix.os }})
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest]
-        go-version: [1.26.0]
 
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v6
 
     - name: Set up Go
-      uses: actions/setup-go@v3
+      uses: actions/setup-go@v6
       with:
-        go-version: ${{ matrix.go-version }}
+        go-version-file: go.mod
+        cache-dependency-path: go.sum
 
-    - name: Test
+    - name: Validate translation and generated site
       run: tools/build
       env:
         VERBOSE: 1
         TESTING: 1
+
+    - name: Verify clean build
+      run: git diff --exit-code

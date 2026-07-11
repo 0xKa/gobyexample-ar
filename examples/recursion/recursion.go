@@ -1,13 +1,13 @@
-// Go supports
-// <a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)"><em>recursive functions</em></a>.
-// Here's a classic example.
+// تدعم Go
+// <a href="https://ar.wikipedia.org/wiki/عودية_(علم_الحاسوب)"><em>الدوال ذاتية الاستدعاء</em></a>.
+// إليك مثالًا تقليديًا.
 
 package main
 
 import "fmt"
 
-// This `fact` function calls itself until it reaches the
-// base case of `fact(0)`.
+// تستدعي الدالة `fact` نفسها حتى تصل إلى الحالة الأساسية
+// `fact(0)`.
 func fact(n int) int {
 	if n == 0 {
 		return 1
@@ -18,9 +18,9 @@ func fact(n int) int {
 func main() {
 	fmt.Println(fact(7))
 
-	// Anonymous functions can also be recursive, but this requires
-	// explicitly declaring a variable with `var` to store
-	// the function before it's defined.
+	// يمكن للدوال المجهولة أيضًا أن تستدعي نفسها، لكن ذلك
+	// يتطلب التصريح صراحةً باستخدام `var` عن متغير يخزن
+	// الدالة قبل تعريفها.
 	var fib func(n int) int
 
 	fib = func(n int) int {
@@ -28,8 +28,8 @@ func main() {
 			return n
 		}
 
-		// Since `fib` was previously declared in `main`, Go
-		// knows which function to call with `fib` here.
+		// بما أن `fib` صُرّح عنها سابقًا في `main`، تعرف Go
+		// أي دالة تستدعيها باستخدام `fib` هنا.
 		return fib(n-1) + fib(n-2)
 	}
 

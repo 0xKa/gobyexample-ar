@@ -1,5 +1,4 @@
-// Writing a basic HTTP server is easy using the
-// `net/http` package.
+// تسهل كتابة خادم HTTP أساسي باستخدام الحزمة `net/http`.
 package main
 
 import (
@@ -7,26 +6,21 @@ import (
 	"net/http"
 )
 
-// A fundamental concept in `net/http` servers is
-// *handlers*. A handler is an object implementing the
-// `http.Handler` interface. A common way to write
-// a handler is by using the `http.HandlerFunc` adapter
-// on functions with the appropriate signature.
+// تُعد *المعالجات* مفهومًا أساسيًا في خوادم `net/http`. المعالج
+// كائن ينفذ الواجهة `http.Handler`. من الطرق الشائعة لكتابة معالج
+// استخدام المهايئ `http.HandlerFunc` مع دوال ذات توقيع مناسب.
 func hello(w http.ResponseWriter, req *http.Request) {
 
-	// Functions serving as handlers take a
-	// `http.ResponseWriter` and a `http.Request` as
-	// arguments. The response writer is used to fill in the
-	// HTTP response. Here our simple response is just
-	// "hello\n".
+	// تأخذ الدوال التي تعمل كمعالجات `http.ResponseWriter`
+	// و`http.Request` وسيطين. يُستخدم كاتب الاستجابة لملء استجابة
+	// HTTP. استجابتنا البسيطة هنا ليست سوى `"hello\n"`.
 	fmt.Fprintf(w, "hello\n")
 }
 
 func headers(w http.ResponseWriter, req *http.Request) {
 
-	// This handler does something a little more
-	// sophisticated by reading all the HTTP request
-	// headers and echoing them into the response body.
+	// ينفذ هذا المعالج مهمة أكثر تقدمًا قليلًا، إذ يقرأ جميع ترويسات
+	// طلب HTTP ويرددها في جسم الاستجابة.
 	for name, headers := range req.Header {
 		for _, h := range headers {
 			fmt.Fprintf(w, "%v: %v\n", name, h)
@@ -36,15 +30,13 @@ func headers(w http.ResponseWriter, req *http.Request) {
 
 func main() {
 
-	// We register our handlers on server routes using the
-	// `http.HandleFunc` convenience function. It sets up
-	// the *default router* in the `net/http` package and
-	// takes a function as an argument.
+	// نسجّل معالجاتنا في مسارات الخادم باستخدام الدالة المساعدة
+	// `http.HandleFunc`. تضبط هذه الدالة *الموجّه الافتراضي* في
+	// الحزمة `net/http`، وتأخذ دالة بوصفها وسيطًا.
 	http.HandleFunc("/hello", hello)
 	http.HandleFunc("/headers", headers)
 
-	// Finally, we call the `ListenAndServe` with the port
-	// and a handler. `nil` tells it to use the default
-	// router we've just set up.
+	// نستدعي أخيرًا `ListenAndServe` مع المنفذ ومعالج. تطلب منها
+	// `nil` استخدام الموجّه الافتراضي الذي أعددناه للتو.
 	http.ListenAndServe(":8090", nil)
 }

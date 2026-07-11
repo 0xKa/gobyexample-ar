@@ -1,27 +1,27 @@
-// Go has built-in support for _multiple return values_.
-// This feature is used often in idiomatic Go, for example
-// to return both result and error values from a function.
+// تدعم Go _إرجاع قيم متعددة_ دعمًا مدمجًا. تُستخدم هذه
+// الميزة كثيرًا في أسلوب Go المتعارف عليه، مثل إعادة
+// النتيجة والخطأ معًا من دالة.
 
 package main
 
 import "fmt"
 
-// The `(int, int)` in this function signature shows that
-// the function returns 2 `int`s.
+// يوضح `(int, int)` في توقيع هذه الدالة أنها تعيد
+// قيمتين من النوع `int`.
 func vals() (int, int) {
 	return 3, 7
 }
 
 func main() {
 
-	// Here we use the 2 different return values from the
-	// call with _multiple assignment_.
+	// نستخدم هنا قيمتي الإرجاع المختلفتين من الاستدعاء
+	// بواسطة _الإسناد المتعدد_.
 	a, b := vals()
 	fmt.Println(a)
 	fmt.Println(b)
 
-	// If you only want a subset of the returned values,
-	// use the blank identifier `_`.
+	// إذا أردت بعض القيم المعادة فقط، فاستخدم المعرّف
+	// الفارغ `_`.
 	_, c := vals()
 	fmt.Println(c)
 }

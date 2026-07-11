@@ -1,15 +1,14 @@
-// In Go it's idiomatic to communicate errors via an
-// explicit, separate return value. This contrasts with
-// the exceptions used in languages like Java, Python and
-// Ruby and the overloaded single result / error value
-// sometimes used in C. Go's approach makes it easy to
-// see which functions return errors and to handle them
-// using the same language constructs employed for other,
-// non-error tasks.
+// من المتعارف عليه في Go التعبير عن الأخطاء بقيمة إرجاع
+// صريحة ومنفصلة. يختلف ذلك عن الاستثناءات المستخدمة في
+// لغات مثل Java وPython وRuby، وعن القيمة المفردة التي
+// تُستخدم أحيانًا في C لتمثيل النتيجة أو الخطأ. تسهّل
+// طريقة Go معرفة الدوال التي تعيد أخطاء ومعالجتها باستخدام
+// تراكيب اللغة نفسها المستخدمة للمهام الأخرى غير المرتبطة
+// بالأخطاء.
 //
-// See the documentation of the [errors package](https://pkg.go.dev/errors)
-// and [this blog post](https://go.dev/blog/go1.13-errors) for additional
-// details.
+// راجع توثيق [حزمة errors](https://pkg.go.dev/errors)
+// و[هذه المقالة](https://go.dev/blog/go1.13-errors) لمزيد
+// من التفاصيل.
 
 package main
 
@@ -18,22 +17,21 @@ import (
 	"fmt"
 )
 
-// By convention, errors are the last return value and
-// have type `error`, a built-in interface.
+// تكون الأخطاء حسب العرف قيمة الإرجاع الأخيرة، ويكون نوعها
+// `error`، وهو واجهة مدمجة.
 func f(arg int) (int, error) {
 	if arg == 42 {
-		// `errors.New` constructs a basic `error` value
-		// with the given error message.
+		// تنشئ `errors.New` قيمة `error` أساسية برسالة
+		// الخطأ المعطاة.
 		return -1, errors.New("can't work with 42")
 	}
 
-	// A `nil` value in the error position indicates that
-	// there was no error.
+	// تدل قيمة `nil` في موضع الخطأ على عدم وقوع خطأ.
 	return arg + 3, nil
 }
 
-// A sentinel error is a predeclared variable that is used to
-// signify a specific error condition.
+// الخطأ الدالّ متغير مصرح عنه مسبقًا يُستخدم للدلالة على
+// حالة خطأ محددة.
 var ErrOutOfTea = errors.New("no more tea available")
 var ErrPower = errors.New("can't boil water")
 
@@ -42,12 +40,11 @@ func makeTea(arg int) error {
 		return ErrOutOfTea
 	} else if arg == 4 {
 
-		// We can wrap errors with higher-level errors to add
-		// context. The simplest way to do this is with the
-		// `%w` verb in `fmt.Errorf`. Wrapped errors
-		// create a logical chain (A wraps B, which wraps C, etc.)
-		// that can be queried with functions like `errors.Is`
-		// and `errors.AsType`.
+		// يمكننا تغليف الأخطاء بأخطاء أعلى مستوى لإضافة سياق.
+		// أبسط طريقة لذلك هي استخدام الفعل `%w` في
+		// `fmt.Errorf`. تنشئ الأخطاء المغلفة سلسلة منطقية
+		// (يغلف `A` الخطأ `B`، الذي يغلف `C`، وهكذا) يمكن الاستعلام
+		// عنها بدوال مثل `errors.Is` و`errors.AsType`.
 		return fmt.Errorf("making tea: %w", ErrPower)
 	}
 	return nil
@@ -56,8 +53,7 @@ func makeTea(arg int) error {
 func main() {
 	for _, i := range []int{7, 42} {
 
-		// It's idiomatic to use an inline error check in the `if`
-		// line.
+		// من المتعارف عليه التحقق من الخطأ داخل سطر `if`.
 		if r, e := f(i); e != nil {
 			fmt.Println("f failed:", e)
 		} else {
@@ -68,10 +64,10 @@ func main() {
 	for i := range 5 {
 		if err := makeTea(i); err != nil {
 
-			// `errors.Is` checks that a given error (or any error in its chain)
-			// matches a specific error value. This is especially useful with wrapped or
-			// nested errors, allowing you to identify specific error types or sentinel
-			// errors in a chain of errors.
+			// تتحقق `errors.Is` مما إذا كان خطأ معطى، أو أي خطأ
+			// في سلسلته، يطابق قيمة خطأ محددة. يفيد ذلك خصوصًا
+			// مع الأخطاء المغلفة أو المتداخلة، إذ يتيح تحديد أنواع
+			// أخطاء معينة أو أخطاء دالّة داخل سلسلة أخطاء.
 			if errors.Is(err, ErrOutOfTea) {
 				fmt.Println("We should buy new tea!")
 			} else if errors.Is(err, ErrPower) {

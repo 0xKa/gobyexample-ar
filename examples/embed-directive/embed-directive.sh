@@ -1,6 +1,6 @@
-# Use these commands to run the example.
-# (Note: due to limitation on go playground,
-# this example can only be run on your local machine.)
+# استخدم هذه الأوامر لتشغيل المثال.
+# (ملاحظة: بسبب قيود Go Playground، لا يمكن تشغيل هذا المثال
+# إلا على جهازك المحلي.)
 $ mkdir -p folder
 $ echo "hello go" > folder/single_file.txt
 $ echo "123" > folder/file1.hash

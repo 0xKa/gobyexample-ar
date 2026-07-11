@@ -1,7 +1,6 @@
-// _Timeouts_ are important for programs that connect to
-// external resources or that otherwise need to bound
-// execution time. Implementing timeouts in Go is easy and
-// elegant thanks to channels and `select`.
+// _المهل الزمنية_ مهمة للبرامج التي تتصل بموارد خارجية، أو
+// التي تحتاج لسبب آخر إلى تقييد وقت التنفيذ. يسهل تنفيذ المهل
+// الزمنية في Go بأناقة بفضل القنوات و`select`.
 
 package main
 
@@ -12,24 +11,21 @@ import (
 
 func main() {
 
-	// For our example, suppose we're executing an external
-	// call that returns its result on a channel `c1`
-	// after 2s. Note that the channel is buffered, so the
-	// send in the goroutine is nonblocking. This is a
-	// common pattern to prevent goroutine leaks in case the
-	// channel is never read.
+	// لنفترض في مثالنا أننا ننفذ استدعاءً خارجيًا يعيد نتيجته
+	// عبر القناة `c1` بعد ثانيتين. لاحظ أن القناة مخزنة مؤقتًا،
+	// ولذلك تكون عملية الإرسال داخل روتين Go غير حاجزة. هذا نمط
+	// شائع لمنع تسرب روتين Go إذا لم تُقرأ القناة قط.
 	c1 := make(chan string, 1)
 	go func() {
 		time.Sleep(2 * time.Second)
 		c1 <- "result 1"
 	}()
 
-	// Here's the `select` implementing a timeout.
-	// `res := <-c1` awaits the result and `<-time.After`
-	// awaits a value to be sent after the timeout of
-	// 1s. Since `select` proceeds with the first
-	// receive that's ready, we'll take the timeout case
-	// if the operation takes more than the allowed 1s.
+	// تنفّذ `select` هنا مهلة زمنية. تنتظر `res := <-c1`
+	// النتيجة، بينما تنتظر `<-time.After` إرسال قيمة بعد مهلة
+	// مدتها ثانية واحدة. ولأن `select` تتابع أول عملية استقبال
+	// تصبح جاهزة، فسننفذ فرع المهلة إذا استغرقت العملية أكثر من
+	// الثانية المسموح بها.
 	select {
 	case res := <-c1:
 		fmt.Println(res)
@@ -37,8 +33,8 @@ func main() {
 		fmt.Println("timeout 1")
 	}
 
-	// If we allow a longer timeout of 3s, then the receive
-	// from `c2` will succeed and we'll print the result.
+	// إذا سمحنا بمهلة أطول مدتها 3 ثوانٍ، فستنجح عملية الاستقبال
+	// من `c2` وسنطبع النتيجة.
 	c2 := make(chan string, 1)
 	go func() {
 		time.Sleep(2 * time.Second)

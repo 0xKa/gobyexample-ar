@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Constants</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لغة Go بالأمثلة: الثوابت (const)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -11,12 +12,12 @@
               return;
           }
           
-          if (e.key == "ArrowLeft") {
+          if (e.key == "ArrowRight") {
               window.location.href = 'variables';
           }
           
           
-          if (e.key == "ArrowRight") {
+          if (e.key == "ArrowLeft") {
               window.location.href = 'for';
           }
           
@@ -24,14 +25,14 @@
   </script>
   <body>
     <div class="example" id="constants">
-      <h2><a href="./">Go by Example</a>: Constants</h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الثوابت (const)</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>Go supports <em>constants</em> of character, string, boolean,
-and numeric values.</p>
+            <p>تدعم Go <em>الثوابت</em> المحرفية والنصية والمنطقية
+والعددية.</p>
 
           </td>
           <td class="code empty leading">
@@ -45,7 +46,7 @@ and numeric values.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/LfvIxHlpomp"><img title="Run code" src="play.png" class="run" /></a><img title="Copy code" src="clipboard.png" class="copy" />
+            <a href="https://go.dev/play/p/hs_WpWSRGDx" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -65,7 +66,7 @@ and numeric values.</p>
         
         <tr>
           <td class="docs">
-            <p><code>const</code> declares a constant value.</p>
+            <p>تصرّح <code>const</code> عن قيمة ثابتة.</p>
 
           </td>
           <td class="code leading">
@@ -87,8 +88,8 @@ and numeric values.</p>
         
         <tr>
           <td class="docs">
-            <p>A <code>const</code> statement can also appear inside a
-function body.</p>
+            <p>يمكن أن تظهر عبارة <code>const</code> أيضًا داخل جسم
+الدالة.</p>
 
           </td>
           <td class="code leading">
@@ -99,8 +100,8 @@ function body.</p>
         
         <tr>
           <td class="docs">
-            <p>Constant expressions perform arithmetic with
-arbitrary precision.</p>
+            <p>تُجري تعبيرات الثوابت العمليات الحسابية بدقة
+غير محدودة.</p>
 
           </td>
           <td class="code leading">
@@ -112,8 +113,8 @@ arbitrary precision.</p>
         
         <tr>
           <td class="docs">
-            <p>A numeric constant has no type until it&rsquo;s given
-one, such as by an explicit conversion.</p>
+            <p>لا يكون للثابت العددي نوع حتى يُسند إليه نوع،
+كما يحدث مثلًا عند إجراء تحويل صريح.</p>
 
           </td>
           <td class="code leading">
@@ -124,10 +125,10 @@ one, such as by an explicit conversion.</p>
         
         <tr>
           <td class="docs">
-            <p>A number can be given a type by using it in a
-context that requires one, such as a variable
-assignment or function call. For example, here
-<code>math.Sin</code> expects a <code>float64</code>.</p>
+            <p>يمكن إسناد نوع إلى عدد باستخدامه في سياق يتطلب
+نوعًا، مثل إسناده إلى متغير أو تمريره إلى دالة.
+فمثلًا، تتوقع <code>math.Sin</code> هنا قيمة من النوع
+<code>float64</code>.</p>
 
           </td>
           <td class="code">
@@ -159,12 +160,23 @@ assignment or function call. For example, here
       
       
       <p class="next">
-        Next example: <a href="for" rel="next">For</a>.
+        المثال التالي: <a href="for" rel="next"><bdi dir="auto">حلقة التكرار (for)</bdi></a>.
       </p>
       
 
     <p class="footer">
-      by <a href="https://markmcgranaghan.com">Mark McGranaghan</a> and <a href="https://eli.thegreenplace.net">Eli Bendersky</a> | <a href="https://github.com/mmcgrana/gobyexample">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      إعداد <a href="https://markmcgranaghan.com"><bdi dir="ltr">Mark McGranaghan</bdi></a>
+      و<a href="https://eli.thegreenplace.net"><bdi dir="ltr">Eli Bendersky</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample">المصدر الأصلي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample#license">الرخصة</a>
+      <br />
+      الترجمة العربية بواسطة <a href="https://github.com/0xKa"><bdi dir="ltr">0xKa</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://rr0.me">الموقع الشخصي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/0xKa/gobyexample-ar">مصدر الترجمة</a>
     </p>
 
     </div>

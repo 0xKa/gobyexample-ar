@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Generics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لغة Go بالأمثلة: الأنواع العامة (generics)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -11,12 +12,12 @@
               return;
           }
           
-          if (e.key == "ArrowLeft") {
+          if (e.key == "ArrowRight") {
               window.location.href = 'struct-embedding';
           }
           
           
-          if (e.key == "ArrowRight") {
+          if (e.key == "ArrowLeft") {
               window.location.href = 'range-over-iterators';
           }
           
@@ -24,14 +25,14 @@
   </script>
   <body>
     <div class="example" id="generics">
-      <h2><a href="./">Go by Example</a>: Generics</h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الأنواع العامة (generics)</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>Starting with version 1.18, Go has added support for
-<em>generics</em>, also known as <em>type parameters</em>.</p>
+            <p>أضافت Go منذ الإصدار 1.18 دعم _الأنواع العامة_، المعروفة
+أيضًا باسم <em>مُعامِلات الأنواع</em>.</p>
 
           </td>
           <td class="code empty leading">
@@ -45,7 +46,7 @@
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/7v7vElzhAeO"><img title="Run code" src="play.png" class="run" /></a><img title="Copy code" src="clipboard.png" class="copy" />
+            <a href="https://go.dev/play/p/r0CF5h48t9Y" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -62,15 +63,14 @@
         
         <tr>
           <td class="docs">
-            <p>As an example of a generic function, <code>SlicesIndex</code> takes
-a slice of any <code>comparable</code> type and an element of that
-type and returns the index of the first occurrence of
-v in s, or -1 if not present. The <code>comparable</code> constraint
-means that we can compare values of this type with the
-<code>==</code> and <code>!=</code> operators. For a more thorough explanation
-of this type signature, see <a href="https://go.dev/blog/deconstructing-type-parameters">this blog post</a>.
-Note that this function exists in the standard library
-as <a href="https://pkg.go.dev/slices#Index">slices.Index</a>.</p>
+            <p>كمثال على دالة عامة، تستقبل <code>SlicesIndex</code> شريحة من أي
+نوع <code>comparable</code> وعنصرًا من ذلك النوع، ثم تعيد فهرس أول
+ظهور لـ<code>v</code> في <code>s</code>، أو <code>-1</code> إن لم يوجد. يعني القيد
+<code>comparable</code> أنه يمكننا مقارنة قيم هذا النوع بالمعاملين
+<code>==</code> و<code>!=</code>. لشرح أشمل لتوقيع النوع هذا، راجع
+<a href="https://go.dev/blog/deconstructing-type-parameters">هذه المقالة</a>.
+لاحظ أن هذه الدالة موجودة في المكتبة القياسية باسم
+<a href="https://pkg.go.dev/slices#Index">slices.Index</a>.</p>
 
           </td>
           <td class="code leading">
@@ -88,8 +88,8 @@ as <a href="https://pkg.go.dev/slices#Index">slices.Index</a>.</p>
         
         <tr>
           <td class="docs">
-            <p>As an example of a generic type, <code>List</code> is a
-singly-linked list with values of any type.</p>
+            <p>كمثال على نوع عام، تمثل <code>List</code> قائمة أحادية الربط
+بقيم من أي نوع.</p>
 
           </td>
           <td class="code leading">
@@ -115,9 +115,9 @@ singly-linked list with values of any type.</p>
         
         <tr>
           <td class="docs">
-            <p>We can define methods on generic types just like we
-do on regular types, but we have to keep the type
-parameters in place. The type is <code>List[T]</code>, not <code>List</code>.</p>
+            <p>يمكننا تعريف الأساليب على الأنواع العامة كما نفعل مع
+الأنواع العادية، لكن علينا إبقاء مُعامِلات الأنواع في
+مواضعها. النوع هو <code>List[T]</code> لا <code>List</code>.</p>
 
           </td>
           <td class="code leading">
@@ -136,9 +136,9 @@ parameters in place. The type is <code>List[T]</code>, not <code>List</code>.</p
         
         <tr>
           <td class="docs">
-            <p>AllElements returns all the List elements as a slice.
-In the next example we&rsquo;ll see a more idiomatic way
-of iterating over all elements of custom types.</p>
+            <p>تعيد <code>AllElements</code> جميع عناصر <code>List</code> في شريحة. سنرى في
+المثال التالي طريقةً أقرب إلى أسلوب Go المتعارف عليه
+لاجتياز جميع عناصر الأنواع المخصصة.</p>
 
           </td>
           <td class="code leading">
@@ -166,11 +166,10 @@ of iterating over all elements of custom types.</p>
         
         <tr>
           <td class="docs">
-            <p>When invoking generic functions, we can often rely
-on <em>type inference</em>. Note that we don&rsquo;t have to
-specify the types for <code>S</code> and <code>E</code> when
-calling <code>SlicesIndex</code> - the compiler infers them
-automatically.</p>
+            <p>عند استدعاء الدوال العامة، يمكننا غالبًا الاعتماد على
+<em>استنتاج النوع</em>. لاحظ أننا لا نحتاج إلى تحديد نوعي
+<code>S</code> و<code>E</code> عند استدعاء <code>SlicesIndex</code>، إذ يستنتجهما
+المترجم تلقائيًا.</p>
 
           </td>
           <td class="code leading">
@@ -181,7 +180,7 @@ automatically.</p>
         
         <tr>
           <td class="docs">
-            <p>&hellip; though we could also specify them explicitly.</p>
+            <p>&hellip; مع أنه يمكننا أيضًا تحديدهما صراحةً.</p>
 
           </td>
           <td class="code leading">
@@ -225,12 +224,23 @@ automatically.</p>
       
       
       <p class="next">
-        Next example: <a href="range-over-iterators" rel="next">Range over Iterators</a>.
+        المثال التالي: <a href="range-over-iterators" rel="next"><bdi dir="auto">اجتياز المكررات</bdi></a>.
       </p>
       
 
     <p class="footer">
-      by <a href="https://markmcgranaghan.com">Mark McGranaghan</a> and <a href="https://eli.thegreenplace.net">Eli Bendersky</a> | <a href="https://github.com/mmcgrana/gobyexample">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      إعداد <a href="https://markmcgranaghan.com"><bdi dir="ltr">Mark McGranaghan</bdi></a>
+      و<a href="https://eli.thegreenplace.net"><bdi dir="ltr">Eli Bendersky</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample">المصدر الأصلي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample#license">الرخصة</a>
+      <br />
+      الترجمة العربية بواسطة <a href="https://github.com/0xKa"><bdi dir="ltr">0xKa</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://rr0.me">الموقع الشخصي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/0xKa/gobyexample-ar">مصدر الترجمة</a>
     </p>
 
     </div>

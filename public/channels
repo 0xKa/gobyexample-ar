@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Channels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لغة Go بالأمثلة: القنوات (chan)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -11,12 +12,12 @@
               return;
           }
           
-          if (e.key == "ArrowLeft") {
+          if (e.key == "ArrowRight") {
               window.location.href = 'goroutines';
           }
           
           
-          if (e.key == "ArrowRight") {
+          if (e.key == "ArrowLeft") {
               window.location.href = 'channel-buffering';
           }
           
@@ -24,16 +25,15 @@
   </script>
   <body>
     <div class="example" id="channels">
-      <h2><a href="./">Go by Example</a>: Channels</h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">القنوات (chan)</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p><em>Channels</em> are the pipes that connect concurrent
-goroutines. You can send values into channels from one
-goroutine and receive those values into another
-goroutine.</p>
+            <p><em>القنوات</em> هي الأنابيب التي تصل بين روتينات Go المتزامنة.
+يمكنك إرسال قيم إلى القنوات من روتين Go واستقبال تلك القيم
+في روتين Go آخر.</p>
 
           </td>
           <td class="code empty leading">
@@ -47,7 +47,7 @@ goroutine.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/MaLY7AiAkHM"><img title="Run code" src="play.png" class="run" /></a><img title="Copy code" src="clipboard.png" class="copy" />
+            <a href="https://go.dev/play/p/-04TmAxkooI" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -74,8 +74,8 @@ goroutine.</p>
         
         <tr>
           <td class="docs">
-            <p>Create a new channel with <code>make(chan val-type)</code>.
-Channels are typed by the values they convey.</p>
+            <p>أنشئ قناة جديدة باستخدام <code>make(chan val-type)</code>.
+يتحدد نوع القناة بحسب نوع القيم التي تنقلها.</p>
 
           </td>
           <td class="code leading">
@@ -86,9 +86,9 @@ Channels are typed by the values they convey.</p>
         
         <tr>
           <td class="docs">
-            <p><em>Send</em> a value into a channel using the <code>channel &lt;-</code>
-syntax. Here we send <code>&quot;ping&quot;</code>  to the <code>messages</code>
-channel we made above, from a new goroutine.</p>
+            <p><em>أرسل</em> قيمة إلى قناة باستخدام الصياغة <code>channel &lt;-</code>.
+نرسل هنا <code>&quot;ping&quot;</code> إلى القناة <code>messages</code> التي أنشأناها
+أعلاه، وذلك من روتين Go جديد.</p>
 
           </td>
           <td class="code leading">
@@ -99,9 +99,8 @@ channel we made above, from a new goroutine.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>&lt;-channel</code> syntax <em>receives</em> a value from the
-channel. Here we&rsquo;ll receive the <code>&quot;ping&quot;</code> message
-we sent above and print it out.</p>
+            <p>تستقبل الصياغة <code>&lt;-channel</code> قيمة من القناة. سنستقبل هنا
+الرسالة <code>&quot;ping&quot;</code> التي أرسلناها أعلاه ونطبعها.</p>
 
           </td>
           <td class="code">
@@ -118,9 +117,8 @@ we sent above and print it out.</p>
         
         <tr>
           <td class="docs">
-            <p>When we run the program the <code>&quot;ping&quot;</code> message is
-successfully passed from one goroutine to another via
-our channel.</p>
+            <p>عند تشغيل البرنامج، تنتقل الرسالة <code>&quot;ping&quot;</code> بنجاح من روتين
+Go إلى آخر عبر قناتنا.</p>
 
           </td>
           <td class="code leading">
@@ -132,10 +130,10 @@ our channel.</p>
         
         <tr>
           <td class="docs">
-            <p>By default sends and receives block until both the
-sender and receiver are ready. This property allowed
-us to wait at the end of our program for the <code>&quot;ping&quot;</code>
-message without having to use any other synchronization.</p>
+            <p>تحجب عمليتا الإرسال والاستقبال افتراضيًا حتى يصبح كل من
+المرسل والمستقبِل جاهزًا. أتاحت لنا هذه الخاصية انتظار
+الرسالة <code>&quot;ping&quot;</code> في نهاية برنامجنا دون الحاجة إلى أي وسيلة
+مزامنة أخرى.</p>
 
           </td>
           <td class="code empty">
@@ -148,12 +146,23 @@ message without having to use any other synchronization.</p>
       
       
       <p class="next">
-        Next example: <a href="channel-buffering" rel="next">Channel Buffering</a>.
+        المثال التالي: <a href="channel-buffering" rel="next"><bdi dir="auto">القنوات المخزنة مؤقتًا</bdi></a>.
       </p>
       
 
     <p class="footer">
-      by <a href="https://markmcgranaghan.com">Mark McGranaghan</a> and <a href="https://eli.thegreenplace.net">Eli Bendersky</a> | <a href="https://github.com/mmcgrana/gobyexample">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      إعداد <a href="https://markmcgranaghan.com"><bdi dir="ltr">Mark McGranaghan</bdi></a>
+      و<a href="https://eli.thegreenplace.net"><bdi dir="ltr">Eli Bendersky</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample">المصدر الأصلي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample#license">الرخصة</a>
+      <br />
+      الترجمة العربية بواسطة <a href="https://github.com/0xKa"><bdi dir="ltr">0xKa</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://rr0.me">الموقع الشخصي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/0xKa/gobyexample-ar">مصدر الترجمة</a>
     </p>
 
     </div>

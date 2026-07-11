@@ -1,8 +1,7 @@
-// [Timers](timers) are for when you want to do
-// something once in the future - _tickers_ are for when
-// you want to do something repeatedly at regular
-// intervals. Here's an example of a ticker that ticks
-// periodically until we stop it.
+// تُستخدم [المؤقتات](timers) عندما تريد تنفيذ شيء مرة واحدة
+// مستقبلًا، بينما تُستخدم _المؤقتات الدورية_ عندما تريد تنفيذه
+// مرارًا على فواصل زمنية منتظمة. إليك مثالًا على مؤقت دوري
+// يرسل نبضات بانتظام حتى نوقفه.
 
 package main
 
@@ -13,10 +12,9 @@ import (
 
 func main() {
 
-	// Tickers use a similar mechanism to timers: a
-	// channel that is sent values. Here we'll use the
-	// `select` builtin on the channel to await the
-	// values as they arrive every 500ms.
+	// تستخدم المؤقتات الدورية آلية شبيهة بالمؤقتات: قناة تُرسل
+	// إليها القيم. سنستخدم هنا عبارة `select` المدمجة على القناة
+	// لانتظار القيم عند وصولها كل 500 مللي ثانية.
 	ticker := time.NewTicker(500 * time.Millisecond)
 	done := make(chan bool)
 
@@ -31,9 +29,9 @@ func main() {
 		}
 	}()
 
-	// Tickers can be stopped like timers. Once a ticker
-	// is stopped it won't receive any more values on its
-	// channel. We'll stop ours after 1600ms.
+	// يمكن إيقاف المؤقتات الدورية مثل المؤقتات. بعد إيقاف المؤقت
+	// الدوري، لن تتلقى قناته أي قيم أخرى. سنوقف مؤقتنا بعد 1600
+	// مللي ثانية.
 	time.Sleep(1600 * time.Millisecond)
 	ticker.Stop()
 	done <- true

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Temporary Files and Directories</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لغة Go بالأمثلة: الملفات والمجلدات المؤقتة</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -11,12 +12,12 @@
               return;
           }
           
-          if (e.key == "ArrowLeft") {
+          if (e.key == "ArrowRight") {
               window.location.href = 'directories';
           }
           
           
-          if (e.key == "ArrowRight") {
+          if (e.key == "ArrowLeft") {
               window.location.href = 'embed-directive';
           }
           
@@ -24,17 +25,15 @@
   </script>
   <body>
     <div class="example" id="temporary-files-and-directories">
-      <h2><a href="./">Go by Example</a>: Temporary Files and Directories</h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الملفات والمجلدات المؤقتة</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>Throughout program execution, we often want to create
-data that isn&rsquo;t needed after the program exits.
-<em>Temporary files and directories</em> are useful for this
-purpose since they don&rsquo;t pollute the file system over
-time.</p>
+            <p>نحتاج غالبًا أثناء تنفيذ البرنامج إلى إنشاء بيانات لا نحتاجها
+بعد خروجه. تفيد <em>الملفات والمجلدات المؤقتة</em> لهذا الغرض، لأنها
+لا تكدّس البيانات في نظام الملفات بمرور الوقت.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,7 +47,7 @@ time.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/hVcPg9RH3_V"><img title="Run code" src="play.png" class="run" /></a><img title="Copy code" src="clipboard.png" class="copy" />
+            <a href="https://go.dev/play/p/7Z7Poo0rlJb" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -93,11 +92,10 @@ time.</p>
         
         <tr>
           <td class="docs">
-            <p>The easiest way to create a temporary file is by
-calling <code>os.CreateTemp</code>. It creates a file <em>and</em>
-opens it for reading and writing. We provide <code>&quot;&quot;</code>
-as the first argument, so <code>os.CreateTemp</code> will
-create the file in the default location for our OS.</p>
+            <p>أسهل طريقة لإنشاء ملف مؤقت هي استدعاء <code>os.CreateTemp</code>. فهي
+تنشئ ملفًا <em>وتفتحه</em> للقراءة والكتابة. نمرر <code>&quot;&quot;</code> بوصفه الوسيط
+الأول، لذلك ستنشئ <code>os.CreateTemp</code> الملف في الموقع الافتراضي
+لنظام التشغيل لدينا.</p>
 
           </td>
           <td class="code leading">
@@ -109,12 +107,10 @@ create the file in the default location for our OS.</p>
         
         <tr>
           <td class="docs">
-            <p>Display the name of the temporary file. On
-Unix-based OSes the directory will likely be <code>/tmp</code>.
-The file name starts with the prefix given as the
-second argument to <code>os.CreateTemp</code> and the rest
-is chosen automatically to ensure that concurrent
-calls will always create different file names.</p>
+            <p>اعرض اسم الملف المؤقت. في أنظمة التشغيل المبنية على Unix،
+سيكون المجلد غالبًا <code>/tmp</code>. يبدأ اسم الملف بالبادئة الممررة
+وسيطًا ثانيًا إلى <code>os.CreateTemp</code>، ويُختار باقي الاسم تلقائيًا
+لضمان أن تنشئ الاستدعاءات المتزامنة أسماء ملفات مختلفة دائمًا.</p>
 
           </td>
           <td class="code leading">
@@ -125,10 +121,8 @@ calls will always create different file names.</p>
         
         <tr>
           <td class="docs">
-            <p>Clean up the file after we&rsquo;re done. The OS is
-likely to clean up temporary files by itself after
-some time, but it&rsquo;s good practice to do this
-explicitly.</p>
+            <p>احذف الملف بعد الانتهاء. يُرجح أن ينظف نظام التشغيل الملفات
+المؤقتة بنفسه بعد مدة، لكن يُستحسن فعل ذلك صراحة.</p>
 
           </td>
           <td class="code leading">
@@ -139,7 +133,7 @@ explicitly.</p>
         
         <tr>
           <td class="docs">
-            <p>We can write some data to the file.</p>
+            <p>يمكننا كتابة بعض البيانات إلى الملف.</p>
 
           </td>
           <td class="code leading">
@@ -151,11 +145,9 @@ explicitly.</p>
         
         <tr>
           <td class="docs">
-            <p>If we intend to write many temporary files, we may
-prefer to create a temporary <em>directory</em>.
-<code>os.MkdirTemp</code>&rsquo;s arguments are the same as
-<code>CreateTemp</code>&rsquo;s, but it returns a directory <em>name</em>
-rather than an open file.</p>
+            <p>إذا كنا نعتزم كتابة ملفات مؤقتة كثيرة، فقد نفضل إنشاء <em>مجلد</em>
+مؤقت. وسائط <code>os.MkdirTemp</code> هي نفسها وسائط <code>CreateTemp</code>، لكنها
+تعيد <em>اسم</em> مجلد بدلًا من ملف مفتوح.</p>
 
           </td>
           <td class="code leading">
@@ -178,8 +170,7 @@ rather than an open file.</p>
         
         <tr>
           <td class="docs">
-            <p>Now we can synthesize temporary file names by
-prefixing them with our temporary directory.</p>
+            <p>يمكننا الآن إنشاء أسماء ملفات مؤقتة داخل مجلدنا المؤقت.</p>
 
           </td>
           <td class="code">
@@ -211,12 +202,23 @@ prefixing them with our temporary directory.</p>
       
       
       <p class="next">
-        Next example: <a href="embed-directive" rel="next">Embed Directive</a>.
+        المثال التالي: <a href="embed-directive" rel="next"><bdi dir="auto">توجيه التضمين (//go:embed)</bdi></a>.
       </p>
       
 
     <p class="footer">
-      by <a href="https://markmcgranaghan.com">Mark McGranaghan</a> and <a href="https://eli.thegreenplace.net">Eli Bendersky</a> | <a href="https://github.com/mmcgrana/gobyexample">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      إعداد <a href="https://markmcgranaghan.com"><bdi dir="ltr">Mark McGranaghan</bdi></a>
+      و<a href="https://eli.thegreenplace.net"><bdi dir="ltr">Eli Bendersky</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample">المصدر الأصلي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample#license">الرخصة</a>
+      <br />
+      الترجمة العربية بواسطة <a href="https://github.com/0xKa"><bdi dir="ltr">0xKa</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://rr0.me">الموقع الشخصي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/0xKa/gobyexample-ar">مصدر الترجمة</a>
     </p>
 
     </div>

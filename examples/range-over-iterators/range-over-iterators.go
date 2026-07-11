@@ -1,6 +1,6 @@
-// Starting with version 1.23, Go has added support for
-// [iterators](https://go.dev/blog/range-functions),
-// which lets us range over pretty much anything!
+// أضافت Go منذ الإصدار 1.23 دعم
+// [المكررات](https://go.dev/blog/range-functions)،
+// مما يتيح لنا استخدام `range` مع أي شيء تقريبًا!
 
 package main
 
@@ -11,11 +11,11 @@ import (
 	"strings"
 )
 
-// Let's look at the `List` type from the
-// [previous example](generics) again. In that example
-// we had an `AllElements` method that returned a slice
-// of all elements in the list. With Go iterators, we
-// can do it better - as shown below.
+// لننظر مجددًا إلى النوع `List` من
+// [المثال السابق](generics). كان لدينا في ذلك المثال
+// أسلوب `AllElements` يعيد شريحة بجميع عناصر القائمة.
+// يمكننا تنفيذ ذلك بصورة أفضل باستخدام مكررات Go، كما
+// هو موضح أدناه.
 type List[T any] struct {
 	head, tail *element[T]
 }
@@ -35,15 +35,14 @@ func (lst *List[T]) Push(v T) {
 	}
 }
 
-// All returns an _iterator_, which in Go is a function
-// with a [special signature](https://pkg.go.dev/iter#Seq).
+// تعيد `All` _مكررًا_، وهو في Go دالة ذات
+// [توقيع خاص](https://pkg.go.dev/iter#Seq).
 func (lst *List[T]) All() iter.Seq[T] {
 	return func(yield func(T) bool) {
-		// The iterator function takes another function as
-		// a parameter, called `yield` by convention (but
-		// the name can be arbitrary). It will call `yield` for
-		// every element we want to iterate over, and note `yield`'s
-		// return value for a potential early termination.
+		// تستقبل دالة المكرر دالة أخرى كمُعامِل تسمى `yield`
+		// حسب العرف، مع إمكان اختيار أي اسم. تستدعي `yield`
+		// لكل عنصر نريد اجتيازه، وتراعي قيمة إرجاع `yield`
+		// لاحتمال الإنهاء المبكر.
 		for e := lst.head; e != nil; e = e.next {
 			if !yield(e.val) {
 				return
@@ -52,10 +51,9 @@ func (lst *List[T]) All() iter.Seq[T] {
 	}
 }
 
-// Iteration doesn't require an underlying data structure,
-// and doesn't even have to be finite! Here's a function
-// returning an iterator over Fibonacci numbers: it keeps
-// running as long as `yield` keeps returning `true`.
+// لا يتطلب الاجتياز هيكل بيانات أساسيًا، ولا يلزم حتى أن
+// يكون محدودًا! إليك دالة تعيد مكررًا لأعداد فيبوناتشي؛
+// إذ تستمر في العمل ما دامت `yield` تعيد `true`.
 func genFib() iter.Seq[int] {
 	return func(yield func(int) bool) {
 		a, b := 0, 1
@@ -75,30 +73,29 @@ func main() {
 	lst.Push(13)
 	lst.Push(23)
 
-	// Since `List.All` returns an iterator, we can use it
-	// in a regular `range` loop.
+	// بما أن `List.All` تعيد مكررًا، يمكننا استخدامها في
+	// حلقة `range` عادية.
 	for e := range lst.All() {
 		fmt.Println(e)
 	}
 
-	// Packages like [slices](https://pkg.go.dev/slices) have
-	// a number of useful functions to work with iterators.
-	// For example, `Collect` takes any iterator and collects
-	// all its values into a slice.
+	// تحتوي حزم مثل [slices](https://pkg.go.dev/slices) على
+	// عدد من الدوال المفيدة للعمل مع المكررات. فمثلًا، تستقبل
+	// `Collect` أي مكرر وتجمع كل قيمه في شريحة.
 	all := slices.Collect(lst.All())
 	fmt.Println("all:", all)
 
-	// Standard library packages now expose iterator helpers
-	// too. For example, `strings.SplitSeq` iterates over parts
-	// of a byte slice without first building a result slice.
+	// توفر حزم المكتبة القياسية الآن دوال مساعدة للمكررات
+	// أيضًا. فمثلًا، تجتاز `strings.SplitSeq` أجزاء شريحة
+	// بايتات دون إنشاء شريحة نتائج أولًا.
 	for part := range strings.SplitSeq("go-by-example", "-") {
 		fmt.Printf("part: %s\n", part)
 	}
 
 	for n := range genFib() {
 
-		// Once the loop hits `break` or an early return, the `yield` function
-		// passed to the iterator will return `false`.
+		// بمجرد وصول الحلقة إلى `break` أو إرجاع مبكر، ستعيد
+		// الدالة `yield` الممررة إلى المكرر القيمة `false`.
 		if n >= 10 {
 			break
 		}

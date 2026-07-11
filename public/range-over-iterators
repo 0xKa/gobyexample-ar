@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Range over Iterators</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لغة Go بالأمثلة: اجتياز المكررات</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -11,12 +12,12 @@
               return;
           }
           
-          if (e.key == "ArrowLeft") {
+          if (e.key == "ArrowRight") {
               window.location.href = 'generics';
           }
           
           
-          if (e.key == "ArrowRight") {
+          if (e.key == "ArrowLeft") {
               window.location.href = 'errors';
           }
           
@@ -24,15 +25,15 @@
   </script>
   <body>
     <div class="example" id="range-over-iterators">
-      <h2><a href="./">Go by Example</a>: Range over Iterators</h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">اجتياز المكررات</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>Starting with version 1.23, Go has added support for
-<a href="https://go.dev/blog/range-functions">iterators</a>,
-which lets us range over pretty much anything!</p>
+            <p>أضافت Go منذ الإصدار 1.23 دعم
+<a href="https://go.dev/blog/range-functions">المكررات</a>،
+مما يتيح لنا استخدام <code>range</code> مع أي شيء تقريبًا!</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +47,7 @@ which lets us range over pretty much anything!</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/lHX3uDqdfUB"><img title="Run code" src="play.png" class="run" /></a><img title="Copy code" src="clipboard.png" class="copy" />
+            <a href="https://go.dev/play/p/kt5evm0K287" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -68,11 +69,11 @@ which lets us range over pretty much anything!</p>
         
         <tr>
           <td class="docs">
-            <p>Let&rsquo;s look at the <code>List</code> type from the
-<a href="generics">previous example</a> again. In that example
-we had an <code>AllElements</code> method that returned a slice
-of all elements in the list. With Go iterators, we
-can do it better - as shown below.</p>
+            <p>لننظر مجددًا إلى النوع <code>List</code> من
+<a href="generics">المثال السابق</a>. كان لدينا في ذلك المثال
+أسلوب <code>AllElements</code> يعيد شريحة بجميع عناصر القائمة.
+يمكننا تنفيذ ذلك بصورة أفضل باستخدام مكررات Go، كما
+هو موضح أدناه.</p>
 
           </td>
           <td class="code leading">
@@ -116,8 +117,8 @@ can do it better - as shown below.</p>
         
         <tr>
           <td class="docs">
-            <p>All returns an <em>iterator</em>, which in Go is a function
-with a <a href="https://pkg.go.dev/iter#Seq">special signature</a>.</p>
+            <p>تعيد <code>All</code> _مكررًا_، وهو في Go دالة ذات
+<a href="https://pkg.go.dev/iter#Seq">توقيع خاص</a>.</p>
 
           </td>
           <td class="code leading">
@@ -129,11 +130,10 @@ with a <a href="https://pkg.go.dev/iter#Seq">special signature</a>.</p>
         
         <tr>
           <td class="docs">
-            <p>The iterator function takes another function as
-a parameter, called <code>yield</code> by convention (but
-the name can be arbitrary). It will call <code>yield</code> for
-every element we want to iterate over, and note <code>yield</code>&rsquo;s
-return value for a potential early termination.</p>
+            <p>تستقبل دالة المكرر دالة أخرى كمُعامِل تسمى <code>yield</code>
+حسب العرف، مع إمكان اختيار أي اسم. تستدعي <code>yield</code>
+لكل عنصر نريد اجتيازه، وتراعي قيمة إرجاع <code>yield</code>
+لاحتمال الإنهاء المبكر.</p>
 
           </td>
           <td class="code leading">
@@ -150,10 +150,9 @@ return value for a potential early termination.</p>
         
         <tr>
           <td class="docs">
-            <p>Iteration doesn&rsquo;t require an underlying data structure,
-and doesn&rsquo;t even have to be finite! Here&rsquo;s a function
-returning an iterator over Fibonacci numbers: it keeps
-running as long as <code>yield</code> keeps returning <code>true</code>.</p>
+            <p>لا يتطلب الاجتياز هيكل بيانات أساسيًا، ولا يلزم حتى أن
+يكون محدودًا! إليك دالة تعيد مكررًا لأعداد فيبوناتشي؛
+إذ تستمر في العمل ما دامت <code>yield</code> تعيد <code>true</code>.</p>
 
           </td>
           <td class="code leading">
@@ -197,8 +196,8 @@ running as long as <code>yield</code> keeps returning <code>true</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Since <code>List.All</code> returns an iterator, we can use it
-in a regular <code>range</code> loop.</p>
+            <p>بما أن <code>List.All</code> تعيد مكررًا، يمكننا استخدامها في
+حلقة <code>range</code> عادية.</p>
 
           </td>
           <td class="code leading">
@@ -211,10 +210,9 @@ in a regular <code>range</code> loop.</p>
         
         <tr>
           <td class="docs">
-            <p>Packages like <a href="https://pkg.go.dev/slices">slices</a> have
-a number of useful functions to work with iterators.
-For example, <code>Collect</code> takes any iterator and collects
-all its values into a slice.</p>
+            <p>تحتوي حزم مثل <a href="https://pkg.go.dev/slices">slices</a> على
+عدد من الدوال المفيدة للعمل مع المكررات. فمثلًا، تستقبل
+<code>Collect</code> أي مكرر وتجمع كل قيمه في شريحة.</p>
 
           </td>
           <td class="code leading">
@@ -226,9 +224,9 @@ all its values into a slice.</p>
         
         <tr>
           <td class="docs">
-            <p>Standard library packages now expose iterator helpers
-too. For example, <code>strings.SplitSeq</code> iterates over parts
-of a byte slice without first building a result slice.</p>
+            <p>توفر حزم المكتبة القياسية الآن دوال مساعدة للمكررات
+أيضًا. فمثلًا، تجتاز <code>strings.SplitSeq</code> أجزاء شريحة
+بايتات دون إنشاء شريحة نتائج أولًا.</p>
 
           </td>
           <td class="code leading">
@@ -251,8 +249,8 @@ of a byte slice without first building a result slice.</p>
         
         <tr>
           <td class="docs">
-            <p>Once the loop hits <code>break</code> or an early return, the <code>yield</code> function
-passed to the iterator will return <code>false</code>.</p>
+            <p>بمجرد وصول الحلقة إلى <code>break</code> أو إرجاع مبكر، ستعيد
+الدالة <code>yield</code> الممررة إلى المكرر القيمة <code>false</code>.</p>
 
           </td>
           <td class="code">
@@ -298,12 +296,23 @@ passed to the iterator will return <code>false</code>.</p>
       
       
       <p class="next">
-        Next example: <a href="errors" rel="next">Errors</a>.
+        المثال التالي: <a href="errors" rel="next"><bdi dir="auto">الأخطاء (error)</bdi></a>.
       </p>
       
 
     <p class="footer">
-      by <a href="https://markmcgranaghan.com">Mark McGranaghan</a> and <a href="https://eli.thegreenplace.net">Eli Bendersky</a> | <a href="https://github.com/mmcgrana/gobyexample">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      إعداد <a href="https://markmcgranaghan.com"><bdi dir="ltr">Mark McGranaghan</bdi></a>
+      و<a href="https://eli.thegreenplace.net"><bdi dir="ltr">Eli Bendersky</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample">المصدر الأصلي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample#license">الرخصة</a>
+      <br />
+      الترجمة العربية بواسطة <a href="https://github.com/0xKa"><bdi dir="ltr">0xKa</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://rr0.me">الموقع الشخصي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/0xKa/gobyexample-ar">مصدر الترجمة</a>
     </p>
 
     </div>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Closing Channels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لغة Go بالأمثلة: إغلاق القنوات (close)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -11,12 +12,12 @@
               return;
           }
           
-          if (e.key == "ArrowLeft") {
+          if (e.key == "ArrowRight") {
               window.location.href = 'non-blocking-channel-operations';
           }
           
           
-          if (e.key == "ArrowRight") {
+          if (e.key == "ArrowLeft") {
               window.location.href = 'range-over-channels';
           }
           
@@ -24,15 +25,14 @@
   </script>
   <body>
     <div class="example" id="closing-channels">
-      <h2><a href="./">Go by Example</a>: Closing Channels</h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">إغلاق القنوات (close)</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p><em>Closing</em> a channel indicates that no more values
-will be sent on it. This can be useful to communicate
-completion to the channel&rsquo;s receivers.</p>
+            <p>يشير <em>إغلاق</em> قناة إلى عدم إرسال أي قيم أخرى إليها. يفيد ذلك
+في إبلاغ مستقبِلي القناة باكتمال العمل.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +46,7 @@ completion to the channel&rsquo;s receivers.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/yZijZHYe22y"><img title="Run code" src="play.png" class="run" /></a><img title="Copy code" src="clipboard.png" class="copy" />
+            <a href="https://go.dev/play/p/-HhwitYgQHu" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -63,10 +63,10 @@ completion to the channel&rsquo;s receivers.</p>
         
         <tr>
           <td class="docs">
-            <p>In this example we&rsquo;ll use a <code>jobs</code> channel to
-communicate work to be done from the <code>main()</code> goroutine
-to a worker goroutine. When we have no more jobs for
-the worker we&rsquo;ll <code>close</code> the <code>jobs</code> channel.</p>
+            <p>سنستخدم في هذا المثال القناة <code>jobs</code> لإرسال العمل المطلوب من
+روتين Go الذي ينفذ <code>main()</code> إلى روتين Go عامل. عندما لا يبقى
+لدينا المزيد من المهام للعامل، سنغلق القناة <code>jobs</code> باستخدام
+<code>close</code>.</p>
 
           </td>
           <td class="code leading">
@@ -79,13 +79,11 @@ the worker we&rsquo;ll <code>close</code> the <code>jobs</code> channel.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s the worker goroutine. It repeatedly receives
-from <code>jobs</code> with <code>j, more := &lt;-jobs</code>. In this
-special 2-value form of receive, the <code>more</code> value
-will be <code>false</code> if <code>jobs</code> has been <code>close</code>d and all
-values in the channel have already been received.
-We use this to notify on <code>done</code> when we&rsquo;ve worked
-all our jobs.</p>
+            <p>هذا هو روتين Go العامل. يستقبل مرارًا من <code>jobs</code> باستخدام
+<code>j, more := &lt;-jobs</code>. في صيغة الاستقبال الخاصة هذه، التي
+تعيد قيمتين، تكون قيمة <code>more</code> مساوية لـ<code>false</code> إذا أُغلقت
+<code>jobs</code> واستُقبلت جميع القيم الموجودة في القناة. نستخدم ذلك
+للإشعار عبر <code>done</code> بعد إنجاز جميع مهامنا.</p>
 
           </td>
           <td class="code leading">
@@ -107,8 +105,7 @@ all our jobs.</p>
         
         <tr>
           <td class="docs">
-            <p>This sends 3 jobs to the worker over the <code>jobs</code>
-channel, then closes it.</p>
+            <p>يرسل هذا 3 مهام إلى العامل عبر القناة <code>jobs</code>، ثم يغلقها.</p>
 
           </td>
           <td class="code leading">
@@ -124,9 +121,8 @@ channel, then closes it.</p>
         
         <tr>
           <td class="docs">
-            <p>We await the worker using the
-<a href="channel-synchronization">synchronization</a> approach
-we saw earlier.</p>
+            <p>ننتظر العامل باستخدام أسلوب
+<a href="channel-synchronization">المزامنة</a> الذي رأيناه سابقًا.</p>
 
           </td>
           <td class="code leading">
@@ -137,13 +133,11 @@ we saw earlier.</p>
         
         <tr>
           <td class="docs">
-            <p>Reading from a closed channel succeeds immediately,
-returning the zero value of the underlying type.
-The optional second return value is <code>true</code> if the
-value received was delivered by a successful send
-operation to the channel, or <code>false</code> if it was a
-zero value generated because the channel is closed
-and empty.</p>
+            <p>تنجح القراءة من قناة مغلقة فورًا، وتعيد القيمة الصفرية
+للنوع الأساسي. تكون قيمة الإرجاع الثانية الاختيارية <code>true</code>
+إذا وصلت القيمة المستقبلة بعملية إرسال ناجحة إلى القناة،
+أو <code>false</code> إذا كانت قيمة صفرية أُنشئت لأن القناة مغلقة
+وفارغة.</p>
 
           </td>
           <td class="code">
@@ -179,8 +173,8 @@ and empty.</p>
         
         <tr>
           <td class="docs">
-            <p>The idea of closed channels leads naturally to our next
-example: <code>range</code> over channels.</p>
+            <p>تقودنا فكرة القنوات المغلقة طبيعيًا إلى مثالنا التالي:
+استخدام <code>range</code> لاجتياز القنوات.</p>
 
           </td>
           <td class="code empty">
@@ -193,12 +187,23 @@ example: <code>range</code> over channels.</p>
       
       
       <p class="next">
-        Next example: <a href="range-over-channels" rel="next">Range over Channels</a>.
+        المثال التالي: <a href="range-over-channels" rel="next"><bdi dir="auto">اجتياز القنوات</bdi></a>.
       </p>
       
 
     <p class="footer">
-      by <a href="https://markmcgranaghan.com">Mark McGranaghan</a> and <a href="https://eli.thegreenplace.net">Eli Bendersky</a> | <a href="https://github.com/mmcgrana/gobyexample">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      إعداد <a href="https://markmcgranaghan.com"><bdi dir="ltr">Mark McGranaghan</bdi></a>
+      و<a href="https://eli.thegreenplace.net"><bdi dir="ltr">Eli Bendersky</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample">المصدر الأصلي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample#license">الرخصة</a>
+      <br />
+      الترجمة العربية بواسطة <a href="https://github.com/0xKa"><bdi dir="ltr">0xKa</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://rr0.me">الموقع الشخصي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/0xKa/gobyexample-ar">مصدر الترجمة</a>
     </p>
 
     </div>

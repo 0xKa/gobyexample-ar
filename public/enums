@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Enums</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لغة Go بالأمثلة: التعدادات (iota)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -11,12 +12,12 @@
               return;
           }
           
-          if (e.key == "ArrowLeft") {
+          if (e.key == "ArrowRight") {
               window.location.href = 'interfaces';
           }
           
           
-          if (e.key == "ArrowRight") {
+          if (e.key == "ArrowLeft") {
               window.location.href = 'struct-embedding';
           }
           
@@ -24,18 +25,17 @@
   </script>
   <body>
     <div class="example" id="enums">
-      <h2><a href="./">Go by Example</a>: Enums</h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">التعدادات (iota)</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p><em>Enumerated types</em> (enums) are a special case of
-<a href="https://en.wikipedia.org/wiki/Algebraic_data_type">sum types</a>.
-An enum is a type that has a fixed number of possible
-values, each with a distinct name. Go doesn&rsquo;t have an
-enum type as a distinct language feature, but enums
-are simple to implement using existing language idioms.</p>
+            <p><em>الأنواع المعدّدة</em> (التعدادات) حالة خاصة من
+<a href="https://en.wikipedia.org/wiki/Algebraic_data_type">الأنواع المجموعية</a>.
+التعداد نوع له عدد ثابت من القيم الممكنة، ولكل منها اسم
+مميز. لا تملك Go نوع تعداد كميزة لغوية مستقلة، لكن يسهل
+تطبيق التعدادات باستخدام أساليب اللغة المتعارف عليها.</p>
 
           </td>
           <td class="code empty leading">
@@ -49,7 +49,7 @@ are simple to implement using existing language idioms.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/prQMptP_p1s"><img title="Run code" src="play.png" class="run" /></a><img title="Copy code" src="clipboard.png" class="copy" />
+            <a href="https://go.dev/play/p/TL6fVir66cT" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -66,7 +66,7 @@ are simple to implement using existing language idioms.</p>
         
         <tr>
           <td class="docs">
-            <p>Our enum type <code>ServerState</code> has an underlying <code>int</code> type.</p>
+            <p>النوع الأساسي لتعدادنا <code>ServerState</code> هو <code>int</code>.</p>
 
           </td>
           <td class="code leading">
@@ -77,10 +77,10 @@ are simple to implement using existing language idioms.</p>
         
         <tr>
           <td class="docs">
-            <p>The possible values for <code>ServerState</code> are defined as
-constants. The special keyword <a href="https://go.dev/ref/spec#Iota">iota</a>
-generates successive constant values automatically; in this
-case 0, 1, 2 and so on.</p>
+            <p>تُعرّف القيم الممكنة لـ<code>ServerState</code> كثوابت. تولد الكلمة
+الخاصة <a href="https://go.dev/ref/spec#Iota">iota</a> قيمًا ثابتة
+متتالية تلقائيًا؛ وهي في هذه الحالة <code>0</code> و<code>1</code> و<code>2</code>
+وهكذا.</p>
 
           </td>
           <td class="code leading">
@@ -96,15 +96,14 @@ case 0, 1, 2 and so on.</p>
         
         <tr>
           <td class="docs">
-            <p>By implementing the <a href="https://pkg.go.dev/fmt#Stringer">fmt.Stringer</a>
-interface, values of <code>ServerState</code> can be printed out or converted
-to strings.</p>
+            <p>بتطبيق واجهة <a href="https://pkg.go.dev/fmt#Stringer">fmt.Stringer</a>،
+يمكن طباعة قيم <code>ServerState</code> أو تحويلها إلى سلاسل نصية.</p>
 
-<p>This can get cumbersome if there are many possible values. In such
-cases the <a href="https://pkg.go.dev/golang.org/x/tools/cmd/stringer">stringer tool</a>
-can be used in conjunction with <code>go:generate</code> to automate the
-process. See <a href="https://eli.thegreenplace.net/2021/a-comprehensive-guide-to-go-generate">this post</a>
-for a longer explanation.</p>
+<p>قد يصبح هذا مرهقًا عند وجود قيم ممكنة كثيرة. في هذه
+الحالات، يمكن استخدام <a href="https://pkg.go.dev/golang.org/x/tools/cmd/stringer">أداة stringer</a>
+مع <code>go:generate</code> لأتمتة العملية. راجع
+<a href="https://eli.thegreenplace.net/2021/a-comprehensive-guide-to-go-generate">هذه المقالة</a>
+لشرح أطول.</p>
 
           </td>
           <td class="code leading">
@@ -132,9 +131,9 @@ for a longer explanation.</p>
         
         <tr>
           <td class="docs">
-            <p>If we have a value of type <code>int</code>, we cannot pass it to <code>transition</code> - the
-compiler will complain about type mismatch. This provides some degree of
-compile-time type safety for enums.</p>
+            <p>إذا كانت لدينا قيمة من النوع <code>int</code>، فلا يمكننا تمريرها
+إلى <code>transition</code>، إذ سيبلغ المترجم عن عدم تطابق النوع.
+يوفر ذلك قدرًا من سلامة أنواع التعدادات وقت الترجمة.</p>
 
           </td>
           <td class="code leading">
@@ -159,9 +158,8 @@ compile-time type safety for enums.</p>
         
         <tr>
           <td class="docs">
-            <p>transition emulates a state transition for a
-server; it takes the existing state and returns
-a new state.</p>
+            <p>تحاكي <code>transition</code> انتقال حالة لخادم؛ فتستقبل الحالة
+الحالية وتعيد حالة جديدة.</p>
 
           </td>
           <td class="code leading">
@@ -176,8 +174,8 @@ a new state.</p>
         
         <tr>
           <td class="docs">
-            <p>Suppose we check some predicates here to
-determine the next state&hellip;</p>
+            <p>افترض أننا نتحقق هنا من بعض الشروط لتحديد
+الحالة التالية&hellip;</p>
 
           </td>
           <td class="code">
@@ -212,12 +210,23 @@ determine the next state&hellip;</p>
       
       
       <p class="next">
-        Next example: <a href="struct-embedding" rel="next">Struct Embedding</a>.
+        المثال التالي: <a href="struct-embedding" rel="next"><bdi dir="auto">تضمين الهياكل (embedding)</bdi></a>.
       </p>
       
 
     <p class="footer">
-      by <a href="https://markmcgranaghan.com">Mark McGranaghan</a> and <a href="https://eli.thegreenplace.net">Eli Bendersky</a> | <a href="https://github.com/mmcgrana/gobyexample">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      إعداد <a href="https://markmcgranaghan.com"><bdi dir="ltr">Mark McGranaghan</bdi></a>
+      و<a href="https://eli.thegreenplace.net"><bdi dir="ltr">Eli Bendersky</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample">المصدر الأصلي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample#license">الرخصة</a>
+      <br />
+      الترجمة العربية بواسطة <a href="https://github.com/0xKa"><bdi dir="ltr">0xKa</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://rr0.me">الموقع الشخصي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/0xKa/gobyexample-ar">مصدر الترجمة</a>
     </p>
 
     </div>

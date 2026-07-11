@@ -1,11 +1,10 @@
-// A _line filter_ is a common type of program that reads
-// input on stdin, processes it, and then prints some
-// derived result to stdout. `grep` and `sed` are common
-// line filters.
+// _مرشح الأسطر_ نوع شائع من البرامج يقرأ المدخلات من `stdin`
+// ويعالجها، ثم يطبع نتيجة مشتقة إلى `stdout`. يُعد `grep` و`sed`
+// من مرشحات الأسطر الشائعة.
 
-// Here's an example line filter in Go that writes a
-// capitalized version of all input text. You can use this
-// pattern to write your own Go line filters.
+// إليك مثالًا على مرشح أسطر في Go يكتب نسخة بأحرف إنجليزية كبيرة
+// من نص المدخلات كله. يمكنك استخدام هذا النمط لكتابة مرشحات
+// الأسطر الخاصة بك في Go.
 package main
 
 import (
@@ -17,23 +16,22 @@ import (
 
 func main() {
 
-	// Wrapping the unbuffered `os.Stdin` with a buffered
-	// scanner gives us a convenient `Scan` method that
-	// advances the scanner to the next token; which is
-	// the next line in the default scanner.
+	// يمنحنا تغليف `os.Stdin` غير المخزن مؤقتًا بماسح مخزن مؤقتًا
+	// الأسلوب الملائم `Scan`، الذي ينقل الماسح إلى الوحدة التالية؛
+	// وهي السطر التالي في الماسح الافتراضي.
 	scanner := bufio.NewScanner(os.Stdin)
 
 	for scanner.Scan() {
-		// `Text` returns the current token, here the next line,
-		// from the input.
+		// تعيد `Text` الوحدة الحالية من المدخلات، وهي هنا السطر
+		// التالي.
 		ucl := strings.ToUpper(scanner.Text())
 
-		// Write out the uppercased line.
+		// اكتب السطر المحول إلى أحرف إنجليزية كبيرة.
 		fmt.Println(ucl)
 	}
 
-	// Check for errors during `Scan`. End of file is
-	// expected and not reported by `Scan` as an error.
+	// تحقق من الأخطاء أثناء `Scan`. نهاية الملف متوقعة، ولا تعدّها
+	// `Scan` خطأ.
 	if err := scanner.Err(); err != nil {
 		fmt.Fprintln(os.Stderr, "error:", err)
 		os.Exit(1)

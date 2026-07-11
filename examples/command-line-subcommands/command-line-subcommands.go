@@ -1,9 +1,7 @@
-// Some command-line tools, like the `go` tool or `git`
-// have many *subcommands*, each with its own set of
-// flags. For example, `go build` and `go get` are two
-// different subcommands of the `go` tool.
-// The `flag` package lets us easily define simple
-// subcommands that have their own flags.
+// لبعض أدوات سطر الأوامر، مثل `go` أو `git`، عدة *أوامر فرعية*،
+// لكل منها مجموعة خيارات خاصة به. يُعد `go build` و`go get` مثلًا
+// أمرين فرعيين مختلفين للأداة `go`. تتيح لنا الحزمة `flag` تعريف
+// أوامر فرعية بسيطة ذات خيارات خاصة بسهولة.
 
 package main
 
@@ -15,30 +13,26 @@ import (
 
 func main() {
 
-	// We declare a subcommand using the `NewFlagSet`
-	// function, and proceed to define new flags specific
-	// for this subcommand.
+	// نصرّح بأمر فرعي باستخدام الدالة `NewFlagSet`، ثم نعرّف خيارات
+	// جديدة خاصة بهذا الأمر الفرعي.
 	fooCmd := flag.NewFlagSet("foo", flag.ExitOnError)
 	fooEnable := fooCmd.Bool("enable", false, "enable")
 	fooName := fooCmd.String("name", "", "name")
 
-	// For a different subcommand we can define different
-	// supported flags.
+	// يمكننا تعريف خيارات مدعومة مختلفة لأمر فرعي آخر.
 	barCmd := flag.NewFlagSet("bar", flag.ExitOnError)
 	barLevel := barCmd.Int("level", 0, "level")
 
-	// The subcommand is expected as the first argument
-	// to the program.
+	// يُتوقع أن يكون الأمر الفرعي أول وسيط للبرنامج.
 	if len(os.Args) < 2 {
 		fmt.Println("expected 'foo' or 'bar' subcommands")
 		os.Exit(1)
 	}
 
-	// Check which subcommand is invoked.
+	// تحقق من الأمر الفرعي المستدعى.
 	switch os.Args[1] {
 
-	// For every subcommand, we parse its own flags and
-	// have access to trailing positional arguments.
+	// لكل أمر فرعي، نحلل خياراته ونصل إلى الوسائط الموضعية اللاحقة.
 	case "foo":
 		fooCmd.Parse(os.Args[2:])
 		fmt.Println("subcommand 'foo'")

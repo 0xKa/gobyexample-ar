@@ -1,9 +1,8 @@
-// Sometimes we'd like our Go programs to intelligently
-// handle [Unix signals](https://en.wikipedia.org/wiki/Unix_signal).
-// For example, we might want a server to gracefully
-// shutdown when it receives a `SIGTERM`, or a command-line
-// tool to stop processing input if it receives a `SIGINT`.
-// Here's a modern way to handle signals using contexts.
+// نريد أحيانًا أن تتعامل برامج Go بذكاء مع [إشارات
+// Unix](https://en.wikipedia.org/wiki/Unix_signal). فقد نريد مثلًا
+// إيقاف خادم بسلاسة عند تلقيه `SIGTERM`، أو إيقاف أداة سطر أوامر
+// عن معالجة المدخلات إذا تلقت `SIGINT`. إليك طريقة حديثة لمعالجة
+// الإشارات باستخدام السياقات.
 
 package main
 
@@ -15,20 +14,18 @@ import (
 )
 
 func main() {
-	// `signal.NotifyContext` returns a context that's canceled
-	// when one of the listed signals arrives.
+	// تعيد `signal.NotifyContext` سياقًا يُلغى عند وصول إحدى الإشارات
+	// المدرجة.
 	ctx, stop := signal.NotifyContext(
 		context.Background(), syscall.SIGINT, syscall.SIGTERM)
 	defer stop()
 
-	// The program will wait here until one of the
-	// configured signals is received.
+	// سينتظر البرنامج هنا حتى يستقبل إحدى الإشارات المحددة.
 	fmt.Println("awaiting signal")
 	<-ctx.Done()
 
-	// `context.Cause` reports why the context was canceled.
-	// For a signal-triggered cancellation, this includes
-	// the signal value.
+	// تعيد `context.Cause` سبب إلغاء السياق. وعندما يكون الإلغاء
+	// ناتجًا عن إشارة، تتضمن النتيجة قيمة الإشارة.
 	fmt.Println()
 	fmt.Println(context.Cause(ctx))
 	fmt.Println("exiting")

@@ -1,41 +1,36 @@
-// Go makes it possible to _recover_ from a panic, by
-// using the `recover` built-in function. A `recover` can
-// stop a `panic` from aborting the program and let it
-// continue with execution instead.
+// تتيح Go _الاستعادة_ من `panic` باستخدام الدالة المدمجة
+// `recover`. يمكن لـ`recover` منع `panic` من إنهاء البرنامج،
+// والسماح له بمتابعة التنفيذ بدلًا من ذلك.
 
-// An example of where this can be useful: a server
-// wouldn't want to crash if one of the client connections
-// exhibits a critical error. Instead, the server would
-// want to close that connection and continue serving
-// other clients. In fact, this is what Go's `net/http`
-// does by default for HTTP servers.
+// مثال على موضع فائدة ذلك: لا يريد الخادم أن يتعطل إذا حدث خطأ
+// حرج في أحد اتصالات العملاء، بل يريد إغلاق ذلك الاتصال ومواصلة
+// خدمة العملاء الآخرين. وهذا ما تفعله `net/http` في Go افتراضيًا
+// لخوادم HTTP.
 
 package main
 
 import "fmt"
 
-// This function panics.
+// تستدعي هذه الدالة `panic`.
 func mayPanic() {
 	panic("a problem")
 }
 
 func main() {
-	// `recover` must be called within a deferred function.
-	// When the enclosing function panics, the defer will
-	// activate and a `recover` call within it will catch
-	// the panic.
+	// يجب استدعاء `recover` داخل دالة مؤجلة. عندما تستدعي الدالة
+	// المحيطة `panic`، ستُنفذ الدالة المؤجلة ويلتقط استدعاء
+	// `recover` داخلها حالة `panic`.
 	defer func() {
 		if r := recover(); r != nil {
-			// The return value of `recover` is the error raised in
-			// the call to `panic`.
+			// قيمة إرجاع `recover` هي الخطأ الذي أُطلق في استدعاء
+			// `panic`.
 			fmt.Println("Recovered. Error:\n", r)
 		}
 	}()
 
 	mayPanic()
 
-	// This code will not run, because `mayPanic` panics.
-	// The execution of `main` stops at the point of the
-	// panic and resumes in the deferred closure.
+	// لن يعمل هذا الكود، لأن `mayPanic` تستدعي `panic`. يتوقف
+	// تنفيذ `main` عند موضع `panic`، ويُستأنف داخل الإغلاق المؤجل.
 	fmt.Println("After mayPanic()")
 }

@@ -1,117 +1,83 @@
-# Go by Example
+# لغة Go بالأمثلة
 
-Content and build toolchain for [Go by Example](https://gobyexample.com),
-a site that teaches Go via annotated example programs.
+ترجمة عربية مستقلة لموقع [Go by Example](https://gobyexample.com)، وهو مدخل عملي إلى لغة Go يعتمد على برامج نموذجية مشروحة.
 
-### Overview
+> Arabic translation of [Go by Example](https://github.com/mmcgrana/gobyexample). This translation is maintained as a separate website and follows the upstream examples and build toolchain.
 
-The Go by Example site is built by extracting code and
-comments from source files in `examples` and rendering
-them using `templates` into a static `public`
-directory. The programs implementing this build process
-are in `tools`, along with dependencies specified in
-the `go.mod`file.
+عنوان الموقع : <https://0xKa.github.io/gobyexample-ar/>
 
-The built `public` directory can be served by any
-static content system. The production site uses S3 and
-CloudFront, for example.
+## حالة المشروع
 
-### Building
+- اكتملت ترجمة الأمثلة الـ85 ومراجعتها؛ راجع [جدول الأمثلة](PROGRESS.md).
+- تدعم الواجهة العربية اتجاه RTL مع إبقاء الكود باتجاه LTR.
+- تتحقق CI من سلامة الترجمة وتطابق الملفات المولّدة مع مصادرها.
+- يُنشر الموقع تلقائيًا من `master` عبر GitHub Actions بعد تفعيل Pages واختيار **GitHub Actions** مصدرًا للنشر.
 
-[![test](https://github.com/mmcgrana/gobyexample/actions/workflows/test.yml/badge.svg)](https://github.com/mmcgrana/gobyexample/actions/workflows/test.yml)
+## كيفية عمل المشروع
 
-To build the site you'll need Go installed. Run:
+توجد النصوص الأصلية والكود في `examples`. تستخرج أداة البناء الشروح من ملفات `.go` و`.sh`، ثم تدمجها مع القوالب الموجودة في `templates` وتولد موقعًا ثابتًا داخل `public`.
+
+| المسار | الغرض |
+| --- | --- |
+| `examples/` | الكود والشروح التي تمثل مصدر المحتوى الأساسي |
+| `examples.txt` | ترتيب الأمثلة وأسماؤها الأصلية المستخدمة لاشتقاق الروابط الثابتة |
+| `examples.ar.txt` | العناوين العربية المرتبطة بمعرّفات الأمثلة الثابتة |
+| `templates/` | قوالب HTML وملفات CSS وJavaScript والأصول المشتركة |
+| `tools/` | أدوات الاختبار والبناء والتوليد والخدمة المحلية |
+| `public/` | الموقع الثابت المولّد؛ لا يُحرر يدويًا |
+
+## البناء والمعاينة محليًا
+
+تحتاج إلى إصدار Go المحدد في [`go.mod`](go.mod) وبيئة Bash. على Windows يمكن استخدام Git Bash أو WSL.
+
+لبناء الموقع وتحديث `public`:
 
 ```console
 $ tools/build
 ```
 
-To build continuously in a loop:
+للتحقق من أن الملفات المولّدة مطابقة للمصادر:
 
 ```console
-$ tools/build-loop
+$ VERBOSE=1 TESTING=1 tools/build
 ```
 
-To see the site locally:
+لمعاينة الموقع:
 
 ```console
 $ tools/serve
 ```
 
-and open `http://127.0.0.1:8000/` in your browser.
+ثم افتح `http://127.0.0.1:8000/`.
 
-### Publishing
+## المساهمة
 
-To upload the site:
+نرحب بتصحيح الترجمات، وتوحيد المصطلحات، ومراجعة الدقة التقنية، ومزامنة التغييرات القادمة من المشروع الأصلي.
 
-```console
-$ export AWS_ACCESS_KEY_ID=...
-$ export AWS_SECRET_ACCESS_KEY=...
-$ tools/upload
-```
+اقرأ قبل البدء:
 
-### License
+- [دليل المساهمة](CONTRIBUTING.md)
+- [مسرد المصطلحات](GLOSSARY.md)
+- [جدول الأمثلة](PROGRESS.md)
 
-This work is copyright Mark McGranaghan and licensed under a
-[Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/).
+يجب تعديل ملفات المصدر ثم تشغيل أداة البناء وإرفاق التغييرات المولّدة في `public`. لا تُقبل التعديلات التي تغير `public` وحده.
 
-The Go Gopher is copyright [Renée French](https://reneefrench.blogspot.com/) and licensed under a
-[Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/).
+## المزامنة مع المشروع الأصلي
 
+هذا المستودع ترجمة مستقلة وليس بديلًا عن المشروع الأصلي. تُجلب إصلاحات الكود والأمثلة الجديدة من [`mmcgrana/gobyexample`](https://github.com/mmcgrana/gobyexample)، ثم تُترجم الشروح الجديدة قبل دمجها في فرع النشر.
 
-### Translations
+يجب اقتراح الأمثلة الجديدة وتغييرات هيكل التنقل على المشروع الأصلي أولًا، لأن هذه الترجمة تهدف إلى البقاء متوافقة معه.
 
-Contributor translations of the Go by Example site are available in:
+## النسب والرخصة
 
-* [Chinese](https://gobyexample-cn.github.io/) by [gobyexample-cn](https://github.com/gobyexample-cn)
-* [French](http://le-go-par-l-exemple.keiruaprod.fr) by [keirua](https://github.com/keirua/gobyexample)
-* [Italian](https://gobyexampleit.andrearaponi.it/) by [andrearaponi](https://github.com/andrearaponi/gobyexample-it)
-* [Japanese](http://spinute.org/go-by-example) by [spinute](https://github.com/spinute)
-* [Korean](https://mingrammer.com/gobyexample/) by [mingrammer](https://github.com/mingrammer)
-* [Ukrainian](https://butuzov.github.io/gobyexample/) by [butuzov](https://github.com/butuzov/gobyexample)
-* [Brazilian Portuguese](https://lcslitx.github.io/GoEmExemplos/) by [lcslitx](https://github.com/LCSLITX)
-* [Burmese](https://setkyar.github.io/gobyexample) by [Set Kyar Wa Lar](https://github.com/setkyar/gobyexample)
-* [Uzbek](https://elchintoyirov.github.io/gobyexample/) by [elchintoyirov](https://github.com/elchintoyirov/gobyexample)
+المحتوى الأصلي من إعداد [Mark McGranaghan](https://markmcgranaghan.com) و[Eli Bendersky](https://eli.thegreenplace.net)، ويتوفر الكود المصدري في [المستودع الأصلي](https://github.com/mmcgrana/gobyexample).
 
-### Thanks
+حقوق العمل الأصلي محفوظة لـ Mark McGranaghan، وهو منشور بموجب [رخصة المشاع الإبداعي: النسب 3.0 غير موطنة](https://creativecommons.org/licenses/by/3.0/). تحافظ هذه الترجمة على نسب العمل الأصلي وروابط مصدره ورخصته.
 
-Thanks to [Jeremy Ashkenas](https://github.com/jashkenas)
-for [Docco](http://jashkenas.github.io/docco/), which
-inspired this project.
+شعار Go Gopher من تصميم [Renée French](https://reneefrench.blogspot.com/) ومتاح بموجب الرخصة نفسها.
 
-### FAQ
+الترجمة العربية بإشراف [0xKa](https://github.com/0xKa).
 
-#### I found a problem with the examples; what do I do?
+## شكر
 
-We're very happy to fix problem reports and accept contributions! Please submit
-[an issue](https://github.com/mmcgrana/gobyexample/issues) or send a Pull Request.
-See `CONTRIBUTING.md` for more details.
-
-#### What version of Go is required to run these examples?
-
-Given Go's strong [backwards compatibility guarantees](https://go.dev/doc/go1compat),
-we expect the vast majority of examples to work on the latest released version of Go
-as well as many older releases going back years.
-
-That said, some examples show off new features added in recent releases; therefore,
-it's recommended to try running examples with the latest officially released Go version
-(see Go's [release history](https://go.dev/doc/devel/release) for details).
-
-#### I'm getting output in a different order from the example. Is the example wrong?
-
-Some of the examples demonstrate concurrent code which has a non-deterministic
-execution order. It depends on how the Go runtime schedules its goroutines and
-may vary by operating system, CPU architecture, or even Go version.
-
-Similarly, examples that iterate over maps may produce items in a different order
-from what you're getting on your machine. This is because the order of iteration
-over maps in Go is [not specified and is not guaranteed to be the same from one
-iteration to the next](https://go.dev/ref/spec#RangeClause).
-
-It doesn't mean anything is wrong with the example. Typically the code in these
-examples will be insensitive to the actual order of the output; if the code is
-sensitive to the order - that's probably a bug - so feel free to report it.
-
-
-
-
+استُلهم المشروع الأصلي من [Docco](http://jashkenas.github.io/docco/) الذي أنشأه [Jeremy Ashkenas](https://github.com/jashkenas).

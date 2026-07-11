@@ -1,6 +1,6 @@
-# The string encodes to slightly different values with the
-# standard and URL base64 encoders (trailing `+` vs `-`)
-# but they both decode to the original string as desired.
+# تُرمّز السلسلة النصية إلى قيمتين مختلفتين قليلًا باستخدام
+# مرمّزي Base64 القياسي والمتوافق مع URL (`+` في النهاية مقابل
+# `-`)، لكن فك كلتا القيمتين يعيد السلسلة الأصلية كما أردنا.
 $ go run base64-encoding.go
 YWJjMTIzIT8kKiYoKSctPUB+
 abc123!?$*&()'-=@~

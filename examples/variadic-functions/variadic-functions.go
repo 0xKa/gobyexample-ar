@@ -1,20 +1,18 @@
-// [_Variadic functions_](https://en.wikipedia.org/wiki/Variadic_function)
-// can be called with any number of trailing arguments.
-// For example, `fmt.Println` is a common variadic
-// function.
+// يمكن استدعاء [_الدوال متغيرة عدد الوسائط_](https://en.wikipedia.org/wiki/Variadic_function)
+// بأي عدد من الوسائط اللاحقة. فمثلًا، `fmt.Println`
+// دالة شائعة متغيرة عدد الوسائط.
 
 package main
 
 import "fmt"
 
-// Here's a function that will take an arbitrary number
-// of `int`s as arguments.
+// تستقبل هذه الدالة عددًا غير محدد من الوسائط ذات النوع
+// `int`.
 func sum(nums ...int) {
 	fmt.Print(nums, " ")
 	total := 0
-	// Within the function, the type of `nums` is
-	// equivalent to `[]int`. We can call `len(nums)`,
-	// iterate over it with `range`, etc.
+	// داخل الدالة، يكافئ نوع `nums` النوع `[]int`. ويمكننا
+	// استدعاء `len(nums)` واجتيازه باستخدام `range` وغير ذلك.
 	for _, num := range nums {
 		total += num
 	}
@@ -23,14 +21,13 @@ func sum(nums ...int) {
 
 func main() {
 
-	// Variadic functions can be called in the usual way
-	// with individual arguments.
+	// يمكن استدعاء الدوال متغيرة عدد الوسائط بالطريقة
+	// المعتادة باستخدام وسائط منفردة.
 	sum(1, 2)
 	sum(1, 2, 3)
 
-	// If you already have multiple args in a slice,
-	// apply them to a variadic function using
-	// `func(slice...)` like this.
+	// إذا كانت لديك عدة وسائط في شريحة، فمررها إلى دالة
+	// متغيرة عدد الوسائط باستخدام `func(slice...)` كما يلي.
 	nums := []int{1, 2, 3, 4}
 	sum(nums...)
 }

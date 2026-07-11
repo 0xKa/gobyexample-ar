@@ -1,39 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
-    <title>Go by Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لغة Go بالأمثلة</title>
     <link rel=stylesheet href="site.css">
   </head>
   <body>
     <div id="intro">
-      <h2><a href="./">Go by Example</a></h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a></h2>
       <p>
-        <a href="https://go.dev">Go</a> is an
-        open source programming language designed for
-        building scalable, secure and reliable software.
-        Please read the
-        <a href="https://go.dev/doc/tutorial/getting-started">official documentation</a>
-        to learn more.
+        لغة <a href="https://go.dev"><span lang="en" dir="ltr">Go</span></a>
+        هي لغة برمجة مفتوحة المصدر، صُممت لبناء برمجيات
+        قابلة للتوسع وآمنة وموثوقة. اقرأ
+        <a href="https://go.dev/doc/tutorial/getting-started">الوثائق الرسمية</a>
+        لمعرفة المزيد.
       </p>
 
       <p>
-        <em>Go by Example</em> is a hands-on introduction
-        to Go using annotated example programs. Check out
-        the <a href="hello-world">first example</a> or
-        browse the full list below.
+        موقع "<em>لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</em>"
+        هو مقدمة عملية إلى لغة <span lang="en" dir="ltr">Go</span>
+        من خلال برامج نموذجية مشروحة. ابدأ
+        <a href="hello-world">بالمثال الأول</a>
+        أو تصفح القائمة الكاملة أدناه.
       </p>
 
       <p>
-        Unless stated otherwise, examples here assume the
-        <a href="https://go.dev/doc/devel/release">latest major release Go</a>
-        and may use new language features. Try to upgrade to the latest
-        version if something isn't working.
+        ما لم يُذكر خلاف ذلك، تفترض الأمثلة هنا استخدام
+        <a href="https://go.dev/doc/devel/release">أحدث إصدار رئيسي من <span lang="en" dir="ltr">Go</span></a>،
+        وقد تستعمل ميزات لغوية جديدة. حاول الترقية إلى أحدث
+        إصدار إذا لم يعمل شيء كما هو متوقع.
       </p>
 
       <ul>
       {{range .}}
-        <li><a href="{{.ID}}">{{.Name}}</a></li>
+        <li><a href="{{.ID}}"><bdi dir="auto">{{.Name}}</bdi></a></li>
       {{end}}
       </ul>
 {{ template "footer" }}

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Directories</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لغة Go بالأمثلة: المجلدات</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -11,12 +12,12 @@
               return;
           }
           
-          if (e.key == "ArrowLeft") {
+          if (e.key == "ArrowRight") {
               window.location.href = 'file-paths';
           }
           
           
-          if (e.key == "ArrowRight") {
+          if (e.key == "ArrowLeft") {
               window.location.href = 'temporary-files-and-directories';
           }
           
@@ -24,14 +25,13 @@
   </script>
   <body>
     <div class="example" id="directories">
-      <h2><a href="./">Go by Example</a>: Directories</h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">المجلدات</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>Go has several useful functions for working with
-<em>directories</em> in the file system.</p>
+            <p>توفر Go عدة دوال مفيدة للعمل مع <em>المجلدات</em> في نظام الملفات.</p>
 
           </td>
           <td class="code empty leading">
@@ -45,7 +45,7 @@
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/6saPJU8IfPL"><img title="Run code" src="play.png" class="run" /></a><img title="Copy code" src="clipboard.png" class="copy" />
+            <a href="https://go.dev/play/p/-5N8omcm81H" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -91,8 +91,7 @@
         
         <tr>
           <td class="docs">
-            <p>Create a new sub-directory in the current working
-directory.</p>
+            <p>أنشئ مجلدًا فرعيًا جديدًا داخل مجلد العمل الحالي.</p>
 
           </td>
           <td class="code leading">
@@ -104,10 +103,9 @@ directory.</p>
         
         <tr>
           <td class="docs">
-            <p>When creating temporary directories, it&rsquo;s good
-practice to <code>defer</code> their removal. <code>os.RemoveAll</code>
-will delete a whole directory tree (similarly to
-<code>rm -rf</code>).</p>
+            <p>عند إنشاء مجلدات مؤقتة، يُستحسن تأجيل حذفها باستخدام
+<code>defer</code>. تحذف <code>os.RemoveAll</code> شجرة مجلدات كاملة، على نحو شبيه
+بـ<code>rm -rf</code>.</p>
 
           </td>
           <td class="code leading">
@@ -118,7 +116,7 @@ will delete a whole directory tree (similarly to
         
         <tr>
           <td class="docs">
-            <p>Helper function to create a new empty file.</p>
+            <p>دالة مساعدة لإنشاء ملف فارغ جديد.</p>
 
           </td>
           <td class="code leading">
@@ -142,9 +140,9 @@ will delete a whole directory tree (similarly to
         
         <tr>
           <td class="docs">
-            <p>We can create a hierarchy of directories, including
-parents with <code>MkdirAll</code>. This is similar to the
-command-line <code>mkdir -p</code>.</p>
+            <p>يمكننا إنشاء تسلسل هرمي من المجلدات، بما فيها المجلدات
+الأم، باستخدام <code>MkdirAll</code>. يشبه ذلك أمر سطر الأوامر
+<code>mkdir -p</code>.</p>
 
           </td>
           <td class="code leading">
@@ -168,8 +166,8 @@ command-line <code>mkdir -p</code>.</p>
         
         <tr>
           <td class="docs">
-            <p><code>ReadDir</code> lists directory contents, returning a
-slice of <code>os.DirEntry</code> objects.</p>
+            <p>تسرد <code>ReadDir</code> محتويات المجلد، وتعيد شريحة من كائنات
+<code>os.DirEntry</code>.</p>
 
           </td>
           <td class="code leading">
@@ -194,8 +192,7 @@ slice of <code>os.DirEntry</code> objects.</p>
         
         <tr>
           <td class="docs">
-            <p><code>Chdir</code> lets us change the current working directory,
-similarly to <code>cd</code>.</p>
+            <p>تتيح لنا <code>Chdir</code> تغيير مجلد العمل الحالي على نحو شبيه بـ<code>cd</code>.</p>
 
           </td>
           <td class="code leading">
@@ -207,8 +204,8 @@ similarly to <code>cd</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Now we&rsquo;ll see the contents of <code>subdir/parent/child</code>
-when listing the <em>current</em> directory.</p>
+            <p>سنرى الآن محتويات <code>subdir/parent/child</code> عند سرد المجلد
+<em>الحالي</em>.</p>
 
           </td>
           <td class="code leading">
@@ -233,7 +230,7 @@ when listing the <em>current</em> directory.</p>
         
         <tr>
           <td class="docs">
-            <p><code>cd</code> back to where we started.</p>
+            <p>عُد باستخدام <code>cd</code> إلى موضع البداية.</p>
 
           </td>
           <td class="code leading">
@@ -245,10 +242,9 @@ when listing the <em>current</em> directory.</p>
         
         <tr>
           <td class="docs">
-            <p>We can also visit a directory <em>recursively</em>,
-including all its sub-directories. <code>WalkDir</code> accepts
-a callback function to handle every file or
-directory visited.</p>
+            <p>يمكننا أيضًا زيارة مجلد *بكل تفرعاته*، بما في ذلك جميع
+مجلداته الفرعية. تقبل <code>WalkDir</code> دالة رد نداء لمعالجة كل ملف
+أو مجلد تزوره.</p>
 
           </td>
           <td class="code leading">
@@ -262,8 +258,8 @@ directory visited.</p>
         
         <tr>
           <td class="docs">
-            <p><code>visit</code> is called for every file or directory found
-recursively by <code>filepath.WalkDir</code>.</p>
+            <p>تُستدعى <code>visit</code> لكل ملف أو مجلد تعثر عليه <code>filepath.WalkDir</code>
+في جميع التفرعات.</p>
 
           </td>
           <td class="code">
@@ -310,12 +306,23 @@ recursively by <code>filepath.WalkDir</code>.</p>
       
       
       <p class="next">
-        Next example: <a href="temporary-files-and-directories" rel="next">Temporary Files and Directories</a>.
+        المثال التالي: <a href="temporary-files-and-directories" rel="next"><bdi dir="auto">الملفات والمجلدات المؤقتة</bdi></a>.
       </p>
       
 
     <p class="footer">
-      by <a href="https://markmcgranaghan.com">Mark McGranaghan</a> and <a href="https://eli.thegreenplace.net">Eli Bendersky</a> | <a href="https://github.com/mmcgrana/gobyexample">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      إعداد <a href="https://markmcgranaghan.com"><bdi dir="ltr">Mark McGranaghan</bdi></a>
+      و<a href="https://eli.thegreenplace.net"><bdi dir="ltr">Eli Bendersky</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample">المصدر الأصلي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample#license">الرخصة</a>
+      <br />
+      الترجمة العربية بواسطة <a href="https://github.com/0xKa"><bdi dir="ltr">0xKa</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://rr0.me">الموقع الشخصي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/0xKa/gobyexample-ar">مصدر الترجمة</a>
     </p>
 
     </div>

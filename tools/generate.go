@@ -120,11 +120,14 @@ func parseHashFile(sourcePath string) (string, string) {
 }
 
 func resetURLHashFile(codehash, code, sourcePath string) string {
+	if os.Getenv("TESTING") != "" {
+		panic(fmt.Sprintf("%s: stale Go Playground hash; run tools/build without TESTING to refresh it", sourcePath))
+	}
 	if verbose() {
-		fmt.Println("  Sending request to play.golang.org")
+		fmt.Println("  Sending request to go.dev")
 	}
 	payload := strings.NewReader(code)
-	resp, err := http.Post("https://play.golang.org/share", "text/plain", payload)
+	resp, err := http.Post("https://go.dev/_/share", "text/plain", payload)
 	check(err)
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
@@ -241,25 +244,85 @@ func parseAndRenderSegs(sourcePath string) ([]*Seg, string) {
 	return segs, filecontent
 }
 
-func parseExamples() []*Example {
+func exampleIDFromName(exampleName string) string {
+	exampleID := strings.ToLower(exampleName)
+	exampleID = strings.Replace(exampleID, " ", "-", -1)
+	exampleID = strings.Replace(exampleID, "/", "-", -1)
+	exampleID = strings.Replace(exampleID, "'", "", -1)
+	return dashPat.ReplaceAllString(exampleID, "-")
+}
+
+func parseExampleNames() ([]string, []string) {
 	var exampleNames []string
-	for _, line := range readLines("examples.txt") {
-		if line != "" && !strings.HasPrefix(line, "#") {
-			exampleNames = append(exampleNames, line)
+	var exampleIDs []string
+	seenIDs := make(map[string]bool)
+	for lineNumber, rawLine := range readLines("examples.txt") {
+		line := strings.TrimSpace(rawLine)
+		if line == "" || strings.HasPrefix(line, "#") {
+			continue
+		}
+
+		exampleID := exampleIDFromName(line)
+		if seenIDs[exampleID] {
+			panic(fmt.Sprintf("examples.txt:%d: duplicate example ID %q", lineNumber+1, exampleID))
+		}
+		seenIDs[exampleID] = true
+		exampleNames = append(exampleNames, line)
+		exampleIDs = append(exampleIDs, exampleID)
+	}
+	return exampleNames, exampleIDs
+}
+
+func parseArabicExampleNames(exampleIDs []string) map[string]string {
+	expectedIDs := make(map[string]bool, len(exampleIDs))
+	for _, exampleID := range exampleIDs {
+		expectedIDs[exampleID] = true
+	}
+
+	arabicNames := make(map[string]string, len(exampleIDs))
+	for lineNumber, rawLine := range readLines("examples.ar.txt") {
+		line := strings.TrimSpace(rawLine)
+		if line == "" || strings.HasPrefix(line, "#") {
+			continue
+		}
+
+		parts := strings.SplitN(line, "|", 2)
+		if len(parts) != 2 {
+			panic(fmt.Sprintf("examples.ar.txt:%d: expected example-id|Arabic title", lineNumber+1))
+		}
+		exampleID := strings.TrimSpace(parts[0])
+		arabicName := strings.TrimSpace(parts[1])
+		if exampleID == "" || arabicName == "" {
+			panic(fmt.Sprintf("examples.ar.txt:%d: example ID and Arabic title must not be empty", lineNumber+1))
+		}
+		if !expectedIDs[exampleID] {
+			panic(fmt.Sprintf("examples.ar.txt:%d: unknown example ID %q", lineNumber+1, exampleID))
+		}
+		if _, exists := arabicNames[exampleID]; exists {
+			panic(fmt.Sprintf("examples.ar.txt:%d: duplicate example ID %q", lineNumber+1, exampleID))
+		}
+		arabicNames[exampleID] = arabicName
+	}
+
+	for _, exampleID := range exampleIDs {
+		if _, exists := arabicNames[exampleID]; !exists {
+			panic(fmt.Sprintf("examples.ar.txt: missing Arabic title for example ID %q", exampleID))
 		}
 	}
+	return arabicNames
+}
+
+func parseExamples() []*Example {
+	exampleNames, exampleIDs := parseExampleNames()
+	arabicNames := parseArabicExampleNames(exampleIDs)
 	examples := make([]*Example, 0)
-	for i, exampleName := range exampleNames {
+	for i, sourceName := range exampleNames {
+		exampleID := exampleIDs[i]
+		exampleName := arabicNames[exampleID]
 		if verbose() {
-			fmt.Printf("Processing %s [%d/%d]\n", exampleName, i+1, len(exampleNames))
+			fmt.Printf("Processing %s (%s) [%d/%d]\n", sourceName, exampleName, i+1, len(exampleNames))
 		}
-		example := Example{Name: exampleName}
-		exampleID := strings.ToLower(exampleName)
-		exampleID = strings.Replace(exampleID, " ", "-", -1)
-		exampleID = strings.Replace(exampleID, "/", "-", -1)
-		exampleID = strings.Replace(exampleID, "'", "", -1)
-		exampleID = dashPat.ReplaceAllString(exampleID, "-")
-		example.ID = exampleID
+		example := Example{ID: exampleID, Name: exampleName}
 		example.Segs = make([][]*Seg, 0)
 		sourcePaths := mustGlob("examples/" + exampleID + "/*")
 		for _, sourcePath := range sourcePaths {

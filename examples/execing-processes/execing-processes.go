@@ -1,12 +1,10 @@
-// In the previous example we looked at
-// [spawning external processes](spawning-processes). We
-// do this when we need an external process accessible to
-// a running Go process. Sometimes we just want to
-// completely replace the current Go process with another
-// (perhaps non-Go) one. To do this we'll use Go's
-// implementation of the classic
+// تعرفنا في المثال السابق على [تشغيل عمليات
+// خارجية](spawning-processes). نفعل ذلك عندما نحتاج إلى عملية
+// خارجية تستطيع عملية Go قيد التشغيل الوصول إليها. نريد أحيانًا
+// استبدال عملية Go الحالية بالكامل بعملية أخرى، قد لا تكون مكتوبة
+// بلغة Go. لفعل ذلك، سنستخدم تنفيذ Go لدالة
 // <a href="https://en.wikipedia.org/wiki/Exec_(operating_system)"><code>exec</code></a>
-// function.
+// التقليدية.
 
 package main
 
@@ -18,31 +16,27 @@ import (
 
 func main() {
 
-	// For our example we'll exec `ls`. Go requires an
-	// absolute path to the binary we want to execute, so
-	// we'll use `exec.LookPath` to find it (probably
-	// `/bin/ls`).
+	// سنستبدل عمليتنا في هذا المثال بـ`ls`. تتطلب Go مسارًا مطلقًا
+	// للملف التنفيذي الذي نريد تشغيله، لذا سنستخدم `exec.LookPath`
+	// للعثور عليه، ويُرجح أن يكون `/bin/ls`.
 	binary, lookErr := exec.LookPath("ls")
 	if lookErr != nil {
 		panic(lookErr)
 	}
 
-	// `Exec` requires arguments in slice form (as
-	// opposed to one big string). We'll give `ls` a few
-	// common arguments. Note that the first argument should
-	// be the program name.
+	// تتطلب `Exec` الوسائط في صورة شريحة، لا سلسلة نصية كبيرة واحدة.
+	// سنمرر إلى `ls` بعض الوسائط الشائعة. لاحظ أن الوسيط الأول ينبغي
+	// أن يكون اسم البرنامج.
 	args := []string{"ls", "-a", "-l", "-h"}
 
-	// `Exec` also needs a set of [environment variables](environment-variables)
-	// to use. Here we just provide our current
-	// environment.
+	// تحتاج `Exec` أيضًا إلى مجموعة من [متغيرات
+	// البيئة](environment-variables) لاستخدامها. نوفر هنا بيئتنا
+	// الحالية فحسب.
 	env := os.Environ()
 
-	// Here's the actual `syscall.Exec` call. If this call is
-	// successful, the execution of our process will end
-	// here and be replaced by the `/bin/ls -a -l -h`
-	// process. If there is an error we'll get a return
-	// value.
+	// هذا هو استدعاء `syscall.Exec` الفعلي. إذا نجح الاستدعاء،
+	// فسينتهي تنفيذ عمليتنا هنا وتحل محله العملية
+	// `/bin/ls -a -l -h`. وإذا حدث خطأ، فسنحصل على قيمة إرجاع.
 	execErr := syscall.Exec(binary, args, env)
 	if execErr != nil {
 		panic(execErr)

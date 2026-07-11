@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Exec'ing Processes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لغة Go بالأمثلة: استبدال العملية (exec)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -11,12 +12,12 @@
               return;
           }
           
-          if (e.key == "ArrowLeft") {
+          if (e.key == "ArrowRight") {
               window.location.href = 'spawning-processes';
           }
           
           
-          if (e.key == "ArrowRight") {
+          if (e.key == "ArrowLeft") {
               window.location.href = 'signals';
           }
           
@@ -24,21 +25,19 @@
   </script>
   <body>
     <div class="example" id="execing-processes">
-      <h2><a href="./">Go by Example</a>: Exec'ing Processes</h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">استبدال العملية (exec)</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>In the previous example we looked at
-<a href="spawning-processes">spawning external processes</a>. We
-do this when we need an external process accessible to
-a running Go process. Sometimes we just want to
-completely replace the current Go process with another
-(perhaps non-Go) one. To do this we&rsquo;ll use Go&rsquo;s
-implementation of the classic
+            <p>تعرفنا في المثال السابق على <a href="spawning-processes">تشغيل عمليات
+خارجية</a>. نفعل ذلك عندما نحتاج إلى عملية
+خارجية تستطيع عملية Go قيد التشغيل الوصول إليها. نريد أحيانًا
+استبدال عملية Go الحالية بالكامل بعملية أخرى، قد لا تكون مكتوبة
+بلغة Go. لفعل ذلك، سنستخدم تنفيذ Go لدالة
 <a href="https://en.wikipedia.org/wiki/Exec_(operating_system)"><code>exec</code></a>
-function.</p>
+التقليدية.</p>
 
           </td>
           <td class="code empty leading">
@@ -52,7 +51,7 @@ function.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/s9qg7olf1dM"><img title="Run code" src="play.png" class="run" /></a><img title="Copy code" src="clipboard.png" class="copy" />
+            <a href="https://go.dev/play/p/uVRZMK3x95K" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -83,10 +82,9 @@ function.</p>
         
         <tr>
           <td class="docs">
-            <p>For our example we&rsquo;ll exec <code>ls</code>. Go requires an
-absolute path to the binary we want to execute, so
-we&rsquo;ll use <code>exec.LookPath</code> to find it (probably
-<code>/bin/ls</code>).</p>
+            <p>سنستبدل عمليتنا في هذا المثال بـ<code>ls</code>. تتطلب Go مسارًا مطلقًا
+للملف التنفيذي الذي نريد تشغيله، لذا سنستخدم <code>exec.LookPath</code>
+للعثور عليه، ويُرجح أن يكون <code>/bin/ls</code>.</p>
 
           </td>
           <td class="code leading">
@@ -100,10 +98,9 @@ we&rsquo;ll use <code>exec.LookPath</code> to find it (probably
         
         <tr>
           <td class="docs">
-            <p><code>Exec</code> requires arguments in slice form (as
-opposed to one big string). We&rsquo;ll give <code>ls</code> a few
-common arguments. Note that the first argument should
-be the program name.</p>
+            <p>تتطلب <code>Exec</code> الوسائط في صورة شريحة، لا سلسلة نصية كبيرة واحدة.
+سنمرر إلى <code>ls</code> بعض الوسائط الشائعة. لاحظ أن الوسيط الأول ينبغي
+أن يكون اسم البرنامج.</p>
 
           </td>
           <td class="code leading">
@@ -114,9 +111,9 @@ be the program name.</p>
         
         <tr>
           <td class="docs">
-            <p><code>Exec</code> also needs a set of <a href="environment-variables">environment variables</a>
-to use. Here we just provide our current
-environment.</p>
+            <p>تحتاج <code>Exec</code> أيضًا إلى مجموعة من <a href="environment-variables">متغيرات
+البيئة</a> لاستخدامها. نوفر هنا بيئتنا
+الحالية فحسب.</p>
 
           </td>
           <td class="code leading">
@@ -127,11 +124,9 @@ environment.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s the actual <code>syscall.Exec</code> call. If this call is
-successful, the execution of our process will end
-here and be replaced by the <code>/bin/ls -a -l -h</code>
-process. If there is an error we&rsquo;ll get a return
-value.</p>
+            <p>هذا هو استدعاء <code>syscall.Exec</code> الفعلي. إذا نجح الاستدعاء،
+فسينتهي تنفيذ عمليتنا هنا وتحل محله العملية
+<code>/bin/ls -a -l -h</code>. وإذا حدث خطأ، فسنحصل على قيمة إرجاع.</p>
 
           </td>
           <td class="code">
@@ -150,7 +145,7 @@ value.</p>
         
         <tr>
           <td class="docs">
-            <p>When we run our program it is replaced by <code>ls</code>.</p>
+            <p>عند تشغيل برنامجنا، يحل محله الأمر <code>ls</code>.</p>
 
           </td>
           <td class="code leading">
@@ -165,10 +160,9 @@ value.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that Go does not offer a classic Unix <code>fork</code>
-function. Usually this isn&rsquo;t an issue though, since
-starting goroutines, spawning processes, and exec&rsquo;ing
-processes covers most use cases for <code>fork</code>.</p>
+            <p>لاحظ أن Go لا توفر دالة <code>fork</code> التقليدية في Unix. لا يمثل ذلك
+مشكلة عادة، لأن بدء روتينات Go وتشغيل العمليات واستبدالها يغطي
+معظم حالات استخدام <code>fork</code>.</p>
 
           </td>
           <td class="code empty">
@@ -181,12 +175,23 @@ processes covers most use cases for <code>fork</code>.</p>
       
       
       <p class="next">
-        Next example: <a href="signals" rel="next">Signals</a>.
+        المثال التالي: <a href="signals" rel="next"><bdi dir="auto">الإشارات</bdi></a>.
       </p>
       
 
     <p class="footer">
-      by <a href="https://markmcgranaghan.com">Mark McGranaghan</a> and <a href="https://eli.thegreenplace.net">Eli Bendersky</a> | <a href="https://github.com/mmcgrana/gobyexample">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      إعداد <a href="https://markmcgranaghan.com"><bdi dir="ltr">Mark McGranaghan</bdi></a>
+      و<a href="https://eli.thegreenplace.net"><bdi dir="ltr">Eli Bendersky</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample">المصدر الأصلي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample#license">الرخصة</a>
+      <br />
+      الترجمة العربية بواسطة <a href="https://github.com/0xKa"><bdi dir="ltr">0xKa</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://rr0.me">الموقع الشخصي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/0xKa/gobyexample-ar">مصدر الترجمة</a>
     </p>
 
     </div>

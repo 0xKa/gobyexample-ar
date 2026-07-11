@@ -1,8 +1,8 @@
-// Go supports _embedding_ of structs and interfaces
-// to express a more seamless _composition_ of types.
-// This is not to be confused with [`//go:embed`](embed-directive) which is
-// a go directive introduced in Go version 1.16+ to embed
-// files and folders into the application binary.
+// تدعم Go _تضمين_ الهياكل والواجهات للتعبير عن _تركيب_
+// أكثر سلاسة للأنواع. لا ينبغي الخلط بين ذلك وبين
+// [`//go:embed`](embed-directive)، وهو توجيه في Go أُضيف
+// في الإصدار 1.16 لتضمين الملفات والمجلدات في الملف
+// التنفيذي للتطبيق.
 
 package main
 
@@ -16,8 +16,8 @@ func (b base) describe() string {
 	return fmt.Sprintf("base with num=%v", b.num)
 }
 
-// A `container` _embeds_ a `base`. An embedding looks
-// like a field without a name.
+// _يضمّن_ `container` النوع `base`. ويبدو التضمين كحقل
+// بلا اسم.
 type container struct {
 	base
 	str string
@@ -25,9 +25,8 @@ type container struct {
 
 func main() {
 
-	// When creating structs with literals, we have to
-	// initialize the embedding explicitly; here the
-	// embedded type serves as the field name.
+	// عند إنشاء الهياكل باستخدام القيم الحرفية، علينا تهيئة
+	// التضمين صراحةً؛ ويؤدي النوع المضمّن هنا دور اسم الحقل.
 	co := container{
 		base: base{
 			num: 1,
@@ -35,28 +34,26 @@ func main() {
 		str: "some name",
 	}
 
-	// We can access the base's fields directly on `co`,
-	// e.g. `co.num`.
+	// يمكننا الوصول إلى حقول `base` مباشرةً عبر `co`،
+	// مثل `co.num`.
 	fmt.Printf("co={num: %v, str: %v}\n", co.num, co.str)
 
-	// Alternatively, we can spell out the full path using
-	// the embedded type name.
+	// بدلًا من ذلك، يمكننا كتابة المسار كاملًا باستخدام
+	// اسم النوع المضمّن.
 	fmt.Println("also num:", co.base.num)
 
-	// Since `container` embeds `base`, the methods of
-	// `base` also become methods of a `container`. Here
-	// we invoke a method that was embedded from `base`
-	// directly on `co`.
+	// بما أن `container` يضمّن `base`، تصبح أساليب `base`
+	// أيضًا أساليب لـ`container`. نستدعي هنا مباشرةً عبر
+	// `co` أسلوبًا مضمّنًا من `base`.
 	fmt.Println("describe:", co.describe())
 
 	type describer interface {
 		describe() string
 	}
 
-	// Embedding structs with methods may be used to bestow
-	// interface implementations onto other structs. Here
-	// we see that a `container` now implements the
-	// `describer` interface because it embeds `base`.
+	// يمكن استخدام تضمين الهياكل ذات الأساليب لجعل هياكل
+	// أخرى تطبق واجهات. نرى هنا أن `container` يطبق الآن
+	// واجهة `describer` لأنه يضمّن `base`.
 	var d describer = co
 	fmt.Println("describer:", d.describe())
 }

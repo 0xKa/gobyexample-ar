@@ -1,9 +1,6 @@
-// The Go standard library provides straightforward
-// tools for outputting logs from Go programs, with
-// the [log](https://pkg.go.dev/log) package for
-// free-form output and the
-// [log/slog](https://pkg.go.dev/log/slog) package for
-// structured output.
+// توفر مكتبة Go القياسية أدوات مباشرة لإخراج السجلات من برامج
+// Go، باستخدام الحزمة [log](https://pkg.go.dev/log) للخرج الحر،
+// والحزمة [log/slog](https://pkg.go.dev/log/slog) للخرج المنظم.
 package main
 
 import (
@@ -17,61 +14,52 @@ import (
 
 func main() {
 
-	// Simply invoking functions like `Println` from the
-	// `log` package uses the _standard_ logger, which
-	// is already pre-configured for reasonable logging
-	// output to `os.Stderr`. Additional methods like
-	// `Fatal*` or `Panic*` will exit the program after
-	// logging.
+	// يستخدم مجرد استدعاء دوال مثل `Println` من الحزمة `log`
+	// مسجّل الأحداث _القياسي_، المهيأ مسبقًا لإخراج سجلات مناسبة
+	// إلى `os.Stderr`. تؤدي أساليب إضافية مثل `Fatal*` أو `Panic*`
+	// إلى خروج البرنامج بعد التسجيل.
 	log.Println("standard logger")
 
-	// Loggers can be configured with _flags_ to set
-	// their output format. By default, the standard
-	// logger has the `log.Ldate` and `log.Ltime` flags
-	// set, and these are collected in `log.LstdFlags`.
-	// We can change its flags to emit time with
-	// microsecond accuracy, for example.
+	// يمكن إعداد مسجّلات الأحداث باستخدام _خيارات_ تحدد صيغة
+	// خرجها. تكون خيارات `log.Ldate` و`log.Ltime` مفعلة افتراضيًا
+	// في المسجّل القياسي، وهي مجمعة في `log.LstdFlags`. يمكننا مثلًا
+	// تغيير خياراته لإخراج الوقت بدقة الميكروثانية.
 	log.SetFlags(log.LstdFlags | log.Lmicroseconds)
 	log.Println("with micro")
 
-	// It also supports emitting the file name and
-	// line from which the `log` function is called.
+	// يدعم أيضًا إخراج اسم الملف ورقم السطر الذي استُدعيت منه دالة
+	// `log`.
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 	log.Println("with file/line")
 
-	// It may be useful to create a custom logger and
-	// pass it around. When creating a new logger, we
-	// can set a _prefix_ to distinguish its output
-	// from other loggers.
+	// قد يفيد إنشاء مسجّل أحداث مخصص وتمريره. عند إنشاء مسجّل جديد،
+	// يمكننا تعيين _بادئة_ لتمييز خرجه من خرج المسجّلات الأخرى.
 	mylog := log.New(os.Stdout, "my:", log.LstdFlags)
 	mylog.Println("from mylog")
 
-	// We can set the prefix
-	// on existing loggers (including the standard one)
-	// with the `SetPrefix` method.
+	// يمكننا تعيين البادئة لمسجّلات الأحداث الموجودة، بما فيها
+	// المسجّل القياسي، باستخدام الأسلوب `SetPrefix`.
 	mylog.SetPrefix("ohmy:")
 	mylog.Println("from mylog")
 
-	// Loggers can have custom output targets;
-	// any `io.Writer` works.
+	// يمكن أن تكون لمسجّلات الأحداث أهداف خرج مخصصة؛ إذ يصلح أي
+	// `io.Writer`.
 	var buf bytes.Buffer
 	buflog := log.New(&buf, "buf:", log.LstdFlags)
 
-	// This call writes the log output into `buf`.
+	// يكتب هذا الاستدعاء خرج السجل في `buf`.
 	buflog.Println("hello")
 
-	// This will actually show it on standard output.
+	// سيعرضه هذا فعليًا على الخرج القياسي.
 	fmt.Print("from buflog:", buf.String())
 
-	// The `slog` package provides
-	// _structured_ log output. For example, logging
-	// in JSON format is straightforward.
+	// توفر الحزمة `slog` خرج سجلات _منظمًا_. ويكون تسجيل الأحداث
+	// بصيغة JSON مباشرًا مثلًا.
 	jsonHandler := slog.NewJSONHandler(os.Stderr, nil)
 	myslog := slog.New(jsonHandler)
 	myslog.Info("hi there")
 
-	// In addition to the message, `slog` output can
-	// contain an arbitrary number of key=value
-	// pairs.
+	// يمكن أن يحتوي خرج `slog`، إضافة إلى الرسالة، على أي عدد من
+	// أزواج `key=value`.
 	myslog.Info("hello again", "key", "val", "age", 25)
 }

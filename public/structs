@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
-    <title>Go by Example: Structs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لغة Go بالأمثلة: الهياكل (struct)</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -11,12 +12,12 @@
               return;
           }
           
-          if (e.key == "ArrowLeft") {
+          if (e.key == "ArrowRight") {
               window.location.href = 'strings-and-runes';
           }
           
           
-          if (e.key == "ArrowRight") {
+          if (e.key == "ArrowLeft") {
               window.location.href = 'methods';
           }
           
@@ -24,15 +25,14 @@
   </script>
   <body>
     <div class="example" id="structs">
-      <h2><a href="./">Go by Example</a>: Structs</h2>
+      <h2><a href="./">لغة <span lang="en" dir="ltr">Go</span> بالأمثلة</a>: <bdi dir="auto">الهياكل (struct)</bdi></h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>Go&rsquo;s <em>structs</em> are typed collections of fields.
-They&rsquo;re useful for grouping data together to form
-records.</p>
+            <p><em>الهياكل</em> في Go مجموعات من الحقول محددة الأنواع.
+تفيد في تجميع البيانات معًا لتكوين سجلات.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +46,7 @@ records.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/56SPo-L2nMN"><img title="Run code" src="play.png" class="run" /></a><img title="Copy code" src="clipboard.png" class="copy" />
+            <a href="https://go.dev/play/p/yTFM7RnGTuH" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -63,7 +63,7 @@ records.</p>
         
         <tr>
           <td class="docs">
-            <p>This <code>person</code> struct type has <code>name</code> and <code>age</code> fields.</p>
+            <p>يحتوي نوع الهيكل <code>person</code> على الحقلين <code>name</code> و<code>age</code>.</p>
 
           </td>
           <td class="code leading">
@@ -77,7 +77,7 @@ records.</p>
         
         <tr>
           <td class="docs">
-            <p><code>newPerson</code> constructs a new person struct with the given name.</p>
+            <p>تنشئ <code>newPerson</code> هيكل <code>person</code> جديدًا بالاسم المعطى.</p>
 
           </td>
           <td class="code leading">
@@ -88,10 +88,9 @@ records.</p>
         
         <tr>
           <td class="docs">
-            <p>Go is a garbage collected language; you can safely
-return a pointer to a local variable - it will only
-be cleaned up by the garbage collector when there
-are no active references to it.</p>
+            <p>تستخدم Go جمع المهملات؛ لذلك يمكنك بأمان إعادة مؤشر
+إلى متغير محلي، إذ لن ينظفه جامع المهملات إلا عندما
+تنعدم المراجع النشطة إليه.</p>
 
           </td>
           <td class="code leading">
@@ -115,7 +114,7 @@ are no active references to it.</p>
         
         <tr>
           <td class="docs">
-            <p>This syntax creates a new struct.</p>
+            <p>تنشئ هذه الصيغة هيكلًا جديدًا.</p>
 
           </td>
           <td class="code leading">
@@ -126,7 +125,7 @@ are no active references to it.</p>
         
         <tr>
           <td class="docs">
-            <p>You can name the fields when initializing a struct.</p>
+            <p>يمكنك تسمية الحقول عند تهيئة هيكل.</p>
 
           </td>
           <td class="code leading">
@@ -137,7 +136,7 @@ are no active references to it.</p>
         
         <tr>
           <td class="docs">
-            <p>Omitted fields will be zero-valued.</p>
+            <p>تأخذ الحقول غير المذكورة قيمها الصفرية.</p>
 
           </td>
           <td class="code leading">
@@ -148,7 +147,7 @@ are no active references to it.</p>
         
         <tr>
           <td class="docs">
-            <p>An <code>&amp;</code> prefix yields a pointer to the struct.</p>
+            <p>تعطي البادئة <code>&amp;</code> مؤشرًا إلى الهيكل.</p>
 
           </td>
           <td class="code leading">
@@ -159,7 +158,7 @@ are no active references to it.</p>
         
         <tr>
           <td class="docs">
-            <p>It&rsquo;s idiomatic to encapsulate new struct creation in constructor functions</p>
+            <p>من المتعارف عليه حصر إنشاء الهياكل الجديدة في دوال إنشاء.</p>
 
           </td>
           <td class="code leading">
@@ -170,7 +169,7 @@ are no active references to it.</p>
         
         <tr>
           <td class="docs">
-            <p>Access struct fields with a dot.</p>
+            <p>استخدم النقطة للوصول إلى حقول الهيكل.</p>
 
           </td>
           <td class="code leading">
@@ -182,8 +181,8 @@ are no active references to it.</p>
         
         <tr>
           <td class="docs">
-            <p>You can also use dots with struct pointers - the
-pointers are automatically dereferenced.</p>
+            <p>يمكنك أيضًا استخدام النقاط مع مؤشرات الهياكل؛ إذ تفك
+Go إشارة المؤشرات تلقائيًا.</p>
 
           </td>
           <td class="code leading">
@@ -195,7 +194,7 @@ pointers are automatically dereferenced.</p>
         
         <tr>
           <td class="docs">
-            <p>Structs are mutable.</p>
+            <p>الهياكل قابلة للتغيير.</p>
 
           </td>
           <td class="code leading">
@@ -207,10 +206,10 @@ pointers are automatically dereferenced.</p>
         
         <tr>
           <td class="docs">
-            <p>If a struct type is only used for a single value, we don&rsquo;t
-have to give it a name. The value can have an anonymous
-struct type. This technique is commonly used for
-<a href="testing-and-benchmarking">table-driven tests</a>.</p>
+            <p>إذا لم يُستخدم نوع هيكل إلا لقيمة واحدة، فلا يلزم أن
+نسميه؛ إذ يمكن أن يكون للقيمة نوع هيكل مجهول. يشيع
+استخدام هذه التقنية في
+<a href="testing-and-benchmarking">الاختبارات القائمة على جداول</a>.</p>
 
           </td>
           <td class="code">
@@ -254,12 +253,23 @@ struct type. This technique is commonly used for
       
       
       <p class="next">
-        Next example: <a href="methods" rel="next">Methods</a>.
+        المثال التالي: <a href="methods" rel="next"><bdi dir="auto">الأساليب (method)</bdi></a>.
       </p>
       
 
     <p class="footer">
-      by <a href="https://markmcgranaghan.com">Mark McGranaghan</a> and <a href="https://eli.thegreenplace.net">Eli Bendersky</a> | <a href="https://github.com/mmcgrana/gobyexample">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      إعداد <a href="https://markmcgranaghan.com"><bdi dir="ltr">Mark McGranaghan</bdi></a>
+      و<a href="https://eli.thegreenplace.net"><bdi dir="ltr">Eli Bendersky</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample">المصدر الأصلي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/mmcgrana/gobyexample#license">الرخصة</a>
+      <br />
+      الترجمة العربية بواسطة <a href="https://github.com/0xKa"><bdi dir="ltr">0xKa</bdi></a>
+      <span aria-hidden="true">|</span>
+      <a href="https://rr0.me">الموقع الشخصي</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://github.com/0xKa/gobyexample-ar">مصدر الترجمة</a>
     </p>
 
     </div>

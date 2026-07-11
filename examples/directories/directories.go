@@ -1,5 +1,4 @@
-// Go has several useful functions for working with
-// *directories* in the file system.
+// توفر Go عدة دوال مفيدة للعمل مع *المجلدات* في نظام الملفات.
 
 package main
 
@@ -18,18 +17,16 @@ func check(e error) {
 
 func main() {
 
-	// Create a new sub-directory in the current working
-	// directory.
+	// أنشئ مجلدًا فرعيًا جديدًا داخل مجلد العمل الحالي.
 	err := os.Mkdir("subdir", 0755)
 	check(err)
 
-	// When creating temporary directories, it's good
-	// practice to `defer` their removal. `os.RemoveAll`
-	// will delete a whole directory tree (similarly to
-	// `rm -rf`).
+	// عند إنشاء مجلدات مؤقتة، يُستحسن تأجيل حذفها باستخدام
+	// `defer`. تحذف `os.RemoveAll` شجرة مجلدات كاملة، على نحو شبيه
+	// بـ`rm -rf`.
 	defer os.RemoveAll("subdir")
 
-	// Helper function to create a new empty file.
+	// دالة مساعدة لإنشاء ملف فارغ جديد.
 	createEmptyFile := func(name string) {
 		d := []byte("")
 		check(os.WriteFile(name, d, 0644))
@@ -37,9 +34,9 @@ func main() {
 
 	createEmptyFile("subdir/file1")
 
-	// We can create a hierarchy of directories, including
-	// parents with `MkdirAll`. This is similar to the
-	// command-line `mkdir -p`.
+	// يمكننا إنشاء تسلسل هرمي من المجلدات، بما فيها المجلدات
+	// الأم، باستخدام `MkdirAll`. يشبه ذلك أمر سطر الأوامر
+	// `mkdir -p`.
 	err = os.MkdirAll("subdir/parent/child", 0755)
 	check(err)
 
@@ -47,8 +44,8 @@ func main() {
 	createEmptyFile("subdir/parent/file3")
 	createEmptyFile("subdir/parent/child/file4")
 
-	// `ReadDir` lists directory contents, returning a
-	// slice of `os.DirEntry` objects.
+	// تسرد `ReadDir` محتويات المجلد، وتعيد شريحة من كائنات
+	// `os.DirEntry`.
 	c, err := os.ReadDir("subdir/parent")
 	check(err)
 
@@ -57,13 +54,12 @@ func main() {
 		fmt.Println(" ", entry.Name(), entry.IsDir())
 	}
 
-	// `Chdir` lets us change the current working directory,
-	// similarly to `cd`.
+	// تتيح لنا `Chdir` تغيير مجلد العمل الحالي على نحو شبيه بـ`cd`.
 	err = os.Chdir("subdir/parent/child")
 	check(err)
 
-	// Now we'll see the contents of `subdir/parent/child`
-	// when listing the *current* directory.
+	// سنرى الآن محتويات `subdir/parent/child` عند سرد المجلد
+	// *الحالي*.
 	c, err = os.ReadDir(".")
 	check(err)
 
@@ -72,21 +68,20 @@ func main() {
 		fmt.Println(" ", entry.Name(), entry.IsDir())
 	}
 
-	// `cd` back to where we started.
+	// عُد باستخدام `cd` إلى موضع البداية.
 	err = os.Chdir("../../..")
 	check(err)
 
-	// We can also visit a directory *recursively*,
-	// including all its sub-directories. `WalkDir` accepts
-	// a callback function to handle every file or
-	// directory visited.
+	// يمكننا أيضًا زيارة مجلد *بكل تفرعاته*، بما في ذلك جميع
+	// مجلداته الفرعية. تقبل `WalkDir` دالة رد نداء لمعالجة كل ملف
+	// أو مجلد تزوره.
 	fmt.Println("Visiting subdir")
 	err = filepath.WalkDir("subdir", visit)
 	check(err)
 }
 
-// `visit` is called for every file or directory found
-// recursively by `filepath.WalkDir`.
+// تُستدعى `visit` لكل ملف أو مجلد تعثر عليه `filepath.WalkDir`
+// في جميع التفرعات.
 func visit(path string, d fs.DirEntry, err error) error {
 	if err != nil {
 		return err

@@ -1,5 +1,6 @@
-// _Maps_ are Go's built-in [associative data type](https://en.wikipedia.org/wiki/Associative_array)
-// (sometimes called _hashes_ or _dicts_ in other languages).
+// _الخرائط_ هي [نوع البيانات الترابطي](https://ar.wikipedia.org/wiki/مصفوفة_ارتباطية)
+// المدمج في Go (وتسمى أحيانًا _جداول التجزئة_ أو _القواميس_
+// في لغات أخرى).
 
 package main
 
@@ -10,60 +11,58 @@ import (
 
 func main() {
 
-	// To create an empty map, use the builtin `make`:
+	// لإنشاء خريطة فارغة، استخدم الدالة المدمجة `make`:
 	// `make(map[key-type]val-type)`.
 	m := make(map[string]int)
 
-	// Set key/value pairs using typical `name[key] = val`
-	// syntax.
+	// أسند أزواج المفاتيح والقيم باستخدام الصيغة المعتادة
+	// `name[key] = val`.
 	m["k1"] = 7
 	m["k2"] = 13
 
-	// Printing a map with e.g. `fmt.Println` will show all of
-	// its key/value pairs.
+	// تعرض طباعة خريطة باستخدام `fmt.Println` مثلًا جميع
+	// أزواج المفاتيح والقيم فيها.
 	fmt.Println("map:", m)
 
-	// Get a value for a key with `name[key]`.
+	// احصل على قيمة مفتاح باستخدام `name[key]`.
 	v1 := m["k1"]
 	fmt.Println("v1:", v1)
 
-	// If the key doesn't exist, the
-	// [zero value](https://go.dev/ref/spec#The_zero_value) of the
-	// value type is returned.
+	// إذا لم يكن المفتاح موجودًا، تُعاد
+	// [القيمة الصفرية](https://go.dev/ref/spec#The_zero_value)
+	// لنوع القيمة.
 	v3 := m["k3"]
 	fmt.Println("v3:", v3)
 
-	// The builtin `len` returns the number of key/value
-	// pairs when called on a map.
+	// تعيد الدالة المدمجة `len` عدد أزواج المفاتيح والقيم
+	// عند استدعائها على خريطة.
 	fmt.Println("len:", len(m))
 
-	// The builtin `delete` removes key/value pairs from
-	// a map.
+	// تحذف الدالة المدمجة `delete` أزواج المفاتيح والقيم
+	// من الخريطة.
 	delete(m, "k2")
 	fmt.Println("map:", m)
 
-	// To remove *all* key/value pairs from a map, use
-	// the `clear` builtin.
+	// لحذف *جميع* أزواج المفاتيح والقيم من خريطة، استخدم
+	// الدالة المدمجة `clear`.
 	clear(m)
 	fmt.Println("map:", m)
 
-	// The optional second return value when getting a
-	// value from a map indicates if the key was present
-	// in the map. This can be used to disambiguate
-	// between missing keys and keys with zero values
-	// like `0` or `""`. Here we didn't need the value
-	// itself, so we ignored it with the _blank identifier_
-	// `_`.
+	// تشير قيمة الإرجاع الثانية الاختيارية عند جلب قيمة من
+	// خريطة إلى وجود المفتاح فيها. ويمكن استخدامها للتمييز
+	// بين المفاتيح الغائبة والمفاتيح ذات القيم الصفرية مثل
+	// `0` أو `""`. لم نحتج هنا إلى القيمة نفسها، لذلك
+	// تجاهلناها باستخدام _المعرّف الفارغ_ `_`.
 	_, prs := m["k2"]
 	fmt.Println("prs:", prs)
 
-	// You can also declare and initialize a new map in
-	// the same line with this syntax.
+	// يمكنك أيضًا التصريح عن خريطة جديدة وتهيئتها في السطر
+	// نفسه باستخدام هذه الصيغة.
 	n := map[string]int{"foo": 1, "bar": 2}
 	fmt.Println("map:", n)
 
-	// The `maps` package contains a number of useful
-	// utility functions for maps.
+	// تحتوي الحزمة `maps` على عدد من الدوال المساعدة
+	// المفيدة للخرائط.
 	n2 := map[string]int{"foo": 1, "bar": 2}
 	if maps.Equal(n, n2) {
 		fmt.Println("n == n2")
