@@ -27,8 +27,7 @@
         
         <tr>
           <td class="docs">
-            <p>Use <code>os.Exit</code> to immediately exit with a given
-status.</p>
+            <p>استخدم <code>os.Exit</code> للخروج فورًا بحالة محددة.</p>
 
           </td>
           <td class="code empty leading">
@@ -42,7 +41,7 @@ status.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/b9aYzlENkb__R" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/ubB0x3GV7Ua" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -72,8 +71,8 @@ status.</p>
         
         <tr>
           <td class="docs">
-            <p><code>defer</code>s will <em>not</em> be run when using <code>os.Exit</code>, so
-this <code>fmt.Println</code> will never be called.</p>
+            <p>لن تُنفذ استدعاءات <code>defer</code> عند استخدام <code>os.Exit</code>، ولذلك لن
+تُستدعى <code>fmt.Println</code> هذه مطلقًا.</p>
 
           </td>
           <td class="code leading">
@@ -84,7 +83,7 @@ this <code>fmt.Println</code> will never be called.</p>
         
         <tr>
           <td class="docs">
-            <p>Exit with status 3.</p>
+            <p>اخرج بالحالة 3.</p>
 
           </td>
           <td class="code leading">
@@ -96,10 +95,9 @@ this <code>fmt.Println</code> will never be called.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that unlike e.g. C, Go does not use an integer
-return value from <code>main</code> to indicate exit status. If
-you&rsquo;d like to exit with a non-zero status you should
-use <code>os.Exit</code>.</p>
+            <p>لاحظ أن Go، بخلاف C مثلًا، لا تستخدم قيمة إرجاع صحيحة من <code>main</code>
+للدلالة على حالة الخروج. إذا أردت الخروج بحالة غير صفرية، فعليك
+استخدام <code>os.Exit</code>.</p>
 
           </td>
           <td class="code empty">
@@ -114,8 +112,8 @@ use <code>os.Exit</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>If you run <code>exit.go</code> using <code>go run</code>, the exit
-will be picked up by <code>go</code> and printed.</p>
+            <p>إذا شغّلت <code>exit.go</code> باستخدام <code>go run</code>، فستلتقط <code>go</code> حالة الخروج
+وتطبعها.</p>
 
           </td>
           <td class="code leading">
@@ -127,8 +125,7 @@ will be picked up by <code>go</code> and printed.</p>
         
         <tr>
           <td class="docs">
-            <p>By building and executing a binary you can see
-the status in the terminal.</p>
+            <p>يمكنك رؤية الحالة في الطرفية ببناء ملف تنفيذي وتشغيله.</p>
 
           </td>
           <td class="code leading">
@@ -142,7 +139,7 @@ the status in the terminal.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that the <code>!</code> from our program never got printed.</p>
+            <p>لاحظ أن العلامة <code>!</code> من برنامجنا لم تُطبع قط.</p>
 
           </td>
           <td class="code empty">

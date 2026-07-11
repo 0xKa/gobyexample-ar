@@ -31,12 +31,11 @@
         
         <tr>
           <td class="docs">
-            <p>Sometimes we&rsquo;d like our Go programs to intelligently
-handle <a href="https://en.wikipedia.org/wiki/Unix_signal">Unix signals</a>.
-For example, we might want a server to gracefully
-shutdown when it receives a <code>SIGTERM</code>, or a command-line
-tool to stop processing input if it receives a <code>SIGINT</code>.
-Here&rsquo;s a modern way to handle signals using contexts.</p>
+            <p>نريد أحيانًا أن تتعامل برامج Go بذكاء مع <a href="https://en.wikipedia.org/wiki/Unix_signal">إشارات
+Unix</a>. فقد نريد مثلًا
+إيقاف خادم بسلاسة عند تلقيه <code>SIGTERM</code>، أو إيقاف أداة سطر أوامر
+عن معالجة المدخلات إذا تلقت <code>SIGINT</code>. إليك طريقة حديثة لمعالجة
+الإشارات باستخدام السياقات.</p>
 
           </td>
           <td class="code empty leading">
@@ -50,7 +49,7 @@ Here&rsquo;s a modern way to handle signals using contexts.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/F3Wm7JT8wgn" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/xfAI4GswJbU" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -72,8 +71,8 @@ Here&rsquo;s a modern way to handle signals using contexts.</p>
         
         <tr>
           <td class="docs">
-            <p><code>signal.NotifyContext</code> returns a context that&rsquo;s canceled
-when one of the listed signals arrives.</p>
+            <p>تعيد <code>signal.NotifyContext</code> سياقًا يُلغى عند وصول إحدى الإشارات
+المدرجة.</p>
 
           </td>
           <td class="code leading">
@@ -96,8 +95,7 @@ when one of the listed signals arrives.</p>
         
         <tr>
           <td class="docs">
-            <p>The program will wait here until one of the
-configured signals is received.</p>
+            <p>سينتظر البرنامج هنا حتى يستقبل إحدى الإشارات المحددة.</p>
 
           </td>
           <td class="code leading">
@@ -109,9 +107,8 @@ configured signals is received.</p>
         
         <tr>
           <td class="docs">
-            <p><code>context.Cause</code> reports why the context was canceled.
-For a signal-triggered cancellation, this includes
-the signal value.</p>
+            <p>تعيد <code>context.Cause</code> سبب إلغاء السياق. وعندما يكون الإلغاء
+ناتجًا عن إشارة، تتضمن النتيجة قيمة الإشارة.</p>
 
           </td>
           <td class="code">
@@ -129,10 +126,9 @@ the signal value.</p>
         
         <tr>
           <td class="docs">
-            <p>When we run this program it will block waiting for a
-signal. By typing <code>ctrl-C</code> (which the
-terminal shows as <code>^C</code>) we can send a <code>SIGINT</code> signal,
-causing the program to print the cancellation cause and then exit.</p>
+            <p>عند تشغيل هذا البرنامج، سيُحجب منتظرًا إشارة. يمكننا بالضغط على
+<code>ctrl-C</code>، التي تعرضها الطرفية على صورة <code>^C</code>، إرسال إشارة
+<code>SIGINT</code>، فيطبع البرنامج سبب الإلغاء ثم يخرج.</p>
 
           </td>
           <td class="code">

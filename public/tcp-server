@@ -31,12 +31,12 @@
         
         <tr>
           <td class="docs">
-            <p>The <code>net</code> package provides the tools we need to easily build
-TCP socket servers.</p>
+            <p>توفر الحزمة <code>net</code> الأدوات التي نحتاجها لبناء خوادم مقابس TCP
+بسهولة.</p>
 
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/G0k2jHMA6ei" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/tMBGmtNpqAV" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -69,8 +69,8 @@ TCP socket servers.</p>
         
         <tr>
           <td class="docs">
-            <p><code>net.Listen</code> starts the server on the given network
-(TCP) and address (port 8090 on all interfaces).</p>
+            <p>تبدأ <code>net.Listen</code> الخادم على الشبكة المحددة (TCP) والعنوان
+المحدد (المنفذ 8090 على جميع واجهات الشبكة).</p>
 
           </td>
           <td class="code leading">
@@ -84,8 +84,7 @@ TCP socket servers.</p>
         
         <tr>
           <td class="docs">
-            <p>Close the listener to free the port
-when the application exits.</p>
+            <p>أغلق المستمع لتحرير المنفذ عند خروج التطبيق.</p>
 
           </td>
           <td class="code leading">
@@ -96,7 +95,7 @@ when the application exits.</p>
         
         <tr>
           <td class="docs">
-            <p>Loop indefinitely to accept new client connections.</p>
+            <p>كرر إلى أجل غير مسمى لقبول اتصالات عملاء جديدة.</p>
 
           </td>
           <td class="code leading">
@@ -107,7 +106,7 @@ when the application exits.</p>
         
         <tr>
           <td class="docs">
-            <p>Wait for a connection.</p>
+            <p>انتظر اتصالًا.</p>
 
           </td>
           <td class="code leading">
@@ -122,9 +121,8 @@ when the application exits.</p>
         
         <tr>
           <td class="docs">
-            <p>We use a goroutine here to handle the connection
-so that the main loop can continue accepting more
-connections.</p>
+            <p>نستخدم هنا روتين Go لمعالجة الاتصال، حتى تتمكن الحلقة
+الرئيسية من مواصلة قبول المزيد من الاتصالات.</p>
 
           </td>
           <td class="code leading">
@@ -137,8 +135,8 @@ connections.</p>
         
         <tr>
           <td class="docs">
-            <p><code>handleConnection</code> handles a single client connection,
-reading one line of text from the client and returning a response.</p>
+            <p>تعالج <code>handleConnection</code> اتصالًا واحدًا لعميل، فتقرأ سطرًا
+نصيًا واحدًا من العميل وتعيد استجابة.</p>
 
           </td>
           <td class="code leading">
@@ -149,8 +147,7 @@ reading one line of text from the client and returning a response.</p>
         
         <tr>
           <td class="docs">
-            <p>Closing the connection releases resources when
-we are finished interacting with the client.</p>
+            <p>يحرر إغلاق الاتصال الموارد عند انتهاء تفاعلنا مع العميل.</p>
 
           </td>
           <td class="code leading">
@@ -161,8 +158,8 @@ we are finished interacting with the client.</p>
         
         <tr>
           <td class="docs">
-            <p>Use <code>bufio.NewReader</code> to read one line of data
-from the client (terminated by a newline).</p>
+            <p>استخدم <code>bufio.NewReader</code> لقراءة سطر بيانات واحد من العميل،
+ينتهي بمحرف سطر جديد.</p>
 
           </td>
           <td class="code leading">
@@ -178,8 +175,7 @@ from the client (terminated by a newline).</p>
         
         <tr>
           <td class="docs">
-            <p>Create and send a response back to the client,
-demonstrating two-way communication.</p>
+            <p>أنشئ استجابة وأرسلها إلى العميل، موضحًا الاتصال ثنائي الاتجاه.</p>
 
           </td>
           <td class="code">
@@ -200,7 +196,7 @@ demonstrating two-way communication.</p>
         
         <tr>
           <td class="docs">
-            <p>Run the TCP server in the background.</p>
+            <p>شغّل خادم TCP في الخلفية.</p>
 
           </td>
           <td class="code leading">
@@ -211,7 +207,7 @@ demonstrating two-way communication.</p>
         
         <tr>
           <td class="docs">
-            <p>Send data and capture the response using netcat.</p>
+            <p>أرسل البيانات والتقط الاستجابة باستخدام netcat.</p>
 
           </td>
           <td class="code">

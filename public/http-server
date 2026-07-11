@@ -31,12 +31,11 @@
         
         <tr>
           <td class="docs">
-            <p>Writing a basic HTTP server is easy using the
-<code>net/http</code> package.</p>
+            <p>تسهل كتابة خادم HTTP أساسي باستخدام الحزمة <code>net/http</code>.</p>
 
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/s3xMMt9Ytry" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/9OqZDPzSPv8" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -56,11 +55,9 @@
         
         <tr>
           <td class="docs">
-            <p>A fundamental concept in <code>net/http</code> servers is
-<em>handlers</em>. A handler is an object implementing the
-<code>http.Handler</code> interface. A common way to write
-a handler is by using the <code>http.HandlerFunc</code> adapter
-on functions with the appropriate signature.</p>
+            <p>تُعد <em>المعالجات</em> مفهومًا أساسيًا في خوادم <code>net/http</code>. المعالج
+كائن ينفذ الواجهة <code>http.Handler</code>. من الطرق الشائعة لكتابة معالج
+استخدام المهايئ <code>http.HandlerFunc</code> مع دوال ذات توقيع مناسب.</p>
 
           </td>
           <td class="code leading">
@@ -71,11 +68,9 @@ on functions with the appropriate signature.</p>
         
         <tr>
           <td class="docs">
-            <p>Functions serving as handlers take a
-<code>http.ResponseWriter</code> and a <code>http.Request</code> as
-arguments. The response writer is used to fill in the
-HTTP response. Here our simple response is just
-&ldquo;hello\n&rdquo;.</p>
+            <p>تأخذ الدوال التي تعمل كمعالجات <code>http.ResponseWriter</code>
+و<code>http.Request</code> وسيطين. يُستخدم كاتب الاستجابة لملء استجابة
+HTTP. استجابتنا البسيطة هنا ليست سوى <code>&quot;hello\n&quot;</code>.</p>
 
           </td>
           <td class="code leading">
@@ -97,9 +92,8 @@ HTTP response. Here our simple response is just
         
         <tr>
           <td class="docs">
-            <p>This handler does something a little more
-sophisticated by reading all the HTTP request
-headers and echoing them into the response body.</p>
+            <p>ينفذ هذا المعالج مهمة أكثر تقدمًا قليلًا، إذ يقرأ جميع ترويسات
+طلب HTTP ويرددها في جسم الاستجابة.</p>
 
           </td>
           <td class="code leading">
@@ -125,10 +119,9 @@ headers and echoing them into the response body.</p>
         
         <tr>
           <td class="docs">
-            <p>We register our handlers on server routes using the
-<code>http.HandleFunc</code> convenience function. It sets up
-the <em>default router</em> in the <code>net/http</code> package and
-takes a function as an argument.</p>
+            <p>نسجّل معالجاتنا في مسارات الخادم باستخدام الدالة المساعدة
+<code>http.HandleFunc</code>. تضبط هذه الدالة <em>الموجّه الافتراضي</em> في
+الحزمة <code>net/http</code>، وتأخذ دالة بوصفها وسيطًا.</p>
 
           </td>
           <td class="code leading">
@@ -140,9 +133,8 @@ takes a function as an argument.</p>
         
         <tr>
           <td class="docs">
-            <p>Finally, we call the <code>ListenAndServe</code> with the port
-and a handler. <code>nil</code> tells it to use the default
-router we&rsquo;ve just set up.</p>
+            <p>نستدعي أخيرًا <code>ListenAndServe</code> مع المنفذ ومعالج. تطلب منها
+<code>nil</code> استخدام الموجّه الافتراضي الذي أعددناه للتو.</p>
 
           </td>
           <td class="code">
@@ -158,7 +150,7 @@ router we&rsquo;ve just set up.</p>
         
         <tr>
           <td class="docs">
-            <p>Run the server in the background.</p>
+            <p>شغّل الخادم في الخلفية.</p>
 
           </td>
           <td class="code leading">
@@ -169,7 +161,7 @@ router we&rsquo;ve just set up.</p>
         
         <tr>
           <td class="docs">
-            <p>Access the <code>/hello</code> route.</p>
+            <p>صِل إلى المسار <code>/hello</code>.</p>
 
           </td>
           <td class="code">

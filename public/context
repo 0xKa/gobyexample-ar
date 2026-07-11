@@ -31,16 +31,15 @@
         
         <tr>
           <td class="docs">
-            <p>In the previous example we looked at setting up a simple
-<a href="http-server">HTTP server</a>. HTTP servers are useful for
-demonstrating the usage of <code>context.Context</code> for
-controlling cancellation. A <code>Context</code> carries deadlines,
-cancellation signals, and other request-scoped values
-across API boundaries and goroutines.</p>
+            <p>تعرفنا في المثال السابق على إعداد <a href="http-server">خادم HTTP</a>
+بسيط. تفيد خوادم HTTP في توضيح استخدام <code>context.Context</code>
+للتحكم في الإلغاء. ينقل <code>Context</code> المواعيد النهائية وإشارات
+الإلغاء والقيم الأخرى ذات نطاق الطلب عبر حدود الواجهات
+البرمجية وروتينات Go.</p>
 
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/7G1TlQrnbF1" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/EYWrJaSNRjN" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -71,9 +70,8 @@ across API boundaries and goroutines.</p>
         
         <tr>
           <td class="docs">
-            <p>A <code>context.Context</code> is created for each request by
-the <code>net/http</code> machinery, and is available with
-the <code>Context()</code> method.</p>
+            <p>تنشئ آلية <code>net/http</code> قيمة <code>context.Context</code> لكل طلب، ويمكن
+الوصول إليها باستخدام الأسلوب <code>Context()</code>.</p>
 
           </td>
           <td class="code leading">
@@ -86,11 +84,9 @@ the <code>Context()</code> method.</p>
         
         <tr>
           <td class="docs">
-            <p>Wait for a few seconds before sending a reply to the
-client. This could simulate some work the server is
-doing. While working, keep an eye on the context&rsquo;s
-<code>Done()</code> channel for a signal that we should cancel
-the work and return as soon as possible.</p>
+            <p>انتظر بضع ثوانٍ قبل إرسال رد إلى العميل. قد يحاكي ذلك بعض
+العمل الذي ينفذه الخادم. أثناء العمل، راقب قناة السياق
+<code>Done()</code> بحثًا عن إشارة تطلب إلغاء العمل والعودة في أسرع وقت.</p>
 
           </td>
           <td class="code leading">
@@ -104,9 +100,8 @@ the work and return as soon as possible.</p>
         
         <tr>
           <td class="docs">
-            <p>The context&rsquo;s <code>Err()</code> method returns an error
-that explains why the <code>Done()</code> channel was
-closed.</p>
+            <p>يعيد الأسلوب <code>Err()</code> للسياق خطأ يوضح سبب إغلاق قناة
+<code>Done()</code>.</p>
 
           </td>
           <td class="code leading">
@@ -132,8 +127,7 @@ closed.</p>
         
         <tr>
           <td class="docs">
-            <p>As before, we register our handler on the &ldquo;/hello&rdquo;
-route, and start serving.</p>
+            <p>كما سبق، نسجّل معالجنا في المسار <code>&quot;/hello&quot;</code> ونبدأ الخدمة.</p>
 
           </td>
           <td class="code">
@@ -150,7 +144,7 @@ route, and start serving.</p>
         
         <tr>
           <td class="docs">
-            <p>Run the server in the background.</p>
+            <p>شغّل الخادم في الخلفية.</p>
 
           </td>
           <td class="code leading">
@@ -161,9 +155,8 @@ route, and start serving.</p>
         
         <tr>
           <td class="docs">
-            <p>Simulate a client request to <code>/hello</code>, hitting
-Ctrl+C shortly after starting to signal
-cancellation.</p>
+            <p>حاكِ طلب عميل إلى <code>/hello</code>، واضغط <code>Ctrl+C</code> بعد وقت قصير من البدء
+لإرسال إشارة إلغاء.</p>
 
           </td>
           <td class="code">

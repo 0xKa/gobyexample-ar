@@ -31,8 +31,7 @@
         
         <tr>
           <td class="docs">
-            <p>Sometimes our Go programs need to spawn other
-processes.</p>
+            <p>تحتاج برامج Go أحيانًا إلى تشغيل عمليات أخرى.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +45,7 @@ processes.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/IxGAEXe0I7U" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/1rCa-D_m_WN" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -78,10 +77,9 @@ processes.</p>
         
         <tr>
           <td class="docs">
-            <p>We&rsquo;ll start with a simple command that takes no
-arguments or input and just prints something to
-stdout. The <code>exec.Command</code> helper creates an object
-to represent this external process.</p>
+            <p>سنبدأ بأمر بسيط لا يأخذ وسائط أو مدخلات، ويطبع شيئًا إلى
+<code>stdout</code> فحسب. تنشئ الدالة المساعدة <code>exec.Command</code> كائنًا
+يمثل هذه العملية الخارجية.</p>
 
           </td>
           <td class="code leading">
@@ -92,10 +90,9 @@ to represent this external process.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>Output</code> method runs the command, waits for it
-to finish and collects its standard output.
- If there were no errors, <code>dateOut</code> will hold bytes
-with the date info.</p>
+            <p>يشغّل الأسلوب <code>Output</code> الأمر وينتظر انتهاءه ويجمع خرجه
+القياسي. إذا لم تحدث أخطاء، فستحتوي <code>dateOut</code> على بايتات
+معلومات التاريخ.</p>
 
           </td>
           <td class="code leading">
@@ -111,11 +108,9 @@ with the date info.</p>
         
         <tr>
           <td class="docs">
-            <p><code>Output</code> and other methods of <code>Command</code> will return
-<code>*exec.Error</code> if there was a problem executing the
-command (e.g. wrong path), and <code>*exec.ExitError</code>
-if the command ran but exited with a non-zero return
-code.</p>
+            <p>يعيد <code>Output</code> وأساليب <code>Command</code> الأخرى قيمة <code>*exec.Error</code> إذا
+حدثت مشكلة أثناء تنفيذ الأمر، مثل مسار خاطئ، ويعيد
+<code>*exec.ExitError</code> إذا عمل الأمر لكنه خرج برمز إرجاع غير صفري.</p>
 
           </td>
           <td class="code leading">
@@ -136,9 +131,9 @@ code.</p>
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at a slightly more involved case
-where we pipe data to the external process on its
-<code>stdin</code> and collect the results from its <code>stdout</code>.</p>
+            <p>سنتعرف تاليًا على حالة أعقد قليلًا، نمرر فيها البيانات عبر
+أنبوب إلى <code>stdin</code> للعملية الخارجية، ونجمع النتائج من
+<code>stdout</code> الخاص بها.</p>
 
           </td>
           <td class="code leading">
@@ -149,10 +144,9 @@ where we pipe data to the external process on its
         
         <tr>
           <td class="docs">
-            <p>Here we explicitly grab input/output pipes, start
-the process, write some input to it, read the
-resulting output, and finally wait for the process
-to exit.</p>
+            <p>نحصل هنا صراحة على أنبوبي الإدخال والإخراج، ونبدأ العملية،
+ونكتب بعض المدخلات إليها، ونقرأ الخرج الناتج، ثم ننتظر أخيرًا
+خروج العملية.</p>
 
           </td>
           <td class="code leading">
@@ -169,11 +163,9 @@ to exit.</p>
         
         <tr>
           <td class="docs">
-            <p>We omitted error checks in the above example, but
-you could use the usual <code>if err != nil</code> pattern for
-all of them. We also only collect the <code>StdoutPipe</code>
-results, but you could collect the <code>StderrPipe</code> in
-exactly the same way.</p>
+            <p>أغفلنا فحوص الأخطاء في المثال أعلاه، لكن يمكنك استخدام النمط
+المعتاد <code>if err != nil</code> معها كلها. كما أننا لا نجمع إلا نتائج
+<code>StdoutPipe</code>، لكن يمكنك جمع <code>StderrPipe</code> بالطريقة نفسها تمامًا.</p>
 
           </td>
           <td class="code leading">
@@ -185,12 +177,10 @@ exactly the same way.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that when spawning commands we need to
-provide an explicitly delineated command and
-argument array, vs. being able to just pass in one
-command-line string. If you want to spawn a full
-command with a string, you can use <code>bash</code>&rsquo;s <code>-c</code>
-option:</p>
+            <p>لاحظ أننا عند تشغيل الأوامر نحتاج إلى توفير الأمر ومصفوفة
+الوسائط كلًا على حدة، بدلًا من تمرير سلسلة نصية واحدة لسطر
+الأوامر. إذا أردت تشغيل أمر كامل من سلسلة نصية، فيمكنك استخدام
+الخيار <code>-c</code> في <code>bash</code>:</p>
 
           </td>
           <td class="code">
@@ -212,8 +202,8 @@ option:</p>
         
         <tr>
           <td class="docs">
-            <p>The spawned programs return output that is the same
-as if we had run them directly from the command-line.</p>
+            <p>تعيد البرامج المشغّلة خرجًا مماثلًا لما ستعيده لو شغّلناها
+مباشرة من سطر الأوامر.</p>
 
           </td>
           <td class="code leading">
@@ -226,8 +216,8 @@ as if we had run them directly from the command-line.</p>
         
         <tr>
           <td class="docs">
-            <p>date doesn&rsquo;t have a <code>-x</code> flag so it will exit with
-an error message and non-zero return code.</p>
+            <p>لا يدعم <code>date</code> الخيار <code>-x</code>، لذا سيخرج مع رسالة خطأ ورمز إرجاع
+غير صفري.</p>
 
           </td>
           <td class="code leading">
