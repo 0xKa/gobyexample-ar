@@ -31,10 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p>A <em>line filter</em> is a common type of program that reads
-input on stdin, processes it, and then prints some
-derived result to stdout. <code>grep</code> and <code>sed</code> are common
-line filters.</p>
+            <p><em>مرشح الأسطر</em> نوع شائع من البرامج يقرأ المدخلات من <code>stdin</code>
+ويعالجها، ثم يطبع نتيجة مشتقة إلى <code>stdout</code>. يُعد <code>grep</code> و<code>sed</code>
+من مرشحات الأسطر الشائعة.</p>
 
           </td>
           <td class="code empty leading">
@@ -45,13 +44,13 @@ line filters.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s an example line filter in Go that writes a
-capitalized version of all input text. You can use this
-pattern to write your own Go line filters.</p>
+            <p>إليك مثالًا على مرشح أسطر في Go يكتب نسخة بأحرف إنجليزية كبيرة
+من نص المدخلات كله. يمكنك استخدام هذا النمط لكتابة مرشحات
+الأسطر الخاصة بك في Go.</p>
 
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/kNcupWRsYPP" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/Dt7aCFj_olS" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -83,10 +82,9 @@ pattern to write your own Go line filters.</p>
         
         <tr>
           <td class="docs">
-            <p>Wrapping the unbuffered <code>os.Stdin</code> with a buffered
-scanner gives us a convenient <code>Scan</code> method that
-advances the scanner to the next token; which is
-the next line in the default scanner.</p>
+            <p>يمنحنا تغليف <code>os.Stdin</code> غير المخزن مؤقتًا بماسح مخزن مؤقتًا
+الأسلوب الملائم <code>Scan</code>، الذي ينقل الماسح إلى الوحدة التالية؛
+وهي السطر التالي في الماسح الافتراضي.</p>
 
           </td>
           <td class="code leading">
@@ -97,8 +95,8 @@ the next line in the default scanner.</p>
         
         <tr>
           <td class="docs">
-            <p><code>Text</code> returns the current token, here the next line,
-from the input.</p>
+            <p>تعيد <code>Text</code> الوحدة الحالية من المدخلات، وهي هنا السطر
+التالي.</p>
 
           </td>
           <td class="code leading">
@@ -119,7 +117,7 @@ from the input.</p>
         
         <tr>
           <td class="docs">
-            <p>Write out the uppercased line.</p>
+            <p>اكتب السطر المحول إلى أحرف إنجليزية كبيرة.</p>
 
           </td>
           <td class="code leading">
@@ -131,8 +129,8 @@ from the input.</p>
         
         <tr>
           <td class="docs">
-            <p>Check for errors during <code>Scan</code>. End of file is
-expected and not reported by <code>Scan</code> as an error.</p>
+            <p>تحقق من الأخطاء أثناء <code>Scan</code>. نهاية الملف متوقعة، ولا تعدّها
+<code>Scan</code> خطأ.</p>
 
           </td>
           <td class="code">
@@ -151,8 +149,8 @@ expected and not reported by <code>Scan</code> as an error.</p>
         
         <tr>
           <td class="docs">
-            <p>To try out our line filter, first make a file with a few
-lowercase lines.</p>
+            <p>لتجربة مرشح الأسطر، أنشئ أولًا ملفًا يحتوي على بضعة أسطر بأحرف
+إنجليزية صغيرة.</p>
 
           </td>
           <td class="code leading">
@@ -164,7 +162,7 @@ lowercase lines.</p>
         
         <tr>
           <td class="docs">
-            <p>Then use the line filter to get uppercase lines.</p>
+            <p>ثم استخدم مرشح الأسطر للحصول على أسطر بأحرف إنجليزية كبيرة.</p>
 
           </td>
           <td class="code">

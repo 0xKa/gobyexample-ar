@@ -31,8 +31,8 @@
         
         <tr>
           <td class="docs">
-            <p>Writing files in Go follows similar patterns to the
-ones we saw earlier for reading.</p>
+            <p>تتبع كتابة الملفات في Go أنماطًا شبيهة بما رأيناه سابقًا عند
+القراءة.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +46,7 @@ ones we saw earlier for reading.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/iuKQDnKfl2T" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/KsSLufnJDHh" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -92,8 +92,7 @@ ones we saw earlier for reading.</p>
         
         <tr>
           <td class="docs">
-            <p>To start, here&rsquo;s how to dump a string (or just
-bytes) into a file.</p>
+            <p>للبدء، هكذا نكتب سلسلة نصية، أو مجرد بايتات، إلى ملف.</p>
 
           </td>
           <td class="code leading">
@@ -107,7 +106,7 @@ bytes) into a file.</p>
         
         <tr>
           <td class="docs">
-            <p>For more granular writes, open a file for writing.</p>
+            <p>لعمليات كتابة أدق، افتح ملفًا للكتابة.</p>
 
           </td>
           <td class="code leading">
@@ -120,8 +119,7 @@ bytes) into a file.</p>
         
         <tr>
           <td class="docs">
-            <p>It&rsquo;s idiomatic to defer a <code>Close</code> immediately
-after opening a file.</p>
+            <p>من الشائع تأجيل <code>Close</code> مباشرة بعد فتح ملف.</p>
 
           </td>
           <td class="code leading">
@@ -132,7 +130,7 @@ after opening a file.</p>
         
         <tr>
           <td class="docs">
-            <p>You can <code>Write</code> byte slices as you&rsquo;d expect.</p>
+            <p>يمكنك كتابة شرائح البايتات باستخدام <code>Write</code> كما هو متوقع.</p>
 
           </td>
           <td class="code leading">
@@ -146,7 +144,7 @@ after opening a file.</p>
         
         <tr>
           <td class="docs">
-            <p>A <code>WriteString</code> is also available.</p>
+            <p>تتوفر أيضًا <code>WriteString</code>.</p>
 
           </td>
           <td class="code leading">
@@ -159,7 +157,7 @@ after opening a file.</p>
         
         <tr>
           <td class="docs">
-            <p>Issue a <code>Sync</code> to flush writes to stable storage.</p>
+            <p>استدعِ <code>Sync</code> لتفريغ عمليات الكتابة إلى التخزين الدائم.</p>
 
           </td>
           <td class="code leading">
@@ -170,8 +168,8 @@ after opening a file.</p>
         
         <tr>
           <td class="docs">
-            <p><code>bufio</code> provides buffered writers in addition
-to the buffered readers we saw earlier.</p>
+            <p>توفر <code>bufio</code> كائنات <code>Writer</code> مخزنة مؤقتًا، إضافة إلى كائنات
+<code>Reader</code> المخزنة مؤقتًا التي رأيناها سابقًا.</p>
 
           </td>
           <td class="code leading">
@@ -185,8 +183,8 @@ to the buffered readers we saw earlier.</p>
         
         <tr>
           <td class="docs">
-            <p>Use <code>Flush</code> to ensure all buffered operations have
-been applied to the underlying writer.</p>
+            <p>استخدم <code>Flush</code> لضمان تطبيق جميع العمليات المخزنة مؤقتًا على
+الكاتب الأساسي.</p>
 
           </td>
           <td class="code leading">
@@ -211,7 +209,7 @@ been applied to the underlying writer.</p>
         
         <tr>
           <td class="docs">
-            <p>Try running the file-writing code.</p>
+            <p>جرّب تشغيل كود كتابة الملفات.</p>
 
           </td>
           <td class="code leading">
@@ -225,7 +223,7 @@ been applied to the underlying writer.</p>
         
         <tr>
           <td class="docs">
-            <p>Then check the contents of the written files.</p>
+            <p>ثم تحقق من محتويات الملفات المكتوبة.</p>
 
           </td>
           <td class="code leading">
@@ -242,8 +240,8 @@ been applied to the underlying writer.</p>
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at applying some of the file I/O ideas
-we&rsquo;ve just seen to the <code>stdin</code> and <code>stdout</code> streams.</p>
+            <p>سنتعرف تاليًا على تطبيق بعض أفكار إدخال الملفات وإخراجها التي
+رأيناها للتو على تدفقي <code>stdin</code> و<code>stdout</code>.</p>
 
           </td>
           <td class="code empty">

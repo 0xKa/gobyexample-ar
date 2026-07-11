@@ -1,15 +1,12 @@
-# Running the program computes the hash and prints it in
-# a human-readable hex format.
+# يحسب تشغيل البرنامج البصمة ويطبعها بصيغة سداسية عشرية سهلة
+# القراءة.
 $ go run sha256-hashes.go
 sha256 this string
 1af1dfa857bf1d8814fe1af8983c18080019922e557f15a8a...
 
 
-# You can compute other hashes using a similar pattern to
-# the one shown above. For example, to compute
-# SHA512 hashes import `crypto/sha512` and use
-# `sha512.New()`.
+# يمكنك حساب بصمات أخرى باتباع نمط شبيه بما سبق. لحساب بصمات
+# SHA512 مثلًا، استورد `crypto/sha512` واستخدم `sha512.New()`.
 
-# Note that if you need cryptographically secure hashes,
-# you should carefully research
-# [hash strength](https://en.wikipedia.org/wiki/Cryptographic_hash_function)!
+# لاحظ أنه إذا احتجت إلى بصمات آمنة تشفيريًا، فعليك البحث بعناية
+# في [قوة البصمة](https://en.wikipedia.org/wiki/Cryptographic_hash_function)!

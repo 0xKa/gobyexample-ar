@@ -1,11 +1,10 @@
-// Go provides built-in support for [base64
-// encoding/decoding](https://en.wikipedia.org/wiki/Base64).
+// توفر Go دعمًا مدمجًا [لترميز Base64 وفك
+// ترميزه](https://en.wikipedia.org/wiki/Base64).
 
 package main
 
-// This syntax imports the `encoding/base64` package with
-// the `b64` name instead of the default `base64`. It'll
-// save us some space below.
+// تستورد هذه الصياغة الحزمة `encoding/base64` بالاسم `b64` بدلًا
+// من الاسم الافتراضي `base64`، ما يوفر علينا بعض المساحة أدناه.
 import (
 	b64 "encoding/base64"
 	"fmt"
@@ -13,25 +12,23 @@ import (
 
 func main() {
 
-	// Here's the `string` we'll encode/decode.
+	// هذه هي قيمة `string` التي سنرمّزها ونفك ترميزها.
 	data := "abc123!?$*&()'-=@~"
 
-	// Go supports both standard and URL-compatible
-	// base64. Here's how to encode using the standard
-	// encoder. The encoder requires a `[]byte` so we
-	// convert our `string` to that type.
+	// تدعم Go صيغة Base64 القياسية والمتوافقة مع URL. هكذا نُجري
+	// الترميز باستخدام المرمّز القياسي. يتطلب المرمّز قيمة
+	// `[]byte`، لذلك نحوّل قيمة `string` لدينا إلى ذلك النوع.
 	sEnc := b64.StdEncoding.EncodeToString([]byte(data))
 	fmt.Println(sEnc)
 
-	// Decoding may return an error, which you can check
-	// if you don't already know the input to be
-	// well-formed.
+	// قد يعيد فك الترميز خطأ، ويمكنك التحقق منه إذا لم تكن تعرف
+	// مسبقًا أن المدخلات سليمة الصياغة.
 	sDec, _ := b64.StdEncoding.DecodeString(sEnc)
 	fmt.Println(string(sDec))
 	fmt.Println()
 
-	// This encodes/decodes using a URL-compatible base64
-	// format.
+	// يُجري هذا الترميز وفك الترميز باستخدام صيغة Base64 متوافقة
+	// مع URL.
 	uEnc := b64.URLEncoding.EncodeToString([]byte(data))
 	fmt.Println(uEnc)
 	uDec, _ := b64.URLEncoding.DecodeString(uEnc)

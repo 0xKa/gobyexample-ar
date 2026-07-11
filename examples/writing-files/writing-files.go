@@ -1,5 +1,5 @@
-// Writing files in Go follows similar patterns to the
-// ones we saw earlier for reading.
+// تتبع كتابة الملفات في Go أنماطًا شبيهة بما رأيناه سابقًا عند
+// القراءة.
 
 package main
 
@@ -18,45 +18,43 @@ func check(e error) {
 
 func main() {
 
-	// To start, here's how to dump a string (or just
-	// bytes) into a file.
+	// للبدء، هكذا نكتب سلسلة نصية، أو مجرد بايتات، إلى ملف.
 	d1 := []byte("hello\ngo\n")
 	path1 := filepath.Join(os.TempDir(), "dat1")
 	err := os.WriteFile(path1, d1, 0644)
 	check(err)
 
-	// For more granular writes, open a file for writing.
+	// لعمليات كتابة أدق، افتح ملفًا للكتابة.
 	path2 := filepath.Join(os.TempDir(), "dat2")
 	f, err := os.Create(path2)
 	check(err)
 
-	// It's idiomatic to defer a `Close` immediately
-	// after opening a file.
+	// من الشائع تأجيل `Close` مباشرة بعد فتح ملف.
 	defer f.Close()
 
-	// You can `Write` byte slices as you'd expect.
+	// يمكنك كتابة شرائح البايتات باستخدام `Write` كما هو متوقع.
 	d2 := []byte{115, 111, 109, 101, 10}
 	n2, err := f.Write(d2)
 	check(err)
 	fmt.Printf("wrote %d bytes\n", n2)
 
-	// A `WriteString` is also available.
+	// تتوفر أيضًا `WriteString`.
 	n3, err := f.WriteString("writes\n")
 	check(err)
 	fmt.Printf("wrote %d bytes\n", n3)
 
-	// Issue a `Sync` to flush writes to stable storage.
+	// استدعِ `Sync` لتفريغ عمليات الكتابة إلى التخزين الدائم.
 	f.Sync()
 
-	// `bufio` provides buffered writers in addition
-	// to the buffered readers we saw earlier.
+	// توفر `bufio` كائنات `Writer` مخزنة مؤقتًا، إضافة إلى كائنات
+	// `Reader` المخزنة مؤقتًا التي رأيناها سابقًا.
 	w := bufio.NewWriter(f)
 	n4, err := w.WriteString("buffered\n")
 	check(err)
 	fmt.Printf("wrote %d bytes\n", n4)
 
-	// Use `Flush` to ensure all buffered operations have
-	// been applied to the underlying writer.
+	// استخدم `Flush` لضمان تطبيق جميع العمليات المخزنة مؤقتًا على
+	// الكاتب الأساسي.
 	w.Flush()
 
 }

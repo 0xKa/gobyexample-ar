@@ -31,8 +31,8 @@
         
         <tr>
           <td class="docs">
-            <p>Go provides built-in support for <a href="https://en.wikipedia.org/wiki/Base64">base64
-encoding/decoding</a>.</p>
+            <p>توفر Go دعمًا مدمجًا <a href="https://en.wikipedia.org/wiki/Base64">لترميز Base64 وفك
+ترميزه</a>.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,16 +46,15 @@ encoding/decoding</a>.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/yztzkirFEvv" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/cs3Fmv85tWY" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
         
         <tr>
           <td class="docs">
-            <p>This syntax imports the <code>encoding/base64</code> package with
-the <code>b64</code> name instead of the default <code>base64</code>. It&rsquo;ll
-save us some space below.</p>
+            <p>تستورد هذه الصياغة الحزمة <code>encoding/base64</code> بالاسم <code>b64</code> بدلًا
+من الاسم الافتراضي <code>base64</code>، ما يوفر علينا بعض المساحة أدناه.</p>
 
           </td>
           <td class="code leading">
@@ -79,7 +78,7 @@ save us some space below.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s the <code>string</code> we&rsquo;ll encode/decode.</p>
+            <p>هذه هي قيمة <code>string</code> التي سنرمّزها ونفك ترميزها.</p>
 
           </td>
           <td class="code leading">
@@ -90,10 +89,9 @@ save us some space below.</p>
         
         <tr>
           <td class="docs">
-            <p>Go supports both standard and URL-compatible
-base64. Here&rsquo;s how to encode using the standard
-encoder. The encoder requires a <code>[]byte</code> so we
-convert our <code>string</code> to that type.</p>
+            <p>تدعم Go صيغة Base64 القياسية والمتوافقة مع URL. هكذا نُجري
+الترميز باستخدام المرمّز القياسي. يتطلب المرمّز قيمة
+<code>[]byte</code>، لذلك نحوّل قيمة <code>string</code> لدينا إلى ذلك النوع.</p>
 
           </td>
           <td class="code leading">
@@ -105,9 +103,8 @@ convert our <code>string</code> to that type.</p>
         
         <tr>
           <td class="docs">
-            <p>Decoding may return an error, which you can check
-if you don&rsquo;t already know the input to be
-well-formed.</p>
+            <p>قد يعيد فك الترميز خطأ، ويمكنك التحقق منه إذا لم تكن تعرف
+مسبقًا أن المدخلات سليمة الصياغة.</p>
 
           </td>
           <td class="code leading">
@@ -120,8 +117,8 @@ well-formed.</p>
         
         <tr>
           <td class="docs">
-            <p>This encodes/decodes using a URL-compatible base64
-format.</p>
+            <p>يُجري هذا الترميز وفك الترميز باستخدام صيغة Base64 متوافقة
+مع URL.</p>
 
           </td>
           <td class="code">
@@ -140,9 +137,9 @@ format.</p>
         
         <tr>
           <td class="docs">
-            <p>The string encodes to slightly different values with the
-standard and URL base64 encoders (trailing <code>+</code> vs <code>-</code>)
-but they both decode to the original string as desired.</p>
+            <p>تُرمّز السلسلة النصية إلى قيمتين مختلفتين قليلًا باستخدام
+مرمّزي Base64 القياسي والمتوافق مع URL (<code>+</code> في النهاية مقابل
+<code>-</code>)، لكن فك كلتا القيمتين يعيد السلسلة الأصلية كما أردنا.</p>
 
           </td>
           <td class="code leading">

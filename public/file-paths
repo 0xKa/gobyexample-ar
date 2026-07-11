@@ -31,14 +31,13 @@
         
         <tr>
           <td class="docs">
-            <p>The <code>filepath</code> package provides functions to parse
-and construct <em>file paths</em> in a way that is portable
-between operating systems; <code>dir/file</code> on Linux vs.
-<code>dir\file</code> on Windows, for example.</p>
+            <p>توفر الحزمة <code>filepath</code> دوال لتحليل <em>مسارات الملفات</em> وإنشائها
+بطريقة قابلة للنقل بين أنظمة التشغيل، مثل <code>dir/file</code> على Linux
+مقابل <code>dir\file</code> على Windows.</p>
 
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/5h3lUytvmyO" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/31lPl8AFCDF" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -69,9 +68,8 @@ between operating systems; <code>dir/file</code> on Linux vs.
         
         <tr>
           <td class="docs">
-            <p><code>Join</code> should be used to construct paths in a
-portable way. It takes any number of arguments
-and constructs a hierarchical path from them.</p>
+            <p>ينبغي استخدام <code>Join</code> لإنشاء المسارات بطريقة قابلة للنقل. تقبل
+أي عدد من الوسائط وتنشئ منها مسارًا هرميًا.</p>
 
           </td>
           <td class="code leading">
@@ -83,11 +81,9 @@ and constructs a hierarchical path from them.</p>
         
         <tr>
           <td class="docs">
-            <p>You should always use <code>Join</code> instead of
-concatenating <code>/</code>s or <code>\</code>s manually. In addition
-to providing portability, <code>Join</code> will also
-normalize paths by removing superfluous separators
-and directory changes.</p>
+            <p>ينبغي دائمًا استخدام <code>Join</code> بدلًا من وصل <code>/</code> أو <code>\</code> يدويًا.
+إلى جانب قابلية النقل، تطبّع <code>Join</code> المسارات أيضًا بإزالة
+الفواصل الزائدة ومكونات الانتقال بين المجلدات مثل <code>..</code>.</p>
 
           </td>
           <td class="code leading">
@@ -99,9 +95,8 @@ and directory changes.</p>
         
         <tr>
           <td class="docs">
-            <p><code>Dir</code> and <code>Base</code> can be used to split a path to the
-directory and the file. Alternatively, <code>Split</code> will
-return both in the same call.</p>
+            <p>يمكن استخدام <code>Dir</code> و<code>Base</code> لتقسيم مسار إلى المجلد والملف.
+أو يمكن استخدام <code>Split</code> لإعادتهما معًا في استدعاء واحد.</p>
 
           </td>
           <td class="code leading">
@@ -113,7 +108,7 @@ return both in the same call.</p>
         
         <tr>
           <td class="docs">
-            <p>We can check whether a path is absolute.</p>
+            <p>يمكننا التحقق مما إذا كان المسار مطلقًا.</p>
 
           </td>
           <td class="code leading">
@@ -135,8 +130,8 @@ return both in the same call.</p>
         
         <tr>
           <td class="docs">
-            <p>Some file names have extensions following a dot. We
-can split the extension out of such names with <code>Ext</code>.</p>
+            <p>لبعض أسماء الملفات امتدادات تأتي بعد نقطة. يمكننا فصل
+الامتداد عن هذه الأسماء باستخدام <code>Ext</code>.</p>
 
           </td>
           <td class="code leading">
@@ -148,8 +143,8 @@ can split the extension out of such names with <code>Ext</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>To find the file&rsquo;s name with the extension removed,
-use <code>strings.TrimSuffix</code>.</p>
+            <p>للحصول على اسم الملف بعد إزالة الامتداد، استخدم
+<code>strings.TrimSuffix</code>.</p>
 
           </td>
           <td class="code leading">
@@ -160,9 +155,8 @@ use <code>strings.TrimSuffix</code>.</p>
         
         <tr>
           <td class="docs">
-            <p><code>Rel</code> finds a relative path between a <em>base</em> and a
-<em>target</em>. It returns an error if the target cannot
-be made relative to base.</p>
+            <p>تجد <code>Rel</code> مسارًا نسبيًا بين <em>أساس</em> و<em>هدف</em>. وتعيد خطأ إذا
+تعذر جعل الهدف نسبيًا إلى الأساس.</p>
 
           </td>
           <td class="code leading">

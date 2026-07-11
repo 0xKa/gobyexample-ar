@@ -31,9 +31,8 @@
         
         <tr>
           <td class="docs">
-            <p>Reading and writing files are basic tasks needed for
-many Go programs. First we&rsquo;ll look at some examples of
-reading files.</p>
+            <p>قراءة الملفات وكتابتها مهمتان أساسيتان تحتاج إليهما برامج Go
+كثيرة. سنتعرف أولًا على بعض أمثلة قراءة الملفات.</p>
 
           </td>
           <td class="code empty leading">
@@ -47,7 +46,7 @@ reading files.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/J710-KJyC8z" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/OtH1U3B8tLw" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -70,8 +69,8 @@ reading files.</p>
         
         <tr>
           <td class="docs">
-            <p>Reading files requires checking most calls for errors.
-This helper will streamline our error checks below.</p>
+            <p>تتطلب قراءة الملفات التحقق من الأخطاء في معظم الاستدعاءات.
+ستبسّط هذه الدالة المساعدة فحوص الأخطاء أدناه.</p>
 
           </td>
           <td class="code leading">
@@ -96,8 +95,8 @@ This helper will streamline our error checks below.</p>
         
         <tr>
           <td class="docs">
-            <p>Perhaps the most basic file reading task is
-slurping a file&rsquo;s entire contents into memory.</p>
+            <p>لعل أبسط مهام قراءة الملفات هي تحميل محتويات ملف كاملة إلى
+الذاكرة.</p>
 
           </td>
           <td class="code leading">
@@ -111,9 +110,9 @@ slurping a file&rsquo;s entire contents into memory.</p>
         
         <tr>
           <td class="docs">
-            <p>You&rsquo;ll often want more control over how and what
-parts of a file are read. For these tasks, start
-by <code>Open</code>ing a file to obtain an <code>os.File</code> value.</p>
+            <p>ستحتاج غالبًا إلى تحكم أكبر في كيفية قراءة الملف والأجزاء
+المقروءة منه. لهذه المهام، ابدأ بفتح ملف باستخدام <code>Open</code>
+للحصول على قيمة <code>os.File</code>.</p>
 
           </td>
           <td class="code leading">
@@ -125,9 +124,8 @@ by <code>Open</code>ing a file to obtain an <code>os.File</code> value.</p>
         
         <tr>
           <td class="docs">
-            <p>Read some bytes from the beginning of the file.
-Allow up to 5 to be read but also note how many
-actually were read.</p>
+            <p>اقرأ بعض البايتات من بداية الملف. اسمح بقراءة ما يصل إلى 5
+بايتات، وسجّل أيضًا عدد ما قُرئ فعليًا.</p>
 
           </td>
           <td class="code leading">
@@ -141,8 +139,8 @@ actually were read.</p>
         
         <tr>
           <td class="docs">
-            <p>You can also <code>Seek</code> to a known location in the file
-and <code>Read</code> from there.</p>
+            <p>يمكنك أيضًا الانتقال باستخدام <code>Seek</code> إلى موضع معلوم في الملف،
+ثم القراءة منه باستخدام <code>Read</code>.</p>
 
           </td>
           <td class="code leading">
@@ -159,8 +157,7 @@ and <code>Read</code> from there.</p>
         
         <tr>
           <td class="docs">
-            <p>Other methods of seeking are relative to the
-current cursor position,</p>
+            <p>توجد طرق أخرى للانتقال نسبة إلى موضع المؤشر الحالي،</p>
 
           </td>
           <td class="code leading">
@@ -172,7 +169,7 @@ current cursor position,</p>
         
         <tr>
           <td class="docs">
-            <p>and relative to the end of the file.</p>
+            <p>ونسبة إلى نهاية الملف.</p>
 
           </td>
           <td class="code leading">
@@ -184,10 +181,9 @@ current cursor position,</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>io</code> package provides some functions that may
-be helpful for file reading. For example, reads
-like the ones above can be more robustly
-implemented with <code>ReadAtLeast</code>.</p>
+            <p>توفر الحزمة <code>io</code> بعض الدوال التي قد تفيد في قراءة الملفات.
+يمكن مثلًا تنفيذ عمليات قراءة شبيهة بما سبق بمتانة أكبر
+باستخدام <code>ReadAtLeast</code>.</p>
 
           </td>
           <td class="code leading">
@@ -203,8 +199,8 @@ implemented with <code>ReadAtLeast</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>There is no built-in rewind, but
-<code>Seek(0, io.SeekStart)</code> accomplishes this.</p>
+            <p>لا توجد عملية مدمجة لإعادة المؤشر إلى البداية، لكن
+<code>Seek(0, io.SeekStart)</code> تحقق ذلك.</p>
 
           </td>
           <td class="code leading">
@@ -216,10 +212,9 @@ implemented with <code>ReadAtLeast</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>bufio</code> package implements a buffered
-reader that may be useful both for its efficiency
-with many small reads and because of the additional
-reading methods it provides.</p>
+            <p>تنفذ الحزمة <code>bufio</code> قارئًا مخزنًا مؤقتًا قد يفيد لكفاءته مع
+عمليات القراءة الصغيرة الكثيرة، ولما يوفره من أساليب قراءة
+إضافية.</p>
 
           </td>
           <td class="code leading">
@@ -233,9 +228,8 @@ reading methods it provides.</p>
         
         <tr>
           <td class="docs">
-            <p>Close the file when you&rsquo;re done (usually this would
-be scheduled immediately after <code>Open</code>ing with
-<code>defer</code>).</p>
+            <p>أغلق الملف عند الانتهاء (عادة ما يُجدول ذلك باستخدام <code>defer</code>
+فور فتح الملف عبر <code>Open</code>).</p>
 
           </td>
           <td class="code">
@@ -269,7 +263,7 @@ be scheduled immediately after <code>Open</code>ing with
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at writing files.</p>
+            <p>سنتعرف تاليًا على كتابة الملفات.</p>
 
           </td>
           <td class="code empty">
