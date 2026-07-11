@@ -31,11 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p>Sometimes we&rsquo;ll want to sort a collection by something
-other than its natural order. For example, suppose we
-wanted to sort strings by their length instead of
-alphabetically. Here&rsquo;s an example of custom sorts
-in Go.</p>
+            <p>قد نرغب أحيانًا في فرز مجموعة وفق معيار غير ترتيبها الطبيعي.
+لنفترض مثلًا أننا نريد فرز السلاسل النصية حسب طولها بدلًا من
+ترتيبها أبجديًا. إليك مثالًا على الفرز المخصص في Go.</p>
 
           </td>
           <td class="code empty leading">
@@ -49,7 +47,7 @@ in Go.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/3EaTknAZHMu" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/OFxdP9Lum51" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -81,8 +79,8 @@ in Go.</p>
         
         <tr>
           <td class="docs">
-            <p>We implement a comparison function for string
-lengths. <code>cmp.Compare</code> is helpful for this.</p>
+            <p>ننفذ دالة مقارنة لأطوال السلاسل النصية. تفيدنا
+<code>cmp.Compare</code> في ذلك.</p>
 
           </td>
           <td class="code leading">
@@ -95,8 +93,8 @@ lengths. <code>cmp.Compare</code> is helpful for this.</p>
         
         <tr>
           <td class="docs">
-            <p>Now we can call <code>slices.SortFunc</code> with this custom
-comparison function to sort <code>fruits</code> by name length.</p>
+            <p>يمكننا الآن استدعاء <code>slices.SortFunc</code> مع دالة المقارنة
+المخصصة هذه لفرز <code>fruits</code> حسب طول الاسم.</p>
 
           </td>
           <td class="code leading">
@@ -108,8 +106,8 @@ comparison function to sort <code>fruits</code> by name length.</p>
         
         <tr>
           <td class="docs">
-            <p>We can use the same technique to sort a slice of
-values that aren&rsquo;t built-in types.</p>
+            <p>يمكننا استخدام الأسلوب نفسه لفرز شريحة من قيم ليست من
+الأنواع المدمجة.</p>
 
           </td>
           <td class="code leading">
@@ -137,12 +135,11 @@ values that aren&rsquo;t built-in types.</p>
         
         <tr>
           <td class="docs">
-            <p>Sort <code>people</code> by age using <code>slices.SortFunc</code>.</p>
+            <p>افرز <code>people</code> حسب العمر باستخدام <code>slices.SortFunc</code>.</p>
 
-<p>Note: if the <code>Person</code> struct is large,
-you may want the slice to contain <code>*Person</code> instead
-and adjust the sorting function accordingly. If in
-doubt, <a href="testing-and-benchmarking">benchmark</a>!</p>
+<p>لاحظ أنه إذا كان الهيكل <code>Person</code> كبيرًا، فقد تفضل أن تحتوي
+الشريحة على <code>*Person</code> بدلًا منه، وأن تعدّل دالة الفرز وفقًا
+لذلك. عند الشك، <a href="testing-and-benchmarking">قِس الأداء</a>!</p>
 
           </td>
           <td class="code">

@@ -31,9 +31,8 @@
         
         <tr>
           <td class="docs">
-            <p>Go offers excellent support for string formatting in
-the <code>printf</code> tradition. Here are some examples of
-common string formatting tasks.</p>
+            <p>توفر Go دعمًا ممتازًا لتنسيق السلاسل النصية وفق نهج <code>printf</code>.
+إليك بعض الأمثلة على مهام تنسيق السلاسل النصية الشائعة.</p>
 
           </td>
           <td class="code empty leading">
@@ -47,7 +46,7 @@ common string formatting tasks.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/EZCZX1Uwp6D" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/9b2TGJZ3lEA" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -89,9 +88,8 @@ common string formatting tasks.</p>
         
         <tr>
           <td class="docs">
-            <p>Go offers several printing &ldquo;verbs&rdquo; designed to
-format general Go values. For example, this prints
-an instance of our <code>point</code> struct.</p>
+            <p>توفر Go عدة «أفعال» طباعة مصممة لتنسيق قيم Go العامة.
+يطبع هذا مثلًا نسخة من الهيكل <code>point</code> لدينا.</p>
 
           </td>
           <td class="code leading">
@@ -103,8 +101,8 @@ an instance of our <code>point</code> struct.</p>
         
         <tr>
           <td class="docs">
-            <p>If the value is a struct, the <code>%+v</code> variant will
-include the struct&rsquo;s field names.</p>
+            <p>إذا كانت القيمة هيكلًا، فستتضمن الصيغة <code>%+v</code> أسماء حقول
+الهيكل.</p>
 
           </td>
           <td class="code leading">
@@ -115,9 +113,8 @@ include the struct&rsquo;s field names.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>%#v</code> variant prints a Go syntax representation
-of the value, i.e. the source code snippet that
-would produce that value.</p>
+            <p>تطبع الصيغة <code>%#v</code> تمثيل القيمة بصياغة Go، أي مقطع الكود
+المصدري الذي يُنتج تلك القيمة.</p>
 
           </td>
           <td class="code leading">
@@ -128,7 +125,7 @@ would produce that value.</p>
         
         <tr>
           <td class="docs">
-            <p>To print the type of a value, use <code>%T</code>.</p>
+            <p>لطباعة نوع قيمة، استخدم <code>%T</code>.</p>
 
           </td>
           <td class="code leading">
@@ -139,7 +136,7 @@ would produce that value.</p>
         
         <tr>
           <td class="docs">
-            <p>Formatting booleans is straight-forward.</p>
+            <p>تنسيق القيم المنطقية مباشر.</p>
 
           </td>
           <td class="code leading">
@@ -150,8 +147,8 @@ would produce that value.</p>
         
         <tr>
           <td class="docs">
-            <p>There are many options for formatting integers.
-Use <code>%d</code> for standard, base-10 formatting.</p>
+            <p>توجد خيارات كثيرة لتنسيق الأعداد الصحيحة. استخدم <code>%d</code>
+للتنسيق القياسي ذي الأساس 10.</p>
 
           </td>
           <td class="code leading">
@@ -162,7 +159,7 @@ Use <code>%d</code> for standard, base-10 formatting.</p>
         
         <tr>
           <td class="docs">
-            <p>This prints a binary representation.</p>
+            <p>يطبع هذا تمثيلًا ثنائيًا.</p>
 
           </td>
           <td class="code leading">
@@ -173,8 +170,7 @@ Use <code>%d</code> for standard, base-10 formatting.</p>
         
         <tr>
           <td class="docs">
-            <p>This prints the character corresponding to the
-given integer.</p>
+            <p>يطبع هذا المحرف المقابل للعدد الصحيح المعطى.</p>
 
           </td>
           <td class="code leading">
@@ -185,7 +181,7 @@ given integer.</p>
         
         <tr>
           <td class="docs">
-            <p><code>%x</code> provides hex encoding.</p>
+            <p>يوفر <code>%x</code> ترميزًا سداسيًا عشريًا.</p>
 
           </td>
           <td class="code leading">
@@ -196,8 +192,8 @@ given integer.</p>
         
         <tr>
           <td class="docs">
-            <p>There are also several formatting options for
-floats. For basic decimal formatting use <code>%f</code>.</p>
+            <p>توجد أيضًا عدة خيارات لتنسيق أعداد الفاصلة العائمة. استخدم
+<code>%f</code> للتنسيق العشري الأساسي.</p>
 
           </td>
           <td class="code leading">
@@ -208,8 +204,8 @@ floats. For basic decimal formatting use <code>%f</code>.</p>
         
         <tr>
           <td class="docs">
-            <p><code>%e</code> and <code>%E</code> format the float in (slightly
-different versions of) scientific notation.</p>
+            <p>ينسق <code>%e</code> و<code>%E</code> عدد الفاصلة العائمة بصيغتين مختلفتين قليلًا
+من التدوين العلمي.</p>
 
           </td>
           <td class="code leading">
@@ -221,7 +217,7 @@ different versions of) scientific notation.</p>
         
         <tr>
           <td class="docs">
-            <p>For basic string printing use <code>%s</code>.</p>
+            <p>استخدم <code>%s</code> للطباعة الأساسية للسلاسل النصية.</p>
 
           </td>
           <td class="code leading">
@@ -232,7 +228,8 @@ different versions of) scientific notation.</p>
         
         <tr>
           <td class="docs">
-            <p>To double-quote strings as in Go source, use <code>%q</code>.</p>
+            <p>استخدم <code>%q</code> لإحاطة السلاسل النصية بعلامتي اقتباس مزدوجتين
+كما في كود Go المصدري.</p>
 
           </td>
           <td class="code leading">
@@ -243,9 +240,8 @@ different versions of) scientific notation.</p>
         
         <tr>
           <td class="docs">
-            <p>As with integers seen earlier, <code>%x</code> renders
-the string in base-16, with two output characters
-per byte of input.</p>
+            <p>كما رأينا مع الأعداد الصحيحة، يعرض <code>%x</code> السلسلة النصية
+بالأساس 16، بمحرفي خرج لكل بايت من المدخلات.</p>
 
           </td>
           <td class="code leading">
@@ -256,7 +252,7 @@ per byte of input.</p>
         
         <tr>
           <td class="docs">
-            <p>To print a representation of a pointer, use <code>%p</code>.</p>
+            <p>لطباعة تمثيل لمؤشر، استخدم <code>%p</code>.</p>
 
           </td>
           <td class="code leading">
@@ -267,12 +263,9 @@ per byte of input.</p>
         
         <tr>
           <td class="docs">
-            <p>When formatting numbers you will often want to
-control the width and precision of the resulting
-figure. To specify the width of an integer, use a
-number after the <code>%</code> in the verb. By default the
-result will be right-justified and padded with
-spaces.</p>
+            <p>عند تنسيق الأعداد، ستحتاج غالبًا إلى التحكم في عرض العدد
+الناتج ودقته. لتحديد عرض عدد صحيح، ضع عددًا بعد <code>%</code> في فعل
+التنسيق. تُحاذى النتيجة افتراضيًا إلى اليمين وتُحشى بمسافات.</p>
 
           </td>
           <td class="code leading">
@@ -283,10 +276,9 @@ spaces.</p>
         
         <tr>
           <td class="docs">
-            <p>You can also specify the width of printed floats,
-though usually you&rsquo;ll also want to restrict the
-decimal precision at the same time with the
-width.precision syntax.</p>
+            <p>يمكنك أيضًا تحديد عرض أعداد الفاصلة العائمة المطبوعة، لكنك
+سترغب عادة في تقييد الدقة العشرية في الوقت نفسه باستخدام
+الصياغة <code>width.precision</code>.</p>
 
           </td>
           <td class="code leading">
@@ -297,7 +289,7 @@ width.precision syntax.</p>
         
         <tr>
           <td class="docs">
-            <p>To left-justify, use the <code>-</code> flag.</p>
+            <p>للمحاذاة إلى اليسار، استخدم الخيار <code>-</code>.</p>
 
           </td>
           <td class="code leading">
@@ -308,9 +300,9 @@ width.precision syntax.</p>
         
         <tr>
           <td class="docs">
-            <p>You may also want to control width when formatting
-strings, especially to ensure that they align in
-table-like output. For basic right-justified width.</p>
+            <p>قد ترغب أيضًا في التحكم في العرض عند تنسيق السلاسل النصية،
+ولا سيما لضمان محاذاتها في خرج شبيه بالجدول. هذا عرض أساسي
+محاذى إلى اليمين.</p>
 
           </td>
           <td class="code leading">
@@ -321,7 +313,7 @@ table-like output. For basic right-justified width.</p>
         
         <tr>
           <td class="docs">
-            <p>To left-justify use the <code>-</code> flag as with numbers.</p>
+            <p>للمحاذاة إلى اليسار، استخدم الخيار <code>-</code> كما مع الأعداد.</p>
 
           </td>
           <td class="code leading">
@@ -332,9 +324,9 @@ table-like output. For basic right-justified width.</p>
         
         <tr>
           <td class="docs">
-            <p>So far we&rsquo;ve seen <code>Printf</code>, which prints the
-formatted string to <code>os.Stdout</code>. <code>Sprintf</code> formats
-and returns a string without printing it anywhere.</p>
+            <p>رأينا حتى الآن <code>Printf</code>، التي تطبع السلسلة النصية المنسقة
+إلى <code>os.Stdout</code>. تنسق <code>Sprintf</code> سلسلة نصية وتعيدها دون
+طباعتها في أي مكان.</p>
 
           </td>
           <td class="code leading">
@@ -346,8 +338,8 @@ and returns a string without printing it anywhere.</p>
         
         <tr>
           <td class="docs">
-            <p>You can format+print to <code>io.Writers</code> other than
-<code>os.Stdout</code> using <code>Fprintf</code>.</p>
+            <p>يمكنك استخدام <code>Fprintf</code> للتنسيق والطباعة إلى كائنات
+<code>io.Writer</code> غير <code>os.Stdout</code>.</p>
 
           </td>
           <td class="code">

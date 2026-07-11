@@ -1,8 +1,6 @@
-// Sometimes we'll want to sort a collection by something
-// other than its natural order. For example, suppose we
-// wanted to sort strings by their length instead of
-// alphabetically. Here's an example of custom sorts
-// in Go.
+// قد نرغب أحيانًا في فرز مجموعة وفق معيار غير ترتيبها الطبيعي.
+// لنفترض مثلًا أننا نريد فرز السلاسل النصية حسب طولها بدلًا من
+// ترتيبها أبجديًا. إليك مثالًا على الفرز المخصص في Go.
 
 package main
 
@@ -15,19 +13,19 @@ import (
 func main() {
 	fruits := []string{"peach", "banana", "kiwi"}
 
-	// We implement a comparison function for string
-	// lengths. `cmp.Compare` is helpful for this.
+	// ننفذ دالة مقارنة لأطوال السلاسل النصية. تفيدنا
+	// `cmp.Compare` في ذلك.
 	lenCmp := func(a, b string) int {
 		return cmp.Compare(len(a), len(b))
 	}
 
-	// Now we can call `slices.SortFunc` with this custom
-	// comparison function to sort `fruits` by name length.
+	// يمكننا الآن استدعاء `slices.SortFunc` مع دالة المقارنة
+	// المخصصة هذه لفرز `fruits` حسب طول الاسم.
 	slices.SortFunc(fruits, lenCmp)
 	fmt.Println(fruits)
 
-	// We can use the same technique to sort a slice of
-	// values that aren't built-in types.
+	// يمكننا استخدام الأسلوب نفسه لفرز شريحة من قيم ليست من
+	// الأنواع المدمجة.
 	type Person struct {
 		name string
 		age  int
@@ -39,12 +37,11 @@ func main() {
 		Person{name: "Alex", age: 72},
 	}
 
-	// Sort `people` by age using `slices.SortFunc`.
+	// افرز `people` حسب العمر باستخدام `slices.SortFunc`.
 	//
-	// Note: if the `Person` struct is large,
-	// you may want the slice to contain `*Person` instead
-	// and adjust the sorting function accordingly. If in
-	// doubt, [benchmark](testing-and-benchmarking)!
+	// لاحظ أنه إذا كان الهيكل `Person` كبيرًا، فقد تفضل أن تحتوي
+	// الشريحة على `*Person` بدلًا منه، وأن تعدّل دالة الفرز وفقًا
+	// لذلك. عند الشك، [قِس الأداء](testing-and-benchmarking)!
 	slices.SortFunc(people,
 		func(a, b Person) int {
 			return cmp.Compare(a.age, b.age)

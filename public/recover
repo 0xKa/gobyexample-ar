@@ -31,10 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p>Go makes it possible to <em>recover</em> from a panic, by
-using the <code>recover</code> built-in function. A <code>recover</code> can
-stop a <code>panic</code> from aborting the program and let it
-continue with execution instead.</p>
+            <p>تتيح Go <em>الاستعادة</em> من <code>panic</code> باستخدام الدالة المدمجة
+<code>recover</code>. يمكن لـ<code>recover</code> منع <code>panic</code> من إنهاء البرنامج،
+والسماح له بمتابعة التنفيذ بدلًا من ذلك.</p>
 
           </td>
           <td class="code empty leading">
@@ -45,12 +44,10 @@ continue with execution instead.</p>
         
         <tr>
           <td class="docs">
-            <p>An example of where this can be useful: a server
-wouldn&rsquo;t want to crash if one of the client connections
-exhibits a critical error. Instead, the server would
-want to close that connection and continue serving
-other clients. In fact, this is what Go&rsquo;s <code>net/http</code>
-does by default for HTTP servers.</p>
+            <p>مثال على موضع فائدة ذلك: لا يريد الخادم أن يتعطل إذا حدث خطأ
+حرج في أحد اتصالات العملاء، بل يريد إغلاق ذلك الاتصال ومواصلة
+خدمة العملاء الآخرين. وهذا ما تفعله <code>net/http</code> في Go افتراضيًا
+لخوادم HTTP.</p>
 
           </td>
           <td class="code empty leading">
@@ -64,7 +61,7 @@ does by default for HTTP servers.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/Sk-SVdofEIZ" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/gjwguln3Tam" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -81,7 +78,7 @@ does by default for HTTP servers.</p>
         
         <tr>
           <td class="docs">
-            <p>This function panics.</p>
+            <p>تستدعي هذه الدالة <code>panic</code>.</p>
 
           </td>
           <td class="code leading">
@@ -94,10 +91,9 @@ does by default for HTTP servers.</p>
         
         <tr>
           <td class="docs">
-            <p><code>recover</code> must be called within a deferred function.
-When the enclosing function panics, the defer will
-activate and a <code>recover</code> call within it will catch
-the panic.</p>
+            <p>يجب استدعاء <code>recover</code> داخل دالة مؤجلة. عندما تستدعي الدالة
+المحيطة <code>panic</code>، ستُنفذ الدالة المؤجلة ويلتقط استدعاء
+<code>recover</code> داخلها حالة <code>panic</code>.</p>
 
           </td>
           <td class="code leading">
@@ -108,8 +104,8 @@ the panic.</p>
         
         <tr>
           <td class="docs">
-            <p>The return value of <code>recover</code> is the error raised in
-the call to <code>panic</code>.</p>
+            <p>قيمة إرجاع <code>recover</code> هي الخطأ الذي أُطلق في استدعاء
+<code>panic</code>.</p>
 
           </td>
           <td class="code leading">
@@ -143,9 +139,8 @@ the call to <code>panic</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>This code will not run, because <code>mayPanic</code> panics.
-The execution of <code>main</code> stops at the point of the
-panic and resumes in the deferred closure.</p>
+            <p>لن يعمل هذا الكود، لأن <code>mayPanic</code> تستدعي <code>panic</code>. يتوقف
+تنفيذ <code>main</code> عند موضع <code>panic</code>، ويُستأنف داخل الإغلاق المؤجل.</p>
 
           </td>
           <td class="code">

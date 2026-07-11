@@ -31,10 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p>A <code>panic</code> typically means something went unexpectedly
-wrong. Mostly we use it to fail fast on errors that
-shouldn&rsquo;t occur during normal operation, or that we
-aren&rsquo;t prepared to handle gracefully.</p>
+            <p>تشير <code>panic</code> عادة إلى حدوث خطأ غير متوقع. نستخدمها غالبًا
+للإخفاق السريع عند أخطاء لا ينبغي أن تحدث أثناء التشغيل
+العادي، أو لسنا مستعدين لمعالجتها بسلاسة.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,7 +47,7 @@ aren&rsquo;t prepared to handle gracefully.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/Z57OSC0ASwn" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/6Exmu0UR5qM" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -78,9 +77,9 @@ aren&rsquo;t prepared to handle gracefully.</p>
         
         <tr>
           <td class="docs">
-            <p>We&rsquo;ll use panic throughout this site to check for
-unexpected errors. This is the only program on the
-site designed to panic.</p>
+            <p>سنستخدم <code>panic</code> في أنحاء هذا الموقع للتحقق من الأخطاء غير
+المتوقعة. هذا هو البرنامج الوحيد في الموقع المصمم لاستدعاء
+<code>panic</code>.</p>
 
           </td>
           <td class="code leading">
@@ -91,10 +90,10 @@ site designed to panic.</p>
         
         <tr>
           <td class="docs">
-            <p>A common use of panic is to abort if a function
-returns an error value that we don&rsquo;t know how to
-(or want to) handle. Here&rsquo;s an example of
-<code>panic</code>king if we get an unexpected error when creating a new file.</p>
+            <p>من الاستخدامات الشائعة لـ<code>panic</code> إيقاف التنفيذ إذا أعادت
+دالة قيمة خطأ لا نعرف كيف نعالجها، أو لا نريد معالجتها.
+يوضح الآتي استدعاء <code>panic</code> عند حدوث خطأ غير متوقع أثناء
+إنشاء ملف جديد.</p>
 
           </td>
           <td class="code">
@@ -114,9 +113,8 @@ returns an error value that we don&rsquo;t know how to
         
         <tr>
           <td class="docs">
-            <p>Running this program will cause it to panic, print
-an error message and goroutine traces, and exit with
-a non-zero status.</p>
+            <p>سيؤدي تشغيل هذا البرنامج إلى استدعاء <code>panic</code>، وطباعة رسالة
+خطأ وتتبعات روتينات Go، ثم الخروج بحالة غير صفرية.</p>
 
           </td>
           <td class="code empty leading">
@@ -127,10 +125,9 @@ a non-zero status.</p>
         
         <tr>
           <td class="docs">
-            <p>When first panic in <code>main</code> fires, the program exits
-without reaching the rest of the code. If you&rsquo;d like
-to see the program try to create a temp file, comment
-the first panic out.</p>
+            <p>عند تنفيذ أول <code>panic</code> في <code>main</code>، يخرج البرنامج دون الوصول إلى
+بقية الكود. إذا أردت رؤية البرنامج وهو يحاول إنشاء ملف مؤقت،
+فحوّل استدعاء <code>panic</code> الأول إلى تعليق.</p>
 
           </td>
           <td class="code leading">
@@ -156,9 +153,9 @@ the first panic out.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that unlike some languages which use exceptions
-for handling of many errors, in Go it is idiomatic
-to use error-indicating return values wherever possible.</p>
+            <p>لاحظ أنه بخلاف بعض اللغات التي تستخدم الاستثناءات لمعالجة كثير
+من الأخطاء، من الشائع في Go استخدام قيم إرجاع تدل على الخطأ
+كلما أمكن ذلك.</p>
 
           </td>
           <td class="code empty">

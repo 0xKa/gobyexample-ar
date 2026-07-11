@@ -31,10 +31,10 @@
         
         <tr>
           <td class="docs">
-            <p><em>Defer</em> is used to ensure that a function call is
-performed later in a program&rsquo;s execution, usually for
-purposes of cleanup. <code>defer</code> is often used where e.g.
-<code>ensure</code> and <code>finally</code> would be used in other languages.</p>
+            <p>تُستخدم الكلمة <em><code>defer</code></em> لضمان تنفيذ استدعاء دالة في وقت لاحق
+من تشغيل البرنامج، ويكون ذلك عادة لأغراض التنظيف. تُستخدم
+<code>defer</code> غالبًا حيث تُستخدم <code>ensure</code> و<code>finally</code> مثلًا في لغات
+أخرى.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,7 +48,7 @@ purposes of cleanup. <code>defer</code> is often used where e.g.
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/9_sJ5XnikSw" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/P9JbucpiYAn" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -69,9 +69,8 @@ purposes of cleanup. <code>defer</code> is often used where e.g.
         
         <tr>
           <td class="docs">
-            <p>Suppose we wanted to create a file, write to it,
-and then close when we&rsquo;re done. Here&rsquo;s how we could
-do that with <code>defer</code>.</p>
+            <p>لنفترض أننا نريد إنشاء ملف والكتابة إليه، ثم إغلاقه عند
+الانتهاء. هكذا يمكننا فعل ذلك باستخدام <code>defer</code>.</p>
 
           </td>
           <td class="code leading">
@@ -82,11 +81,9 @@ do that with <code>defer</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Immediately after getting a file object with
-<code>createFile</code>, we defer the closing of that file
-with <code>closeFile</code>. This will be executed at the end
-of the enclosing function (<code>main</code>), after
-<code>writeFile</code> has finished.</p>
+            <p>فور الحصول على كائن ملف باستخدام <code>createFile</code>، نؤجل إغلاق
+الملف عبر <code>closeFile</code>. سيُنفذ هذا الاستدعاء عند نهاية الدالة
+المحيطة (<code>main</code>)، بعد انتهاء <code>writeFile</code>.</p>
 
           </td>
           <td class="code leading">
@@ -131,8 +128,7 @@ of the enclosing function (<code>main</code>), after
         
         <tr>
           <td class="docs">
-            <p>It&rsquo;s important to check for errors when closing a
-file, even in a deferred function.</p>
+            <p>من المهم التحقق من الأخطاء عند إغلاق ملف، حتى داخل دالة مؤجلة.</p>
 
           </td>
           <td class="code leading">
@@ -162,8 +158,7 @@ file, even in a deferred function.</p>
         
         <tr>
           <td class="docs">
-            <p>Running the program confirms that the file is closed
-after being written.</p>
+            <p>يؤكد تشغيل البرنامج إغلاق الملف بعد الكتابة إليه.</p>
 
           </td>
           <td class="code">

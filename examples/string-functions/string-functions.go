@@ -1,6 +1,6 @@
-// The standard library's `strings` package provides many
-// useful string-related functions. Here are some examples
-// to give you a sense of the package.
+// توفر الحزمة `strings` في المكتبة القياسية كثيرًا من الدوال
+// المفيدة المتعلقة بالسلاسل النصية. إليك بعض الأمثلة للتعرف على
+// الحزمة.
 
 package main
 
@@ -9,19 +9,17 @@ import (
 	s "strings"
 )
 
-// We alias `fmt.Println` to a shorter name as we'll use
-// it a lot below.
+// نمنح `fmt.Println` اسمًا مستعارًا أقصر لأننا سنستخدمها كثيرًا
+// أدناه.
 var p = fmt.Println
 
 func main() {
 
-	// Here's a sample of the functions available in
-	// `strings`. Since these are functions from the
-	// package, not methods on the string object itself,
-	// we need to pass the string in question as the first
-	// argument to the function. You can find more
-	// functions in the [`strings`](https://pkg.go.dev/strings)
-	// package docs.
+	// هذه عينة من الدوال المتاحة في `strings`. ولأنها دوال من
+	// الحزمة وليست أساليب معرّفة على قيمة السلسلة النصية نفسها،
+	// فعلينا تمرير السلسلة المعنية بصفتها الوسيط الأول للدالة. ستجد
+	// مزيدًا من الدوال في توثيق الحزمة
+	// [`strings`](https://pkg.go.dev/strings).
 	p("Contains:  ", s.Contains("test", "es"))
 	p("Count:     ", s.Count("test", "t"))
 	p("HasPrefix: ", s.HasPrefix("test", "te"))

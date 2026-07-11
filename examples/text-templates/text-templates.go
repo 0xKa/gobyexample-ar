@@ -1,7 +1,7 @@
-// Go offers built-in support for creating dynamic content or showing customized
-// output to the user with the `text/template` package. A sibling package
-// named `html/template` provides the same API but has additional security
-// features and should be used for generating HTML.
+// توفر Go دعمًا مدمجًا لإنشاء محتوى ديناميكي أو عرض خرج مخصص
+// للمستخدم باستخدام الحزمة `text/template`. توفر الحزمة الشقيقة
+// `html/template` الواجهة البرمجية نفسها، لكنها تتمتع بمزايا أمان
+// إضافية وينبغي استخدامها لإنشاء HTML.
 
 package main
 
@@ -12,24 +12,23 @@ import (
 
 func main() {
 
-	// We can create a new template and parse its body from
-	// a string.
-	// Templates are a mix of static text and "actions" enclosed in
-	// `{{...}}` that are used to dynamically insert content.
+	// يمكننا إنشاء قالب جديد وتحليل محتواه من سلسلة نصية.
+	// تجمع القوالب بين نص ثابت و«إجراءات» محاطة بـ`{{...}}`، تُستخدم
+	// لإدراج المحتوى ديناميكيًا.
 	t1 := template.New("t1")
 	t1, err := t1.Parse("Value is {{.}}\n")
 	if err != nil {
 		panic(err)
 	}
 
-	// Alternatively, we can use the `template.Must` function to
-	// panic in case `Parse` returns an error. This is especially
-	// useful for templates initialized in the global scope.
+	// بدلًا من ذلك، يمكننا استخدام الدالة `template.Must` لاستدعاء
+	// `panic` إذا أعادت `Parse` خطأ. يفيد ذلك خصوصًا مع القوالب
+	// المهيأة في النطاق العام.
 	t1 = template.Must(t1.Parse("Value: {{.}}\n"))
 
-	// By "executing" the template we generate its text with
-	// specific values for its actions. The `{{.}}` action is
-	// replaced by the value passed as a parameter to `Execute`.
+	// «بتنفيذ» القالب، نُنشئ نصه باستخدام قيم محددة لإجراءاته.
+	// يُستبدل الإجراء `{{.}}` بالقيمة الممررة كمُعامِل إلى
+	// `Execute`.
 	t1.Execute(os.Stdout, "some text")
 	t1.Execute(os.Stdout, 5)
 	t1.Execute(os.Stdout, []string{
@@ -39,38 +38,38 @@ func main() {
 		"C#",
 	})
 
-	// Helper function we'll use below.
+	// دالة مساعدة سنستخدمها أدناه.
 	Create := func(name, t string) *template.Template {
 		return template.Must(template.New(name).Parse(t))
 	}
 
-	// If the data is a struct we can use the `{{.FieldName}}` action to access
-	// its fields. The fields should be exported to be accessible when a
-	// template is executing.
+	// إذا كانت البيانات هيكلًا، فيمكننا استخدام الإجراء
+	// `{{.FieldName}}` للوصول إلى حقوله. يجب أن تكون الحقول مصدّرة
+	// حتى يمكن الوصول إليها أثناء تنفيذ القالب.
 	t2 := Create("t2", "Name: {{.Name}}\n")
 
 	t2.Execute(os.Stdout, struct {
 		Name string
 	}{"Jane Doe"})
 
-	// The same applies to maps; with maps there is no restriction on the
-	// case of key names.
+	// ينطبق الأمر نفسه على الخرائط، لكن لا قيود فيها على حالة أحرف
+	// أسماء المفاتيح.
 	t2.Execute(os.Stdout, map[string]string{
 		"Name": "Mickey Mouse",
 	})
 
-	// if/else provide conditional execution for templates. A value is considered
-	// false if it's the default value of a type, such as 0, an empty string,
-	// nil pointer, etc.
-	// This sample demonstrates another
-	// feature of templates: using `-` in actions to trim whitespace.
+	// توفر `if/else` تنفيذًا شرطيًا للقوالب. تُعد القيمة `false` إذا
+	// كانت القيمة الافتراضية لنوع، مثل 0 أو سلسلة نصية فارغة أو
+	// مؤشر `nil`، وما إلى ذلك. توضح هذه العينة ميزة أخرى للقوالب:
+	// استخدام `-` في الإجراءات لإزالة المسافات البيضاء.
 	t3 := Create("t3",
 		"{{if . -}} yes {{else -}} no {{end}}\n")
 	t3.Execute(os.Stdout, "not empty")
 	t3.Execute(os.Stdout, "")
 
-	// range blocks let us loop through slices, arrays, maps or channels. Inside
-	// the range block `{{.}}` is set to the current item of the iteration.
+	// تتيح لنا كتل `range` اجتياز الشرائح أو المصفوفات أو الخرائط
+	// أو القنوات. داخل كتلة `range`، تُضبط `{{.}}` على العنصر الحالي
+	// من الاجتياز.
 	t4 := Create("t4",
 		"Range: {{range .}}{{.}} {{end}}\n")
 	t4.Execute(os.Stdout,

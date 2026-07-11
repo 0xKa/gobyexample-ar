@@ -31,9 +31,8 @@
         
         <tr>
           <td class="docs">
-            <p>Go&rsquo;s <code>slices</code> package implements sorting for builtins
-and user-defined types. We&rsquo;ll look at sorting for
-builtins first.</p>
+            <p>تنفذ الحزمة <code>slices</code> في Go فرز الأنواع المدمجة والأنواع
+المعرّفة من المستخدم. سنتعرف أولًا على فرز الأنواع المدمجة.</p>
 
           </td>
           <td class="code empty leading">
@@ -47,7 +46,7 @@ builtins first.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/X7iJcIua02T" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/ZCrrMOhbkpI" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -77,9 +76,9 @@ builtins first.</p>
         
         <tr>
           <td class="docs">
-            <p>Sorting functions are generic, and work for any
-<em>ordered</em> built-in type. For a list of ordered
-types, see <a href="https://pkg.go.dev/cmp#Ordered">cmp.Ordered</a>.</p>
+            <p>دوال الفرز عامة، وتعمل مع أي نوع مدمج <em>قابل للترتيب</em>. راجع
+<a href="https://pkg.go.dev/cmp#Ordered">cmp.Ordered</a> للاطلاع على
+قائمة الأنواع القابلة للترتيب.</p>
 
           </td>
           <td class="code leading">
@@ -92,7 +91,7 @@ types, see <a href="https://pkg.go.dev/cmp#Ordered">cmp.Ordered</a>.</p>
         
         <tr>
           <td class="docs">
-            <p>An example of sorting <code>int</code>s.</p>
+            <p>هذا مثال على فرز قيم من النوع <code>int</code>.</p>
 
           </td>
           <td class="code leading">
@@ -105,8 +104,8 @@ types, see <a href="https://pkg.go.dev/cmp#Ordered">cmp.Ordered</a>.</p>
         
         <tr>
           <td class="docs">
-            <p>We can also use the <code>slices</code> package to check if
-a slice is already in sorted order.</p>
+            <p>يمكننا أيضًا استخدام الحزمة <code>slices</code> للتحقق مما إذا كانت
+شريحة مرتبة بالفعل.</p>
 
           </td>
           <td class="code">

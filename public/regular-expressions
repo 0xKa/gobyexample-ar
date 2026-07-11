@@ -31,9 +31,9 @@
         
         <tr>
           <td class="docs">
-            <p>Go offers built-in support for <a href="https://en.wikipedia.org/wiki/Regular_expression">regular expressions</a>.
-Here are some examples of  common regexp-related tasks
-in Go.</p>
+            <p>توفر Go دعمًا مدمجًا
+<a href="https://en.wikipedia.org/wiki/Regular_expression">للتعبيرات النمطية</a>.
+إليك بعض الأمثلة على المهام الشائعة المتعلقة بها في Go.</p>
 
           </td>
           <td class="code empty leading">
@@ -47,7 +47,7 @@ in Go.</p>
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/fI2YIfYsCaL" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/XMw6fCVkhtU" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -78,7 +78,7 @@ in Go.</p>
         
         <tr>
           <td class="docs">
-            <p>This tests whether a pattern matches a string.</p>
+            <p>يختبر هذا ما إذا كان النمط يطابق سلسلة نصية.</p>
 
           </td>
           <td class="code leading">
@@ -90,9 +90,9 @@ in Go.</p>
         
         <tr>
           <td class="docs">
-            <p>Above we used a string pattern directly, but for
-other regexp tasks you&rsquo;ll need to <code>Compile</code> an
-optimized <code>Regexp</code> struct.</p>
+            <p>استخدمنا أعلاه نمطًا نصيًا مباشرة، لكنك ستحتاج في مهام
+التعبيرات النمطية الأخرى إلى استخدام <code>Compile</code> لترجمة النمط
+إلى هيكل <code>Regexp</code> محسّن.</p>
 
           </td>
           <td class="code leading">
@@ -103,8 +103,8 @@ optimized <code>Regexp</code> struct.</p>
         
         <tr>
           <td class="docs">
-            <p>Many methods are available on these structs. Here&rsquo;s
-a match test like we saw earlier.</p>
+            <p>تتوفر أساليب كثيرة على هذه الهياكل. هذا اختبار تطابق شبيه
+بما رأيناه سابقًا.</p>
 
           </td>
           <td class="code leading">
@@ -115,7 +115,7 @@ a match test like we saw earlier.</p>
         
         <tr>
           <td class="docs">
-            <p>This finds the match for the regexp.</p>
+            <p>يجد هذا النص المطابق للتعبير النمطي.</p>
 
           </td>
           <td class="code leading">
@@ -126,9 +126,8 @@ a match test like we saw earlier.</p>
         
         <tr>
           <td class="docs">
-            <p>This also finds the first match but returns the
-start and end indexes for the match instead of the
-matching text.</p>
+            <p>يجد هذا أيضًا أول تطابق، لكنه يعيد فهرسي بداية التطابق
+ونهايته بدلًا من النص المطابق.</p>
 
           </td>
           <td class="code leading">
@@ -139,10 +138,9 @@ matching text.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>Submatch</code> variants include information about
-both the whole-pattern matches and the submatches
-within those matches. For example this will return
-information for both <code>p([a-z]+)ch</code> and <code>([a-z]+)</code>.</p>
+            <p>تتضمن صيغ <code>Submatch</code> معلومات عن تطابق النمط الكامل
+والتطابقات الفرعية داخله. سيعيد هذا مثلًا معلومات عن كل من
+<code>p([a-z]+)ch</code> و<code>([a-z]+)</code>.</p>
 
           </td>
           <td class="code leading">
@@ -153,8 +151,8 @@ information for both <code>p([a-z]+)ch</code> and <code>([a-z]+)</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Similarly this will return information about the
-indexes of matches and submatches.</p>
+            <p>وبالمثل، سيعيد هذا معلومات عن فهارس التطابقات والتطابقات
+الفرعية.</p>
 
           </td>
           <td class="code leading">
@@ -165,9 +163,9 @@ indexes of matches and submatches.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>All</code> variants of these functions apply to all
-matches in the input, not just the first. For
-example to find all matches for a regexp.</p>
+            <p>تنطبق صيغ <code>All</code> من هذه الدوال على جميع التطابقات في
+المدخلات، وليس أول تطابق فقط. يجد هذا مثلًا جميع التطابقات
+مع تعبير نمطي.</p>
 
           </td>
           <td class="code leading">
@@ -178,8 +176,8 @@ example to find all matches for a regexp.</p>
         
         <tr>
           <td class="docs">
-            <p>These <code>All</code> variants are available for the other
-functions we saw above as well.</p>
+            <p>تتوفر صيغ <code>All</code> هذه أيضًا للدوال الأخرى التي رأيناها
+أعلاه.</p>
 
           </td>
           <td class="code leading">
@@ -191,9 +189,8 @@ functions we saw above as well.</p>
         
         <tr>
           <td class="docs">
-            <p>Providing a non-negative integer as the second
-argument to these functions will limit the number
-of matches.</p>
+            <p>يؤدي تمرير عدد صحيح غير سالب وسيطًا ثانيًا لهذه الدوال إلى
+تقييد عدد التطابقات.</p>
 
           </td>
           <td class="code leading">
@@ -204,10 +201,9 @@ of matches.</p>
         
         <tr>
           <td class="docs">
-            <p>Our examples above had string arguments and used
-names like <code>MatchString</code>. We can also provide
-<code>[]byte</code> arguments and drop <code>String</code> from the
-function name.</p>
+            <p>استخدمت أمثلتنا أعلاه وسائط من السلاسل النصية وأسماء مثل
+<code>MatchString</code>. يمكننا أيضًا تمرير وسائط من النوع <code>[]byte</code>
+وحذف <code>String</code> من اسم الدالة.</p>
 
           </td>
           <td class="code leading">
@@ -218,11 +214,10 @@ function name.</p>
         
         <tr>
           <td class="docs">
-            <p>When creating global variables with regular
-expressions you can use the <code>MustCompile</code> variation
-of <code>Compile</code>. <code>MustCompile</code> panics instead of
-returning an error, which makes it safer to use for
-global variables.</p>
+            <p>عند إنشاء متغيرات عامة تحتوي على تعبيرات نمطية، يمكنك
+استخدام الصيغة <code>MustCompile</code> من <code>Compile</code>. تستدعي
+<code>MustCompile</code> الدالة <code>panic</code> بدلًا من إعادة خطأ، ما يجعل
+استخدامها أكثر أمانًا للمتغيرات العامة.</p>
 
           </td>
           <td class="code leading">
@@ -234,8 +229,8 @@ global variables.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>regexp</code> package can also be used to replace
-subsets of strings with other values.</p>
+            <p>يمكن أيضًا استخدام الحزمة <code>regexp</code> لاستبدال أجزاء من
+السلاسل النصية بقيم أخرى.</p>
 
           </td>
           <td class="code leading">
@@ -246,8 +241,8 @@ subsets of strings with other values.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>Func</code> variant allows you to transform matched
-text with a given function.</p>
+            <p>تتيح لك الصيغة <code>Func</code> تحويل النص المطابق باستخدام دالة
+محددة.</p>
 
           </td>
           <td class="code">
@@ -288,8 +283,8 @@ text with a given function.</p>
         
         <tr>
           <td class="docs">
-            <p>For a complete reference on Go regular expressions check
-the <a href="https://pkg.go.dev/regexp"><code>regexp</code></a> package docs.</p>
+            <p>للحصول على مرجع كامل للتعبيرات النمطية في Go، راجع توثيق
+الحزمة <a href="https://pkg.go.dev/regexp"><code>regexp</code></a>.</p>
 
           </td>
           <td class="code empty">
