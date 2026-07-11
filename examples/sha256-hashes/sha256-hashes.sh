@@ -9,4 +9,4 @@ sha256 this string
 # SHA512 مثلًا، استورد `crypto/sha512` واستخدم `sha512.New()`.
 
 # لاحظ أنه إذا احتجت إلى بصمات آمنة تشفيريًا، فعليك البحث بعناية
-# في [قوة البصمة](https://en.wikipedia.org/wiki/Cryptographic_hash_function)!
+# في [قوة البصمة](https://ar.wikipedia.org/wiki/دالة_تلبيد_تعموية)!

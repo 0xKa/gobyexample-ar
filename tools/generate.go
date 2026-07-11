@@ -121,10 +121,10 @@ func parseHashFile(sourcePath string) (string, string) {
 
 func resetURLHashFile(codehash, code, sourcePath string) string {
 	if verbose() {
-		fmt.Println("  Sending request to play.golang.org")
+		fmt.Println("  Sending request to go.dev")
 	}
 	payload := strings.NewReader(code)
-	resp, err := http.Post("https://play.golang.org/share", "text/plain", payload)
+	resp, err := http.Post("https://go.dev/_/share", "text/plain", payload)
 	check(err)
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)

@@ -1,5 +1,5 @@
 // توفر Go دعمًا مدمجًا
-// [للتعبيرات النمطية](https://en.wikipedia.org/wiki/Regular_expression).
+// [للتعبيرات النمطية](https://ar.wikipedia.org/wiki/تعبير_نمطي).
 // إليك بعض الأمثلة على المهام الشائعة المتعلقة بها في Go.
 
 package main

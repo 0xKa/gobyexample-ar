@@ -1,6 +1,6 @@
 // من المتطلبات الشائعة في البرامج الحصول على عدد الثواني أو
 // المللي ثانية أو النانو ثانية المنقضية منذ
-// [حقبة Unix](https://en.wikipedia.org/wiki/Unix_time).
+// [حقبة Unix](https://ar.wikipedia.org/wiki/توقيت_يونكس).
 // هكذا تفعل ذلك في Go.
 
 package main

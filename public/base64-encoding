@@ -31,7 +31,7 @@
         
         <tr>
           <td class="docs">
-            <p>توفر Go دعمًا مدمجًا <a href="https://en.wikipedia.org/wiki/Base64">لترميز Base64 وفك
+            <p>توفر Go دعمًا مدمجًا <a href="https://ar.wikipedia.org/wiki/الأساس_64">لترميز Base64 وفك
 ترميزه</a>.</p>
 
           </td>
@@ -46,7 +46,7 @@
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/cs3Fmv85tWY" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/QRofjoS_pdb" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>

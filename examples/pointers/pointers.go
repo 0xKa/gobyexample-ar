@@ -1,4 +1,4 @@
-// تدعم Go <em><a href="https://en.wikipedia.org/wiki/Pointer_(computer_programming)">المؤشرات</a></em>،
+// تدعم Go <em><a href="https://ar.wikipedia.org/wiki/مؤشر_(برمجة)">المؤشرات</a></em>،
 // مما يتيح لك تمرير مراجع إلى القيم والسجلات داخل
 // برنامجك.
 

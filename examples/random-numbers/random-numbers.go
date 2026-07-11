@@ -1,5 +1,5 @@
 // توفر الحزمة `math/rand/v2` في Go توليد
-// [الأعداد شبه العشوائية](https://en.wikipedia.org/wiki/Pseudorandom_number_generator).
+// [الأعداد شبه العشوائية](https://ar.wikipedia.org/wiki/مولد_أعداد_شبه_عشوائية).
 
 package main
 

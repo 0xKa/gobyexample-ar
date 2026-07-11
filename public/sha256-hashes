@@ -31,7 +31,7 @@
         
         <tr>
           <td class="docs">
-            <p>تُستخدم <a href="https://en.wikipedia.org/wiki/SHA-2">بصمات SHA-256</a>
+            <p>تُستخدم <a href="https://ar.wikipedia.org/wiki/خوارزمية_التلبيد_الآمنة_2">بصمات SHA-256</a>
 كثيرًا لحساب معرّفات مختصرة لكتل البيانات الثنائية أو النصية.
 تستخدم شهادات TLS/SSL مثلًا SHA-256 لحساب توقيع الشهادة. إليك
 كيفية حساب بصمات SHA-256 في Go.</p>
@@ -48,7 +48,7 @@
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/du_hK7dozmZ" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/QlpYNVr812Y" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
@@ -159,7 +159,7 @@ SHA512 مثلًا، استورد <code>crypto/sha512</code> واستخدم <code
         <tr>
           <td class="docs">
             <p>لاحظ أنه إذا احتجت إلى بصمات آمنة تشفيريًا، فعليك البحث بعناية
-في <a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">قوة البصمة</a>!</p>
+في <a href="https://ar.wikipedia.org/wiki/دالة_تلبيد_تعموية">قوة البصمة</a>!</p>
 
           </td>
           <td class="code empty">

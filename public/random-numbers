@@ -32,7 +32,7 @@
         <tr>
           <td class="docs">
             <p>توفر الحزمة <code>math/rand/v2</code> في Go توليد
-<a href="https://en.wikipedia.org/wiki/Pseudorandom_number_generator">الأعداد شبه العشوائية</a>.</p>
+<a href="https://ar.wikipedia.org/wiki/مولد_أعداد_شبه_عشوائية">الأعداد شبه العشوائية</a>.</p>
 
           </td>
           <td class="code empty leading">
@@ -46,7 +46,7 @@
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/WjJMd6DILyq" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/_SLTIB55VpS" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>

@@ -33,7 +33,7 @@
           <td class="docs">
             <p>من المتطلبات الشائعة في البرامج الحصول على عدد الثواني أو
 المللي ثانية أو النانو ثانية المنقضية منذ
-<a href="https://en.wikipedia.org/wiki/Unix_time">حقبة Unix</a>.
+<a href="https://ar.wikipedia.org/wiki/توقيت_يونكس">حقبة Unix</a>.
 هكذا تفعل ذلك في Go.</p>
 
           </td>
@@ -48,7 +48,7 @@
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/1KFoxXznMTU" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/zTueay-TgNU" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>

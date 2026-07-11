@@ -1,5 +1,5 @@
 // توفر Go دعمًا مدمجًا [لترميز Base64 وفك
-// ترميزه](https://en.wikipedia.org/wiki/Base64).
+// ترميزه](https://ar.wikipedia.org/wiki/الأساس_64).
 
 package main
 

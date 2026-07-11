@@ -1,5 +1,5 @@
 // تدعم Go
-// <a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)"><em>الدوال ذاتية الاستدعاء</em></a>.
+// <a href="https://ar.wikipedia.org/wiki/عودية_(علم_الحاسوب)"><em>الدوال ذاتية الاستدعاء</em></a>.
 // إليك مثالًا تقليديًا.
 
 package main

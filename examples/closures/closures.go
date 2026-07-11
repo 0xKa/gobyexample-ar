@@ -1,4 +1,4 @@
-// تدعم Go [_الدوال المجهولة_](https://en.wikipedia.org/wiki/Anonymous_function)،
+// تدعم Go [_الدوال المجهولة_](https://ar.wikipedia.org/wiki/دالة_مجهولة)،
 // التي يمكنها تكوين <a href="https://en.wikipedia.org/wiki/Closure_(computer_science)"><em>إغلاقات</em></a>.
 // تفيد الدوال المجهولة عندما تريد تعريف دالة في موضعها
 // دون الحاجة إلى تسميتها.

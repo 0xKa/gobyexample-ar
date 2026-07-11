@@ -33,7 +33,7 @@
           <td class="docs">
             <p>السلسلة النصية في Go شريحة بايتات للقراءة فقط. تتعامل
 اللغة والمكتبة القياسية مع السلاسل النصية معاملة خاصة،
-بوصفها حاويات لنص مرمّز بصيغة <a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a>.
+بوصفها حاويات لنص مرمّز بصيغة <a href="https://ar.wikipedia.org/wiki/صيغة_التحويل_الموحد-8">UTF-8</a>.
 تتكون السلاسل النصية في لغات أخرى من «محارف». أما في
 Go، فيسمى مفهوم المحرف <code>rune</code>، وهو عدد صحيح يمثل نقطة
 ترميز Unicode. تقدم <a href="https://go.dev/blog/strings">هذه المقالة في مدونة Go</a>
@@ -51,7 +51,7 @@ Go، فيسمى مفهوم المحرف <code>rune</code>، وهو عدد صحي
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/X7Zu2Y11S1m" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/EvbYAo5AfDh" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>

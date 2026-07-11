@@ -1,4 +1,4 @@
-// تُعد [خيارات سطر الأوامر](https://en.wikipedia.org/wiki/Command-line_interface#Command-line_option)
+// تُعد [خيارات سطر الأوامر](https://ar.wikipedia.org/wiki/واجهة_سطر_الأوامر)
 // طريقة شائعة لتحديد خيارات برامج سطر الأوامر. في `wc -l` مثلًا،
 // يُعد `-l` خيارًا لسطر الأوامر.
 

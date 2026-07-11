@@ -1,4 +1,4 @@
-// تُعد [وسائط سطر الأوامر](https://en.wikipedia.org/wiki/Command-line_interface#Arguments)
+// تُعد [وسائط سطر الأوامر](https://ar.wikipedia.org/wiki/واجهة_سطر_الأوامر)
 // طريقة شائعة لتحديد مُعامِلات تشغيل البرامج. يستخدم الأمر
 // `go run hello.go` مثلًا `run` و`hello.go` وسيطين للبرنامج `go`.
 

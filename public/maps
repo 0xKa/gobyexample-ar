@@ -31,7 +31,7 @@
         
         <tr>
           <td class="docs">
-            <p><em>الخرائط</em> هي <a href="https://en.wikipedia.org/wiki/Associative_array">نوع البيانات الترابطي</a>
+            <p><em>الخرائط</em> هي <a href="https://ar.wikipedia.org/wiki/مصفوفة_ارتباطية">نوع البيانات الترابطي</a>
 المدمج في Go (وتسمى أحيانًا <em>جداول التجزئة</em> أو <em>القواميس</em>
 في لغات أخرى).</p>
 
@@ -47,7 +47,7 @@
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/yBbmCBzowPK" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/-PiaI6kQShD" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>

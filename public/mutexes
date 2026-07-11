@@ -33,7 +33,7 @@
           <td class="docs">
             <p>رأينا في المثال السابق كيفية إدارة حالة عداد بسيطة باستخدام
 <a href="atomic-counters">العمليات الذرية</a>. للحالات الأكثر تعقيدًا،
-يمكننا استخدام <a href="https://en.wikipedia.org/wiki/Mutual_exclusion">قفل استبعاد متبادل</a>
+يمكننا استخدام <a href="https://ar.wikipedia.org/wiki/استبعاد_التشارك">قفل استبعاد متبادل</a>
 للوصول إلى البيانات بأمان من عدة روتينات Go.</p>
 
           </td>
@@ -48,7 +48,7 @@
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/pRsGns-4hn0" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/yJOJQIkZwd6" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>

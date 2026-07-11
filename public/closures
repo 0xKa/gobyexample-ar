@@ -31,7 +31,7 @@
         
         <tr>
           <td class="docs">
-            <p>تدعم Go <a href="https://en.wikipedia.org/wiki/Anonymous_function"><em>الدوال المجهولة</em></a>،
+            <p>تدعم Go <a href="https://ar.wikipedia.org/wiki/دالة_مجهولة"><em>الدوال المجهولة</em></a>،
 التي يمكنها تكوين <a href="https://en.wikipedia.org/wiki/Closure_(computer_science)"><em>إغلاقات</em></a>.
 تفيد الدوال المجهولة عندما تريد تعريف دالة في موضعها
 دون الحاجة إلى تسميتها.</p>
@@ -48,7 +48,7 @@
             
           </td>
           <td class="code leading">
-            <a href="https://go.dev/play/p/EEC6krw0D1i" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
+            <a href="https://go.dev/play/p/XtZjlXLp35t" class="run" title="شغّل الكود" aria-label="شغّل الكود في Go Playground"><img src="play.png" alt="" /></a><button type="button" class="copy" title="انسخ الكود" aria-label="انسخ الكود"><img src="clipboard.png" alt="" /></button>
           <pre class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span></span></span></code></pre>
           </td>
         </tr>
