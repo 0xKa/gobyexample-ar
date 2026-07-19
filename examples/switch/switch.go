@@ -46,7 +46,7 @@ func main() {
 	// تقارن `switch` الخاصة بالأنواع بين الأنواع بدلًا من
 	// القيم. يمكنك استخدامها لمعرفة نوع قيمة مخزنة في واجهة.
 	// في هذا المثال، سيحمل المتغير `t` النوع الموافق لفرعه.
-	whatAmI := func(i interface{}) {
+	whatAmI := func(i any) {
 		switch t := i.(type) {
 		case bool:
 			fmt.Println("I'm a bool")
