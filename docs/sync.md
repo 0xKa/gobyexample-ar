@@ -93,7 +93,7 @@ git status
 2. **Go source files (`examples/*/*.go`)**:
    - Accept the updated Go code and logic from upstream.
    - Update the accompanying Arabic prose comments (`// ...`) to reflect any new or modified explanations.
-   - Refer to [`GLOSSARY.md`](../GLOSSARY.md) for approved technical terms.
+   - Refer to [`GLOSSARY.md`](GLOSSARY.md) for approved technical terms.
    - Ensure no invisible Unicode bidirectional control characters are introduced.
 
 3. **Shell scripts (`examples/*/*.sh`)**:

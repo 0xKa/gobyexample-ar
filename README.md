@@ -1,14 +1,16 @@
+**العربية** | [English](README.en.md)
+
 # لغة Go بالأمثلة
 
 ترجمة عربية مستقلة لموقع [Go by Example](https://gobyexample.com)، وهو مدخل عملي إلى لغة Go يعتمد على برامج نموذجية مشروحة.
 
-> Arabic translation of [Go by Example](https://github.com/mmcgrana/gobyexample). This translation is maintained as a separate website and follows the upstream examples and build toolchain.
+تُدار هذه الترجمة كموقع مستقل وتتبع أمثلة المشروع الأصلي وسلسلة أدوات بنائه.
 
-عنوان الموقع : <https://0xKa.github.io/gobyexample-ar/>
+عنوان الموقع: <https://0xKa.github.io/gobyexample-ar/>
 
 ## حالة المشروع
 
-- اكتملت ترجمة الأمثلة الـ85 ومراجعتها؛ راجع [جدول الأمثلة](PROGRESS.md).
+- اكتملت ترجمة الأمثلة الـ85 ومراجعتها؛ راجع [جدول الأمثلة](docs/PROGRESS.md).
 - تدعم الواجهة العربية اتجاه RTL مع إبقاء الكود باتجاه LTR.
 - تتحقق CI من سلامة الترجمة وتطابق الملفات المولّدة مع مصادرها.
 - يُنشر الموقع تلقائيًا من `master` عبر GitHub Actions بعد تفعيل Pages واختيار **GitHub Actions** مصدرًا للنشر.
@@ -17,14 +19,14 @@
 
 توجد النصوص الأصلية والكود في `examples`. تستخرج أداة البناء الشروح من ملفات `.go` و`.sh`، ثم تدمجها مع القوالب الموجودة في `templates` وتولد موقعًا ثابتًا داخل `public`.
 
-| المسار | الغرض |
+| Path | Purpose |
 | --- | --- |
-| `examples/` | الكود والشروح التي تمثل مصدر المحتوى الأساسي |
-| `examples.txt` | ترتيب الأمثلة وأسماؤها الأصلية المستخدمة لاشتقاق الروابط الثابتة |
-| `examples.ar.txt` | العناوين العربية المرتبطة بمعرّفات الأمثلة الثابتة |
-| `templates/` | قوالب HTML وملفات CSS وJavaScript والأصول المشتركة |
-| `tools/` | أدوات الاختبار والبناء والتوليد والخدمة المحلية |
-| `public/` | الموقع الثابت المولّد؛ لا يُحرر يدويًا |
+| `examples/` | Code and commentary representing the primary source content |
+| `examples.txt` | Ordering of examples and original English names used to derive permalinks |
+| `examples.ar.txt` | Arabic titles corresponding to constant example IDs |
+| `templates/` | HTML templates, CSS styles, JavaScript, and shared assets |
+| `tools/` | Scripts for testing, building, generating, and running a local development server |
+| `public/` | The generated static website; **never edit manually** |
 
 ## البناء والمعاينة محليًا
 
@@ -56,9 +58,10 @@ $ tools/serve
 
 اقرأ قبل البدء:
 
-- [دليل المساهمة](CONTRIBUTING.md)
-- [مسرد المصطلحات](GLOSSARY.md)
-- [جدول الأمثلة](PROGRESS.md)
+- [دليل المساهمة](docs/CONTRIBUTING.md)
+- [مسرد المصطلحات](docs/GLOSSARY.md)
+- [جدول الأمثلة](docs/PROGRESS.md)
+- [دليل المزامنة مع المشروع الأصلي](docs/sync.md)
 
 يجب تعديل ملفات المصدر ثم تشغيل أداة البناء وإرفاق التغييرات المولّدة في `public`. لا تُقبل التعديلات التي تغير `public` وحده.
 

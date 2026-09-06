@@ -187,7 +187,7 @@ func checkExampleSources(expectedIDs []string, c *translationChecker) {
 func checkProgress(expectedIDs []string, c *translationChecker) {
 	seen := make(map[string]bool)
 	position := 0
-	for lineNumber, line := range readLines("PROGRESS.md", c) {
+	for lineNumber, line := range readLines("docs/PROGRESS.md", c) {
 		match := progressPattern.FindStringSubmatch(line)
 		if match == nil {
 			continue
@@ -195,21 +195,21 @@ func checkProgress(expectedIDs []string, c *translationChecker) {
 		number, _ := strconv.Atoi(match[1])
 		id := match[2]
 		if seen[id] {
-			c.failf("PROGRESS.md:%d: duplicate example ID %q", lineNumber+1, id)
+			c.failf("docs/PROGRESS.md:%d: duplicate example ID %q", lineNumber+1, id)
 			continue
 		}
 		seen[id] = true
 		position++
 		if position > len(expectedIDs) || expectedIDs[position-1] != id || number != position {
-			c.failf("PROGRESS.md:%d: example order or number does not match examples.txt", lineNumber+1)
+			c.failf("docs/PROGRESS.md:%d: example order or number does not match examples.txt", lineNumber+1)
 		}
 		if match[3] != "✅" || match[4] != "✅" {
-			c.failf("PROGRESS.md:%d: example %q is not translated and reviewed", lineNumber+1, id)
+			c.failf("docs/PROGRESS.md:%d: example %q is not translated and reviewed", lineNumber+1, id)
 		}
 	}
 	for _, id := range expectedIDs {
 		if !seen[id] {
-			c.failf("PROGRESS.md: missing status row for example ID %q", id)
+			c.failf("docs/PROGRESS.md: missing status row for example ID %q", id)
 		}
 	}
 }
