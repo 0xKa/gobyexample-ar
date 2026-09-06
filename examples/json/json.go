@@ -4,9 +4,9 @@
 package main
 
 import (
-	"encoding/json"
+	"bytes"
+	"encoding/json/v2"
 	"fmt"
-	"os"
 	"strings"
 )
 
@@ -107,16 +107,16 @@ func main() {
 
 	// استخدمنا في الأمثلة أعلاه دائمًا البايتات والسلاسل النصية
 	// كقيم وسيطة بين البيانات وتمثيل JSON على الخرج القياسي. يمكننا
-	// أيضًا إرسال ترميزات JSON مباشرة إلى كائنات `os.Writer` مثل
+	// أيضًا إرسال ترميزات JSON مباشرة إلى كائنات `io.Writer` مثل
 	// `os.Stdout`، أو حتى إلى أجسام استجابات HTTP.
-	enc := json.NewEncoder(os.Stdout)
 	d := map[string]int{"apple": 5, "lettuce": 7}
-	_ = enc.Encode(d)
+	var buf bytes.Buffer
+	_ = json.MarshalWrite(&buf, d)
+	fmt.Println(buf.String())
 
-	// تُجرى القراءة المتدفقة من كائنات `os.Reader` مثل `os.Stdin`
-	// أو أجسام طلبات HTTP باستخدام `json.Decoder`.
-	dec := json.NewDecoder(strings.NewReader(str))
+	// تُجرى القراءة المتدفقة من كائنات `io.Reader` مثل `os.Stdin`
+	// أو أجسام طلبات HTTP باستخدام `json.UnmarshalRead`.
 	res1 := response2{}
-	_ = dec.Decode(&res1)
+	_ = json.UnmarshalRead(strings.NewReader(str), &res1)
 	fmt.Println(res1)
 }

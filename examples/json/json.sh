@@ -18,4 +18,4 @@ apple
 
 # تناولنا هنا أساسيات JSON في Go. لمعرفة المزيد، راجع تدوينة
 # [JSON وGo](https://go.dev/blog/json) وتوثيق
-# [حزمة JSON](https://pkg.go.dev/encoding/json).
+# [حزمة JSON](https://pkg.go.dev/encoding/json/v2).
